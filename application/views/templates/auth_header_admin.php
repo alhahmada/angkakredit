@@ -89,10 +89,6 @@
                 </div>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-
 
             <!-- Menu Tambahan User -->
             <hr class="sidebar-divider">

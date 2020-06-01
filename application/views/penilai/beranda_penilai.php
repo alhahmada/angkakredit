@@ -34,8 +34,50 @@
             </div>
             <!-- Body -->
             <div class="card-body">
-                <div class="chart-pie">
-                    <canvas id="myPieChart"></canvas>
+                <div class="chart-piee pt-1">
+                    <div class="col-lg body-content">
+                        <style>
+                            .table-bio {
+                                width: 50%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                            }
+
+                            .table-bio tbody td {
+                                padding-bottom: 0.6rem;
+                            }
+
+                            .table-bio tbody td:first-child {
+                                width: 50%;
+                            }
+                        </style>
+                        <table class="table-bio">
+                            <tbody>
+                                <tr>
+                                    <td>Nama Lengkap</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <><?= $array['nama_lengkap']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>NIP</td>
+                                    <td>$get.Data.User</td>
+                                    <!--<?= $array['nip']; ?>-->
+                                </tr>
+                                <tr>
+                                    <td>Pangkat/Gol.Ruang</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>Alamat Email</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['email']; ?> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>

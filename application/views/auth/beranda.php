@@ -29,40 +29,88 @@
     </div>
 
     <!-- 1 Row, 2 Area -->
-    <div class="container row">
+    <div class="card-deck container col-xl-12">
 
         <!-- Area Pertama -->
-        <div class="col-xl-8  col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Header -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
-                </div>
-                <!--Body -->
-                <div class="card-body">
-                    <div class="chart-piee pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
+        <div class="card shadow col-xl-8 mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
+            </div>
+            <!--Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-1 pb-2">
+                    <div class="col-lg body-content">
+
+                        <style>
+                            .table-bio {
+                                width: 100%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                            }
+
+                            .table-bio tbody td {
+                                padding-bottom: 0.6rem;
+                            }
+
+                            .table-bio tbody td:first-child {
+                                width: 50%;
+                            }
+                        </style>
+                        <table class="table-bio">
+                            <tbody>
+                                <tr>
+                                    <td>Nama Lengkap</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <><?= $array['nama_lengkap']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>Alamat Email</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['email']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>Jabatan Fungsional</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['jabatan_fungsi']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>Pangkat/Gol.Ruang</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>NIP</td>
+                                    <td>$get.Data.User</td>
+                                    <!--<?= $array['nip']; ?>-->
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- Area Kedua -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Header -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Angka Kredit Saat ini</h6>
-                </div>
-                <!--Body -->
-                <div class="card-body">
-                    <div class="chart-piee pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
 
-                    </div>
+        <div class="card shadow col-xl-4 mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Angka Kredit Saat ini</h6>
+            </div>
+            <!--Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-4 pb-2">
+
+                    <h6>Harusnya SIh Pie Chart</h6>
+
+
                 </div>
             </div>
         </div>
+
     </div>
 
 
@@ -78,28 +126,79 @@
             <!-- Body -->
             <div class="card-body">
                 <div class="chart-pie">
-                    <table class="greyGridTable">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Tanggal Pengajuan</th>
-                                <th>Progress Pengajuan</th>
-                                <th>Keterangan</th>
-                                <th>Action</th>
-                                <th>Angka Kredit yang diterima</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>-</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="pt-4 pb-5">
+                        <table class="greyGridTable">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Tanggal Pengajuan</th>
+                                    <th>Progress Pengajuan</th>
+                                    <th>Keterangan</th>
+                                    <th>Action</th>
+                                    <th>Angka Kredit yang diterima</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pt-2 pb-2">
+                        <style>
+                            .table-ket {
+                                width: 100%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                                position: absolute;
+                                bottom: 0px;
+                            }
+
+                            .table-ket thead th {
+                                font-weight: bold;
+                                font-size: 13px;
+                            }
+
+                            .table-ket tbody td {
+                                width: 33%;
+                                font-style: italic;
+                                font-size: 12px;
+                            }
+                        </style>
+                        <table class="table-ket">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Keterangan / Status :</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"0" : Pengajuan</td>
+                                    <td>"3" : Pemilihan Tim Penilai</td>
+                                    <td>"6" : Selesai</td>
+                                </tr>
+                                <tr>
+                                    <td>"1" : Verifikasi Berkas</td>
+                                    <td>"4" : Penilaian</td>
+                                    <td>"7" : Pengajuan Ditolak</td>
+                                </tr>
+                                <tr>
+                                    <td>"2" : Verifikasi Poin Pengajuan</td>
+                                    <td>"5" : Penetapan Angka Kredit</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
 

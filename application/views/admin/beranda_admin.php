@@ -25,153 +25,153 @@
     </div>
 
     <!-- 1 Row, 2 Area -->
-    <div class="container row">
+    <div class="card-deck container">
 
         <!-- Area Pertama -->
-        <div class="col-xl-6  col-lg">
-            <div class="card shadow mb-4">
-                <!-- Header -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
-                </div>
-                <!--Body -->
-                <div class="card-body">
-                    <div class="chart-piee pt-1 pb-2">
-                        <div class="col-lg body-content">
 
-                            <style>
-                                .table-bio {
-                                    width: 100%;
-                                    text-align: left;
-                                    font-size: 16px;
-                                    color: black;
-                                }
+        <div class="card col-xl-6 shadow mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
+            </div>
+            <!--Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-1 pb-2">
+                    <div class="col-lg body-content">
 
-                                .table-bio tbody td {
-                                    padding-bottom: 0.6rem;
-                                }
+                        <style>
+                            .table-bio {
+                                width: 100%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                            }
 
-                                .table-bio tbody td:first-child {
-                                    width: 50%;
-                                }
-                            </style>
-                            <table class="table-bio">
-                                <tbody>
-                                    <tr>
-                                        <td>Nama Lengkap</td>
-                                        <td>$get.Data.User</td>
-                                        <!-- <><?= $array['nama_lengkap']; ?> -->
-                                    </tr>
-                                    <tr>
-                                        <td>NIP</td>
-                                        <td>$get.Data.User</td>
-                                        <!--<?= $array['nip']; ?>-->
-                                    </tr>
-                                    <tr>
-                                        <td>Pangkat/Gol.Ruang</td>
-                                        <td>$get.Data.User</td>
-                                        <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
-                                    </tr>
-                                    <tr>
-                                        <td>Alamat Email</td>
-                                        <td>$get.Data.User</td>
-                                        <!-- <?= $array['angka_kredit']; ?> -->
-                                    </tr>
-                                </tbody>
-                            </table>
+                            .table-bio tbody td {
+                                padding-bottom: 0.6rem;
+                            }
 
-                        </div>
+                            .table-bio tbody td:first-child {
+                                width: 50%;
+                            }
+                        </style>
+                        <table class="table-bio">
+                            <tbody>
+                                <tr>
+                                    <td>Nama Lengkap</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <><?= $array['nama_lengkap']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>NIP</td>
+                                    <td>$get.Data.User</td>
+                                    <!--<?= $array['nip']; ?>-->
+                                </tr>
+                                <tr>
+                                    <td>Pangkat/Gol.Ruang</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
+                                </tr>
+                                <tr>
+                                    <td>Alamat Email</td>
+                                    <td>$get.Data.User</td>
+                                    <!-- <?= $array['angka_kredit']; ?> -->
+                                </tr>
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- Area Kedua -->
-        <div class="col-xl-6 col-lg-5">
-            <div class="card shadow mb-0">
-                <!-- Header -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Daftar Dosen Harus Mengajukan</h6>
-                </div>
-                <!--Body -->
-                <div class="card-body">
-                    <div class="chart-piee pb-2">
-                        <div class="pb-5">
-                            <style>
-                                .table_admin {
-                                    border: 0px solid black;
-                                    width: 100%;
-                                    text-align: center;
-                                    border-collapse: collapse;
-                                }
 
-                                .table_admin td,
-                                .table_admin th {
-                                    border: 1px solid black;
-                                    padding: 3px 4px;
-                                }
+        <div class="card col-xl-6 shadow mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Daftar Dosen Harus Mengajukan</h6>
+            </div>
+            <!--Body -->
+            <div class="card-body">
+                <div class="chart-piee pb-2">
+                    <div class="pb-5">
+                        <style>
+                            .table_admin {
+                                border: 0px solid black;
+                                width: 100%;
+                                text-align: center;
+                                border-collapse: collapse;
+                            }
 
-                                .table_admin thead th {
-                                    font-size: 13px;
-                                    font-weight: bold;
-                                    color: #123a56;
-                                    border-top: none;
-                                    border-left: none;
-                                    border-bottom: 1 px solid black;
-                                    border-right: 1 px solid black;
-                                    padding-bottom: 0.75rem;
-                                }
+                            .table_admin td,
+                            .table_admin th {
+                                border: 1px solid black;
+                                padding: 3px 4px;
+                            }
 
-                                .table_admin thead th:last-child {
-                                    border-right: none;
-                                }
+                            .table_admin thead th {
+                                font-size: 13px;
+                                font-weight: bold;
+                                color: #123a56;
+                                border-top: none;
+                                border-left: none;
+                                border-bottom: 1 px solid black;
+                                border-right: 1 px solid black;
+                                padding-bottom: 0.75rem;
+                            }
 
-                                .table_admin tbody td {
-                                    font-size: 11px;
-                                    color: black;
-                                    text-align: center;
-                                    border-top: none;
-                                    font-weight: bold;
-                                    border-left: none;
-                                    border-bottom: none;
-                                    border-right: 1 px solid black;
-                                }
+                            .table_admin thead th:last-child {
+                                border-right: none;
+                            }
 
-                                .table_admin tbody td:last-child {
-                                    border-right: none;
-                                }
+                            .table_admin tbody td {
+                                font-size: 11px;
+                                color: black;
+                                text-align: center;
+                                border-top: none;
+                                font-weight: bold;
+                                border-left: none;
+                                border-bottom: none;
+                                border-right: 1 px solid black;
+                            }
 
-                                .table_admin tbody td:first-child {
-                                    text-align: left;
-                                }
-                            </style>
-                            <table class="table_admin">
-                                <thead>
-                                    <tr style="font-weight: bold;">
-                                        <th style="width: 40%;">Nama Dosen</th>
-                                        <th style="width: 35%;">Pengajuan Terakhir</th>
-                                        <th style="width: 25%;">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Aditya Faizal Arifin</td>
-                                        <td>2015</td>
-                                        <td><a>Kirim Notifikasi</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dimas Nur Ramadhani</td>
-                                        <td>2016</td>
-                                        <td><a>Kirim Notifikasi</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                            .table_admin tbody td:last-child {
+                                border-right: none;
+                            }
 
+                            .table_admin tbody td:first-child {
+                                text-align: left;
+                            }
+                        </style>
+                        <table class="table_admin">
+                            <thead>
+                                <tr style="font-weight: bold;">
+                                    <th style="width: 40%;">Nama Dosen</th>
+                                    <th style="width: 35%;">Pengajuan Terakhir</th>
+                                    <th style="width: 25%;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aditya Faizal Arifin</td>
+                                    <td>2015</td>
+                                    <td><a>Kirim Notifikasi</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Dimas Nur Ramadhani</td>
+                                    <td>2016</td>
+                                    <td><a>Kirim Notifikasi</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
 
 
@@ -250,24 +250,23 @@
                             <tbody>
                                 <tr>
                                     <td>"0" : Pengajuan</td>
-                                    <td>"1" : Verifikasi Berkas</td>
-                                    <td>"2" : Verifikasi Poin Pengajuan</td>
-                                </tr>
-                                <tr>
                                     <td>"3" : Pemilihan Tim Penilai</td>
-                                    <td>"4" : Penilaian</td>
-                                    <td>"5" : Penetapan Angka Kredit</td>
+                                    <td>"6" : Selesai</td>
                                 </tr>
                                 <tr>
-                                    <td>"6" : Selesai</td>
+                                    <td>"1" : Verifikasi Berkas</td>
+                                    <td>"4" : Penilaian</td>
                                     <td>"7" : Pengajuan Ditolak</td>
+                                </tr>
+                                <tr>
+                                    <td>"2" : Verifikasi Poin Pengajuan</td>
+                                    <td>"5" : Penetapan Angka Kredit</td>
                                     <td></td>
                                 </tr>
                             </tbody>
                         </table>
-
-
                     </div>
+
                 </div>
             </div>
 
