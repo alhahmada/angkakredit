@@ -1,171 +1,100 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard Tim Penilai</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Kritik dan Saran</a>
-    </div>
-    <!-- Content Row -->
+    <!-- Judul Halaman -->
+    <div class="container">
+        <!-- Row Pertama -->
+        <div class="justify-content-between pb-5 pt-4">
 
-    <div class="row">
+            <h1 class="head-content">Beranda Tim Penilai</h1>
+            <style>
+                .head-content {
+                    font-size: 30px;
+                    color: #4e73df;
+                    font-weight: bold;
+                    font-family: Cambria;
+                }
 
-
-        <!-- Pie Chart -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Biodata Tim Penilai</h6>
-                    <div class="dropdown no-arrow">
-
-
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                </div>
-            </div>
+                .body-content {
+                    font-size: 18px;
+                    color: black;
+                    font-family: 'Times New Roman';
+                }
+            </style>
         </div>
-
-
-        <!-- Area Chart -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">History Penilaian</h6>
-                    <div class="dropdown no-arrow">
-
-
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
     </div>
 
-    <!-- Content Row -->
-    <div class="row">
 
-        <!-- Content Column -->
-        <div class="col-lg mb-4">
-
-            <!-- Project Card Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Alur Penilaian</h6>
-                </div>
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
+    <!-- Area Full 1 -->
+    <div class="container-fluid col-xl-12">
+        <div class="card shadow mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi Penilai</h6>
+            </div>
+            <!-- Body -->
+            <div class="card-body">
+                <div class="chart-pie">
+                    <canvas id="myPieChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
 
 
-
-
-    <!-- Lainnya -->
-    <div class="row col-lg-6 mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Lainnya</h1>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-primary text-white shadow">
-                <div class="card-body">
-                    Buku Panduan
-                    <div class="text-white-50 small">#4e73df</div>
-                </div>
+    <!-- Area Full 2 -->
+    <div class="container-fluid col-xl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Daftar Penilaian</h6>
             </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-success text-white shadow">
-                <div class="card-body">
-                    Panduan Ristekdikti
-                    <div class="text-white-50 small">#1cc88a</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-info text-white shadow">
-                <div class="card-body">
-                    Info Lain
-                    <div class="text-white-50 small">#36b9cc</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-warning text-white shadow">
-                <div class="card-body">
-                    Edit Profil
-                    <div class="text-white-50 small">#f6c23e</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-danger text-white shadow">
-                <div class="card-body">
-                    Logout
-                    <div class="text-white-50 small">#e74a3b</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-secondary text-white shadow">
-                <div class="card-body">
-                    Kembali ke Beranda
-                    <div class="text-white-50 small">#858796</div>
+            <!-- Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
 
-</div>
 
-<!-- Illustrations -->
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <div class="card shadow text-center">
-                <div class="card-header">
-                    <h6 class="m-0 font-weight-bold text-primary">Pengembang Web</h6>
-                </div>
-                <div class="card-body">
-                    <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                    <p>adadad</p>
-                </div>
+    <!-- Area Full 3 -->
+    <div class="container-fluid col-xl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Alur Penilaian</h6>
             </div>
-        </div>
-
-
-        <!-- Approach -->
-        <div class="col-lg-6 mb-4">
-            <div class="card shadow text-center">
-                <div class="card-header">
-                    <h6 class="m-0 font-weight-bold text-center text-primary">Tentang Web</h6>
-                </div>
-                <div class="card-body">
-                    <p>Mau Ngomong apa saya juga binghungg</p>
-                    <p>adadad</p>
+            <!-- Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+<div class="pb-5"></div>
+
+
+
+
+
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
 </div>

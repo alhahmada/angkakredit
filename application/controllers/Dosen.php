@@ -1146,7 +1146,7 @@ class Dosen extends CI_Controller
                     $this->berkas->e8($id_pengajuan, $e81[$i], $e82[$i], $e83[$i], $filename);
                 }
                 $filenames[] = $filename;
-                $total += 5;
+                // $total += 5;
             }
             $this->berkas->upload_files($filenames, $_FILES['E84']);
             unset($filenames);
@@ -1253,7 +1253,6 @@ class Dosen extends CI_Controller
         // $a15='OK6';
         // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
         print_r($this->m_pengajuan->test());
-
     }
 
     public function test_submit()

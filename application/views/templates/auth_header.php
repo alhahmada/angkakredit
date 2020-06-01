@@ -72,9 +72,16 @@
             </li>
             <!-- Menu Utama Kedua User -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/format_pengajuan'); ?>">
+                <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">
                     <i class="fas fa-fw "></i>
-                    <span>Format Pegajuan</span>
+                    <span>Informasi Umum</span>
+                </a>
+            </li>
+            <!-- Menu Utama Ketiga User -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('dosen/history_pengajuan'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>History Pegajuan</span>
                 </a>
             </li>
 
@@ -298,8 +305,6 @@
                 </div>
                 <!-- End of Topbar -->
             </div>
-
-
 
 
 

@@ -1,170 +1,287 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard Admin</h1>
+    <!-- Judul Halaman -->
+    <div class="container">
+        <!-- Row Pertama -->
+        <div class="justify-content-between pb-5 pt-4">
+
+            <h1 class="head-content">Beranda Administrator</h1>
+            <style>
+                .head-content {
+                    font-size: 30px;
+                    color: #4e73df;
+                    font-weight: bold;
+                    font-family: Cambria;
+                }
+
+                .body-content {
+                    font-size: 18px;
+                    color: black;
+                    font-family: 'Times New Roman';
+                }
+            </style>
+        </div>
     </div>
-    <!-- Content Row -->
 
-    <div class="row">
+    <!-- 1 Row, 2 Area -->
+    <div class="container row">
 
-
-        <!-- Pie Chart -->
-        <div class="col-xl-4 col-lg-5">
+        <!-- Area Pertama -->
+        <div class="col-xl-6  col-lg">
             <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
+                <!-- Header -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Biodata Admin</h6>
-                    <div class="dropdown no-arrow">
-
-
-                    </div>
+                    <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
                 </div>
-                <!-- Card Body -->
+                <!--Body -->
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
+                    <div class="chart-piee pt-1 pb-2">
+                        <div class="col-lg body-content">
+
+                            <style>
+                                .table-bio {
+                                    width: 100%;
+                                    text-align: left;
+                                    font-size: 16px;
+                                    color: black;
+                                }
+
+                                .table-bio tbody td {
+                                    padding-bottom: 0.6rem;
+                                }
+
+                                .table-bio tbody td:first-child {
+                                    width: 50%;
+                                }
+                            </style>
+                            <table class="table-bio">
+                                <tbody>
+                                    <tr>
+                                        <td>Nama Lengkap</td>
+                                        <td>$get.Data.User</td>
+                                        <!-- <><?= $array['nama_lengkap']; ?> -->
+                                    </tr>
+                                    <tr>
+                                        <td>NIP</td>
+                                        <td>$get.Data.User</td>
+                                        <!--<?= $array['nip']; ?>-->
+                                    </tr>
+                                    <tr>
+                                        <td>Pangkat/Gol.Ruang</td>
+                                        <td>$get.Data.User</td>
+                                        <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat Email</td>
+                                        <td>$get.Data.User</td>
+                                        <!-- <?= $array['angka_kredit']; ?> -->
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <!-- Area Chart -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
+        <!-- Area Kedua -->
+        <div class="col-xl-6 col-lg-5">
+            <div class="card shadow mb-0">
+                <!-- Header -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Pengajuan Dalam Progress</h6>
-                    <div class="dropdown no-arrow">
+                    <h6 class="m-0 font-weight-bold text-primary">Daftar Dosen Harus Mengajukan</h6>
+                </div>
+                <!--Body -->
+                <div class="card-body">
+                    <div class="chart-piee pb-2">
+                        <div class="pb-5">
+                            <style>
+                                .table_admin {
+                                    border: 0px solid black;
+                                    width: 100%;
+                                    text-align: center;
+                                    border-collapse: collapse;
+                                }
+
+                                .table_admin td,
+                                .table_admin th {
+                                    border: 1px solid black;
+                                    padding: 3px 4px;
+                                }
+
+                                .table_admin thead th {
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    color: #123a56;
+                                    border-top: none;
+                                    border-left: none;
+                                    border-bottom: 1 px solid black;
+                                    border-right: 1 px solid black;
+                                    padding-bottom: 0.75rem;
+                                }
+
+                                .table_admin thead th:last-child {
+                                    border-right: none;
+                                }
+
+                                .table_admin tbody td {
+                                    font-size: 11px;
+                                    color: black;
+                                    text-align: center;
+                                    border-top: none;
+                                    font-weight: bold;
+                                    border-left: none;
+                                    border-bottom: none;
+                                    border-right: 1 px solid black;
+                                }
+
+                                .table_admin tbody td:last-child {
+                                    border-right: none;
+                                }
+
+                                .table_admin tbody td:first-child {
+                                    text-align: left;
+                                }
+                            </style>
+                            <table class="table_admin">
+                                <thead>
+                                    <tr style="font-weight: bold;">
+                                        <th style="width: 40%;">Nama Dosen</th>
+                                        <th style="width: 35%;">Pengajuan Terakhir</th>
+                                        <th style="width: 25%;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aditya Faizal Arifin</td>
+                                        <td>2015</td>
+                                        <td><a>Kirim Notifikasi</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dimas Nur Ramadhani</td>
+                                        <td>2016</td>
+                                        <td><a>Kirim Notifikasi</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Area Full 1 -->
+    <div class="container-fluid col-xl-12">
+        <div class="card shadow mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Pengajuan Dalam Progress</h6>
+            </div>
+            <!-- Body -->
+            <div class="card-body">
+                <div class="chart-pie">
+                    <div class="pt-4 pb-5">
+                        <table class="greyGridTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>0</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>7</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jumlah Dosen</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pt-2 pb-2">
+                        <style>
+                            .table-ket {
+                                width: 100%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                                position: absolute;
+                                bottom: 0px;
+                            }
+
+                            .table-ket thead th {
+                                font-weight: bold;
+                                font-size: 13px;
+                            }
+
+                            .table-ket tbody td {
+                                width: 33%;
+                                font-style: italic;
+                                font-size: 12px;
+                            }
+                        </style>
+                        <table class="table-ket">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Keterangan / Status :</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"0" : Pengajuan</td>
+                                    <td>"1" : Verifikasi Berkas</td>
+                                    <td>"2" : Verifikasi Poin Pengajuan</td>
+                                </tr>
+                                <tr>
+                                    <td>"3" : Pemilihan Tim Penilai</td>
+                                    <td>"4" : Penilaian</td>
+                                    <td>"5" : Penetapan Angka Kredit</td>
+                                </tr>
+                                <tr>
+                                    <td>"6" : Selesai</td>
+                                    <td>"7" : Pengajuan Ditolak</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
                     </div>
                 </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                </div>
-
             </div>
-        </div>
 
-    </div>
-
-    <!-- Content Row -->
-    <div class="row">
-
-        <!-- Content Column -->
-        <div class="col-lg mb-4">
-
-            <!-- Project Card Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">History Pengajuan Dosen</h6>
-                </div>
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
 
 
 
-    <!-- Lainnya -->
-    <div class="row col-lg-6 mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Lainnya</h1>
-    </div>
 
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-primary text-white shadow">
-                <div class="card-body">
-                    Buku Panduan
-                    <div class="text-white-50 small">#4e73df</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-success text-white shadow">
-                <div class="card-body">
-                    Panduan Ristekdikti
-                    <div class="text-white-50 small">#1cc88a</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-info text-white shadow">
-                <div class="card-body">
-                    Info Lain
-                    <div class="text-white-50 small">#36b9cc</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-warning text-white shadow">
-                <div class="card-body">
-                    Edit Profil
-                    <div class="text-white-50 small">#f6c23e</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-danger text-white shadow">
-                <div class="card-body">
-                    Logout
-                    <div class="text-white-50 small">#e74a3b</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card bg-secondary text-white shadow">
-                <div class="card-body">
-                    Kembali ke Beranda
-                    <div class="text-white-50 small">#858796</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
 <!-- Illustrations -->
-<div class="container-fluid">
 
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <div class="card shadow text-center">
-                <div class="card-header">
-                    <h6 class="m-0 font-weight-bold text-primary">Pengembang Web</h6>
-                </div>
-                <div class="card-body">
-                    <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                    <p>adadad</p>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Approach -->
-        <div class="col-lg-6 mb-4">
-            <div class="card shadow text-center">
-                <div class="card-header">
-                    <h6 class="m-0 font-weight-bold text-center text-primary">Tentang Web</h6>
-                </div>
-                <div class="card-body">
-                    <p>Mau Ngomong apa saya juga binghungg</p>
-                    <p>adadad</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+<div class="pt-5 pb-3"></div>
 </div>

@@ -61,24 +61,24 @@
             </div>
             <!-- Menu Utama Pertama User -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link" href="<?= base_url('verificator/daftar_verifikasiAK'); ?>">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Daftarkan Pengajuan</span></a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('dosen/pengajuan_dosen'); ?>">Pengajuan Baru</a>
-                        <a class="collapse-item" href="<?= base_url('dosen/history_pengajuan'); ?>">Pengajuan Lama</a>
-                    </div>
-                </div>
+                    <span>Daftar Verifikasi</span></a>
             </li>
             <!-- Menu Utama Kedua User -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/format_pengajuan'); ?>">
+                <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">
                     <i class="fas fa-fw "></i>
-                    <span>Format Pegajuan</span>
+                    <span>Informasi Umum</span>
                 </a>
             </li>
-
+            <!-- Menu Utama Ketiga User -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('verificator/history_verifikasi'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>History</span>
+                </a>
+            </li>
 
             <!-- Menu Tambahan User -->
             <hr class="sidebar-divider">
@@ -87,26 +87,25 @@
             </div>
             <!-- Menu Tambahan User Pertama-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/setting'); ?>">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Setting</span>
-                </a>
+                <a class="nav-link" href="<?= base_url('auth/edit_profil'); ?>">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Edit Profil</span></a>
             </li>
             <!-- Menu Tambahan User Kedua-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Pusat Informasi</span></a>
+                <a class="nav-link" href="<?= base_url('auth/setting'); ?>">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Pengaturan</span>
+                </a>
             </li>
             <!-- Menu Tambahan User Ketiga-->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('auth'); ?>">
                     <i class="fas fa-sign-out-alt fa-fw"></i>
-                    <span>Log Out</span></a>
+                    <span>Keluar</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
             <!-- Button Side Bar Biar Mengecil -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -278,6 +277,8 @@
                     </ul>
                 </nav>
 
+
+
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -296,4 +297,9 @@
                     </div>
                 </div>
                 <!-- End of Topbar -->
+
+
             </div>
+
+
+            <!-- DIV Wrapper dan Content-Wrapper Ditutup di Akhir (FOOTER)-->

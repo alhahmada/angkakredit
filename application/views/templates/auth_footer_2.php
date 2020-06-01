@@ -1,5 +1,4 @@
 </div>
-<!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
 
@@ -15,12 +14,38 @@
 </body>
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Angka Kredit Polstat 2020</span>
+<footer style="background-color: #282b3b; height: 20px;">
+
+</footer>
+
+
+<footer class="sticky-footer" style="background-color: white;">
+
+    <div class="" style="background-color: white;">
+        <div class="container my-auto">
+            <div class="copyright text-center" style="color: black;">
+                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+            </div>
         </div>
     </div>
+
+</footer>
+
+<footer class="sticky-footer" style="background-color: #282b3b;">
+
+    <div class="" style="background-color: #282b3b;">
+        <div class="container my-auto">
+            <div class="copyright text-center" style="color: white;">
+                <span>Copyright &copy; Angka Kredit Politeknik Statistika STIS 2020</span>
+            </div>
+        </div>
+    </div>
+
 </footer>
 <!-- End of Footer -->
 

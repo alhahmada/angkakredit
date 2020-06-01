@@ -4,6 +4,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class verificator extends CI_Controller
 {
 
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('form_validation');
+        if ($this->session->userdata('status') != "login") {
+            redirect(base_url("login"));
+        }
+        $this->load->model('m_auth');
+    }
+
     public function beranda_verificator()
     {
         $data['title'] = 'Beranda Verifikator';
