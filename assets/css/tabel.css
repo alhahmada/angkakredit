@@ -1,0 +1,167 @@
+table.greyGridTable {
+    border: 0px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table.greyGridTable td, table.greyGridTable th {
+    border: 1px solid #FFFFFF;
+    padding: 3px 4px;
+  }
+  table.greyGridTable tbody td {
+    font-size: 14px;
+    color: #000;
+  }
+  table.greyGridTable td:nth-child(even) {
+    background: #EBEBEB;
+  }
+  table.greyGridTable thead {
+    background: #FFFFFF;
+    border-bottom: 4px solid #333333;
+  }
+
+  table.greyGridTable tfoot {
+    background: #FFFFFF;
+    border-top : 4px solid #333333;
+  }
+
+  table.greyGridTable thead th{
+    font-size: 17px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    border-left: 2px solid #333333;
+  }
+
+  table.greyGridTable tfoot th{
+    font-size: 17px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    border-left: 2px solid #333333;
+  }
+
+  table.greyGridTable thead th:first-child{
+    border-left: none;
+  }
+
+  table.greyGridTable tfoot th:first-child {
+    border-left: none;
+  }
+
+
+  table.A1, table.A2, table.B1, table.B2, table.B3, table.B4, table.B5, table.B6, table.B7, table.B8, table.B9, table.B10, table.B11, table.B12, table.B13{
+    border: 0px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  table.C1, table.C2, table.C3, table.C4, table.C5, table.C6, table.C7, table.C8{
+    border: 0px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  table.A11, table.A12, table.D1, table.D2, table.D3, table.D4, table.D5, table.D6, table.D7{
+    border: 0px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  
+  table.E1, table.E2, table.E3, table.E4, table.E5, table.E6, table.E7, table.E8, table.E9, table.E10{
+    border: 0px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+
+  .senter {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .removeA1, .removeA2, .removeB1, .removeB2, .removeB3, .removeB4, .removeB5, .removeB6, .removeB7, .removeB8, .removeB9, .removeB10, .removeB11, .removeB12, .removeB13 {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .removeC1, .removeC2, .removeC3, .removeC4, .removeC5, .removeC6, .removeC7, .removeC8{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .removeD1, .removeD2, .removeD3, .removeD4, .removeD5, .removeD6, .removeD7{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .removeE1, .removeE2, .removeE3, .removeE4, .removeE5, .removeE6, .removeE7, .removeE8, .removeE9, .removeE10{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+
+  #addRowA1, #addRowA2, #addRowB1, #addRowB2, #addRowB3, #addRowB4, #addRowB5, #addRowB6, #addRowB7, #addRowB8, #addRowB9,  #addRowB10, #addRowB11, #addRowB12, #addRowB13, #addRowD1, #addRowD2, #addRowD3, #addRowD4, #addRowD5, #addRowD6, #addRowD7 {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    margin: 20px;
+  }
+
+  #addRowC1, #addRowC2, #addRowC3, #addRowC4, #addRowC5, #addRowC6, #addRowC7, #addRowC8{
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    margin: 20px;
+  }
+
+
+  #addRowE1, #addRowE2, #addRowE3, #addRowE4, #addRowE5, #addRowE6, #addRowE7, #addRowE8, #addRowE9, #addRowE10{
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    margin: 20px;
+  }
+
+  .col_comment {
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    height: 25vh;
+  }
