@@ -48,7 +48,7 @@
             <!-- MENU UTAMA BERANDA -->
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/beranda'); ?>">
+                <a class="nav-link" href="<?= base_url('admin/beranda_admin'); ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Beranda</span></a>
             </li>

@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Judul Halaman -->
-    <div class="container">
+    <div class="container p-5">
         <!-- Row Pertama -->
         <div class="justify-content-between pb-5 pt-4">
 
@@ -25,6 +25,7 @@
     </div>
 
 
+    <!-- Daftar Penilaian Baru-->
     <div class="row">
 
         <!-- Content Column -->
@@ -36,7 +37,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Daftar Penilaian Baru</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-piee pb-2">
+                    <div class="chart-pie pb-2">
 
                         <table class="greyGridTable">
                             <thead>
@@ -62,8 +63,8 @@
                                 </tr>
                                 <tr>
                                     <td>2.</td>
-                                    <td>Dosen B</td>
-                                    <td>11 Mei 2020</td>
+                                    <td>Muhammad Ali Irfan</td>
+                                    <td>13 Mei 2020</td>
                                     <td>Penilai ke-1</td>
                                     <td class="nav-item text-center">
                                         <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
@@ -71,15 +72,45 @@
                                         </a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="nav-item text-center">
+                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
+                                            <span>-
+                                                <!-- Mulai Penilaian -->
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="nav-item text-center">
+                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
+                                            <span>-
+                                                <!-- Mulai Penilaian -->
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
-
+                    </div>
+                    <div class="button-tabel row">
+                        <a class="nav-link" href=""> Sebelumnya</a>
+                        <a class="nav-link" href=""> Selanjutnya</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Tahap Sedang DInilai-->
     <div class="row">
 
         <!-- Content Column -->
@@ -91,7 +122,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Dalam Tahap Sedang Dinilai</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-piee pt-4 pb-2">
+                    <div class="chart-pie pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -118,8 +149,8 @@
                                 </tr>
                                 <tr>
                                     <td>2.</td>
-                                    <td>Dosen B</td>
-                                    <td>11 Mei 2020</td>
+                                    <td>Dimas Nur Ramadhani</td>
+                                    <td>18 Mei 2020</td>
                                     <td>Penilai ke-3</td>
                                     <td class="nav-item text-center">
                                         <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
@@ -127,18 +158,45 @@
                                         </a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="nav-item text-center">
+                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
+                                            <span>-
+                                                <!-- Lanjutkan Penilaian -->
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="nav-item text-center">
+                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
+                                            <span>-
+                                                <!-- Lanjutkan Penilaian -->
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
-
-
+                    </div>
+                    <div class="button-tabel row">
+                        <a class="nav-link" href=""> Sebelumnya</a>
+                        <a class="nav-link" href=""> Selanjutnya</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
+    <!-- Selesai DInilai-->
     <div class="row">
 
         <!-- Content Column -->
@@ -150,7 +208,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Selesai Dinilai</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-piee pt-4 pb-2">
+                    <div class="chart-pie pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -169,14 +227,54 @@
                                     <td>10 Mei 2020</td>
                                     <td>20 Juni 2020</td>
                                 </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>5.</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>6.</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="button-tabel row">
+                        <a class="nav-link" href=""> Sebelumnya</a>
+                        <a class="nav-link" href=""> Selanjutnya</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <style>
+        .button-tabel {
+            position: absolute;
+            bottom: 2px;
+            right: 1rem;
+        }
+    </style>
 </div>
 <div class="pt-5"></div>

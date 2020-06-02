@@ -18,6 +18,9 @@ class verificator extends CI_Controller
 
     public function beranda_verificator()
     {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Beranda Verifikator';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/beranda_verificator');
@@ -26,6 +29,9 @@ class verificator extends CI_Controller
 
     public function daftar_verifikasiAK()
     {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Daftar Pengajuan Yang Harus Diverifikasi';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/daftar_verifikasiAK');
@@ -34,6 +40,9 @@ class verificator extends CI_Controller
 
     public function verif_pendidikan()
     {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Verifikasi Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/verif_pendidikan');
@@ -42,6 +51,9 @@ class verificator extends CI_Controller
 
     public function verif_penelitian()
     {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Verifikasi Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/verif_penelitian');
@@ -50,6 +62,9 @@ class verificator extends CI_Controller
 
     public function verif_pengmas()
     {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Verifikasi Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/verif_pengmas');

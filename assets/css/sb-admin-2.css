@@ -7736,6 +7736,10 @@ button.bg-dark:focus {
   padding: 3rem !important;
 }
 
+.end-konten {
+  padding-top: 4rem !important ;
+}
+
 .pt-5,
 .py-5 {
   padding-top: 3rem !important;

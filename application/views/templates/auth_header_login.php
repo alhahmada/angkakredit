@@ -24,4 +24,8 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+
+<body class="bg-gradient-dark">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper" style="height: 720px;">

@@ -1,10 +1,27 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Pengajuan Angka Kredit Dosen</h1>
+    <!-- Judul Halaman -->
+    <div class="container">
+        <!-- Row Pertama -->
+        <div class="justify-content-between pb-3 pt-4">
 
+            <h1 class="head-content text-center">Pengajuan Angka Kredit Dosen</h1>
+            <style>
+                .head-content {
+                    font-size: 30px;
+                    color: #4e73df;
+                    font-weight: bold;
+                    font-family: Cambria;
+                }
+
+                .body-content {
+                    font-size: 18px;
+                    color: black;
+                    font-family: 'Times New Roman';
+                }
+            </style>
+        </div>
     </div>
 </div>
 

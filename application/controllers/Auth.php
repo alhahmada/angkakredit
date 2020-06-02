@@ -8,7 +8,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        if($this->session->userdata('status') != "login"){
+        if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
         $this->load->model('m_auth');
@@ -16,10 +16,10 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Beranda';
+        $data['title'] = 'Beranda Dosen';
         $this->load->view('templates/auth_header', $data);
         $this->load->view('auth/beranda');
         $this->load->view('templates/auth_footer');
@@ -36,10 +36,10 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {
-            $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
-        $data['nama'] = $datauser[0]['nama_lengkap'];
-        $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'User Registration';
+            $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+            $data['nama'] = $datauser[0]['nama_lengkap'];
+            $data['foto'] = $datauser[0]['foto'];
+            $data['title'] = 'User Registration';
             $this->load->view('templates/auth_header_login', $data);
             $this->load->view('auth/registration');
             $this->load->view('templates/auth_footer');
@@ -50,7 +50,7 @@ class Auth extends CI_Controller
 
     public function beranda()
     {
-        $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Beranda';
@@ -61,7 +61,7 @@ class Auth extends CI_Controller
 
     public function setting()
     {
-        $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Setting';
@@ -72,7 +72,7 @@ class Auth extends CI_Controller
 
     public function tentang()
     {
-        $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Tentang';
@@ -88,7 +88,7 @@ class Auth extends CI_Controller
 
     public function sampel_2()
     {
-        $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Contoh2';
@@ -99,7 +99,7 @@ class Auth extends CI_Controller
 
     public function informasi()
     {
-        $datauser=$this->m_auth->data_user($this->session->userdata('nip'));
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Halaman Informasi';

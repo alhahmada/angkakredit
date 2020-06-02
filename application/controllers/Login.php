@@ -1,22 +1,26 @@
-<?php 
+<?php
 
-class Login extends CI_Controller{
+class Login extends CI_Controller
+{
 
-	function __construct(){
-		parent::__construct();		
+	function __construct()
+	{
+		parent::__construct();
 		$this->load->model('m_auth');
-
 	}
 
-	function index(){
+	function index()
+	{
 		redirect(base_url('login/login'));
 	}
-	function login(){
-		$data['title'] = 'User Login';
+
+	function login()
+	{
+		$data['title'] = 'Halaman Masuk';
 		$data['error'] = $this->uri->segment(3);
 		$this->load->view('templates/auth_header_login', $data);
 		$this->load->view('auth/login');
-		$this->load->view('templates/auth_footer');
+		$this->load->view('templates/auth_footer_login');
 	}
 	public function registration()
 	{
@@ -37,17 +41,18 @@ class Login extends CI_Controller{
 			echo 'data berhasil ditambahkan!';
 		}
 	}
-	function aksi_login(){
+	function aksi_login()
+	{
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$where = array(
 			'email' => $email,
 			'password' => md5($password)
 		);
-		$cek = $this->m_auth->cek_login("tbl_user",$where)->num_rows();
-		
-		if($cek > 0){
-			$data = $this->m_auth->cek_login("tbl_user",$where)->result_array();
+		$cek = $this->m_auth->cek_login("tbl_user", $where)->num_rows();
+
+		if ($cek > 0) {
+			$data = $this->m_auth->cek_login("tbl_user", $where)->result_array();
 			$data_session = array(
 				'nip' => $data[0]['nip'],
 				'status' => "login"
@@ -56,24 +61,23 @@ class Login extends CI_Controller{
 			$this->session->set_userdata($data_session);
 
 			redirect(base_url("auth"));
-
-		}else{
+		} else {
 			redirect(base_url('login/login/error'));
-
 		}
 	}
 
-	function logout(){
+	function logout()
+	{
 		$this->session->sess_destroy();
 		redirect(base_url('login'));
 	}
 	function test()
-	{	
+	{
 		$where = array(
 			'email' => 'dosen@stis.id',
 			'password' => '9f08e0e14eb93c9cd05fdcae991d5f35'
 		);
-		$cek = $this->m_login->cek_login("tbl_user",$where)->result_array();
+		$cek = $this->m_login->cek_login("tbl_user", $where)->result_array();
 		print_r($cek[0]['nip']);
 	}
 }

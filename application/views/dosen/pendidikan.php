@@ -1,10 +1,28 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Pengajuan Angka Kredit Dosen</h1>
-        <h5> Pendidikan dan Pengajaran</h5>
+
+    <!-- Judul Halaman -->
+    <div class="container">
+        <!-- Row Pertama -->
+        <div class="justify-content-between pb-3 pt-4">
+
+            <h1 class="head-content">Pengajuan Angka Kredit Dosen</h1>
+            <style>
+                .head-content {
+                    font-size: 30px;
+                    color: #4e73df;
+                    font-weight: bold;
+                    font-family: Cambria;
+                }
+
+                .body-content {
+                    font-size: 18px;
+                    color: black;
+                    font-family: 'Times New Roman';
+                }
+            </style>
+        </div>
     </div>
 </div>
 
@@ -15,18 +33,33 @@
 
 <div class="container-fluid p-5">
 
+    <style>
+        .head-bab {
+            font-size: 24px;
+            color: #4e73df;
+            font-weight: bold;
+            font-family: Cambria;
+        }
+
+        .head-subbab {
+            font-size: 18px;
+            color: black;
+            font-family: 'Times New Roman';
+        }
+    </style>
+
     <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
-        <h5 class="h5 mb-0 text-gray-800">A. Pendidikan</h5>
+        <h5 class="head-bab">A. Pendidikan</h5>
     </div>
 
 
-    <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-        <h5 class="h6 mb-0 text-gray-800">
+    <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+        <h5 class=" head-subbab">
             1. Mengikuti pendidikan formal dan memperoleh gelar/sebutan/ijazah </h5>
     </div>
     <form class="user" enctype='multipart/form-data' method="post" action="<?= base_url('dosen/action_pendidikan'); ?>">
         <input type="hidden" name="id_pengajuan" value="<?php echo $id_pengajuan; ?>">
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable A1 p-3">
                 <thead>
                     <tr>
@@ -47,11 +80,11 @@
 
 
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 2. Mengikuti diklat prajabatan golongan III</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable A2">
                 <thead>
                     <tr>
@@ -81,17 +114,17 @@
 
 
         <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
-            <h5 class="h5 mb-0 text-gray-800">B. Pelaksanaan Pendidikan</h5>
+            <h5 class="head-bab">B. Pelaksanaan Pendidikan</h5>
         </div>
 
 
 
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 1. Melaksanakan perkuliahan/tutorial/perkuliahan praktikum dan membimbing,menguji serta menyelenggarakan pendidikan di laboratorium, praktik keguruan, bengkel/studio/kebun percobaan/teknologi pengajaran dan praktik lapangan (setiap semester)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B1">
                 <thead>
                     <tr>
@@ -122,11 +155,11 @@
 
 
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 2. Membimbing seminar mahasiswa (Setiap Semester)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B2">
                 <thead>
                     <tr>
@@ -148,11 +181,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 3. Membimbing Paktik Kerja Lapangan (Setiap Semester)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B3">
                 <thead>
                     <tr>
@@ -177,11 +210,11 @@
         <div class="p-3"></div>
 
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 4. Membimbing dan ikut membimbing dalam menghasilkan disertasi, tesis, skripsi dan laporan akhir studi yang sesuai dengan bidang penugasannya</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B4">
                 <thead>
                     <tr>
@@ -209,11 +242,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 5. Bertugas sebagai penguji pada ujian akhir/Profesi (Setiap Mahasiswa)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B5">
                 <thead>
                     <tr>
@@ -239,11 +272,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 6. Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan, termasuk dalam kegiatan ini adalah membimbing mahasiswa menghasilkan produk saintifik (setiap semester)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B6">
                 <thead>
                     <tr>
@@ -267,11 +300,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 7. Mengambengkan program kuliah yang mempunyai nilai kebaharuan metode atau substansi(Setiap Produk)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B7">
                 <thead>
                     <tr>
@@ -300,11 +333,11 @@
         <div class="p-3"></div>
 
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 8. Mengembangkan bahan pengajaran/bahan kuliah yang mempunyai nilai kebaharuan(Setiap Produk)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B8">
                 <thead>
                     <tr>
@@ -333,11 +366,11 @@
         <div class="p-3"></div>
 
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 9. Menyampaikan orasi ilmiah di tingkat perguruan tinggi</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B9">
                 <thead>
                     <tr>
@@ -363,11 +396,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 10. Menduduki jabatan pimpinan perguruan tinggi sesuai tugas pokok, fungsi, kewenangan dan/atau setara (Setiap Semester)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B10">
                 <thead>
                     <tr>
@@ -393,11 +426,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 11. Membimbing dosen yang mempunyai jabatan akademik lebih rendah setiap semester(Bagi Min. Lektor Kepala)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B11">
                 <thead>
                     <tr>
@@ -423,11 +456,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 12. Melaksanakan kegiatan datasering dan pencangkokan diluar institusi tempat bekerja (Setiap Semester)</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B12">
                 <thead>
                     <tr>
@@ -453,11 +486,11 @@
 
         <div class="p-3"></div>
 
-        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-4">
-            <h5 class="h6 mb-0 text-gray-800">
+        <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
+            <h5 class=" head-subbab">
                 13. Melaksanakan pengembangan diri untuk meningkatkan kompetensi</h5>
         </div>
-        <div class="p-5">
+        <div class="pb-5 pt-3">
             <table class="greyGridTable B13">
                 <thead>
                     <tr>
@@ -492,5 +525,4 @@
     </form>
     <div class="p-5"></div>
 
-</div>
 </div>

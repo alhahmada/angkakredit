@@ -20,16 +20,23 @@
 
 
 <footer class="sticky-footer" style="background-color: white;">
+    <style>
+        .text-ftr {
+            text-transform: uppercase;
+            font-family: sans-serif;
+            color: #3d446e;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
 
     <div class="" style="background-color: white;">
-        <div class="container my-auto">
-            <div class="copyright text-center" style="color: black;">
-                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
-                <p>Pengembang merupakan mahasiswa polstat stis blablablablabal</p>
+        <div class="container">
+            <div class="text-ftr text-center">
+                <p>Sistem ini dibangun dalam rangka penyusunan tugas akhir pengembang web. Sistem akan selalu Dikembangkan.</p>
+                <p class="pb-4">Kritik dan Saran : 16.8993@stis.ac.id</p>
+                <p>Pengembang Sistem : Alha Ahmada Belasae (16.8993)</p>
+                <p>Versi : AK POLSTAT STIS 1.0 (Last Modified June 2020)</p>
             </div>
         </div>
     </div>

@@ -226,20 +226,42 @@
 
 
     <!-- Lainnya -->
-    <div class="container">
-        <div class="row col-lg-6 mb-4">
-            <h1 class="head-content">Lainnya</h1>
+    <div class="container-fluid">
+        <div class="row col-lg-6 mb-4 pt-5  ">
+            <h1 class="head-content">Unduh / Download</h1>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row  justify-content-center">
         <div class="col-lg-5 mb-4">
-            <div class="card bg-primary text-white shadow">
+            <div class="card text-white shadow" style="background-color: #282b3b;">
                 <div class="card-body">
                     Panduan Ristekdikti
                 </div>
             </div>
         </div>
+        <div class="col-lg-5 mb-4">
+            <div class="card bg-dark text-white shadow">
+                <div class="card-body">
+                    Format Daftar Usulan PAK
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-4">
+            <div class="card bg-dark text-white shadow">
+                <div class="card-body">
+                    Format Berkas Pengajuan
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-4">
+            <div class="card text-white shadow" style="background-color: #282b3b;">
+                <div class="card-body">
+                    Pedoman Pengajuan
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>

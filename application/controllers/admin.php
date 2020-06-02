@@ -20,7 +20,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Beranda';
+        $data['title'] = 'Beranda Admin';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/beranda_admin');
         $this->load->view('templates/auth_footer');
@@ -42,7 +42,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Pengecekan Berkas Pengajuan';
+        $data['title'] = 'Verifikasi Berkas Pengajuan';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/cek_berkas');
         $this->load->view('templates/auth_footer');
@@ -53,7 +53,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Pengecekan Unsur Pengajuan';
+        $data['title'] = 'Verifikasi Pengajuan Argka Kredit';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/verif_penunjang');
         $this->load->view('templates/auth_footer');

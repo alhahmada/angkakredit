@@ -1,6 +1,5 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <div class="justify-content-between pb-3 pt-4">
         <h1 class="head-content">Pengajuan Angka Kredit Dosen</h1>
@@ -25,13 +24,8 @@
             font-family: 'Times New Roman';
         }
     </style>
-</div>
 
-
-<!--Biodata Dosen-->
-<div class="container-fluid">
-
-
+    <!--Biodata Dosen-->
     <div class="container mb-5">
         <div class="card shadow mt-3 mb-1" style="width: 100%;">
             <div class="card-header py-2">
@@ -64,7 +58,7 @@
                             <h5>Pangkat/Gol Ruang</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['pangkat']."/".$array['golongan_ruang']; ?></h5>
+                            <h5><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></h5>
                         </div>
                     </div>
 
@@ -103,19 +97,16 @@
         </div>
     </div>
 
-
     <!-- Tabel Pengajuan Yang Harus Dilampirkan -->
-
-
     <form class="user" enctype='multipart/form-data' method="post" action="<?= base_url('dosen/action_pengajuan'); ?>">
 
-        <div class="container">
-
+        <div class="container pb-5">
             <!-- Pengisian Berkas Persyaratan -->
             <div class="card shadow mb-1" style="width: 100%;">
                 <div class="card-header py-3">
                     <h6 class=" font-weight-bold text-left text-primary">I. Lampirkan Berkas Persyaratan Pengajuan</h6>
                 </div>
+
                 <div class="card-body">
                     <div class="pt-2 pb-3">
                         <table class="greyGridTable A1">
@@ -149,7 +140,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_sp3t" data-target="#modal_link_sp3t">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_sp3t" data-target="#modal_link_sp3t">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_sp3t" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -159,7 +150,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_sp3t" data-target="#modal_file_sp3t">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_sp3t" data-target="#modal_file_sp3t">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_sp3t" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -194,7 +185,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_resume" data-target="#modal_link_resume">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_resume" data-target="#modal_link_resume">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_resume" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -204,7 +195,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_resume" data-target="#modal_file_resume">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_resume" data-target="#modal_file_resume">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_resume" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -239,7 +230,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_ijazah" data-target="#modal_link_ijazah">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_ijazah" data-target="#modal_link_ijazah">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_ijazah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -249,7 +240,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_ijazah" data-target="#modal_file_ijazah">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_ijazah" data-target="#modal_file_ijazah">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_ijazah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -283,7 +274,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_abstrak" data-target="#modal_link_abstrak">Lampirkan Link</button>
+                                        <button class="btn btn-sm" type="button" data-toggle="modal" id="btn_link_abstrak" data-target="#modal_link_abstrak">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_abstrak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -293,7 +284,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_abstrak" data-target="#modal_file_abstrak">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_abstrak" data-target="#modal_file_abstrak">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_abstrak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -327,7 +318,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_skptb" data-target="#modal_link_skptb">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_skptb" data-target="#modal_link_skptb">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_skptb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -337,7 +328,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_skptb" data-target="#modal_file_skptb">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_skptb" data-target="#modal_file_skptb">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_skptb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -371,7 +362,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_skpk" data-target="#modal_link_skpk">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_skpk" data-target="#modal_link_skpk">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_skpk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -381,7 +372,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_skpk" data-target="#modal_file_skpk">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_skpk" data-target="#modal_file_skpk">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_skpk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -415,7 +406,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_dupak" data-target="#modal_link_dupak">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_dupak" data-target="#modal_link_dupak">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_dupak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -425,7 +416,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_dupak" data-target="#modal_file_dupak">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_dupak" data-target="#modal_file_dupak">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_dupak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -459,7 +450,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_spak" data-target="#modal_link_spak">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_spak" data-target="#modal_link_spak">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_spak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -469,7 +460,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_spak" data-target="#modal_file_spak">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_spak" data-target="#modal_file_spak">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_spak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -503,7 +494,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_skjabatan" data-target="#modal_link_skjabatan">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_skjabatan" data-target="#modal_link_skjabatan">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_skjabatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -513,7 +504,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_skjabatan" data-target="#modal_file_skjabatan">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_skjabatan" data-target="#modal_file_skjabatan">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_skjabatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -547,7 +538,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_skpangkat" data-target="#modal_link_skpangkat">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_skpangkat" data-target="#modal_link_skpangkat">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_skpangkat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -557,7 +548,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_skpangkat" data-target="#modal_file_skpangkat">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_skpangkat" data-target="#modal_file_skpangkat">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_skpangkat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -591,7 +582,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_ppkp" data-target="#modal_link_ppkp">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_ppkp" data-target="#modal_link_ppkp">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_ppkp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -601,7 +592,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_ppkp" data-target="#modal_file_ppkp">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_ppkp" data-target="#modal_file_ppkp">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_ppkp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -635,7 +626,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_skmp" data-target="#modal_link_skmp">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_skmp" data-target="#modal_link_skmp">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_skmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -645,7 +636,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_skmp" data-target="#modal_file_skmp">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_skmp" data-target="#modal_file_skmp">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_skmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -679,7 +670,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_spps" data-target="#modal_link_spps">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_spps" data-target="#modal_link_spps">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_spps" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -689,7 +680,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_spps" data-target="#modal_file_spps">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_spps" data-target="#modal_file_spps">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_spps" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -723,7 +714,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_daftarhadir" data-target="#modal_link_daftarhadir">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_daftarhadir" data-target="#modal_link_daftarhadir">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_daftarhadir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -733,7 +724,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_daftarhadir" data-target="#modal_file_daftarhadir">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_daftarhadir" data-target="#modal_file_daftarhadir">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_daftarhadir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -767,7 +758,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_sphvki" data-target="#modal_link_sphvki">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_sphvki" data-target="#modal_link_sphvki">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_sphvki" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -777,7 +768,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_sphvki" data-target="#modal_file_sphvki">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_sphvki" data-target="#modal_file_sphvki">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_sphvki" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -811,7 +802,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_spkki" data-target="#modal_link_spkki">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_spkki" data-target="#modal_link_spkki">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_spkki" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -821,7 +812,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_spkki" data-target="#modal_file_spkki">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_spkki" data-target="#modal_file_spkki">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_spkki" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -855,7 +846,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_pendidikan" data-target="#modal_link_pendidikan">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_pendidikan" data-target="#modal_link_pendidikan">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_pendidikan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -865,7 +856,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_pendidikan" data-target="#modal_file_pendidikan">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_pendidikan" data-target="#modal_file_pendidikan">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_pendidikan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -899,7 +890,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_link_klarifikasi" data-target="#modal_link_klarifikasi">Lampirkan Link</button>
+                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_klarifikasi" data-target="#modal_link_klarifikasi">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_klarifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -909,7 +900,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        || <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_file_klarifikasi" data-target="#modal_file_klarifikasi">Lampirkan File</button>
+                                        atau <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_file_klarifikasi" data-target="#modal_file_klarifikasi">Lampirkan File</button>
                                         <div class="modal fade" id="modal_file_klarifikasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -926,10 +917,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <!-- Pengisian Tipe Pengajuan -->
             <div class="card shadow mt-5 mb-4">
                 <div class="card-header py-3">
@@ -951,87 +938,84 @@
                                     <td class="font_col_1">Jabatan Fungsional</td>
                                     <td class="text-center">$get.from.table</td>
                                     <td><label for="F1">
-                                        <select class="f" id="F1" name="F1">
-                                            <option value="" selected disabled hidden> ... </option>
-                                            <option value="Asisten Ahli">Asisten Ahli</option>
-                                            <option value="Lektor">Lektor</option>
-                                            <option value="Lektor Kepala">Lektor Kepala</option>
-                                            <option value="Profesor">Profesor</option>
-                                        </select>
-                                    </label>
-                                </td>
-                            </tr>
+                                            <select class="f" id="F1" name="F1">
+                                                <option value="" selected disabled hidden> ... </option>
+                                                <option value="Asisten Ahli">Asisten Ahli</option>
+                                                <option value="Lektor">Lektor</option>
+                                                <option value="Lektor Kepala">Lektor Kepala</option>
+                                                <option value="Profesor">Profesor</option>
+                                            </select>
+                                        </label>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="font_col_1">Pangkat</td>
-                                <td class="text-center">$get.from.table</td>
-                                <td><label for="F2">
-                                    <select class="f" id="F2" name="F2">
-                                        <option value="" selected disabled hidden> ... </option>
-                                        <option value="IIIa">1</option>
-                                        <option value="IIIb">2</option>
-                                        <option value="IIIc">3</option>
-                                        <option value="IIId">4</option>
-                                        <option value="IVa">5</option>
-                                        <option value="IVb">6</option>
-                                        <option value="IVc">7</option>
-                                        <option value="IVd">8</option>
-                                        <option value="IVe">9</option>
-                                    </select>
-                                </label>
-                            </td>
-                        </tr>
+                                <tr>
+                                    <td class="font_col_1">Pangkat</td>
+                                    <td class="text-center">$get.from.table</td>
+                                    <td><label for="F2">
+                                            <select class="f" id="F2" name="F2">
+                                                <option value="" selected disabled hidden> ... </option>
+                                                <option value="IIIa">IIIa</option>
+                                                <option value="IIIb">IIIb</option>
+                                                <option value="IIIc">IIIc</option>
+                                                <option value="IIId">IIId</option>
+                                                <option value="IVa">IVa</option>
+                                                <option value="IVb">IVb</option>
+                                                <option value="IVc">IVc</option>
+                                                <option value="IVd">IVd</option>
+                                                <option value="IVe">IVe</option>
+                                            </select>
+                                        </label>
+                                    </td>
+                                </tr>
 
 
-                        <tr>
-                            <td class="font_col_1">Golongan Ruang</td>
-                            <td class="text-center"> $get.from.table </td>
-                            <td><label for="F3">
-                                <select class="f" id="F3" name="F3">
-                                    <option value="" selected disabled hidden> ... </option>
-                                    <option value="1">Penata Muda Tk.1</option>
-                                    <option value="2">Penata</option>
-                                    <option value="3">Penata Tk.1</option>
-                                    <option value="4">Pembina</option>
-                                    <option value="5">Pembina Tk.1</option>
-                                    <option value="6">Pembina Utama Muda</option>
-                                    <option value="7">Pembina Utama Madya</option>
-                                    <option value="8">Pembina Utama</option>
-                                </select>
-                            </label>
-                        </td>
-                    </tr>
-                </tbody>
+                                <tr>
+                                    <td class="font_col_1">Golongan Ruang</td>
+                                    <td class="text-center"> $get.from.table </td>
+                                    <td><label for="F3">
+                                            <select class="f" id="F3" name="F3">
+                                                <option value="" selected disabled hidden> ... </option>
+                                                <option value="1">Penata Muda Tk.1</option>
+                                                <option value="2">Penata</option>
+                                                <option value="3">Penata Tk.1</option>
+                                                <option value="4">Pembina</option>
+                                                <option value="5">Pembina Tk.1</option>
+                                                <option value="6">Pembina Utama Muda</option>
+                                                <option value="7">Pembina Utama Madya</option>
+                                                <option value="8">Pembina Utama</option>
+                                            </select>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
 
-            </table>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Submit Form -->
+            <div class="pt-3">
+                <button type="submit" class="col-sm-2 float-right btn btn-primary btn-user btn=block">
+                    Ajukan Pengajuan
+                </button>
+            </div>
         </div>
-    </div>
+    </form>
+
+    <style>
+        select.f {
+            width: 120px;
+            border: none;
+        }
+
+        .font_col_1 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+            color: chartreuse;
+        }
+    </style>
 </div>
 
-<!-- Submit Form -->
-<div class="pt-5">
-    <button type="submit" class="col-sm-2 float-right btn btn-primary btn-user btn=block">
-        Ajukan Pengajuan
-    </button>
-</div>
-</div>
-</form>
-
-<style>
-    select.f {
-        width: 120px;
-        border: none;
-    }
-
-    .font_col_1 {
-        font-size: 20px;
-        font-weight: bold;
-        text-align: right;
-        color: chartreuse;
-    }
-</style>
-
-
-</div>
-
-</div>
+<div style="margin-bottom: 7rem;"></div>

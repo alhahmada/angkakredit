@@ -164,14 +164,14 @@
                         setInterval(showTime, 500);
                     </script>
                     <style>
-                        .jam {
+                        .jam-tampil {
                             font-size: 20px;
                             color: white;
                             font-family: Cambria;
                             font-weight: bold;
                         }
                     </style>
-                    <h2 class="jam">
+                    <h2 class="jam-tampil">
                         <script type='text/javascript'>
                             var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
                             var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
