@@ -65,9 +65,9 @@ class Auth extends CI_Controller
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Setting';
-        $this->load->view('templates/auth_header', $data);
-        $this->load->view('auth/setting');
-        $this->load->view('templates/auth_footer');
+        // $this->load->view('templates/auth_header', $data);
+        $this->load->view('auth/setting', $data);
+        //     $this->load->view('templates/auth_footer');
     }
 
     public function tentang()
@@ -103,8 +103,8 @@ class Auth extends CI_Controller
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Halaman Informasi';
-        $this->load->view('templates/auth_header', $data);
-        $this->load->view('auth/informasi');
-        $this->load->view('templates/auth_footer');
+        // $this->load->view('templates/auth_header', $data);
+        $this->load->view('auth/informasi', $data);
+        // $this->load->view('templates/auth_footer');
     }
 }
