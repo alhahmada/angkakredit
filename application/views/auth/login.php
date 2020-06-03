@@ -12,6 +12,8 @@
                     <div class="row">
                         <?php if ($error == 'error') { ?>
                             <div style="width: 100%;background-color: red;color: black;text-align: center;">Username dan password salah !</div>
+                        <?php }elseif ($error == 'role') { ?>
+                            <div style="width: 100%;background-color: red;color: black;text-align: center;">Anda Tidak Memiliki akses ke halaman ini !</div>
                         <?php } ?>
                         <div class="col-lg p-5">
 
@@ -31,19 +33,19 @@
                                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" name="login_as" value="dosen" class="btn btn-primary btn-user btn-block">
                                     Masuk Sebagai Dosen
                                 </button>
 
-                                <a href="index.html" style="background-color: #1cc88a;" class="btn-penilai btn-user btn-block">
+                                <button type="submit" name="login_as" value="penilai" class="btn btn-primary btn-user btn-block">
                                     Masuk Sebagai Tim Penilai
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                </button>
+                                <button type="submit" name="login_as" value="verificator" class="btn btn-primary btn-user btn-block">
                                     Masuk Sebagai Verifikator
-                                </a>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                </button>
+                                <button type="submit" name="login_as" value="admin" class="btn btn-primary btn-user btn-block">
                                     Masuk Sebagai Administrator
-                                </a>
+                                </button>
                             </form>
                             <hr>
                             <div class="text-center">

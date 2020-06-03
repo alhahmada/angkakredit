@@ -46,48 +46,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                $no=1;
+                                foreach ($pengajuan as $key => $value) { ?>
                                 <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
+                                    <td><?= $no; ?></td>
+                                    <td><?= $value['nama_lengkap']; ?></td>
+                                    <td><?= date('d F Y',strtotime($value['tgl_pengajuan'])); ?></td>
                                     <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas'); ?>">
+                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas/'.$value['id_pengajuan']); ?>">
                                             <span>Cek Kelengkapan Berkas</span>
                                         </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Dosen B</td>
-                                    <td>11 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas'); ?>">
-                                            <span>Cek Kelengkapan Berkas</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Dosen C</td>
-                                    <td>15 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas'); ?>">
-                                            <span>Cek Kelengkapan Berkas</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas'); ?>">
-                                            <span>-
-                                                <!-- Cek Kelengkapan Berkas -->
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php $no++; } ?>
                             </tbody>
                         </table>
                         <div class="button-tabel row">
