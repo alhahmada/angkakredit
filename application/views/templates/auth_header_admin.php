@@ -82,9 +82,8 @@
                     <span>History</span></a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('history/pengajuan'); ?>">Pengajuan</a>
-                        <a class="collapse-item" href="<?= base_url('history/penilaian'); ?>">Penilaian</a>
-                        <a class="collapse-item" href="<?= base_url('history/verifikasi'); ?>">Verifikasi</a>
+                        <a class="collapse-item" href="<?= base_url('admin/pengajuan_tolak'); ?>">Pengajuan Ditolak</a>
+                        <a class="collapse-item" href="<?= base_url('admin/pengajuan_selesai'); ?>">Pengajuan Selesai</a>
                     </div>
                 </div>
             </li>

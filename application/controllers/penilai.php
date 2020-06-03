@@ -125,4 +125,15 @@ class penilai extends CI_Controller
         $this->load->view('auth/edit_profil');
         $this->load->view('templates/auth_footer');
     }
+
+    public function history_penilai()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'History Penilaian Angka Kredit';
+        $this->load->view('templates/auth_header_penilai', $data);
+        $this->load->view('penilai/history_penilaian');
+        $this->load->view('templates/auth_footer');
+    }
 }

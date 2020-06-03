@@ -5,7 +5,7 @@
         <!-- Row Pertama -->
         <div class="justify-content-between pb-3 pt-4">
 
-            <h1 class="head-content">History Pengajuan Angka Kredit</h1>
+            <h1 class="head-content">History Verifikasi Angka Kredit</h1>
             <style>
                 .head-content {
                     font-size: 30px;
@@ -39,11 +39,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Tanggal Pengajuan</th>
-                        <th>Progress Pengajuan</th>
-                        <th>Terakhir Diproses</th>
-                        <th>ID Pengajuan</th>
-                        <th style="width: 15%;">Angka Kredit yang diterima</th>
+                        <th>Nama Dosen</th>
+                        <th>Tanggal Submit Verifikasi</th>
+                        <th>Hasil Verifikasi</th>
+                        <th style="width: 15%;"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,11 +50,18 @@
                     foreach ($pengajuan as $key => $data) { ?>
                         <tr>
                             <td><?= $no; ?></td>
-                            <td><?= $data['tgl_pengajuan']; ?></td>
-                            <td><?= $data['progress_pengajuan']; ?></td>
-                            <td><?= $data['tgl_pengajuan']; ?></td>
-                            <td><?= $data['id_pengajuan']; ?></td>
-                            <td><?= $data['ak_diterima']; ?></td>
+                            <td>
+                                <!-- <?= $data['tgl_pengajuan']; ?> -->
+                            </td>
+                            <td>
+                                <!-- <?= $data['progress_pengajuan']; ?> -->
+                            </td>
+                            <td>
+                                <?= $data['tgl_pengajuan']; ?>
+                            </td>
+                            <td>
+                                <?= $data['id_pengajuan']; ?>
+                            </td>
                         <?php $no++;
                     } ?>
                         </tr>

@@ -102,4 +102,15 @@ class verificator extends CI_Controller
         $this->load->view('auth/edit_profil');
         $this->load->view('templates/auth_footer');
     }
+
+    public function history_verif()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'History Verifikasi Pengajuan';
+        $this->load->view('templates/auth_header_verif', $data);
+        $this->load->view('verificator/history_verif');
+        $this->load->view('templates/auth_footer');
+    }
 }

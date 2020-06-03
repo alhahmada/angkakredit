@@ -196,4 +196,26 @@ class admin extends CI_Controller
         $this->load->view('admin/edit_user');
         $this->load->view('templates/auth_footer');
     }
+
+    public function pengajuan_tolak()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Edit/Tambahkan User';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('admin/pengajuan_tolak');
+        $this->load->view('templates/auth_footer');
+    }
+
+    public function pengajuan_selesai()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Edit/Tambahkan User';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('admin/pengajuan_selesai');
+        $this->load->view('templates/auth_footer');
+    }
 }

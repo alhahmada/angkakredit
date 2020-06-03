@@ -5,7 +5,7 @@
         <!-- Row Pertama -->
         <div class="justify-content-between pb-3 pt-4">
 
-            <h1 class="head-content">History Pengajuan Angka Kredit</h1>
+            <h1 class="head-content">History Pengajuan Selesai</h1>
             <style>
                 .head-content {
                     font-size: 30px;
@@ -39,10 +39,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Tanggal Pengajuan</th>
-                        <th>Progress Pengajuan</th>
-                        <th>Terakhir Diproses</th>
-                        <th>ID Pengajuan</th>
+                        <th>Nama Dosen</th>
+                        <th>Tanggal Penetapan</th>
+                        <th>Daftar Penilai</th>
+                        <th>Jabatan Saat Ini</th>
                         <th style="width: 15%;">Angka Kredit yang diterima</th>
                     </tr>
                 </thead>

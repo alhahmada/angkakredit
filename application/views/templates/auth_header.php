@@ -125,7 +125,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Bagian Menu Atas Tengah -->
-            <div id="content">
+            <div id="content" style="max-height: 70px;">
 
                 <nav class="navbar navbar-expand navbar-light topbar static-top shadow" style="background-color: #282b3b;">
 

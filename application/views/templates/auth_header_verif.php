@@ -74,7 +74,7 @@
             </li>
             <!-- Menu Utama Ketiga User -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('verificator/history_verifikasi'); ?>">
+                <a class="nav-link" href="<?= base_url('verificator/history_verif'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>History</span>
                 </a>

@@ -75,7 +75,7 @@
             </li>
             <!-- Menu Utama Ketiga User -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('penilai/history_penilaian'); ?>">
+                <a class="nav-link" href="<?= base_url('penilai/history_penilai'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>History</span>
                 </a>
