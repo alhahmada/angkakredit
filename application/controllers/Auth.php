@@ -12,17 +12,12 @@ class Auth extends CI_Controller
             redirect(base_url("login"));
         }
         $this->load->model('m_auth');
+        $this->load->model('m_pengajuan');
     }
 
     public function index()
     {
-        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-        $data['nama'] = $datauser[0]['nama_lengkap'];
-        $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Beranda Dosen';
-        $this->load->view('templates/auth_header', $data);
-        $this->load->view('auth/beranda');
-        $this->load->view('templates/auth_footer');
+        redirect('/auth/beranda');
     }
 
     public function registration()
@@ -53,6 +48,9 @@ class Auth extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['array'] = $datauser[0];
+        $datapengajuan = $this->m_pengajuan->data_pengajuan();
+        $data['pengajuan'] = $datapengajuan;
         $data['title'] = 'Beranda';
         $this->load->view('templates/auth_header', $data);
         $this->load->view('auth/beranda');

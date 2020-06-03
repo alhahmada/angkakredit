@@ -59,22 +59,22 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nip']; ?></td>
                                     <!--<?= $array['nip']; ?>-->
                                 </tr>
                                 <tr>
                                     <td>Pangkat/Gol.Ruang</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></td>
                                     <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Alamat Email</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                             </tbody>
@@ -206,14 +206,9 @@
                             <tbody>
                                 <tr>
                                     <td>Jumlah Dosen</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <?php for ($i=0; $i < 8 ; $i++) { 
+                                        echo "<td>".$progress[$i]."</td>";
+                                    } ?>
                                 </tr>
                             </tbody>
                         </table>

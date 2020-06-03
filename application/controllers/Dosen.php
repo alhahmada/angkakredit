@@ -1252,7 +1252,7 @@ class Dosen extends CI_Controller
         // $a14='OK5';
         // $a15='OK6';
         // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
-        print_r($this->m_pengajuan->test());
+        print_r($this->m_pengajuan->total_per_progress());
     }
 
     public function test_submit()

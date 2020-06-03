@@ -62,28 +62,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <><?= $array['nama_lengkap']; ?> -->
+                                    <td><?= $array['nama_lengkap'] ?></td>
+                                    <!-- <><?= $array['']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Alamat Email</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <?= $array['email']; ?> -->
+                                    <td><?= $array['email'] ?></td>
+                                    <!-- <?= $array['']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Jabatan Fungsional</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <?= $array['jabatan_fungsi']; ?> -->
+                                    <td><?= $array['jabatan_fungsi'] ?></td>
+                                    <!-- <?= $array['']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Pangkat/Gol.Ruang</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
+                                    <td><?= $array['pangkat']."/". $array['golongan_ruang']; ?></td>
+                                    <!-- <?= $array[''] . "/" . $array['golongan_ruang']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $array['nip'] ?></td>
+                                    <!--<?= $array['']; ?>-->
                                 </tr>
                             </tbody>
                         </table>
@@ -139,14 +139,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>-</td>
-                                </tr>
+                                <?php $no=1; foreach ($pengajuan as $key => $data) { ?>
+                            <tr>
+                                <td><?= $no; ?></td>
+                                <td><?= $data['tgl_pengajuan']; ?></td>
+                                <td><?= $data['progress_pengajuan']; ?></td>
+                                <td><?= $data['tgl_pengajuan']; ?></td>
+                                <td><?= $data['id_pengajuan']; ?></td>
+                                <td><?= $data['ak_diterima']; ?></td>
+                            <?php $no++; } ?>
                             </tbody>
                         </table>
                     </div>

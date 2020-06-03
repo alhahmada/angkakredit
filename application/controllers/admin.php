@@ -11,15 +11,21 @@ class admin extends CI_Controller
         $this->load->library('form_validation');
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
+        }if ($this->session->userdata('role') != "1") {
+            redirect(base_url($this->session->userdata('home')));
         }
         $this->load->model('m_auth');
+        $this->load->model('m_pengajuan');
     }
 
     public function beranda_admin()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $progress = $this->m_pengajuan->total_per_progress();
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['array'] = $datauser[0];
+        $data['progress'] = $progress;
         $data['title'] = 'Beranda Admin';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/beranda_admin');
@@ -29,8 +35,10 @@ class admin extends CI_Controller
     public function daftar_pengajuanAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $pengajuan = $this->m_pengajuan->pengajuan_all();
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['pengajuan'] = $pengajuan;
         $data['title'] = 'Daftar Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/daftar_pengajuanAK');
@@ -40,12 +48,33 @@ class admin extends CI_Controller
     public function cek_berkas()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $id_pengajuan=$this->uri->segment(3);
+        $user=$this->m_pengajuan->user_pengajuan($id_pengajuan);
+        $berkas=$this->m_pengajuan->data_berkas($id_pengajuan);
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['berkas'] = $berkas[0];
+        $data['user'] = $user[0];
         $data['title'] = 'Verifikasi Berkas Pengajuan';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/cek_berkas');
         $this->load->view('templates/auth_footer');
+    }
+    public function action_verif_berkas()
+    {
+        $keterangan=$this->input->post('keterangan');
+        $aksi=$this->input->post('aksi');
+        $id_pengajuan=$this->input->post('id_pengajuan');
+        if($aksi=='tolak'){
+            $progress=7;
+            $ket="Berkas Tidak Lulus verifikasi oleh admin";
+        }elseif($aksi=='terima'){
+            $progress=1;
+            $ket="Berkas Lulus verifikasi oleh admin";
+        }
+        $this->m_pengajuan->update_log($id_pengajuan,$keterangan,'Berkas Pengajuan');
+        $this->m_pengajuan->update_progress($id_pengajuan,$progress,$ket);
+        redirect('/admin/daftar_pengajuanAK');
     }
 
     public function verif_penunjang()
