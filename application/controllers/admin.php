@@ -12,12 +12,22 @@ class admin extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
-        if ($this->session->userdata('role') != "1") {
-            redirect(base_url($this->session->userdata('home')));
-        }
+        // if ($this->session->userdata('role') != "1") {
+        //     redirect(base_url($this->session->userdata('home')));
+        // }
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
     }
+
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    //     $this->load->library('form_validation');
+    //     if ($this->session->userdata('status') != "login") {
+    //         redirect(base_url("login"));
+    //     }
+    //     $this->load->model('m_auth');
+    // }
 
     public function beranda_admin()
     {
@@ -173,6 +183,17 @@ class admin extends CI_Controller
         $data['title'] = 'Edit Profil';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('auth/edit_profil');
+        $this->load->view('templates/auth_footer');
+    }
+
+    public function edit_user()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Edit/Tambahkan User';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('admin/edit_user');
         $this->load->view('templates/auth_footer');
     }
 }
