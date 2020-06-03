@@ -45,73 +45,73 @@
             </div>
 
 
-            <<!-- MENU UTAMA BERANDA -->
-                <hr class="sidebar-divider my-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('penilai/beranda_penilai'); ?>">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Beranda</span></a>
-                </li>
-                <hr class="sidebar-divider">
+            <!-- MENU UTAMA BERANDA -->
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('penilai/beranda_penilai'); ?>">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Beranda</span></a>
+            </li>
+            <hr class="sidebar-divider">
 
 
 
-                <!-- MENU UTAMA -->
-                <div class="sidebar-heading">
-                    Menu Utama
-                </div>
-                <!-- Menu Utama Pertama User -->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('penilai/daftar_penilaianAK'); ?>">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Daftar Penilaian</span></a>
-                </li>
-                <!-- Menu Utama Kedua User -->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">
-                        <i class="fas fa-fw "></i>
-                        <span>Informasi Umum</span>
-                    </a>
-                </li>
-                <!-- Menu Utama Ketiga User -->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('penilai/history_penilaian'); ?>">
-                        <i class="fas fa-fw "></i>
-                        <span>History</span>
-                    </a>
-                </li>
+            <!-- MENU UTAMA -->
+            <div class="sidebar-heading">
+                Menu Utama
+            </div>
+            <!-- Menu Utama Pertama User -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('penilai/daftar_penilaianAK'); ?>">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Daftar Penilaian</span></a>
+            </li>
+            <!-- Menu Utama Kedua User -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('penilai/informasi_penilai'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Informasi Umum</span>
+                </a>
+            </li>
+            <!-- Menu Utama Ketiga User -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('penilai/history_penilaian'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>History</span>
+                </a>
+            </li>
 
 
-                <!-- Menu Tambahan User -->
-                <hr class="sidebar-divider">
-                <div class="sidebar-heading">
-                    Lainnya
-                </div>
-                <!-- Menu Tambahan User Pertama-->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('auth/edit_profil'); ?>">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Edit Profil</span></a>
-                </li>
-                <!-- Menu Tambahan User Kedua-->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('auth/setting'); ?>">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Pengaturan</span>
-                    </a>
-                </li>
-                <!-- Menu Tambahan User Ketiga-->
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('auth'); ?>">
-                        <i class="fas fa-sign-out-alt fa-fw"></i>
-                        <span>Keluar</span></a>
-                </li>
-                <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block">
-                <!-- Button Side Bar Biar Mengecil -->
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
+            <!-- Menu Tambahan User -->
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Lainnya
+            </div>
+            <!-- Menu Tambahan User Pertama-->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('penilai/edit_profil_penilai'); ?>">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Edit Profil</span></a>
+            </li>
+            <!-- Menu Tambahan User Kedua-->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('penilai/setelan_penilai'); ?>">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Pengaturan</span>
+                </a>
+            </li>
+            <!-- Menu Tambahan User Ketiga-->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('auth'); ?>">
+                    <i class="fas fa-sign-out-alt fa-fw"></i>
+                    <span>Keluar</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Button Side Bar Biar Mengecil -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
         </ul>
         <!-- Akhir Bagian Menu Kiri (Side-bar) -->

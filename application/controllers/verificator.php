@@ -70,4 +70,36 @@ class verificator extends CI_Controller
         $this->load->view('verificator/verif_pengmas');
         $this->load->view('templates/auth_footer');
     }
+
+    public function informasi_verif()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Halaman Informasi';
+        $this->load->view('templates/auth_header_verif', $data);
+        $this->load->view('auth/informasi');
+        $this->load->view('templates/auth_footer');
+    }
+
+    public function setelan_verif()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Halaman Informasi';
+        $this->load->view('templates/auth_header_verif', $data);
+        $this->load->view('auth/setting');
+        $this->load->view('templates/auth_footer');
+    }
+    public function edit_profil_verif()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Edit Profil';
+        $this->load->view('templates/auth_header_verif', $data);
+        $this->load->view('auth/edit_profil');
+        $this->load->view('templates/auth_footer');
+    }
 }

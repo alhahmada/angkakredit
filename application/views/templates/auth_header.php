@@ -93,16 +93,16 @@
             </div>
             <!-- Menu Tambahan User Pertama-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/setting'); ?>">
+                <a class="nav-link" href="<?= base_url('auth/setelan_dosen'); ?>">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Setting</span>
+                    <span>Pengaturan</span>
                 </a>
             </li>
             <!-- Menu Tambahan User Kedua-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">
+                <a class="nav-link" href="<?= base_url('auth/edit_profil_dosen'); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Pusat Informasi</span></a>
+                    <span>Edit Profil</span></a>
             </li>
             <!-- Menu Tambahan User Ketiga-->
             <li class="nav-item">
@@ -279,10 +279,6 @@
 
                     </ul>
                 </nav>
-
-
-
-
 
 
 

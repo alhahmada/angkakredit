@@ -113,4 +113,36 @@ class admin extends CI_Controller
         $this->load->view('admin/penetapan_ak_resume');
         $this->load->view('templates/auth_footer');
     }
+
+    public function informasi_admin()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Halaman Informasi';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('auth/informasi');
+        $this->load->view('templates/auth_footer');
+    }
+
+    public function setelan_admin()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Halaman Informasi';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('auth/setting');
+        $this->load->view('templates/auth_footer');
+    }
+    public function edit_profil_admin()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Edit Profil';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('auth/edit_profil');
+        $this->load->view('templates/auth_footer');
+    }
 }

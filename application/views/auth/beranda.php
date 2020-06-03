@@ -104,7 +104,7 @@
             <div class="card-body">
                 <div class="chart-piee pt-4 pb-2">
 
-                    <h6>Harusnya SIh Pie Chart</h6>
+                    <h6>Pie Chart Angka Kredit</h6>
 
 
                 </div>

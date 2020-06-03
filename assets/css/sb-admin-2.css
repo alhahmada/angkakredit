@@ -10010,6 +10010,7 @@ a:focus {
   border-right: 1px solid #5a5c69;
   height: calc(4.375rem - 2rem);
   margin: auto 1rem;
+  
 }
 
 .topbar-divider-dark {
@@ -11077,7 +11078,6 @@ form.user .btn-user {
 footer.sticky-footer {
   padding: 0 0;
   flex-shrink: 0;
-  padding
 }
 
 footer.sticky-footer .copyright {

@@ -1199,19 +1199,6 @@ class Dosen extends CI_Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function resume_pengajuan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -1254,6 +1241,11 @@ class Dosen extends CI_Controller
         // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
         print_r($this->m_pengajuan->test());
     }
+
+
+
+
+
 
     public function test_submit()
     {

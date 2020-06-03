@@ -67,7 +67,7 @@
             </li>
             <!-- Menu Utama Kedua User -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">
+                <a class="nav-link" href="<?= base_url('verificator/informasi_verif'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Informasi Umum</span>
                 </a>
@@ -87,13 +87,13 @@
             </div>
             <!-- Menu Tambahan User Pertama-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/edit_profil'); ?>">
+                <a class="nav-link" href="<?= base_url('verificator/edit_profil_verif'); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Edit Profil</span></a>
             </li>
             <!-- Menu Tambahan User Kedua-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/setting'); ?>">
+                <a class="nav-link" href="<?= base_url('verificator/setelan_verif'); ?>">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Pengaturan</span>
                 </a>
