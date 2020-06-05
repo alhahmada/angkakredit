@@ -175,9 +175,6 @@
     </div>
 
 
-
-
-
     <!-- Area Full 1 -->
     <div class="container-fluid col-xl-12">
         <div class="card shadow mb-4">
@@ -206,8 +203,8 @@
                             <tbody>
                                 <tr>
                                     <td>Jumlah Dosen</td>
-                                    <?php for ($i=0; $i < 8 ; $i++) { 
-                                        echo "<td>".$progress[$i]."</td>";
+                                    <?php for ($i = 0; $i < 8; $i++) {
+                                        echo "<td>" . $progress[$i] . "</td>";
                                     } ?>
                                 </tr>
                             </tbody>

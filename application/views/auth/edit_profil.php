@@ -107,6 +107,16 @@
                 width: 150px;
                 height: auto;
             }
+
+            .btn-edit {
+                color: teal;
+                text-decoration: underline;
+            }
+
+            .btn-edit:hover {
+                color: tomato;
+                text-decoration: underline;
+            }
         </style>
 
         <!-- Row Pertama -->
@@ -119,9 +129,9 @@
                     <tbody class="tabel-bio">
                         <tr>
                             <td>NIP</td>
-                            <td>$get.from.tabel</td>
+                            <td><?= $array['nip']; ?></td>
                             <td>
-                                <button class="button-tabel btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_ubah_nip" data-target="#modal_ubah_nip">Ubah NIP</button>
+                                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_nip" data-target="#modal_ubah_nip">Ubah NIP</button>
                                 <div class="modal fade" id="modal_ubah_nip" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -153,9 +163,9 @@
                         </tr>
                         <tr>
                             <td>Nama Lengkap</td>
-                            <td>$get.from.tabel</td>
+                            <td><?= $array['nama_lengkap']; ?></td>
                             <td>
-                                <button class="button-tabel btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_ubah_nama" data-target="#modal_ubah_nama">Ubah Nama</button>
+                                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_nama" data-target="#modal_ubah_nama">Ubah Nama</button>
                                 <div class="modal fade" id="modal_ubah_nama" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -187,9 +197,9 @@
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>$get.from.tabel</td>
+                            <td><?= $array['email']; ?></td>
                             <td>
-                                <button class="button-tabel btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_ubah_email" data-target="#modal_ubah_email">Ubah Email</button>
+                                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_email" data-target="#modal_ubah_email">Ubah Email</button>
                                 <div class="modal fade" id="modal_ubah_email" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -221,9 +231,9 @@
                         </tr>
                         <tr>
                             <td>Program Studi</td>
-                            <td>$get.from.tabel</td>
+                            <td><?= $array['prodi']; ?></td>
                             <td>
-                                <button class="button-tabel btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_ubah_prodi" data-target="#modal_ubah_prodi">Ubah Prodi</button>
+                                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_prodi" data-target="#modal_ubah_prodi">Ubah Prodi</button>
                                 <div class="modal fade" id="modal_ubah_prodi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -259,9 +269,9 @@
                         </tr>
                         <tr>
                             <td>Nomor HP</td>
-                            <td>$get.from.tabel</td>
+                            <td><?= $array['no_hp']; ?></td>
                             <td>
-                                <button class="button-tabel btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_ubah_nohp" data-target="#modal_ubah_nohp">Ubah Nomor</button>
+                                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_nohp" data-target="#modal_ubah_nohp">Ubah Nomor</button>
                                 <div class="modal fade" id="modal_ubah_nohp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -297,9 +307,9 @@
 
             <div class="container" style="text-align: center; justify-content: center; width: 20%;">
 
-                <img class="foto-inside" src="<?PHP echo base_url('assets/img/logo58.png'); ?>"></img>
+                <img class="foto-inside" src="<?= base_url('assets/img/avatar/' . $foto); ?>"></img>
 
-                <button class="btn btn-primary btn" type="button" data-toggle="modal" id="btn_ubah_foto" data-target="#modal_ubah_foto">Ubah Foto</button>
+                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_foto" data-target="#modal_ubah_foto">Ubah Foto</button>
                 <div class="modal fade" id="modal_ubah_foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -342,30 +352,32 @@
 
         <div class="justify-content-between pb-3 pt-4">
             <h1 class="head-sub-content" style="font-size: 20px !important;">B. Ubah Password</h1>
-            <div class="ubah-pass">
-                <div class="row">
-                    <div style="width: 200px; float: left;">Password Baru
+            <form>
+                <div class="ubah-pass">
+                    <div class="row">
+                        <div style="width: 200px; float: left;">Password Baru
+                        </div>
+                        <div style="width: 75px;"></div>
+                        <div style="width: 200px; float: left;">Confirm Password
+                        </div>
                     </div>
-                    <div style="width: 75px;"></div>
-                    <div style="width: 200px; float: left;">Confirm Password
+                    <div class="row">
+                        <input style="width: 200px;" id="pass1" name="pass1">
+                        </input>
+                        <div style="width: 75px;"></div>
+                        <input style="width: 200px;" id="pass2" name="pass2">
+                        </input>
+                    </div>
+                    <div class="row">
+                        <div style="width: 200px;">
+                        </div>
+                        <div style="width: 75px;"></div>
+                        <div style="width: 200px;" class="pt-4">
+                            <button class="btn btn-primary btn-sm" style="float: right;">Ubah Password</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <input style="width: 200px;" id="pass1" name="pass1">
-                    </input>
-                    <div style="width: 75px;"></div>
-                    <input style="width: 200px;" id="pass2" name="pass2">
-                    </input>
-                </div>
-                <div class="row">
-                    <div style="width: 200px;">
-                    </div>
-                    <div style="width: 75px;"></div>
-                    <div style="width: 200px;" class="pt-4">
-                        <button style="float: right;">Ubah Password</button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
 
 

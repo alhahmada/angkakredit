@@ -23,6 +23,13 @@
             color: black;
             font-family: 'Times New Roman';
         }
+
+        .bio {
+            width: 100%;
+            text-align: left;
+            font-size: 16px !important;
+            color: black;
+        }
     </style>
 
     <!--Biodata Dosen-->
@@ -37,56 +44,56 @@
 
                     <div class="bio-form row">
                         <div class="col-sm-3">
-                            <h5>Nama </h5>
+                            <h5 class="bio">Nama </h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['nama_lengkap']; ?></h5>
+                            <h5 class="bio"><?= $array['nama_lengkap']; ?></h5>
                         </div>
                     </div>
 
                     <div class="bio-form row">
                         <div class="col-sm-3">
-                            <h5>NIP</h5>
+                            <h5 class="bio">NIP</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['nip']; ?></h5>
+                            <h5 class="bio"><?= $array['nip']; ?></h5>
                         </div>
                     </div>
 
                     <div class="bio-form row">
                         <div class="col-sm-3">
-                            <h5>Pangkat/Gol Ruang</h5>
+                            <h5 class="bio">Pangkat/Gol Ruang</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></h5>
+                            <h5 class="bio"><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></h5>
                         </div>
                     </div>
 
 
                     <div class="bio-form row">
                         <div class="col-sm-3">
-                            <h5>Jabatan Fungsional</h5>
+                            <h5 class="bio">Jabatan Fungsional</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['jabatan_fungsi']; ?></h5>
+                            <h5 class="bio"><?= $array['jabatan_fungsi']; ?></h5>
                         </div>
                     </div>
 
                     <div class="bio-form row">
                         <div class="col-sm-3">
-                            <h5>Unit Kerja</h5>
+                            <h5 class="bio">Unit Kerja</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['unit_kerja']; ?></h5>
+                            <h5 class="bio"><?= $array['unit_kerja']; ?></h5>
                         </div>
                     </div>
 
                     <div class="bio-form row">
                         <div class="col-sm-3">
-                            <h5>Angka Kredit</h5>
+                            <h5 class="bio">Angka Kredit</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5><?= $array['angka_kredit']; ?></h5>
+                            <h5 class="bio"><?= $array['angka_kredit']; ?></h5>
                         </div>
                     </div>
 
@@ -936,7 +943,7 @@
                             <tbody>
                                 <tr>
                                     <td class="font_col_1">Jabatan Fungsional</td>
-                                    <td class="text-center">$get.from.table</td>
+                                    <td class="text-center"><?= $array['jabatan_fungsi']; ?></td>
                                     <td><label for="F1">
                                             <select class="f" id="F1" name="F1">
                                                 <option value="" selected disabled hidden> ... </option>
@@ -951,7 +958,7 @@
 
                                 <tr>
                                     <td class="font_col_1">Pangkat</td>
-                                    <td class="text-center">$get.from.table</td>
+                                    <td class="text-center"><?= $array['pangkat']; ?></td>
                                     <td><label for="F2">
                                             <select class="f" id="F2" name="F2">
                                                 <option value="" selected disabled hidden> ... </option>
@@ -972,7 +979,7 @@
 
                                 <tr>
                                     <td class="font_col_1">Golongan Ruang</td>
-                                    <td class="text-center"> $get.from.table </td>
+                                    <td class="text-center"><?= $array['golongan_ruang']; ?></td>
                                     <td><label for="F3">
                                             <select class="f" id="F3" name="F3">
                                                 <option value="" selected disabled hidden> ... </option>

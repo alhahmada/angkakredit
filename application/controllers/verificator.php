@@ -13,7 +13,11 @@ class verificator extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
+        // if ($this->session->userdata('role') != "3") {
+        //     redirect(base_url($this->session->userdata('home')));
+        // }
         $this->load->model('m_auth');
+        $this->load->model('m_pengajuan');
     }
 
     public function beranda_verificator()
@@ -21,6 +25,7 @@ class verificator extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['array'] = $datauser[0];
         $data['title'] = 'Beranda Verifikator';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/beranda_verificator');

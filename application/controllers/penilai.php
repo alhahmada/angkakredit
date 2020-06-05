@@ -13,7 +13,11 @@ class penilai extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
+        // if ($this->session->userdata('role') != "1") {
+        //     redirect(base_url($this->session->userdata('home')));
+        // }
         $this->load->model('m_auth');
+        $this->load->model('m_pengajuan');
     }
 
     public function beranda_penilai()
@@ -21,6 +25,7 @@ class penilai extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['array'] = $datauser[0];
         $data['title'] = 'Beranda Penilai';
         $this->load->view('templates/auth_header_penilai', $data);
         $this->load->view('penilai/beranda_penilai');

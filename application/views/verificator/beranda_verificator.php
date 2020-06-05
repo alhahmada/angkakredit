@@ -56,28 +56,19 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <><?= $array['nama_lengkap']; ?> -->
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $array['nip']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Pangkat/Gol.Ruang</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
+                                    <td><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Email</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <?= $array['email']; ?> -->
-                                </tr>
-                                <tr>
-                                    <td>Jabatan</td>
-                                    <td>$get.Data.User</td>
-                                    <!-- <?= $array['email']; ?> -->
+                                    <td><?= $array['email']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
