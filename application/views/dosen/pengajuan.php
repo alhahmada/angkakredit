@@ -147,7 +147,7 @@
                                                 });
                                             });
                                         </script>
-                                        <button class="btn   btn-sm" type="button" data-toggle="modal" id="btn_link_sp3t" data-target="#modal_link_sp3t">Lampirkan Link</button>
+                                        <button class="btn btn-sm" type="button" data-toggle="modal" id="btn_link_sp3t" data-target="#modal_link_sp3t">Lampirkan Link</button>
                                         <div class="modal fade" id="modal_link_sp3t" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
