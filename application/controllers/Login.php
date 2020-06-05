@@ -45,7 +45,7 @@ class Login extends CI_Controller
 	{
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-		$login_as= $this->input->post('login_as');
+		$login_as = $this->input->post('login_as');
 		$where = array(
 			'email' => $email,
 			'password' => md5($password)
@@ -54,26 +54,26 @@ class Login extends CI_Controller
 
 		if ($cek > 0) {
 			$data = $this->m_auth->cek_login("tbl_user", $where)->result_array();
-			if($login_as=='admin' && $data[0]['role']==1){
-				$home='/admin/beranda_admin';
-			}elseif($login_as=='dosen' && ($data[0]['role']==2 || $data[0]['role']==3 || $data[0]['role']==4)){
-				$home='/auth/beranda';
-			}elseif($login_as=='penilai' && ($data[0]['role']==5 || $data[0]['role']==4)){
-				$home='/admin/beranda_admin';
-			}elseif($login_as=='verificator' && ($data[0]['role']==3 || $data[0]['role']==4)){
-				$home='/admin/beranda_admin';
-			}else{
-				$home='login/login/role';
+			if ($login_as == 'admin' && $data[0]['role'] == 1) {
+				$home = '/admin/beranda_admin';
+			} elseif ($login_as == 'dosen' && ($data[0]['role'] == 2 || $data[0]['role'] == 3 || $data[0]['role'] == 4)) {
+				$home = '/auth/beranda';
+			} elseif ($login_as == 'penilai' && ($data[0]['role'] == 5 || $data[0]['role'] == 4)) {
+				$home = '/penilai/beranda_penilai';
+			} elseif ($login_as == 'verificator' && ($data[0]['role'] == 3 || $data[0]['role'] == 4)) {
+				$home = '/verificator/beranda_verificator';
+			} else {
+				$home = 'login/login/role';
 			}
-			if($home!='login/login/role'){
-			$data_session = array(
-				'nip' => $data[0]['nip'],
-				'role' => $data[0]['role'],
-				'status' => "login",
-				'home'	=> $home
-			);
+			if ($home != 'login/login/role') {
+				$data_session = array(
+					'nip' => $data[0]['nip'],
+					'role' => $data[0]['role'],
+					'status' => "login",
+					'home'	=> $home
+				);
 
-			$this->session->set_userdata($data_session);
+				$this->session->set_userdata($data_session);
 			}
 			redirect(base_url($home));
 		} else {

@@ -309,6 +309,8 @@
 
                 <img class="foto-inside" src="<?= base_url('assets/img/avatar/' . $foto); ?>"></img>
 
+
+
                 <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_foto" data-target="#modal_ubah_foto">Ubah Foto</button>
                 <div class="modal fade" id="modal_ubah_foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -318,8 +320,7 @@
                             <div class="modal-body row">
                                 <div style="width: 15%;"></div>
                                 <div class="isian-popup" style=" width : 35%; float: left;">Upload Foto</div>
-                                <input style="width: 40%;" id="foto_baru" name="foto_baru">
-                                </input>
+                                <input style="width: 40%;" type="file" accept="jpg, png, jpeg" id="foto_baru" name="foto_baru">
                             </div>
 
                             <div class="p-2"></div>

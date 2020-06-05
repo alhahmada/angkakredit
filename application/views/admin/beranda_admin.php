@@ -68,13 +68,13 @@
                                     <!--<?= $array['nip']; ?>-->
                                 </tr>
                                 <tr>
-                                    <td>Pangkat/Gol.Ruang</td>
-                                    <td><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></td>
+                                    <td>Unit Kerja</td>
+                                    <td><?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Alamat Email</td>
-                                    <td><?= $array['angka_kredit']; ?></td>
+                                    <td><?= $array['email']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                             </tbody>

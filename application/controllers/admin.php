@@ -180,6 +180,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+        $data['array'] = $datauser[0];
         $data['title'] = 'Edit Profil';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('auth/edit_profil');
