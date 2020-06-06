@@ -46,10 +46,17 @@ class admin extends CI_Controller
     public function daftar_pengajuanAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+
         $pengajuan = $this->m_pengajuan->pengajuan_all();
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['pengajuan'] = $pengajuan;
+
+        $pengajuan1 = $this->m_verif->pengajuan_all();
+        $verifikator = $this->m_verif->verifikator();
+        $data['pengajuan1'] = $pengajuan1;
+        $data['verifikator'] = $verifikator[0];
+
         $data['title'] = 'Daftar Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/daftar_pengajuanAK');
@@ -59,8 +66,8 @@ class admin extends CI_Controller
     public function cek_berkas()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-       $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan']= $id_pengajuan;
+        $id_pengajuan = $this->uri->segment(3);
+        $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
         $berkas = $this->m_pengajuan->data_berkas($id_pengajuan);
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -72,6 +79,7 @@ class admin extends CI_Controller
         $this->load->view('admin/cek_berkas');
         $this->load->view('templates/auth_footer');
     }
+
     public function action_verif_berkas()
     {
         $keterangan = $this->input->post('keterangan');
@@ -88,6 +96,7 @@ class admin extends CI_Controller
         $this->m_pengajuan->update_progress($id_pengajuan, $progress, $ket);
         redirect('/admin/daftar_pengajuanAK');
     }
+
     public function action_verif_penunjang()
     {
         $keterangan = $this->input->post('keterangan');
@@ -99,10 +108,10 @@ class admin extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Penunjang');
-        $this->m_verif->verif_pengajuan($id_pengajuan,$status,$keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan)==4) {
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        }elseif ($this->m_verif->verif_pengajuan($id_pengajuan)==5) {
+        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/admin/daftar_pengajuanAK');
@@ -111,10 +120,10 @@ class admin extends CI_Controller
     public function verif_penunjang()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-       $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan']= $id_pengajuan;
+        $id_pengajuan = $this->uri->segment(3);
+        $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] =$user[0];
+        $data['array'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['e1'] = $this->m_verif->e1($id_pengajuan);

@@ -1151,7 +1151,7 @@ class Dosen extends CI_Controller
                     $this->berkas->e8($id_pengajuan, $e81[$i], $e82[$i], $e83[$i], $filename);
                 }
                 $filenames[] = $filename;
-                // $total += 5;
+                $this->berkas->constraint('e8' . $i, $id_pengajuan, 5);
             }
             $this->berkas->upload_files($filenames, $_FILES['E84']);
             unset($filenames);

@@ -43,7 +43,6 @@ class verificator extends CI_Controller
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Daftar Pengajuan Yang Harus Diverifikasi';
 
-        $pengajuan = $this->m_verif->pengajuan_all();
         $verifikator = $this->m_verif->verifikator();
         $data['pengajuan'] = $pengajuan;
         $data['verifikator'] = $verifikator[0];
@@ -56,9 +55,9 @@ class verificator extends CI_Controller
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan']= $id_pengajuan;
+        $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] =$user[0];
+        $data['array'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['a1'] = $this->m_verif->a1($id_pengajuan);
@@ -81,7 +80,7 @@ class verificator extends CI_Controller
         $this->load->view('verificator/verif_pendidikan');
         $this->load->view('templates/auth_footer');
     }
-     public function action_verif_pendidikan()
+    public function action_verif_pendidikan()
     {
         $keterangan = $this->input->post('keterangan');
         $aksi = $this->input->post('aksi');
@@ -92,10 +91,10 @@ class verificator extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pendidikan');
-        $this->m_verif->verif_pengajuan($id_pengajuan,$status,$keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan)==4) {
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        }elseif ($this->m_verif->verif_pengajuan($id_pengajuan)==5) {
+        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
@@ -105,9 +104,9 @@ class verificator extends CI_Controller
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan']= $id_pengajuan;
+        $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] =$user[0];        
+        $data['array'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['c1'] = $this->m_verif->c1($id_pengajuan);
@@ -134,10 +133,10 @@ class verificator extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Penelitian');
-        $this->m_verif->verif_pengajuan($id_pengajuan,$status,$keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan)==4) {
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        }elseif ($this->m_verif->verif_pengajuan($id_pengajuan)==5) {
+        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
@@ -147,9 +146,9 @@ class verificator extends CI_Controller
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan']= $id_pengajuan;
+        $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] =$user[0];
+        $data['array'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Verifikasi Pengajuan Angka Kredit';
@@ -175,10 +174,10 @@ class verificator extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pengmas');
-        $this->m_verif->verif_pengajuan($id_pengajuan,$status,$keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan)==4) {
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        }elseif ($this->m_verif->verif_pengajuan($id_pengajuan)==5) {
+        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
