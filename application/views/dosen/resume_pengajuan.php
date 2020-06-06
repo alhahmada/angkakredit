@@ -133,7 +133,7 @@
             <tbody>
                 <?php
                 $no = 1;
-                $urut= 0;
+                $urut = 0;
                 foreach ($a1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
@@ -145,9 +145,13 @@
                         </td>
                         <td><?= $maks_a1[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php $no++; $urut++;
-                } unset($urut); ?>
-                <?php foreach ($a2 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($a2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -158,8 +162,14 @@
                         </td>
                         <td><?= $maks_a2[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b1 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -170,8 +180,14 @@
                         </td>
                         <td><?= $maks_b1[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b2 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -182,8 +198,14 @@
                         </td>
                         <td><?= $maks_b2[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b3 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -194,8 +216,14 @@
                         </td>
                         <td><?= $maks_b3[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b4 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -206,8 +234,14 @@
                         </td>
                         <td><?= $maks_b4[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b5 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -218,8 +252,14 @@
                         </td>
                         <td><?= $maks_b5[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b6 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -230,8 +270,14 @@
                         </td>
                         <td><?= $maks_b6[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b7 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -242,8 +288,14 @@
                         </td>
                         <td><?= $maks_b7[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b8 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b8 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -254,8 +306,14 @@
                         </td>
                         <td><?= $maks_b8[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b9 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b9 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -266,8 +324,14 @@
                         </td>
                         <td><?= $maks_b9[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b10 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b10 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -278,8 +342,14 @@
                         </td>
                         <td><?= $maks_b10[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b11 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b11 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -290,8 +360,14 @@
                         </td>
                         <td><?= $maks_b11[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b12 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b12 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -302,8 +378,14 @@
                         </td>
                         <td><?= $maks_b12[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($b13 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($b13 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -314,14 +396,18 @@
                         </td>
                         <td><?= $maks_b13[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
+                <?php $no++;
+                    $urut++;
+                }
+                unset($no);
+                unset($urut); ?>
 
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
                     <th class="nav-item text-center">
-                        XX..
+                        <?= $total_pendidikan[0]['total']; ?>
                     </th>
                 </tr>
             </tfoot>
@@ -350,7 +436,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($c1 as $key => $value) { ?>
+                <?php $no = 1;
+                $urut = 0;
+                foreach ($c1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -361,8 +449,14 @@
                         </td>
                         <td><?= $maks_c1[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c2 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -373,8 +467,14 @@
                         </td>
                         <td><?= $maks_c2[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c3 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -385,8 +485,14 @@
                         </td>
                         <td><?= $maks_c3[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c4 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -397,8 +503,14 @@
                         </td>
                         <td><?= $maks_c4[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c5 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -409,8 +521,14 @@
                         </td>
                         <td><?= $maks_c5[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c6 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -421,8 +539,14 @@
                         </td>
                         <td><?= $maks_c6[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c7 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -433,8 +557,14 @@
                         </td>
                         <td><?= $maks_c7[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($c8 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($c8 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -445,13 +575,17 @@
                         </td>
                         <td><?= $maks_c8[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
+                <?php $no++;
+                    $urut++;
+                }
+                unset($no);
+                unset($urut); ?>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
                     <th class="nav-item text-center">
-                        XX..
+                        <?= $total_penelitian[0]['total']; ?>
                     </th>
                 </tr>
             </tfoot>
@@ -478,96 +612,138 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($d1 as $key => $value) { ?>
+                <?php $no = 1;
+                $urut = 0;
+                foreach ($d1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d14'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d14'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d1[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($d2 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($d2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d23'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d2[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($d3 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($d3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d35'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d3[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($d4 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($d4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d43'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d4[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($d5 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($d5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d53'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d5[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($d6 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($d6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d63'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d6[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($d7 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($d7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d75'].'.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
                         <td><?= $maks_d7[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
+                <?php $no++;
+                    $urut++;
+                }
+                unset($no);
+                unset($urut); ?>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
                     <th class="nav-item text-center">
-                        XX..
+                        <?= $total_pengmas[0]['total']; ?>
                     </th>
                 </tr>
             </tfoot>
@@ -597,7 +773,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($e1 as $key => $value) { ?>
+                <?php $no = 1;
+                $urut = 0;
+                foreach ($e1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -608,8 +786,14 @@
                         </td>
                         <td><?= $maks_e1[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e2 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -620,8 +804,14 @@
                         </td>
                         <td><?= $maks_e2[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e3 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -632,8 +822,14 @@
                         </td>
                         <td><?= $maks_e3[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e4 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -644,8 +840,14 @@
                         </td>
                         <td><?= $maks_e4[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e5 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -656,8 +858,14 @@
                         </td>
                         <td><?= $maks_e5[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e6 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -668,8 +876,14 @@
                         </td>
                         <td><?= $maks_e6[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e7 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -680,8 +894,14 @@
                         </td>
                         <td><?= $maks_e7[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e8 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e8 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -692,8 +912,14 @@
                         </td>
                         <td><?= $maks_e8[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e9 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e9 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -704,8 +930,14 @@
                         </td>
                         <td><?= $maks_e9[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
-                <?php foreach ($e10 as $key => $value) { ?>
+                <?php $no++;
+                    $urut++;
+                }
+
+                unset($urut); ?>
+                <?php
+                $urut = 0;
+                foreach ($e10 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
@@ -716,13 +948,17 @@
                         </td>
                         <td><?= $maks_e10[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php } ?>
+                <?php $no++;
+                    $urut++;
+                }
+                unset($no);
+                unset($urut); ?>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
                     <th class="nav-item text-center">
-                        XX..
+                        <?= $total_penunjang[0]['total']; ?>
                     </th>
                 </tr>
             </tfoot>

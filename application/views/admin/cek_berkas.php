@@ -232,199 +232,272 @@
                     <tr>
                         <td>1.</td>
                         <td class="text-left">Scan Surat Pengantar dari Pimpinan Perguruan Tinggi</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_1']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_1'], 'http') !== false){
-                             echo $berkas['berkas_1'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_1']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_1'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_1'], 'http') !== false) {
+                                                                                echo $berkas['berkas_1'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_1']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>2.</td>
                         <td class="text-left">Scan Resume dari pak.dikti.go.id (Cap + Ttd)</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_2']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_2'], 'http') !== false){
-                             echo $berkas['berkas_2'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_2']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_2'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_2'], 'http') !== false) {
+                                                                                echo $berkas['berkas_2'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_2']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>3.</td>
                         <td class="text-left">Scan Ijazah Terakhir (Optional)</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_3']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_3'], 'http') !== false){
-                             echo $berkas['berkas_3'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_3']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_3'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_3'], 'http') !== false) {
+                                                                                echo $berkas['berkas_3'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_3']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a>
+                            <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>4.</td>
                         <td class="text-left">PDF Abstrak Disertasi (Optional)</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_4']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_4'], 'http') !== false){
-                             echo $berkas['berkas_4'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_4']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_4'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_4'], 'http') !== false) {
+                                                                                echo $berkas['berkas_4'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_4']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>5.</td>
                         <td class="text-left">Scan Surat Kepala Pemberian Tugas Belajar (Optional)</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_5']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_5'], 'http') !== false){
-                             echo $berkas['berkas_5'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_5']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_5'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_5'], 'http') !== false) {
+                                                                                echo $berkas['berkas_5'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_5']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>6.</td>
                         <td class="text-left">Scan Surat Kepala Pengaktifan Kembali (Optional)</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_6']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_6'], 'http') !== false){
-                             echo $berkas['berkas_6'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_6']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_6'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_6'], 'http') !== false) {
+                                                                                echo $berkas['berkas_6'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_6']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>7.</td>
                         <td class="text-left">Scan DUPAK</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_7']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_7'], 'http') !== false){
-                             echo $berkas['berkas_7'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_7']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_7'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_7'], 'http') !== false) {
+                                                                                echo $berkas['berkas_7'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_7']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>8.</td>
                         <td class="text-left">Scan PAK terakhir</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_8']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_8'], 'http') !== false){
-                             echo $berkas['berkas_8'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_8']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_8'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_8'], 'http') !== false) {
+                                                                                echo $berkas['berkas_8'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_8']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>9.</td>
                         <td class="text-left">Scan SK Jabatan Terakhir</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_9']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_9'], 'http') !== false){
-                             echo $berkas['berkas_9'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_9']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_9'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_9'], 'http') !== false) {
+                                                                                echo $berkas['berkas_9'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_9']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>10.</td>
                         <td class="text-left">Scan SK Pangkat/Golongan PNS Terakhir</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_10']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_10'], 'http') !== false){
-                             echo $berkas['berkas_10'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_10']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_10'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_10'], 'http') !== false) {
+                                                                                echo $berkas['berkas_10'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_10']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>11.</td>
                         <td class="text-left">Scan PPKP (DP3) 2 Tahun Terakhir</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_11']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_11'], 'http') !== false){
-                             echo $berkas['berkas_11'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_11']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_11'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_11'], 'http') !== false) {
+                                                                                echo $berkas['berkas_11'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_11']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>12.</td>
                         <td class="text-left">Scan Surat Keterangan Melaksanakan Penelitian</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_12']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_12'], 'http') !== false){
-                             echo $berkas['berkas_12'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_12']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_12'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_12'], 'http') !== false) {
+                                                                                echo $berkas['berkas_12'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_12']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>13.</td>
                         <td class="text-left">Scan Persetujuan/Pertimbangan Senat</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_13']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_13'], 'http') !== false){
-                             echo $berkas['berkas_13'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_13']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_13'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_13'], 'http') !== false) {
+                                                                                echo $berkas['berkas_13'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_13']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>14.</td>
                         <td class="text-left">Scan Daftar Hadir Anggota Senat</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_14']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_14'], 'http') !== false){
-                             echo $berkas['berkas_14'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_14']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_14'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_14'], 'http') !== false) {
+                                                                                echo $berkas['berkas_14'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_14']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>15.</td>
                         <td class="text-left">Scan Surat Pengesahan Hasil Validasi Karya Ilmiah (Optional)</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_15']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_15'], 'http') !== false){
-                             echo $berkas['berkas_15'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_15']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_15'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_15'], 'http') !== false) {
+                                                                                echo $berkas['berkas_15'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_15']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>16.</td>
                         <td class="text-left">Scan Surat Pernyataan Keabsahan Karya Ilmiah</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_16']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_16'], 'http') !== false){
-                             echo $berkas['berkas_16'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_16']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_16'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_16'], 'http') !== false) {
+                                                                                echo $berkas['berkas_16'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_16']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>17.</td>
                         <td class="text-left">Scan Sertifikat Pendidik</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_17']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_17'], 'http') !== false){
-                             echo $berkas['berkas_17'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_17']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_17'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_17'], 'http') !== false) {
+                                                                                echo $berkas['berkas_17'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_17']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                     <tr>
                         <td>18.</td>
                         <td class="text-left">Surat Klarifikasi</td>
-                        <td class="nav-item text-center"> <?php if($berkas['berkas_18']!=null){ ?>
-                            <a class="nav-link" target="_blank" href="<?php if(strpos($berkas['berkas_18'], 'http') !== false){
-                             echo $berkas['berkas_18'];   
-                            }else{echo base_url('/assets/document/'.$berkas['berkas_18']);} ?>">
-                                <span>Cek Lampiran</span>
-                            </a> <?php }else{ echo "Tidak Ada Lampiran";} ?>
+                        <td class="nav-item text-center"> <?php if ($berkas['berkas_18'] != null) { ?>
+                                <a class="nav-link" target="_blank" href="<?php if (strpos($berkas['berkas_18'], 'http') !== false) {
+                                                                                echo $berkas['berkas_18'];
+                                                                            } else {
+                                                                                echo base_url('/assets/document/' . $berkas['berkas_18']);
+                                                                            } ?>">
+                                    <span>Cek Lampiran</span>
+                                </a> <?php } else {
+                                                                echo "Tidak Ada Lampiran";
+                                                            } ?>
                         </td>
                     </tr>
                 </tbody>
@@ -454,18 +527,52 @@
             <!-- Tombol Action -->
             <div class="container row p-5">
                 <div class="col-sm-9">
-                    <button type="submit" name="aksi" value="tolak" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#tolakBerkasModal" class="float-right btn btn-primary btn-user btn=block">
                         Tolak Pengajuan
                     </button>
                 </div>
                 <div class="col-sm-3">
-                    <button type="submit" name="aksi" value="terima" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#verBerkasModal" class="float-right btn btn-primary btn-user btn=block">
                         Verifikasi Berkas
                     </button>
                 </div>
             </div>
-
-
+            <!-- Modal Verifikasi Berkas -->
+            <div class="modal fade" id="verBerkasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Verifikasi Berkas ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Memverifikasi Berkas Pengajuan Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="terima" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Tolak Verifikasi Berkas-->
+            <div class="modal fade" id="tolakBerkasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tolak Berkas Pengajuan ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Menolak Berkas Pengajuan Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="tolak" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <style>

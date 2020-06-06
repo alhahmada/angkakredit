@@ -8,7 +8,7 @@ class M_verif extends CI_Model
 	}
 	function pengajuan_not($id)
 	{
-		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1 AND id_pengajuan!=".$id."")->result_array();
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1 AND id_pengajuan!=" . $id . "")->result_array();
 	}
 	function verifikator()
 	{
@@ -174,7 +174,7 @@ class M_verif extends CI_Model
 	{
 		return $this->db->get_where('tbl_e10', array('id_pengajuan' => $id_pengajuan))->result_array();
 	}
-	public function verif_pengajuan($id_pengajuan,$status,$keterangan,$unsur)
+	public function verif_pengajuan($id_pengajuan, $status, $keterangan, $unsur)
 	{
 		$data = array(
 			'id_pengajuan' => $id_pengajuan,
@@ -193,12 +193,26 @@ class M_verif extends CI_Model
 	}
 	public function cek_verifikator()
 	{
-		return $this->db->query("select a.nip,b.id_pengajuan from tbl_verifikator a join tbl_verif_pengajuan b on a.unsur_verif=b.unsur where a.nip=".$this->session->userdata('nip')."")->result_array();
+		return $this->db->query("select a.nip,b.id_pengajuan from tbl_verifikator a join tbl_verif_pengajuan b on a.unsur_verif=b.unsur where a.nip=" . $this->session->userdata('nip') . "")->result_array();
 	}
-	public function constraint($bab,$id_pengajuan)
+	public function constraint($bab, $id_pengajuan)
 	{
-		return $this->db->query("select * from tbl_constraint where sub_bab like '".$bab."%' and id_pengajuan=$id_pengajuan")->result_array();
+		return $this->db->query("select * from tbl_constraint where sub_bab like '" . $bab . "_' and id_pengajuan=$id_pengajuan")->result_array();
 	}
-	
-
+	public function total_pendidikan($id_pengajuan)
+	{
+		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE (sub_bab LIKE 'a%' OR sub_bab LIKE 'b%' ) AND  id_pengajuan=$id_pengajuan")->result_array();
+	}
+	public function total_penelitian($id_pengajuan)
+	{
+		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE sub_bab LIKE 'c%' AND  id_pengajuan=$id_pengajuan")->result_array();
+	}
+	public function total_pengmas($id_pengajuan)
+	{
+		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE sub_bab LIKE 'd%' AND  id_pengajuan=$id_pengajuan")->result_array();
+	}
+	public function total_penunjang($id_pengajuan)
+	{
+		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE sub_bab LIKE 'e%' AND  id_pengajuan=$id_pengajuan")->result_array();
+	}
 }

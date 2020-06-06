@@ -244,7 +244,7 @@
             </div>
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi</h5>
+                    1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -279,7 +279,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                2. Menjadi anggota panitia/badan pada lembaga pemerintah</h5>
+                    2. Menjadi anggota panitia/badan pada lembaga pemerintah</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -318,7 +318,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                3. Menjadi anggota organisasi profesi</h5>
+                    3. Menjadi anggota organisasi profesi</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -355,7 +355,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                4. Mewakili perguruan tinggi/lembaga pemerintah duduk dalam panitia antar lembaga, tiap kepanitiaan </h5>
+                    4. Mewakili perguruan tinggi/lembaga pemerintah duduk dalam panitia antar lembaga, tiap kepanitiaan </h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -391,7 +391,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                5. Menjadi anggota delegasi nasional ke pertemuan internasional</h5>
+                    5. Menjadi anggota delegasi nasional ke pertemuan internasional</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -427,7 +427,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                6. Berperan serta aktif dalam pertemuan ilmiah</h5>
+                    6. Berperan serta aktif dalam pertemuan ilmiah</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -465,7 +465,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                7. Mendapat tanda jasa/penghargaan</h5>
+                    7. Mendapat tanda jasa/penghargaan</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -499,7 +499,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional</h5>
+                    8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -535,7 +535,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                9. Memiliki prestasi di bidang olahraga/humaniora </h5>
+                    9. Memiliki prestasi di bidang olahraga/humaniora </h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -571,7 +571,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                10. Keanggotaan dalam tim penilai jabatan akademik dosen (tiap semester)</h5>
+                    10. Keanggotaan dalam tim penilai jabatan akademik dosen (tiap semester)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -621,14 +621,50 @@
 
             <div class="container row p-5">
                 <div class="col-sm-9">
-                    <button type="submit" name="aksi" value="tolak" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#tolakModal" class="float-right btn btn-primary btn-user btn=block">
                         Tolak Pengajuan
                     </button>
                 </div>
                 <div class="col-sm-3">
-                    <button type="submit" name="aksi" value="terima" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#verModal" class="float-right btn btn-primary btn-user btn=block">
                         Verifikasi Pengajuan
                     </button>
+                </div>
+            </div>
+            <!-- Modal Verifikasi Berkas -->
+            <div class="modal fade" id="verModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Verifikasi Berkas ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Memverifikasi Berkas Pengajuan Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="terima" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Tolak Verifikasi Berkas-->
+            <div class="modal fade" id="tolakModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tolak Berkas Pengajuan ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Menolak Berkas Pengajuan Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="tolak" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
