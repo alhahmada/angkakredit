@@ -65,7 +65,7 @@
             <!-- Menu Utama Pertama User -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('admin/daftar_pengajuanAK'); ?>">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw"></i>
                     <span>Daftar Pengajuan</span></a>
             </li>
             <!-- Menu Utama Kedua User -->
@@ -78,7 +78,7 @@
             <!-- Menu Utama Ketiga User -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw "></i>
                     <span>History</span></a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -94,6 +94,13 @@
                     <span>Informasi Umum</span>
                 </a>
             </li>
+            <!-- Menu Utama Kelima User -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/data_dosen'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Database Dosen</span>
+                </a>
+            </li>
 
 
             <!-- Menu Tambahan User -->
@@ -104,7 +111,7 @@
             <!-- Menu Tambahan User Pertama-->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('admin/edit_profil_admin'); ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-user"></i>
                     <span>Edit Profil</span></a>
             </li>
             <!-- Menu Tambahan User Kedua-->
@@ -140,7 +147,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Bagian Menu Atas Tengah -->
-            <div id="content">
+            <div id="content" style="max-height: 70px;">
 
                 <nav class="navbar navbar-expand navbar-light topbar static-top shadow" style="background-color: #282b3b;">
 
@@ -238,12 +245,12 @@
                             <!-- Menampilkan Popup Ketia Foto atau nama di klik -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <!-- Pilihan 1 (Lihat Profil) -->
-                                <a class="dropdown-item" href="<?= base_url('auth/profil'); ?>">
+                                <a class="dropdown-item" href="<?= base_url('admin/edit_profil_admin'); ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profil
+                                    Edit Profil
                                 </a>
                                 <!-- Pilihan 2 (Pengaturan) -->
-                                <a class="dropdown-item" href="<?= base_url('auth/setting'); ?>">
+                                <a class="dropdown-item" href="<?= base_url('admin/setelan_admin'); ?>">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Pengaturan
                                 </a>

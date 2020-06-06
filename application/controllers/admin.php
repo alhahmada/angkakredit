@@ -93,7 +93,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Verifikasi Pengajuan Argka Kredit';
+        $data['title'] = 'Verifikasi Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/verif_penunjang');
         $this->load->view('templates/auth_footer');
@@ -170,7 +170,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Halaman Informasi';
+        $data['title'] = 'Pengaturan';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('auth/setting');
         $this->load->view('templates/auth_footer');
@@ -203,7 +203,7 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Edit/Tambahkan User';
+        $data['title'] = 'Daftar Pengajuan Ditolak';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/pengajuan_tolak');
         $this->load->view('templates/auth_footer');
@@ -214,9 +214,21 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Edit/Tambahkan User';
+        $data['title'] = 'Daftar Pengajuan Selesai';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/pengajuan_selesai');
+        $this->load->view('templates/auth_footer');
+    }
+
+
+    public function data_dosen()
+    {
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Database User';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('admin/data_dosen');
         $this->load->view('templates/auth_footer');
     }
 }

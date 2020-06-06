@@ -92,7 +92,7 @@ class verificator extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
-        $data['title'] = 'Halaman Informasi';
+        $data['title'] = 'Pengaturan';
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('auth/setting');
         $this->load->view('templates/auth_footer');

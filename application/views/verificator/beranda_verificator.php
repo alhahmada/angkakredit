@@ -127,12 +127,29 @@
     <div class="container-fluid col-xl-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Alur Verifikasi Berkas</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Alur Pengajuan</h6>
             </div>
             <!-- Body -->
             <div class="card-body">
+                <style>
+                    .container-foto {
+                        width: 90%;
+                        margin: 0 auto;
+                        position: relative;
+                    }
+
+                    .alur {
+                        width: 100%;
+                        height: auto;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+
+                    }
+                </style>
                 <div class="chart-piee pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
+                    <div class="container-foto">
+                        <img class="alur" src="<?= base_url('assets/img/alur.png'); ?>"></img>
+                    </div>
                 </div>
             </div>
         </div>

@@ -54,7 +54,6 @@ class Auth extends CI_Controller
         $data['array'] = $datauser[0];
         $datapengajuan = $this->m_pengajuan->data_pengajuan();
         $data['pengajuan'] = $datapengajuan;
-        $data['title'] = 'Beranda';
         // >>>>>>> 42b9dad32abb32577e2d9c6b827f7e01327a92ca
         $this->load->view('templates/auth_header', $data);
         $this->load->view('auth/beranda');
@@ -106,7 +105,7 @@ class Auth extends CI_Controller
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['array'] = $datauser[0];
-        $data['title'] = 'Edit Data';
+        $data['title'] = 'Edit Profil';
         $this->load->view('templates/auth_header', $data);
         $this->load->view('auth/edit_profil');
         $this->load->view('templates/auth_footer');

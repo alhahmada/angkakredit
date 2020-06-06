@@ -77,7 +77,7 @@
                                 </tr>
                                 <tr>
                                     <td>Pangkat/Gol.Ruang</td>
-                                    <td><?= $array['pangkat']."/". $array['golongan_ruang']; ?></td>
+                                    <td><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></td>
                                     <!-- <?= $array[''] . "/" . $array['golongan_ruang']; ?> -->
                                 </tr>
                                 <tr>
@@ -139,15 +139,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no=1; foreach ($pengajuan as $key => $data) { ?>
-                            <tr>
-                                <td><?= $no; ?></td>
-                                <td><?= $data['tgl_pengajuan']; ?></td>
-                                <td><?= $data['progress_pengajuan']; ?></td>
-                                <td><?= $data['tgl_pengajuan']; ?></td>
-                                <td><?= $data['id_pengajuan']; ?></td>
-                                <td><?= $data['ak_diterima']; ?></td>
-                            <?php $no++; } ?>
+                                <?php $no = 1;
+                                foreach ($pengajuan as $key => $data) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $data['tgl_pengajuan']; ?></td>
+                                        <td><?= $data['progress_pengajuan']; ?></td>
+                                        <td><?= $data['tgl_pengajuan']; ?></td>
+                                        <td><?= $data['id_pengajuan']; ?></td>
+                                        <td><?= $data['ak_diterima']; ?></td>
+                                    <?php $no++;
+                                } ?>
                             </tbody>
                         </table>
                     </div>
@@ -211,12 +213,29 @@
     <div class="container-fluid col-xl-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Tata Cara Pengajuan</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Alur Pengajuan Angka Kredit</h6>
             </div>
             <!-- Body -->
             <div class="card-body">
+                <style>
+                    .container-foto {
+                        width: 90%;
+                        margin: 0 auto;
+                        position: relative;
+                    }
+
+                    .alur {
+                        width: 100%;
+                        height: auto;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+
+                    }
+                </style>
                 <div class="chart-piee pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
+                    <div class="container-foto">
+                        <img class="alur" src="<?= base_url('assets/img/alur.png'); ?>"></img>
+                    </div>
                 </div>
             </div>
         </div>

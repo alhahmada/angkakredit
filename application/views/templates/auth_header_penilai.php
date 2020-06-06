@@ -63,7 +63,7 @@
             <!-- Menu Utama Pertama User -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('penilai/daftar_penilaianAK'); ?>">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw"></i>
                     <span>Daftar Penilaian</span></a>
             </li>
             <!-- Menu Utama Kedua User -->
@@ -90,7 +90,7 @@
             <!-- Menu Tambahan User Pertama-->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('penilai/edit_profil_penilai'); ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-user"></i>
                     <span>Edit Profil</span></a>
             </li>
             <!-- Menu Tambahan User Kedua-->
@@ -221,12 +221,12 @@
                             <!-- Menampilkan Popup Ketia Foto atau nama di klik -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <!-- Pilihan 1 (Lihat Profil) -->
-                                <a class="dropdown-item" href="<?= base_url('auth/profil'); ?>">
+                                <a class="dropdown-item" href="<?= base_url('penilai/edit_profil_penilai'); ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profil
+                                    Edit Profil
                                 </a>
                                 <!-- Pilihan 2 (Pengaturan) -->
-                                <a class="dropdown-item" href="<?= base_url('auth/setting'); ?>">
+                                <a class="dropdown-item" href="<?= base_url('penilai/setelan_penilai'); ?>">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Pengaturan
                                 </a>
