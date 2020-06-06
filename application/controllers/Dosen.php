@@ -12,6 +12,7 @@ class Dosen extends CI_Controller
         $this->load->model('berkas');
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
+        $this->load->model('m_verif');
         $this->load->library('upload');
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
@@ -72,6 +73,10 @@ class Dosen extends CI_Controller
         }
 
         redirect('/dosen/pendidikan/' . $id_pengajuan);
+    }
+    public function action_pengajuan_final()
+    {
+        redirect('/dosen/submit_pengajuan');
     }
 
 
@@ -1190,7 +1195,7 @@ class Dosen extends CI_Controller
                     $this->berkas->e10($id_pengajuan, $e101[$i], $e102[$i], $e103[$i], $filename);
                 }
                 $filenames[] = $filename;
-                $this->berkas->constraint('e4' . $i, $id_pengajuan, 0.5);
+                $this->berkas->constraint('e10' . $i, $id_pengajuan, 0.5);
             }
             $this->berkas->upload_files($filenames, $_FILES['E104']);
             unset($filenames);
@@ -1239,7 +1244,7 @@ class Dosen extends CI_Controller
         // $a14='OK5';
         // $a15='OK6';
         // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
-        print_r($this->m_pengajuan->total_per_progress());
+        print_r($this->m_verif->cek_verif('1'));
     }
 
 

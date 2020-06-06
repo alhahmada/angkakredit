@@ -60,28 +60,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $array['nip']; ?></td>
+                                    <!-- <?= $array['nip']; ?> -->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
@@ -236,7 +236,8 @@
             }
         </style>
 
-        <form>
+        <form action="<?= base_url('/verificator/action_verif_penelitian'); ?>" method="POST" id="verif_penelitian">
+            <input type="hidden" name="id_pengajuan" value="<?= $id_pengajuan; ?>">
             <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
                 <h5 class="head-bab">C. Penelitian</h5>
             </div>
@@ -545,14 +546,14 @@
 
             <div class="container row p-5">
                 <div class="col-sm-9">
-                    <a href="<?= base_url('verificator/daftar_verifikasiAK'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="submit" name="aksi" value="tolak" class="float-right btn btn-primary btn-user btn=block">
                         Tolak Pengajuan
-                    </a>
+                    </button>
                 </div>
                 <div class="col-sm-3">
-                    <a type="submit" href="<?= base_url('verificator/daftar_verifikasiAK'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="submit" name="aksi" value="terima" class="float-right btn btn-primary btn-user btn=block">
                         Verifikasi Pengajuan
-                    </a>
+                    </button>
                 </div>
             </div>
 

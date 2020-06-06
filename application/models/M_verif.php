@@ -170,4 +170,22 @@ class M_verif extends CI_Model
 	{
 		return $this->db->get_where('tbl_e10', array('id_pengajuan' => $id_pengajuan))->result_array();
 	}
+	public function verif_pengajuan($id_pengajuan,$status,$keterangan)
+	{
+		$data = array(
+			'id_pengajuan' => $id_pengajuan,
+			'status' => $status,
+			'id_verifikator' => $this->session->userdata('nip'),
+			'keterangan' => $keterangan
+		);
+		$this->db->insert('tbl_verif_pengajuan', $data);
+	}
+	public function cek_verif($id_pengajuan)
+	{
+		$array = array('id_pengajuan' => $id_pengajuan, 'status' => 1);
+		$this->db->where($array);
+		return $this->db->count_all_results('tbl_verif_pengajuan');
+	}
+	
+
 }

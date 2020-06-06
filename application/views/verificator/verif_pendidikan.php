@@ -59,28 +59,28 @@
                                 <tbody>
                                     <tr>
                                         <td>Nama Lengkap</td>
-                                        <td>$get.Data.User</td>
+                                        <td><?= $array['nama_lengkap']; ?></td>
                                         <!-- <><?= $array['nama_lengkap']; ?> -->
                                     </tr>
                                     <tr>
                                         <td>NIP</td>
-                                        <td>$get.Data.User</td>
+                                        <td><?= $array['nip']; ?></td>
                                         <!--<?= $array['nip']; ?>-->
                                     </tr>
 
                                     <tr>
                                         <td>Unit Kerja</td>
-                                        <td>$get.Data.User</td>
+                                        <td><?= $array['unit_kerja']; ?></td>
                                         <!-- <?= $array['unit_kerja']; ?> -->
                                     </tr>
                                     <tr>
                                         <td>Angka Kredit</td>
-                                        <td>$get.Data.User</td>
+                                        <td><?= $array['angka_kredit']; ?></td>
                                         <!-- <?= $array['angka_kredit']; ?> -->
                                     </tr>
                                     <tr>
                                         <td>Tanggal Pengajuan</td>
-                                        <td>$get.Data.User</td>
+                                        <td><?= $array['tgl_pengajuan']; ?></td>
                                         <!-- <?= $array['tgl_pengajuan']; ?> -->
                                     </tr>
                                 </tbody>
@@ -236,7 +236,8 @@
                     font-family: 'Times New Roman';
                 }
             </style>
-            <form>
+            <form action="<?= base_url('/verificator/action_verif_pendidikan'); ?>" method="POST" id="verif_pendidikan">
+            <input type="hidden" name="id_pengajuan" value="<?= $id_pengajuan; ?>">
                 <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
                     <h5 class="head-bab">A. Pendidikan</h5>
                 </div>

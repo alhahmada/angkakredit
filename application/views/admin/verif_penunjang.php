@@ -59,28 +59,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nip']; ?></td>
                                     <!--<?= $array['nip']; ?>-->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
@@ -236,14 +236,15 @@
             }
         </style>
 
-        <form action="" method="POST" id="verif_penunjang">
+        <form action="<?= base_url('/admin/action_verif_penunjang'); ?>" method="POST" id="verif_penunjang">
+            <input type="hidden" name="id_pengajuan" value="<?= $id_pengajuan; ?>">
 
             <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
                 <h5 class="head-bab">E. Unsur Penunjang</h5>
             </div>
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi</h5>
+                1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -278,7 +279,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    2. Menjadi anggota panitia/badan pada lembaga pemerintah</h5>
+                2. Menjadi anggota panitia/badan pada lembaga pemerintah</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -317,7 +318,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    3. Menjadi anggota organisasi profesi</h5>
+                3. Menjadi anggota organisasi profesi</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -354,7 +355,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    4. Mewakili perguruan tinggi/lembaga pemerintah duduk dalam panitia antar lembaga, tiap kepanitiaan </h5>
+                4. Mewakili perguruan tinggi/lembaga pemerintah duduk dalam panitia antar lembaga, tiap kepanitiaan </h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -390,7 +391,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    5. Menjadi anggota delegasi nasional ke pertemuan internasional</h5>
+                5. Menjadi anggota delegasi nasional ke pertemuan internasional</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -426,7 +427,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    6. Berperan serta aktif dalam pertemuan ilmiah</h5>
+                6. Berperan serta aktif dalam pertemuan ilmiah</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -464,7 +465,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    7. Mendapat tanda jasa/penghargaan</h5>
+                7. Mendapat tanda jasa/penghargaan</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -498,7 +499,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional</h5>
+                8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -534,7 +535,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    9. Memiliki prestasi di bidang olahraga/humaniora </h5>
+                9. Memiliki prestasi di bidang olahraga/humaniora </h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -570,7 +571,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    10. Keanggotaan dalam tim penilai jabatan akademik dosen (tiap semester)</h5>
+                10. Keanggotaan dalam tim penilai jabatan akademik dosen (tiap semester)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -620,14 +621,14 @@
 
             <div class="container row p-5">
                 <div class="col-sm-9">
-                    <a href="<?= base_url('admin/daftar_pengajuanAK'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="submit" name="aksi" value="tolak" class="float-right btn btn-primary btn-user btn=block">
                         Tolak Pengajuan
-                    </a>
+                    </button>
                 </div>
                 <div class="col-sm-3">
-                    <a type="submit" href="<?= base_url('admin/daftar_pengajuanAK'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="submit" name="aksi" value="terima" class="float-right btn btn-primary btn-user btn=block">
                         Verifikasi Pengajuan
-                    </a>
+                    </button>
                 </div>
             </div>
 
