@@ -133,29 +133,30 @@
             <tbody>
                 <?php
                 $no = 1;
+                $urut= 0;
                 foreach ($a1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['a15'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_a1[$urut]['ak_maksimal']; ?></td>
                     </tr>
-                <?php $no++;
-                } ?>
+                <?php $no++; $urut++;
+                } unset($urut); ?>
                 <?php foreach ($a2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['a24'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_a2[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b1 as $key => $value) { ?>
@@ -163,11 +164,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b15'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b1[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b2 as $key => $value) { ?>
@@ -175,11 +176,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b22'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b2[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b3 as $key => $value) { ?>
@@ -187,11 +188,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b33'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b3[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b4 as $key => $value) { ?>
@@ -199,11 +200,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b45'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b4[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b5 as $key => $value) { ?>
@@ -211,11 +212,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b54'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b5[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b6 as $key => $value) { ?>
@@ -223,11 +224,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b63'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b6[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b7 as $key => $value) { ?>
@@ -235,11 +236,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b75'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b7[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b8 as $key => $value) { ?>
@@ -247,11 +248,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b85'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b8[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b9 as $key => $value) { ?>
@@ -259,11 +260,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b94'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b9[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b10 as $key => $value) { ?>
@@ -271,11 +272,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b104'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b10[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b11 as $key => $value) { ?>
@@ -283,11 +284,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b114'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b11[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b12 as $key => $value) { ?>
@@ -295,11 +296,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b124'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b12[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($b13 as $key => $value) { ?>
@@ -307,11 +308,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['b132'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_b13[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
 
@@ -354,11 +355,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c15'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c1[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c2 as $key => $value) { ?>
@@ -366,11 +367,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c25'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c2[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c3 as $key => $value) { ?>
@@ -378,11 +379,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c33'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c3[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c4 as $key => $value) { ?>
@@ -390,11 +391,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c44'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c4[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c5 as $key => $value) { ?>
@@ -402,11 +403,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c54'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c5[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c6 as $key => $value) { ?>
@@ -414,11 +415,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c65'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c6[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c7 as $key => $value) { ?>
@@ -426,11 +427,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c75'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c7[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($c8 as $key => $value) { ?>
@@ -438,11 +439,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['c84'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_c8[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -482,11 +483,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d14'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d1[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($d2 as $key => $value) { ?>
@@ -494,11 +495,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d23'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d2[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($d3 as $key => $value) { ?>
@@ -506,11 +507,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d35'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d3[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($d4 as $key => $value) { ?>
@@ -518,11 +519,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d43'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d4[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($d5 as $key => $value) { ?>
@@ -530,11 +531,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d53'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d5[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($d6 as $key => $value) { ?>
@@ -542,11 +543,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d63'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d6[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($d7 as $key => $value) { ?>
@@ -554,11 +555,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d75'].'.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_d7[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -601,11 +602,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e14'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e1[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e2 as $key => $value) { ?>
@@ -613,11 +614,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e26'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e2[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e3 as $key => $value) { ?>
@@ -625,11 +626,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e35'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e3[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e4 as $key => $value) { ?>
@@ -637,11 +638,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e44'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e4[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e5 as $key => $value) { ?>
@@ -649,11 +650,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e54'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e5[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e6 as $key => $value) { ?>
@@ -661,11 +662,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e65'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e6[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e7 as $key => $value) { ?>
@@ -673,11 +674,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e73'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e7[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e8 as $key => $value) { ?>
@@ -685,11 +686,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e84'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e8[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e9 as $key => $value) { ?>
@@ -697,11 +698,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e94'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e9[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
                 <?php foreach ($e10 as $key => $value) { ?>
@@ -709,11 +710,11 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['e104'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
-                        <td><?= $ak_maks; ?></td>
+                        <td><?= $maks_e10[$urut]['ak_maksimal']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

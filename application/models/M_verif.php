@@ -195,6 +195,10 @@ class M_verif extends CI_Model
 	{
 		return $this->db->query("select a.nip,b.id_pengajuan from tbl_verifikator a join tbl_verif_pengajuan b on a.unsur_verif=b.unsur where a.nip=".$this->session->userdata('nip')."")->result_array();
 	}
+	public function constraint($bab,$id_pengajuan)
+	{
+		return $this->db->query("select * from tbl_constraint where sub_bab like '".$bab."%' and id_pengajuan=$id_pengajuan")->result_array();
+	}
 	
 
 }
