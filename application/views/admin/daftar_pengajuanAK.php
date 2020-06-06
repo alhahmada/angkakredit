@@ -147,12 +147,15 @@
 
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td class="nav-item text-center">
+                            <!-- <tbody>
+                            <?php
+                            $no = 1;
+                            foreach ($pengajuan2 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td class="nav-item text-center">
                                         <script>
 
                                         </script>
@@ -196,155 +199,10 @@
                                             </div>
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Dosen F</td>
-                                    <td>17 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <script>
-
-                                        </script>
-
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_pilih_penilai" data-target="#modal_pilih_penilai">Pilih Tim Penilai</button>
-                                        <div class="modal fade" id="modal_pilih_penilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-
-                                                    <div class="modal-body">Pilih Penilai Pertama
-                                                        <select style="width: 20%" id="penilai1" name="penilai1" onchange="optionp1(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> Anzjay </option>
-                                                            <option value="B"> Bajaj </option>
-                                                            <option value="C"> Cakwe </option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Kedua
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Ketiga
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
-                                                        </select>
-                                                    </div>
-
-
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Tetapkan Penilai</button></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Aditya Faizal Arifin</td>
-                                    <td>21 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <script>
-
-                                        </script>
-
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_pilih_penilai" data-target="#modal_pilih_penilai">Pilih Tim Penilai</button>
-                                        <div class="modal fade" id="modal_pilih_penilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-
-                                                    <div class="modal-body">Pilih Penilai Pertama
-                                                        <select style="width: 20%" id="penilai1" name="penilai1" onchange="optionp1(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> Anzjay </option>
-                                                            <option value="B"> Bajaj </option>
-                                                            <option value="C"> Cakwe </option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Kedua
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Ketiga
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
-                                                        </select>
-                                                    </div>
-
-
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Tetapkan Penilai</button></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <script>
-
-                                        </script>
-
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_pilih_penilai" data-target="#modal_pilih_penilai">Pilih Tim Penilai</button>
-                                        <div class="modal fade" id="modal_pilih_penilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-
-                                                    <div class="modal-body">Pilih Penilai Pertama
-                                                        <select style="width: 20%" id="penilai1" name="penilai1" onchange="optionp1(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> Anzjay </option>
-                                                            <option value="B"> Bajaj </option>
-                                                            <option value="C"> Cakwe </option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Kedua
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Ketiga
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
-                                                        </select>
-                                                    </div>
-
-
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Tetapkan Penilai</button></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                                    </tr>
+                                <?php $no++;
+                            } ?>
+                            </tbody> -->
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>
@@ -378,88 +236,21 @@
 
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>Belum Dinilai</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>Belum Dinilai</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>Sudah Dinilai</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Made Indra Prastya</td>
-                                    <td>11 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>Belum Dinilai</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>Belum Dinilai</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>Sudah Dinilai</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/cek_berkas#'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <!-- <tbody>
+                            <?php
+                            $no = 1;
+                            foreach ($pengajuan3 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                <?php $no++;
+                            } ?>
+                            </tbody> -->
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>
@@ -490,48 +281,24 @@
                                     <th>Penetapan Angka Kredit</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/penetapan_ak_pendidikan'); ?>">
-                                            <span>Mulai Tahap Penetapan</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/penetapan_ak_pendidikan'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/penetapan_ak_pendidikan'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('admin/penetapan_ak_pendidikan'); ?>">
-                                            <span>-</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <!-- <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuan4 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td class="nav-item text-center">
+                                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                                <span>Tetapkan Angka Kredit</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
+
+                            </tbody> -->
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>
@@ -562,44 +329,19 @@
                                     <th>Angka Kredit Final</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td>X11</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>5.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>6.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                            </tbody>
+                            <!-- <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuan1 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td></td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
+                            </tbody> -->
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>

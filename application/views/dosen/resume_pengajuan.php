@@ -131,16 +131,190 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td class="text-left">Nama Jenis Pengajuan</td>
-                    <td class="nav-item text-center">
-                        <a class="nav-link" href="<?= base_url(''); ?>">
-                            <span>Cek Berkas</span>
-                        </a>
-                    </td>
-                    <td>X</td>
-                </tr>
+                <?php
+                $no = 1;
+                foreach ($a1 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php $no++;
+                } ?>
+                <?php foreach ($a2 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b1 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b2 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b3 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b4 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b5 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b6 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b7 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b8 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b9 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b10 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b11 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b12 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($b13 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+
             </tbody>
             <tfoot>
                 <tr>
@@ -175,16 +349,102 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td class="text-left">Nama Jenis Pengajuan</td>
-                    <td class="nav-item text-center">
-                        <a class="nav-link" href="<?= base_url(''); ?>">
-                            <span>Cek Berkas</span>
-                        </a>
-                    </td>
-                    <td>X</td>
-                </tr>
+                <?php foreach ($c1 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c2 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c3 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c4 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c5 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c6 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c7 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($c8 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
             </tbody>
             <tfoot>
                 <tr>
@@ -217,16 +477,90 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td class="text-left">Nama Jenis Pengajuan</td>
-                    <td class="nav-item text-center">
-                        <a class="nav-link" href="<?= base_url(''); ?>">
-                            <span>Cek Berkas</span>
-                        </a>
-                    </td>
-                    <td>X</td>
-                </tr>
+                <?php foreach ($d1 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($d2 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($d3 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($d4 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($d5 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($d6 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($d7 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
             </tbody>
             <tfoot>
                 <tr>
@@ -262,16 +596,126 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td class="text-left">Nama Jenis Pengajuan</td>
-                    <td class="nav-item text-center">
-                        <a class="nav-link" href="<?= base_url(''); ?>">
-                            <span>Cek Berkas</span>
-                        </a>
-                    </td>
-                    <td>X</td>
-                </tr>
+                <?php foreach ($e1 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e2 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e3 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e4 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e5 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e6 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e7 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e8 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e9 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
+                <?php foreach ($e10 as $key => $value) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td class="nav-item text-center">
+                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                <span>Cek Kelengkapan Berkas</span>
+                            </a>
+                        </td>
+                        <td><?= $ak_maks; ?></td>
+                    </tr>
+                <?php } ?>
             </tbody>
             <tfoot>
                 <tr>
@@ -357,9 +801,26 @@
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    <button type="submit" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#pengajuanModal" class="float-right btn btn-primary btn-user btn=block">
                         Submit Pengajuan
                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="pengajuanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ajukan Pengajuan ?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Klik Lanjutkan Untuk Mengirim Pengajuan Angka Kredit Anda</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                        <button class="btn btn-primary" type="submit">Lanjutkan</button>
+                    </div>
                 </div>
             </div>
         </div>
