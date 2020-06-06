@@ -613,7 +613,7 @@
                 <div class="card-body">
                     <div>
                         <h6 class="head-subbab font-weight-bold">Berikan Catatan</h6>
-                        <textarea class="col_comment" style="width: 100%; font-family: 'Times New Roman';font-size: 10pt;"></textarea>
+                        <textarea name="keterangan" class="col_comment" style="width: 100%; font-family: 'Times New Roman';font-size: 10pt;"></textarea>
                     </div>
                 </div>
             </div>

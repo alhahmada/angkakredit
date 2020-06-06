@@ -92,9 +92,9 @@ class verificator extends CI_Controller
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pendidikan');
         $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
+        if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
+        } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
@@ -134,9 +134,9 @@ class verificator extends CI_Controller
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Penelitian');
         $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
+        if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
+        } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
@@ -175,9 +175,9 @@ class verificator extends CI_Controller
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pengmas');
         $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
-        if ($this->m_verif->verif_pengajuan($id_pengajuan) == 4) {
+        if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        } elseif ($this->m_verif->verif_pengajuan($id_pengajuan) == 5) {
+        } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
