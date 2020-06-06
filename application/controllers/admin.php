@@ -51,8 +51,13 @@ class admin extends CI_Controller
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['pengajuan'] = $pengajuan;
-
-        $pengajuan1 = $this->m_verif->pengajuan_all();
+        $cekverifikator=$this->m_verif->cek_verifikator();
+        if ($cekverifikator==null){
+            $pengajuan1 = $this->m_verif->pengajuan_all();   
+        }else{
+             $pengajuan1 = $this->m_verif->pengajuan_not($cekverifikator[0]['id'])
+        }
+        
         $verifikator = $this->m_verif->verifikator();
         $data['pengajuan1'] = $pengajuan1;
         $data['verifikator'] = $verifikator[0];
@@ -108,7 +113,7 @@ class admin extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Penunjang');
-        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan,'verif_pendidikan');
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
         } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {

@@ -36,8 +36,13 @@ class verificator extends CI_Controller
     public function daftar_verifikasiAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-
-        $pengajuan = $this->m_verif->pengajuan_all();
+        $cekverifikator=$this->m_verif->cek_verifikator();
+        if ($cekverifikator==null){
+            $pengajuan = $this->m_verif->pengajuan_all();    
+        }else{
+            $pengajuan = $this->m_verif->pengajuan_not($cekverifikator[0]['id_pengajuan']);
+        }
+        
         $data['pengajuan'] = $pengajuan;
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
@@ -91,7 +96,7 @@ class verificator extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pendidikan');
-        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan,'verif_pendidikan');
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
         } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
@@ -133,7 +138,7 @@ class verificator extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Penelitian');
-        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan,'verif_penelitian');
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
         } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
@@ -174,7 +179,7 @@ class verificator extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pengmas');
-        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan);
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan,'verif_pengmas');
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
         } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {

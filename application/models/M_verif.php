@@ -6,6 +6,10 @@ class M_verif extends CI_Model
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1")->result_array();
 	}
+	function pengajuan_not($id)
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1 AND id_pengajuan!=".$id."")->result_array();
+	}
 	function verifikator()
 	{
 		return $this->db->get_where('tbl_verifikator', array('nip' => $this->session->userdata('nip')))->result_array();
@@ -170,12 +174,13 @@ class M_verif extends CI_Model
 	{
 		return $this->db->get_where('tbl_e10', array('id_pengajuan' => $id_pengajuan))->result_array();
 	}
-	public function verif_pengajuan($id_pengajuan,$status,$keterangan)
+	public function verif_pengajuan($id_pengajuan,$status,$keterangan,$unsur)
 	{
 		$data = array(
 			'id_pengajuan' => $id_pengajuan,
 			'status' => $status,
 			'id_verifikator' => $this->session->userdata('nip'),
+			'unsur' => $unsur,
 			'keterangan' => $keterangan
 		);
 		$this->db->insert('tbl_verif_pengajuan', $data);
@@ -185,6 +190,10 @@ class M_verif extends CI_Model
 		$array = array('id_pengajuan' => $id_pengajuan, 'status' => 1);
 		$this->db->where($array);
 		return $this->db->count_all_results('tbl_verif_pengajuan');
+	}
+	public function cek_verifikator()
+	{
+		return $this->db->query("select a.nip,b.id_pengajuan from tbl_verifikator a join tbl_verif_pengajuan b on a.unsur_verif=b.unsur where a.nip=".$this->session->userdata('nip')."")->result_array();
 	}
 	
 
