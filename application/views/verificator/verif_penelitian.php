@@ -254,7 +254,7 @@
                             <th>Jenjang/Tingkat/Bentuk*</th>
                             <th>Tahun</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -264,9 +264,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C1" type="checkbox" name="V_C1" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -289,7 +286,7 @@
                             <th>Tingkat/Jenjang</th>
                             <th>Tahun Didiseminasikan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -299,9 +296,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C2" type="checkbox" name="V_C2" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -323,7 +317,7 @@
                             <th>Judul Penelitian</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -331,9 +325,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C3" type="checkbox" name="V_C3" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -356,7 +347,7 @@
                             <th>Tahun Pelaksanaan</th>
                             <th>No ISBN</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -365,9 +356,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C4" type="checkbox" name="V_C4" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -389,7 +377,7 @@
                             <th>Tahun Pelaksanaan</th>
                             <th>No ISBN</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -398,9 +386,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C5" type="checkbox" name="V_C5" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -422,7 +407,7 @@
                             <th>Tingkat/Jenjang (Option)</th>
                             <th>Tahun Pembuatan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -432,9 +417,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C6" type="checkbox" name="V_C6" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -457,7 +439,7 @@
                             <th>Tingkat/Jenjang (Option)</th>
                             <th>Tahun Pembuatan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -467,9 +449,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C7" type="checkbox" name="V_C7" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -488,7 +467,7 @@
                             <th>Judul/Jenis Karya</th>
                             <th>Tahun Pembuatan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -496,9 +475,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_C8" type="checkbox" name="V_C8" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>

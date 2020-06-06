@@ -250,7 +250,7 @@
                             <th>Jabatan</th>
                             <th>Tahun Menjabat (Sejak)</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -262,9 +262,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D1" type="checkbox" name="V_D1" value="verified">
                             </td>
                         </tr>
                     </tbody>
@@ -284,7 +281,7 @@
                             <th>Judul Penelitian/Nama Program</th>
                             <th>Tahun Diterapkan/Diterbitkan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -295,9 +292,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D2" type="checkbox" name="V_D2" value="verified">
                             </td>
                         </tr>
                     </tbody>
@@ -319,7 +313,7 @@
                             <th>Lama Pelaksanaan</th>
                             <th>Tingkat</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -332,9 +326,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D3" type="checkbox" name="V_D3" value="verified">
                             </td>
                         </tr>
                     </tbody>
@@ -354,7 +345,7 @@
                             <th>Jenis Pelayanan</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -365,9 +356,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D4" type="checkbox" name="V_D4" value="verified">
                             </td>
                         </tr>
                     </tbody>
@@ -387,7 +375,7 @@
                             <th>Jenis Karya</th>
                             <th>Tahun Pembuatan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -398,9 +386,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D5" type="checkbox" name="V_D5" value="verified">
                             </td>
                         </tr>
                     </tbody>
@@ -420,7 +405,7 @@
                             <th>Jenis Karya</th>
                             <th>Tahun Pembuatan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -431,9 +416,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D6" type="checkbox" name="V_D6" value="verified">
                             </td>
                         </tr>
                     </tbody>
@@ -455,7 +437,7 @@
                             <th>Jabatan (Option)</th>
                             <th>Tahun</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -468,9 +450,6 @@
                                 <a class="nav-link" href="<?= base_url(''); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
-                            </td>
-                            <td>
-                                <input id="V_D7" type="checkbox" name="V_D7" value="verified">
                             </td>
                         </tr>
                     </tbody>

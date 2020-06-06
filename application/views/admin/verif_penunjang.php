@@ -254,7 +254,7 @@
                             <th>Jabatan (Option)</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -263,9 +263,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E1" type="checkbox" name="V_E1" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -288,7 +285,7 @@
                             <th>Jabatan</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -299,9 +296,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E2" type="checkbox" name="V_E2" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -323,7 +317,7 @@
                             <th>Jabatan (Option)</th>
                             <th>Tahun</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -333,9 +327,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E3" type="checkbox" name="V_E3" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -356,7 +347,7 @@
                             <th>Lembaga yang Diwakili</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -365,9 +356,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E4" type="checkbox" name="V_E4" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -388,7 +376,7 @@
                             <th>Jabatan (Option)</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -397,9 +385,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E5" type="checkbox" name="V_E5" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -421,7 +406,7 @@
                             <th>Jabatan (Option)</th>
                             <th>Tahun Pelaksanaan</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -431,9 +416,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E6" type="checkbox" name="V_E6" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -453,7 +435,7 @@
                             <th>Janis Tanda Jasa</th>
                             <th>Tahun Diterima</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -461,9 +443,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E7" type="checkbox" name="V_E7" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -484,7 +463,7 @@
                             <th>Tingkat Buku (Option)</th>
                             <th>Tahun Terbit</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -493,9 +472,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E8" type="checkbox" name="V_E8" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -516,7 +492,7 @@
                             <th>Prestasi yang diperoleh</th>
                             <th>Tingkat (Option)</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -525,9 +501,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E9" type="checkbox" name="V_E9" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -548,7 +521,7 @@
                             <th>Tahun Akademik</th>
                             <th>Semester</th>
                             <th>Lampirkan Bukti</th>
-                            <th>Verifikasi</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -557,9 +530,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>
-                                <input id="V_E10" type="checkbox" name="V_E10" value="verified">
-                            </td>
                         </tr>
                     </tbody>
                 </table>

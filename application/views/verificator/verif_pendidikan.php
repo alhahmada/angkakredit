@@ -255,7 +255,7 @@
                                 <th>Tahun Masuk</th>
                                 <th>Tahun Keluar</th>
                                 <th>Lampiran</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -269,9 +269,7 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td>
-                                    <input id="V_A1" type="checkbox" name="V_A1" value="verified">
-                                </td>
+
 
 
                             </tr>
@@ -294,7 +292,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -307,9 +305,7 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td>
-                                    <input id="V_A2" type="checkbox" name="V_A2" value="verified">
-                                </td>
+
 
 
                             </tr>
@@ -340,7 +336,7 @@
                                 <th>Kelas</th>
                                 <th>Mata Kuliah</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -354,9 +350,7 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td>
-                                    <input id="V_B1" type="checkbox" name="V_B1" value="verified">
-                                </td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -378,7 +372,7 @@
                             <tr>
                                 <th>Tahun Akademik</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -390,9 +384,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B2" type="checkbox" name="V_B2" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -414,7 +406,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -427,9 +419,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B3" type="checkbox" name="V_B3" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -453,7 +443,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Jumlah Mahasiswa (Option)</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -468,9 +458,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B4" type="checkbox" name="V_B4" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -493,7 +481,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Jumlah Mahasiswa</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -507,9 +495,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B5" type="checkbox" name="V_B5" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -531,7 +517,7 @@
                                 <th>Jenis (Isian)</th>
                                 <th>Tahun Akademik</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -544,9 +530,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B6" type="checkbox" name="V_B6" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -570,7 +554,7 @@
                                 <th>Semester</th>
                                 <th>Mata Kuliah</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -585,9 +569,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B7" type="checkbox" name="V_B7" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -610,7 +592,7 @@
                                 <th>Semester</th>
                                 <th>Mata Kuliah</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -625,9 +607,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B8" type="checkbox" name="V_B8" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -649,7 +629,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -663,9 +643,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B9" type="checkbox" name="V_B9" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -686,7 +664,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -700,9 +678,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B10" type="checkbox" name="V_B10" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -723,7 +699,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -737,9 +713,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B11" type="checkbox" name="V_B11" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -760,7 +734,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -774,9 +748,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B12" type="checkbox" name="V_B12" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
@@ -795,7 +767,7 @@
                             <tr>
                                 <th>Lama Program Pengembangan yang diikuti</th>
                                 <th>Lampirkan Bukti</th>
-                                <th>Verifikasi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -807,9 +779,7 @@
                                     </a>
                                 </td>
 
-                                <td>
-                                    <input id="V_B13" type="checkbox" name="V_B13" value="verified">
-                                </td>
+
 
                             </tr>
                         </tbody>
