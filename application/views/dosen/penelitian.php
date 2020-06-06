@@ -25,6 +25,74 @@
     </div>
 </div>
 
+<!-- Constraint -->
+<div class="container-fluid p-5">
+    <div class="card shadow" style="width: 100%;">
+        <!-- Header -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Constraint Pengajuan</h6>
+        </div>
+        <!--Body -->
+        <div class="card-body">
+            <h5 class="pt-1 pb-2 body-content-a">Pengajuan : Dari Lektor Kepala 100 Menuju Lektor Kepala 200</h5>
+            <h5 class="pt-1 pb-2 body-content-a">Kum Kekurangan Angka : 100</h5>
+            <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
+                <thead>
+                    <tr>
+                        <th rowspan="2"></th>
+                        <th>Pendidikan</th>
+                        <th>Penelitian</th>
+                        <th>Pengabdian Masy. </th>
+                        <th>Penunjang</th>
+                    </tr>
+                    <tr>
+
+                        <th>Minimum</th>
+                        <th>Minimum</th>
+                        <th>Rentang</th>
+                        <th>Maksimal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold;">Persentase</td>
+                        <td>45%</td>
+                        <td>35%</td>
+                        <td>0,5 - 10%</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Angka Kredit</td>
+                        <td>45</td>
+                        <td>35</td>
+                        <td>10</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+            <style>
+                .body-content-1 {
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: black;
+                    margin-left: 5rem;
+                }
+
+                .body-content-a {
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: black;
+                    margin-left: 3rem;
+                }
+            </style>
+
+            <h5 class="pt-1 pb-2 body-content-a">Unsur Penelitian (C)</h5>
+            <h5 class="pt-1 pb-2 body-content-1">1. Poin C2 e + C3 Maksimal 5% Dari Total Unsur Penelitian</h5>
+            <h5 class="pt-1 pb-2 body-content-1">2. Poin C1 Jurnal Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
+            <h5 class="pt-1 pb-2 body-content-1">3. Poin C2a + C2b + C2c + C2d Tingkat Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
+        </div>
+    </div>
+</div>
 
 <!-- Content Row B. Penelitian-->
 <div class="container-fluid p-5">

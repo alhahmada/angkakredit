@@ -34,7 +34,7 @@
         </div>
         <!--Body -->
         <div class="card-body">
-            <h5 class="pt-1 pb-2 body-content-a">Pengajuan = Lektor Kepala 100 -> Lektor Kepala 200</h5>
+            <h5 class="pt-1 pb-2 body-content-a">Pengajuan : Dari Lektor Kepala 100 Menuju Lektor Kepala 200</h5>
             <h5 class="pt-1 pb-2 body-content-a">Kum Kekurangan Angka : 100</h5>
             <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                 <thead>

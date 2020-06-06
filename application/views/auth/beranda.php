@@ -102,11 +102,8 @@
             </div>
             <!--Body -->
             <div class="card-body">
-                <div class="chart-piee pt-4 pb-2">
-
-                    <h6>Pie Chart Angka Kredit</h6>
-
-
+                <div class="chart-pie pt-4 pb-2">
+                    <canvas id="PieChartAK"></canvas>
                 </div>
             </div>
         </div>
@@ -309,3 +306,6 @@
         </div>
     </div>
 </div>
+
+<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="assets/js/demo/chart-pie-demo.js"></script>

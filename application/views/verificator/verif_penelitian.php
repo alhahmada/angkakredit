@@ -258,13 +258,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c1 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c11']; ?></td>
+                                <td><?= $value['c12']; ?></td>
+                                <td><?= $value['c13']; ?></td>
+                                <td><?= $value['c14']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c15'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -290,13 +296,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c2 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c21']; ?></td>
+                                <td><?= $value['c22']; ?></td>
+                                <td><?= $value['c23']; ?></td>
+                                <td><?= $value['c24']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c25'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -321,11 +333,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c3 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c31']; ?></td>
+                                <td><?= $value['c32']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c33'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -351,12 +369,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c4 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c41']; ?></td>
+                                <td><?= $value['c42']; ?></td>
+                                <td><?= $value['c43']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c44'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -381,12 +405,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c5 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c51']; ?></td>
+                                <td><?= $value['c52']; ?></td>
+                                <td><?= $value['c53']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c54'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -411,13 +441,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c6 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c61']; ?></td>
+                                <td><?= $value['c62']; ?></td>
+                                <td><?= $value['c63']; ?></td>
+                                <td><?= $value['c64']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c65'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
 
@@ -443,13 +479,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c7 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c71']; ?></td>
+                                <td><?= $value['c72']; ?></td>
+                                <td><?= $value['c73']; ?></td>
+                                <td><?= $value['c74']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c75'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -464,18 +506,26 @@
                 <table class="greyGridTable C8">
                     <thead>
                         <tr>
-                            <th>Judul/Jenis Karya</th>
-                            <th>Tahun Pembuatan</th>
+                            <th>Unsur</th>
+                            <th>Sub Unsur</th>
+                            <th>Tingkat</th>
                             <th>Lampirkan Bukti</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <?php foreach ($c8 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c81']; ?></td>
+                                <td><?= $value['c82']; ?></td>
+                                <td><?= $value['c83']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c84'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
