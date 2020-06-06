@@ -59,28 +59,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nip']; ?></td>
                                     <!--<?= $array['nip']; ?>-->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
@@ -254,16 +254,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($d1 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d11']; ?></td>
+                            <td><?= $value['d12']; ?></td>
+                            <td><?= $value['d13']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                               <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/'.$value['d14'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
                         </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -284,16 +286,16 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> <?php foreach ($d2 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d21']; ?></td>
+                            <td><?= $value['d22']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d23'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>  <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -316,18 +318,18 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> <?php foreach ($d3 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d31']; ?></td>
+                            <td><?= $value['d32']; ?></td>
+                            <td><?= $value['d33']; ?></td>
+                            <td><?= $value['d34']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d35'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>  <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -348,16 +350,16 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> <?php foreach ($d4 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d41']; ?></td>
+                            <td><?= $value['d42']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d43'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>  <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -378,16 +380,16 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> <?php foreach ($d5 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d51']; ?></td>
+                            <td><?= $value['d52']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d53'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>  <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -408,16 +410,16 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> <?php foreach ($d6 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d61']; ?></td>
+                            <td><?= $value['d62']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d63'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>  <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -440,18 +442,18 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> <?php foreach ($d7 as $key => $value) { ?>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?= $value['d71']; ?></td>
+                            <td><?= $value['d72']; ?></td>
+                            <td><?= $value['d73']; ?></td>
+                            <td><?= $value['d74']; ?></td>
                             <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
+                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d75'].'.pdf'); ?>">
                                     <span>Cek Berkas</span>
                                 </a>
                             </td>
-                        </tr>
+                        </tr>  <?php } ?>
                     </tbody>
                 </table>
             </div>
