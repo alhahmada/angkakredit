@@ -34,7 +34,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pengajuan Baru Diajukan</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pb-2">
+                    <div class="chart-piee pb-2">
 
                         <table class="greyGridTable">
                             <thead>
@@ -63,11 +63,8 @@
                                 } ?>
                             </tbody>
                         </table>
-                        <div class="button-tabel row">
-                            <a class="nav-link" href=""> Sebelumnya</a>
-                            <a class="nav-link" href=""> Selanjutnya</a>
-                        </div>
                     </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -84,9 +81,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pengajuan dalam Tahap Verifikasi</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-2 pb-2">
-
-
+                    <div class="chart-piee pt-2 pb-2">
                         <table class="greyGridTable">
                             <thead>
                                 <tr>
@@ -120,12 +115,8 @@
                                 } ?>
                             </tbody>
                         </table>
-
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -143,7 +134,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pengajuan dalam Tahap Pengalokasian Tim Penilai</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="chart-piee pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -356,10 +347,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -375,7 +363,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pengajuan dalam Tahap Penilaian</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="chart-piee pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -474,10 +462,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -493,7 +478,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pengajuan dalam Tahap Penetapan Angka Kredit</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="chart-piee pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -549,10 +534,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -568,7 +550,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pengajuan Selesai</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="chart-piee pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -620,22 +602,12 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <style>
-        .button-tabel {
-            position: absolute;
-            bottom: 2px;
-            right: 1rem;
-        }
-    </style>
 
 </div>
 <div class="pt-5"></div>

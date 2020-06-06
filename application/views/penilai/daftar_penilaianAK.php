@@ -37,7 +37,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Daftar Penilaian Baru</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pb-2">
+                    <div class="chart-piee pb-2">
 
                         <table class="greyGridTable">
                             <thead>
@@ -101,10 +101,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -122,7 +119,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Dalam Tahap Sedang Dinilai</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="chart-piee pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -187,10 +184,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -208,7 +202,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Selesai Dinilai</h6>
                 </div>
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="chart-piee pt-4 pb-2">
 
 
                         <table class="greyGridTable">
@@ -260,10 +254,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="button-tabel row">
-                        <a class="nav-link" href=""> Sebelumnya</a>
-                        <a class="nav-link" href=""> Selanjutnya</a>
-                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
                 </div>
             </div>
         </div>
@@ -276,5 +267,6 @@
             right: 1rem;
         }
     </style>
+
 </div>
 <div class="pt-5"></div>
