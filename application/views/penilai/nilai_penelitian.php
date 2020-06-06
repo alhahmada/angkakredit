@@ -270,15 +270,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c1 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c11']; ?></td>
+                                <td><?= $value['c12']; ?></td>
+                                <td><?= $value['c13']; ?></td>
+                                <td><?= $value['c14']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c15'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c1['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c1" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -306,15 +312,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c2 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c21']; ?></td>
+                                <td><?= $value['c22']; ?></td>
+                                <td><?= $value['c23']; ?></td>
+                                <td><?= $value['c24']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c25'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c2['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c2" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -341,13 +353,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c3 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c31']; ?></td>
+                                <td><?= $value['c32']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c33'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c3['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c3" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -375,14 +393,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c4 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c41']; ?></td>
+                                <td><?= $value['c42']; ?></td>
+                                <td><?= $value['c43']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c44'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c4['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c4" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -409,14 +433,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c5 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c51']; ?></td>
+                                <td><?= $value['c52']; ?></td>
+                                <td><?= $value['c53']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c54'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c5['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c5" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -438,20 +468,25 @@
                             <th>Tahun Pembuatan</th>
                             <th>Lampirkan Bukti</th>
                             <th>AK Maksimal</th>
-
                             <th>AK yang diberikan</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c6 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c61']; ?></td>
+                                <td><?= $value['c62']; ?></td>
+                                <td><?= $value['c63']; ?></td>
+                                <td><?= $value['c64']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c65'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c6['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c6" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -478,15 +513,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c7 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c71']; ?></td>
+                                <td><?= $value['c72']; ?></td>
+                                <td><?= $value['c73']; ?></td>
+                                <td><?= $value['c74']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c75'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c7['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c7" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -502,8 +543,9 @@
                 <table class="greyGridTable C8">
                     <thead>
                         <tr>
-                            <th>Judul/Jenis Karya</th>
-                            <th>Tahun Pembuatan</th>
+                            <th>Unsur</th>
+                            <th>Sub Unsur</th>
+                            <th>Tingkat</th>
                             <th>Lampirkan Bukti</th>
                             <th>AK Maksimal</th>
 
@@ -511,13 +553,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>X1</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($c8 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['c81']; ?></td>
+                                <td><?= $value['c82']; ?></td>
+                                <td><?= $value['c83']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c84'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $c8['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_c8" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

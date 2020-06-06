@@ -573,8 +573,9 @@
                     <table class="greyGridTable C8">
                         <thead>
                             <tr>
-                                <th>Judul/Jenis Karya</th>
-                                <th>Tahun Pembuatan</th>
+                                <th>Unsur</th>
+                                <th>Sub Unsur</th>
+                                <th>Tingkat</th>
                                 <th>Lampirkan Bukti</th>
                                 <th>AK Maks</th>
                                 <th>AK-1</th>
@@ -585,6 +586,7 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td class="nav-item text-center">
