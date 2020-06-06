@@ -50,7 +50,10 @@ class Dosen extends CI_Controller
     public function action_pengajuan()
     {
         ini_set('max_execution_time', 0);
-        $id_pengajuan = $this->berkas->pengajuan();
+        $F1 = $this->input->post('F1');
+        $F2 = $this->input->post('F2');
+        $F3 = $this->input->post('F3');
+        $id_pengajuan = $this->berkas->pengajuan($F1,$F2,$F3);
         $data1 = array();
         $data = array(
             'id_pengajuan' => $id_pengajuan
