@@ -269,19 +269,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-                            <td><input type="text" style="width: 3rem;"></input></td>
-
-                        </tr>
+                        <?php foreach ($d1 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d11']; ?></td>
+                                <td><?= $value['d12']; ?></td>
+                                <td><?= $value['d13']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d14'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d1['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d1" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -306,18 +307,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($d2 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d21']; ?></td>
+                                <td><?= $value['d22']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d2['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d2" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -344,20 +346,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($d3 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d31']; ?></td>
+                                <td><?= $value['d32']; ?></td>
+                                <td><?= $value['d33']; ?></td>
+                                <td><?= $value['d34']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d3['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d3" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -382,18 +385,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($d4 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d41']; ?></td>
+                                <td><?= $value['d42']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d4['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d4" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -418,18 +422,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($d5 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d51']; ?></td>
+                                <td><?= $value['d52']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d5['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d5" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -454,18 +459,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($d6 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d61']; ?></td>
+                                <td><?= $value['d62']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d6['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d6" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -492,20 +498,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?= base_url(''); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                            <td>X</td>
-
-                            <td><input type="text" style="width: 3rem;"></input></td>
-                        </tr>
+                        <?php foreach ($d7 as $key => $value) { ?>
+                            <tr>
+                                <td><?= $value['d71']; ?></td>
+                                <td><?= $value['d72']; ?></td>
+                                <td><?= $value['d73']; ?></td>
+                                <td><?= $value['d74']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                                <td><?= $d7['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d7" style="width: 3rem;"></input></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
