@@ -139,7 +139,7 @@
                         <td><?= $no; ?></td>
                         <td><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
-                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['a15'] . '.pdf'); ?>">
+                            <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['a15']); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
                             </a>
                         </td>
