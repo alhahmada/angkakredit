@@ -1298,6 +1298,13 @@ class Dosen extends CI_Controller
         $data['total_penelitian'] = $this->m_verif->total_penelitian($id_pengajuan);
         $data['total_pengmas'] = $this->m_verif->total_pengmas($id_pengajuan);
         $data['total_penunjang'] = $this->m_verif->total_penunjang($id_pengajuan);
+        $data['total_AK'] = $this->m_verif->total_AK($id_pengajuan);
+
+        $data['persentase_pendidikan'] = number_format($data['total_pendidikan'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $data['persentase_penelitian'] = number_format($data['total_penelitian'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $data['persentase_pengmas'] = number_format($data['total_pengmas'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $data['persentase_penunjang'] = number_format($data['total_penunjang'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+
         $data['id_pengajuan'] = $this->uri->segment(3);
         $this->load->view('templates/auth_header', $data);
         $this->load->view('dosen/resume_pengajuan');

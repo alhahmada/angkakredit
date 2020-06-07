@@ -215,4 +215,11 @@ class M_verif extends CI_Model
 	{
 		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE sub_bab LIKE 'e%' AND  id_pengajuan=$id_pengajuan")->result_array();
 	}
+	public function total_AK($id_pengajuan)
+	{
+		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE id_pengajuan=$id_pengajuan")->result_array();
+	}
+	public function batas_constraint($from, $to)
+	{
+	}
 }

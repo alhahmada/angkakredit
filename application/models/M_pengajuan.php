@@ -25,7 +25,7 @@ class M_pengajuan extends CI_Model
 	{
 		$data = array();
 		for ($i = 0; $i < 8; $i++) {
-			$cek = $this->db->query("select count(*) as total from tbl_pengajuan where progress_pengajuan=" . $i . " group by progress_pengajuan")->result_array();
+			$cek = $this->db->query("SELECT count(*) as total from tbl_pengajuan where progress_pengajuan=" . $i . " group by progress_pengajuan")->result_array();
 			if ($cek != null) {
 				$data[$i] = $cek[0]['total'];
 			} else {
@@ -44,7 +44,7 @@ class M_pengajuan extends CI_Model
 
 	function user_pengajuan($id)
 	{
-		return $this->db->query("select a.tgl_pengajuan,b.* from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.id_pengajuan=$id")->result_array();
+		return $this->db->query("SELECT a.tgl_pengajuan, b.* from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.id_pengajuan=" . $id . "")->result_array();
 	}
 
 

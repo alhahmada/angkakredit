@@ -137,7 +137,7 @@
                 foreach ($a1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['a15']); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -154,7 +154,7 @@
                 foreach ($a2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['a24'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -172,7 +172,7 @@
                 foreach ($b1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b15'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -190,7 +190,7 @@
                 foreach ($b2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b22'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -208,7 +208,7 @@
                 foreach ($b3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b33'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -226,7 +226,7 @@
                 foreach ($b4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b45'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -244,7 +244,7 @@
                 foreach ($b5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b54'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -262,7 +262,7 @@
                 foreach ($b6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b63'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -280,7 +280,7 @@
                 foreach ($b7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b75'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -298,7 +298,7 @@
                 foreach ($b8 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b85'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -316,7 +316,7 @@
                 foreach ($b9 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b94'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -334,7 +334,7 @@
                 foreach ($b10 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b104'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -352,7 +352,7 @@
                 foreach ($b11 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b114'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -370,7 +370,7 @@
                 foreach ($b12 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b124'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -388,7 +388,7 @@
                 foreach ($b13 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b132'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -441,7 +441,7 @@
                 foreach ($c1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c15'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -459,7 +459,7 @@
                 foreach ($c2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c25'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -477,7 +477,7 @@
                 foreach ($c3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c33'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -495,7 +495,7 @@
                 foreach ($c4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c44'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -513,7 +513,7 @@
                 foreach ($c5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c54'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -531,7 +531,7 @@
                 foreach ($c6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c65'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -549,7 +549,7 @@
                 foreach ($c7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c75'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -567,7 +567,7 @@
                 foreach ($c8 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c84'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -617,7 +617,7 @@
                 foreach ($d1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d14'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -635,7 +635,7 @@
                 foreach ($d2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -653,7 +653,7 @@
                 foreach ($d3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -671,7 +671,7 @@
                 foreach ($d4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -689,7 +689,7 @@
                 foreach ($d5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -707,7 +707,7 @@
                 foreach ($d6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -725,7 +725,7 @@
                 foreach ($d7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -778,7 +778,7 @@
                 foreach ($e1 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e14'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -796,7 +796,7 @@
                 foreach ($e2 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e26'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -814,7 +814,7 @@
                 foreach ($e3 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e35'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -832,7 +832,7 @@
                 foreach ($e4 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e44'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -850,7 +850,7 @@
                 foreach ($e5 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e54'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -868,7 +868,7 @@
                 foreach ($e6 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e65'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -886,7 +886,7 @@
                 foreach ($e7 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e73'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -904,7 +904,7 @@
                 foreach ($e8 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e84'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -922,7 +922,7 @@
                 foreach ($e9 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e94'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -940,7 +940,7 @@
                 foreach ($e10 as $key => $value) { ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $value['jenis_pengajuan']; ?></td>
+                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
                         <td class="nav-item text-center">
                             <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e104'] . '.pdf'); ?>">
                                 <span>Cek Kelengkapan Berkas</span>
@@ -990,33 +990,33 @@
                 <tr>
                     <td>1.</td>
                     <td class="text-left">Pendidikan dan Pelaksanaan Pendidikan</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persentase_pendidikan; ?>%</td>
+                    <td><?= $total_pendidikan[0]['total']; ?></td>
                 </tr>
                 <tr>
                     <td>2.</td>
                     <td class="text-left">Penelitian</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persentase_penelitian; ?>%</td>
+                    <td><?= $total_penelitian[0]['total'];  ?></td>
                 </tr>
                 <tr>
                     <td>3.</td>
                     <td class="text-left">Pengabdian Masyarakat</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persentase_pengmas; ?>%</td>
+                    <td><?= $total_pengmas[0]['total']; ?></td>
                 </tr>
                 <tr>
                     <td>4.</td>
                     <td class="text-left">Unsur Penunjang</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persentase_penunjang; ?>%</td>
+                    <td><?= $total_penunjang[0]['total']; ?></td>
                 </tr>
 
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                    <th>XX..</th>
+                    <th><?= $total_AK[0]['total']; ?></th>
                 </tr>
             </tfoot>
         </table>

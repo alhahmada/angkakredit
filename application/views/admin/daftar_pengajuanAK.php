@@ -40,6 +40,7 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>ID Pengajuan</th>
                                     <th>Nama Dosen</th>
                                     <th>Tanggal Pengajuan</th>
                                     <th>Keterangan</th>
@@ -51,6 +52,7 @@
                                 foreach ($pengajuan as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
+                                        <td><?= $value['id_pengajuan'] ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
                                         <td class="nav-item text-center">

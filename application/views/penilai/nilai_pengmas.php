@@ -51,7 +51,7 @@
                                 padding-bottom: 0.6rem;
                             }
 
-                            .table-bio tbody td:first-child {
+                            .table-bio tbody td:last-child {
                                 width: 50%;
                             }
                         </style>
@@ -59,28 +59,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nip']; ?></td>
                                     <!--<?= $array['nip']; ?>-->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
@@ -269,7 +269,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d1 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d1 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d11']; ?></td>
                                 <td><?= $value['d12']; ?></td>
@@ -279,10 +280,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d1['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d1" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d1[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d1[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
@@ -307,7 +310,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d2 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d2 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d21']; ?></td>
                                 <td><?= $value['d22']; ?></td>
@@ -316,10 +320,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d2['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d2" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d2[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d2[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
@@ -346,7 +352,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d3 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d3 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d31']; ?></td>
                                 <td><?= $value['d32']; ?></td>
@@ -357,10 +364,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d3['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d3" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d3[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d3[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
@@ -385,7 +394,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d4 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d4 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d41']; ?></td>
                                 <td><?= $value['d42']; ?></td>
@@ -394,10 +404,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d4['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d4" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d4[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d4[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
@@ -422,7 +434,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d5 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d5 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d51']; ?></td>
                                 <td><?= $value['d52']; ?></td>
@@ -431,10 +444,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d5['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d5" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d5[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d5[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
@@ -459,7 +474,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d6 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d6 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d61']; ?></td>
                                 <td><?= $value['d62']; ?></td>
@@ -468,10 +484,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d6['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d6" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d6[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d6[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
@@ -498,7 +516,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($d7 as $key => $value) { ?>
+                        <?php $urut = 0;
+                        foreach ($d7 as $key => $value) { ?>
                             <tr>
                                 <td><?= $value['d71']; ?></td>
                                 <td><?= $value['d72']; ?></td>
@@ -509,10 +528,12 @@
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
-                                <td><?= $d7['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_d7" style="width: 3rem;"></input></td>
+                                <td><?= $maks_d7[$urut]['ak_maksimal']; ?></td>
+                                <td><input type="number" name="nilai_d7[]" style="width: 3rem;"></input></td>
                             </tr>
-                        <?php } ?>
+                        <?php $urut++;
+                        }
+                        unset($urut); ?>
                     </tbody>
                 </table>
             </div>
