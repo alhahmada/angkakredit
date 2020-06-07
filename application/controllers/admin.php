@@ -19,6 +19,7 @@ class admin extends CI_Controller
         $this->load->model('m_pengajuan');
         $this->load->model('m_verif');
         $this->load->model('m_penilai');
+        $this->load->model('m_penetapan');
     }
 
     // public function __construct()
@@ -62,16 +63,51 @@ class admin extends CI_Controller
 
         $verifikator = $this->m_verif->verifikator();
         $data['pengajuan1'] = $pengajuan1;
-        $data['verifikator'] = $verifikator['0'];
+        $data['verifikator'] = $verifikator[0];
+
+        $pengajuan2 = $this->m_verif->pengajuan_2();
+        $data['pengajuan2'] = $pengajuan2;
 
 
         $list_penilai = $this->m_penilai->list_penilai();
-        // $data['list_penilai'] = $list_penilai;
+        $data['list_penilai'] = $list_penilai;
+
+        $pengajuan3 = $this->m_verif->pengajuan_3();
+        $data['pengajuan3'] = $pengajuan3;
+
+        $pengajuan4 = $this->m_verif->pengajuan_4();
+        $data['pengajuan4'] = $pengajuan4;
+
+        $pengajuan5 = $this->m_verif->pengajuan_5();
+        $data['pengajuan5'] = $pengajuan5;
+
+        $pengajuan6 = $this->m_verif->pengajuan_6();
+        $data['pengajuan6'] = $pengajuan6;
 
         $data['title'] = 'Daftar Pengajuan Angka Kredit';
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/daftar_pengajuanAK');
         $this->load->view('templates/auth_footer');
+    }
+
+
+    public function action_pilih_penilai()
+    {
+        // Insert ke Tabel Penilaian
+        // id_penilaian
+        $id_pengajuan = $this->input->post('id_pengajuan');
+        // nip_penilai
+        for ($i = 1; $i <= 3; $i++) {
+            $nip = $this->input->post('penilai' . $i);
+            $keterangan = $i;
+            $this->m_penilai->pilih_penilai($nip, $id_pengajuan, $keterangan);
+        }
+        redirect('/admin/daftar_pengajuanAK');
+
+        // id_pengajuan
+        // keterangan (Penilai Ke Berapa)
+
+
     }
 
     public function cek_berkas()
@@ -90,7 +126,6 @@ class admin extends CI_Controller
         $this->load->view('admin/cek_berkas');
         $this->load->view('templates/auth_footer');
     }
-
     public function action_verif_berkas()
     {
         $keterangan = $this->input->post('keterangan');
@@ -127,7 +162,6 @@ class admin extends CI_Controller
         }
         redirect('/admin/daftar_pengajuanAK');
     }
-
     public function verif_penunjang()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -200,6 +234,47 @@ class admin extends CI_Controller
         $this->load->view('admin/penetapan_ak_pendidikan');
         $this->load->view('templates/auth_footer');
     }
+    public function action_penetapan_pendidikan()
+    {
+        ini_set('max_execution_time', 0);
+        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
+
+        $nilai_a1_final = $this->input->post('nilai_a1_final');
+        $nilai_a2_final = $this->input->post('nilai_a2_final');
+        $nilai_b1_final = $this->input->post('nilai_b1_final');
+        $nilai_b2_final = $this->input->post('nilai_b2_final');
+        $nilai_b3_final = $this->input->post('nilai_b3_final');
+        $nilai_b4_final = $this->input->post('nilai_b4_final');
+        $nilai_b5_final = $this->input->post('nilai_b5_final');
+        $nilai_b6_final = $this->input->post('nilai_b6_final');
+        $nilai_b7_final = $this->input->post('nilai_b7_final');
+        $nilai_b8_final = $this->input->post('nilai_b8_final');
+        $nilai_b9_final = $this->input->post('nilai_b9_final');
+        $nilai_b10_final = $this->input->post('nilai_b10_final');
+        $nilai_b11_final = $this->input->post('nilai_b11_final');
+        $nilai_b12_final = $this->input->post('nilai_b12_final');
+        $nilai_b13_final = $this->input->post('nilai_b13_final');
+        $id_pengajuan = $this->input->post('id_pengajuan');
+
+        $arraytbl = array('a1', 'a2', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'b13');
+        $total1 = 0;
+        foreach ($arraytbl as $key => $tbl) {
+            $nilai = $this->input->post('nilai_' . $tbl);
+            $total = 0;
+            if ($nilai != NULL) {
+                for ($i = 0; $i < count($nilai); $i++) {
+                    $id_bab = $this->input->post('id_bab_' . $tbl);
+                    $this->m_penetapan->update_nilai_final('tbl_' . $tbl, $id_bab[$i], $nilai[$i]);
+                    $total += $nilai[$i];
+                }
+            }
+            $total1 += $total;
+        }
+        $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'pendidikan');
+
+
+        redirect('/admin/penetapan_ak_penelitian/' . $id_pengajuan);
+    }
 
     public function penetapan_ak_penelitian()
     {
@@ -238,6 +313,9 @@ class admin extends CI_Controller
         $this->load->view('admin/penetapan_ak_penelitian');
         $this->load->view('templates/auth_footer');
     }
+    public function action_penetapan_penelitian()
+    {
+    }
 
     public function penetapan_ak_pengmas()
     {
@@ -269,6 +347,9 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/penetapan_ak_pengmas');
         $this->load->view('templates/auth_footer');
+    }
+    public function action_penetapan_pengmas()
+    {
     }
 
     public function penetapan_ak_penunjang()
@@ -307,6 +388,9 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/penetapan_ak_penunjang');
         $this->load->view('templates/auth_footer');
+    }
+    public function action_penetapan_penunjang()
+    {
     }
 
     public function penetapan_ak_resume()
@@ -349,6 +433,7 @@ class admin extends CI_Controller
         $this->load->view('auth/setting');
         $this->load->view('templates/auth_footer');
     }
+
     public function edit_profil_admin()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));

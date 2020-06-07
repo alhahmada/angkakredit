@@ -150,60 +150,62 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- <?php
-                                        $no = 1;
-                                        foreach ($pengajuan2 as $key => $value) { ?> -->
-                                <tr>
-                                    <td><?= $no; ?></td>
-                                    <td><?= $value['nama_lengkap']; ?></td>
-                                    <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                    <td class="nav-item text-center">
-                                        <script>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuan2 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td class="nav-item text-center">
+                                            <script>
 
-                                        </script>
+                                            </script>
+                                            <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_pilih_penilai'); ?>">
+                                                <input type="hidden" value="<?= $value['id_pengajuan']; ?>" name="id_pengajuan">
+                                                <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_pilih_penilai" data-target="#modal_pilih_penilai">Pilih Tim Penilai</button>
+                                                <div class="modal fade" id="modal_pilih_penilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
 
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_pilih_penilai" data-target="#modal_pilih_penilai">Pilih Tim Penilai</button>
-                                        <div class="modal fade" id="modal_pilih_penilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
+                                                            <div class="modal-body">Pilih Penilai Pertama
+                                                                <select style="width: 20%" id="penilai1" name="penilai1" onchange="optionp1(this)">
+                                                                    <option value="" selected disabled hidden> ... </option>
+                                                                    <?php foreach ($list_penilai as $key => $value1) { ?>
+                                                                        <option value="<?= $value1['nip']; ?>"> <?= $value1['nama_lengkap']; ?></option>
+                                                                    <?php }; ?>
+                                                                </select>
+                                                            </div>
 
-                                                    <div class="modal-body">Pilih Penilai Pertama
-                                                        <select style="width: 20%" id="penilai1" name="penilai1" onchange="optionp1(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <? $i=0; php foreach ($list_penilai as $key =>$value){ ?>
-                                                            <option value="1"> <?= $value['nama_lengkap']; ?></option>
-                                                            <? php }; ?>
-                                                        </select>
+                                                            <div class="modal-body">Pilih Penilai Kedua
+                                                                <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
+                                                                    <option value="" selected disabled hidden> ... </option>
+                                                                    <?php foreach ($list_penilai as $key => $value1) { ?>
+                                                                        <option value="<?= $value1['nip']; ?>"> <?= $value1['nama_lengkap']; ?></option>
+                                                                    <?php }; ?>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="modal-body">Pilih Penilai Ketiga
+                                                                <select style="width: 20%" id="penilai3" name="penilai3" onchange="optionp3(this)">
+                                                                    <option value="" selected disabled hidden> ... </option>
+                                                                    <?php foreach ($list_penilai as $key => $value1) { ?>
+                                                                        <option value="<?= $value1['nip']; ?>"> <?= $value1['nama_lengkap']; ?></option>
+                                                                    <?php }; ?>
+                                                                </select>
+                                                            </div>
+
+
+                                                            <div class="modal-footer">
+                                                                <button class="btn btn-secondary" type="submit">Tetapkan Penilai</button></div>
+                                                        </div>
                                                     </div>
-
-                                                    <div class="modal-body">Pilih Penilai Kedua
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <? $i=0; php foreach ($list_penilai as $key =>$value){ ?>
-                                                            <option value="2"> <?= $value['nama_lengkap']; ?></option>
-                                                            <? php }; ?>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="modal-body">Pilih Penilai Ketiga
-                                                        <select style="width: 20%" id="penilai3" name="penilai3" onchange="optionp3(this)">
-                                                            <option value="" selected disabled hidden> ... </option>
-                                                            <? $i=0; php foreach ($list_penilai as $key =>$value){ ?>
-                                                            <option value="3"> <?= $value['nama_lengkap']; ?></option>
-                                                            <? php }; ?>
-                                                        </select>
-                                                    </div>
-
-
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Tetapkan Penilai</button></div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- <?php $no++;
-                                        } ?> -->
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
                             </tbody>
                         </table>
                     </div>
@@ -238,10 +240,10 @@
 
                                 </tr>
                             </thead>
-                            <!-- <tbody>
-                            <?php
-                            $no = 1;
-                            foreach ($pengajuan3 as $key => $value) { ?>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuan3 as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
@@ -251,8 +253,8 @@
                                         <td></td>
                                     </tr>
                                 <?php $no++;
-                            } ?>
-                            </tbody> -->
+                                } ?>
+                            </tbody>
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>
@@ -283,7 +285,7 @@
                                     <th>Penetapan Angka Kredit</th>
                                 </tr>
                             </thead>
-                            <!-- <tbody>
+                            <tbody>
                                 <?php
                                 $no = 1;
                                 foreach ($pengajuan4 as $key => $value) { ?>
@@ -300,7 +302,7 @@
                                 <?php $no++;
                                 } ?>
 
-                            </tbody> -->
+                            </tbody>
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>
@@ -331,19 +333,19 @@
                                     <th>Angka Kredit Final</th>
                                 </tr>
                             </thead>
-                            <!-- <tbody>
+                            <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($pengajuan1 as $key => $value) { ?>
+                                foreach ($pengajuan6 as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                        <td></td>
+                                        <td><?= $value['ak_diterima']; ?></td>
                                     </tr>
                                 <?php $no++;
                                 } ?>
-                            </tbody> -->
+                            </tbody>
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>

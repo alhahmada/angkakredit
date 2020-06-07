@@ -275,6 +275,7 @@
                         <?php $urut = 0;
                         foreach ($e1 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e1" value="<?= $value['id']; ?>">
                                 <td><?= $value['e11']; ?></td>
                                 <td><?= $value['e12']; ?></td>
                                 <td><?= $value['e13']; ?></td>
@@ -319,6 +320,7 @@
                         <?php $urut = 0;
                         foreach ($e2 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e2" value="<?= $value['id']; ?>">
                                 <td><?= $value['e21']; ?></td>
                                 <td><?= $value['e22']; ?></td>
                                 <td><?= $value['e23']; ?></td>
@@ -364,6 +366,7 @@
                         <?php $urut = 0;
                         foreach ($e3 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e3" value="<?= $value['id']; ?>">
                                 <td><?= $value['e31']; ?></td>
                                 <td><?= $value['e32']; ?></td>
                                 <td><?= $value['e33']; ?></td>
@@ -407,6 +410,7 @@
                         <?php $urut = 0;
                         foreach ($e4 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e4" value="<?= $value['id']; ?>">
                                 <td><?= $value['e41']; ?></td>
                                 <td><?= $value['e42']; ?></td>
                                 <td><?= $value['e43']; ?></td>
@@ -449,6 +453,7 @@
                         <?php $urut = 0;
                         foreach ($e5 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e5" value="<?= $value['id']; ?>">
                                 <td><?= $value['e51']; ?></td>
                                 <td><?= $value['e52']; ?></td>
                                 <td><?= $value['e53']; ?></td>
@@ -492,6 +497,7 @@
                         <?php $urut = 0;
                         foreach ($e6 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e6" value="<?= $value['id']; ?>">
                                 <td><?= $value['e61']; ?></td>
                                 <td><?= $value['e62']; ?></td>
                                 <td><?= $value['e63']; ?></td>
@@ -534,6 +540,7 @@
                         <?php $urut = 0;
                         foreach ($e7 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e7" value="<?= $value['id']; ?>">
                                 <td><?= $value['e71']; ?></td>
                                 <td><?= $value['e72']; ?></td>
                                 <td class="nav-item text-center">
@@ -575,6 +582,7 @@
                         <?php $urut = 0;
                         foreach ($e8 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e8" value="<?= $value['id']; ?>">
                                 <td><?= $value['e81']; ?></td>
                                 <td><?= $value['e82']; ?></td>
                                 <td><?= $value['e83']; ?></td>
@@ -617,6 +625,7 @@
                         <?php $urut = 0;
                         foreach ($e9 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e9" value="<?= $value['id']; ?>">
                                 <td><?= $value['e91']; ?></td>
                                 <td><?= $value['e92']; ?></td>
                                 <td><?= $value['e93']; ?></td>
@@ -659,6 +668,7 @@
                         <?php $urut = 0;
                         foreach ($e10 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_e10" value="<?= $value['id']; ?>">
                                 <td><?= $value['e101']; ?></td>
                                 <td><?= $value['e102']; ?></td>
                                 <td><?= $value['e103']; ?></td>

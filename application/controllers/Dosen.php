@@ -1360,7 +1360,20 @@ class Dosen extends CI_Controller
         // $a14='OK5';
         // $a15='OK6';
         // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
-        print_r($this->m_verif->total_pendidikan(6));
+        $total1 = 0;
+        for ($i = 1; $i < 9; $i++) {
+            $nilai = array(9, 8);
+            $total = 0;
+            if ($nilai != null) {
+                for ($a = 0; $a < count($nilai); $a++) {
+                    //$id_bab = $this->input->post('id_bab_c' . $i);
+                    //$this->m_penilai->update_nilai('tbl_c' . $i, $id_bab[$a], $nilai[$a], $ak_p);
+                    $total += $nilai[$a];
+                }
+            }
+            $total1 += $total;
+        }
+        print_r($total1);
     }
 
 

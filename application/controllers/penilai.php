@@ -3,9 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class penilai extends CI_Controller
 {
-
-
-
     public function __construct()
     {
         parent::__construct();
@@ -20,6 +17,7 @@ class penilai extends CI_Controller
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
         $this->load->model('m_verif');
+        $this->load->model('m_penilai');
         $this->load->model('m_resume');
     }
 
@@ -123,53 +121,22 @@ class penilai extends CI_Controller
         } elseif ($keterangan['0']['keterangan'] == "3") {
             $ak_p = "ak_p3";
         }
-
-        for ($i = 0; $i < count($nilai_a1); $i++) {
-            $this->m_resume->n_a1($id_pengajuan, $nilai_a1[$i], $this->session->userdata('nip'), $ak_p);
+        //$arraytbl = array('a1', 'a2', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'b13', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'e10');
+        $arraytbl = array('a1', 'a2', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'b13');
+        $total1 = 0;
+        foreach ($arraytbl as $key => $tbl) {
+            $nilai = $this->input->post('nilai_' . $tbl);
+            $total = 0;
+            if ($nilai != NULL) {
+                for ($i = 0; $i < count($nilai); $i++) {
+                    $id_bab = $this->input->post('id_bab_' . $tbl);
+                    $this->m_penilai->update_nilai('tbl_' . $tbl, $id_bab[$i], $nilai[$i], $ak_p);
+                    $total += $nilai[$i];
+                }
+            }
+            $total1 += $total;
         }
-        for ($i = 0; $i < count($nilai_a2); $i++) {
-            $this->m_resume->n_a2($id_pengajuan, $nilai_a2[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b1); $i++) {
-            $this->m_resume->n_b1($id_pengajuan, $nilai_b1[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b2); $i++) {
-            $this->m_resume->n_b2($id_pengajuan, $nilai_b2[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b3); $i++) {
-            $this->m_resume->n_b3($id_pengajuan, $nilai_b3[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b4); $i++) {
-            $this->m_resume->n_b4($id_pengajuan, $nilai_b4[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b5); $i++) {
-            $this->m_resume->n_b5($id_pengajuan, $nilai_b5[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b6); $i++) {
-            $this->m_resume->n_b6($id_pengajuan, $nilai_b6[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b7); $i++) {
-            $this->m_resume->n_b7($id_pengajuan, $nilai_b7[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b8); $i++) {
-            $this->m_resume->n_b8($id_pengajuan, $nilai_b8[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b9); $i++) {
-            $this->m_resume->n_b9($id_pengajuan, $nilai_b9[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b10); $i++) {
-            $this->m_resume->n_b10($id_pengajuan, $nilai_b10[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b11); $i++) {
-            $this->m_resume->n_b11($id_pengajuan, $nilai_b11[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b12); $i++) {
-            $this->m_resume->n_b12($id_pengajuan, $nilai_b12[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_b13); $i++) {
-            $this->m_resume->n_b13($id_pengajuan, $nilai_b13[$i], $this->session->userdata('nip'), $ak_p);
-        }
-
+        $this->m_penilai->update_total_nilai($id_pengajuan, $total1, 'pendidikan');
         redirect('/penilai/nilai_penelitian/' . $id_pengajuan);
     }
 
@@ -229,32 +196,20 @@ class penilai extends CI_Controller
         } elseif ($keterangan['0']['keterangan'] == "3") {
             $ak_p = "ak_p3";
         }
-
-        for ($i = 0; $i < count($nilai_c1); $i++) {
-            $this->m_resume->n_c1($id_pengajuan, $nilai_c1[$i], $this->session->userdata('nip'), $ak_p);
+        $total1 = 0;
+        for ($i = 1; $i < 9; $i++) {
+            $nilai = $this->input->post('nilai_c' . $i);
+            $total = 0;
+            if ($nilai != null) {
+                for ($a = 0; $a < count($nilai); $a++) {
+                    $id_bab = $this->input->post('id_bab_c' . $i);
+                    $this->m_penilai->update_nilai('tbl_c' . $i, $id_bab[$a], $nilai[$a], $ak_p);
+                    $total += $nilai[$a];
+                }
+            }
+            $total1 += $total;
         }
-        for ($i = 0; $i < count($nilai_c2); $i++) {
-            $this->m_resume->n_c2($id_pengajuan, $nilai_c2[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_c3); $i++) {
-            $this->m_resume->n_c3($id_pengajuan, $nilai_c3[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_c4); $i++) {
-            $this->m_resume->n_c4($id_pengajuan, $nilai_c4[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_c5); $i++) {
-            $this->m_resume->n_c5($id_pengajuan, $nilai_c5[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_c6); $i++) {
-            $this->m_resume->n_c6($id_pengajuan, $nilai_c6[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_c7); $i++) {
-            $this->m_resume->n_c7($id_pengajuan, $nilai_c7[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_c8); $i++) {
-            $this->m_resume->n_c8($id_pengajuan, $nilai_c8[$i], $this->session->userdata('nip'), $ak_p);
-        }
-
+        $this->m_penilai->update_total_nilai($id_pengajuan, $total1, 'penelitian');
 
         redirect('/penilai/nilai_pengmas/' . $id_pengajuan);
     }
@@ -312,27 +267,21 @@ class penilai extends CI_Controller
         } elseif ($keterangan['0']['keterangan'] == "3") {
             $ak_p = "ak_p3";
         }
-        for ($i = 0; $i < count($nilai_d1); $i++) {
-            $this->m_resume->n_d1($id_pengajuan, $nilai_d1[$i], $this->session->userdata('nip'), $ak_p);
+
+        $total1 = 0;
+        for ($i = 1; $i < 8; $i++) {
+            $nilai = $this->input->post('nilai_d' . $i);
+            $total = 0;
+            if ($nilai != null) {
+                for ($a = 0; $a < count($nilai); $a++) {
+                    $id_bab = $this->input->post('id_bab_d' . $i);
+                    $this->m_penilai->update_nilai('tbl_d' . $i, $id_bab[$a], $nilai[$a], $ak_p);
+                    $total += $nilai[$a];
+                }
+            }
+            $total1 += $total;
         }
-        for ($i = 0; $i < count($nilai_d2); $i++) {
-            $this->m_resume->n_d2($id_pengajuan, $nilai_d2[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_d3); $i++) {
-            $this->m_resume->n_d3($id_pengajuan, $nilai_d3[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_d4); $i++) {
-            $this->m_resume->n_d4($id_pengajuan, $nilai_d4[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_d5); $i++) {
-            $this->m_resume->n_d5($id_pengajuan, $nilai_d5[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_d6); $i++) {
-            $this->m_resume->n_d6($id_pengajuan, $nilai_d6[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_d7); $i++) {
-            $this->m_resume->n_d7($id_pengajuan, $nilai_d7[$i], $this->session->userdata('nip'), $ak_p);
-        }
+        $this->m_penilai->update_total_nilai($id_pengajuan, $total1, 'pengmas');
 
         redirect('/penilai/nilai_penunjang/' . $id_pengajuan);
     }
@@ -400,37 +349,20 @@ class penilai extends CI_Controller
             $ak_p = "ak_p3";
         }
 
-        for ($i = 0; $i < count($nilai_e1); $i++) {
-            $this->m_resume->n_e1($id_pengajuan, $nilai_e1[$i], $this->session->userdata('nip'), $ak_p);
+        $total1 = 0;
+        for ($i = 1; $i < 11; $i++) {
+            $nilai = $this->input->post('nilai_e' . $i);
+            $total = 0;
+            if ($nilai != null) {
+                for ($a = 0; $a < count($nilai); $a++) {
+                    $id_bab = $this->input->post('id_bab_e' . $i);
+                    $this->m_penilai->update_nilai('tbl_e' . $i, $id_bab[$a], $nilai[$a], $ak_p);
+                    $total += $nilai[$a];
+                }
+            }
+            $total1 += $total;
         }
-        for ($i = 0; $i < count($nilai_e2); $i++) {
-            $this->m_resume->n_e2($id_pengajuan, $nilai_e2[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e3); $i++) {
-            $this->m_resume->n_e3($id_pengajuan, $nilai_e3[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e4); $i++) {
-            $this->m_resume->n_e4($id_pengajuan, $nilai_e4[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e5); $i++) {
-            $this->m_resume->n_e5($id_pengajuan, $nilai_e5[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e6); $i++) {
-            $this->m_resume->n_e6($id_pengajuan, $nilai_e6[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e7); $i++) {
-            $this->m_resume->n_e7($id_pengajuan, $nilai_e7[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e8); $i++) {
-            $this->m_resume->n_e8($id_pengajuan, $nilai_e8[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e9); $i++) {
-            $this->m_resume->n_e9($id_pengajuan, $nilai_e9[$i], $this->session->userdata('nip'), $ak_p);
-        }
-        for ($i = 0; $i < count($nilai_e10); $i++) {
-            $this->m_resume->n_e10($id_pengajuan, $nilai_e10[$i], $this->session->userdata('nip'), $ak_p);
-        }
-
+        $this->m_penilai->update_total_nilai($id_pengajuan, $total1, 'penunjang');
 
         redirect('/penilai/nilai_resume/' . $id_pengajuan);
     }
@@ -441,6 +373,17 @@ class penilai extends CI_Controller
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
+        $penilaian = $this->m_resume->resume_penilai($id_pengajuan, $this->session->userdata('nip'));
+        $data['data_nilai'] = $penilaian;
+
+        $total_penilaian = $penilaian[0]['ak_pendidikan'] + $penilaian[0]['ak_penelitian'] + $penilaian[0]['ak_pengmas'] + $penilaian[0]['ak_penunjang'];
+
+        $data['total_nilai'] = $total_penilaian;
+
+        $data['persen_pendidikan'] = number_format($penilaian[0]['ak_pendidikan'] * 100 / $total_penilaian, 2);
+        $data['persen_penelitian'] = number_format($penilaian[0]['ak_penelitian'] * 100 / $total_penilaian, 2);
+        $data['persen_pengmas'] = number_format($penilaian[0]['ak_pengmas'] * 100 / $total_penilaian, 2);
+        $data['persen_penunjang'] = number_format($penilaian[0]['ak_penunjang'] * 100 / $total_penilaian, 2);
 
         $data['array'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];

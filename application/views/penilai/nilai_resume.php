@@ -264,33 +264,33 @@
                 <tr>
                     <td>1.</td>
                     <td class="text-left">Pendidikan dan Pelaksanaan Pendidikan</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_pendidikan; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_pendidikan']; ?></td>
                 </tr>
                 <tr>
                     <td>2.</td>
                     <td class="text-left">Penelitian</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_penelitian; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_penelitian']; ?></td>
                 </tr>
                 <tr>
                     <td>3.</td>
                     <td class="text-left">Pengabdian Masyarakat</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_pengmas; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_pengmas']; ?></td>
                 </tr>
                 <tr>
                     <td>4.</td>
                     <td class="text-left">Unsur Penunjang</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_penunjang; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_penunjang']; ?></td>
                 </tr>
 
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="3" class="text-center margin-right-2px">Total Angka Kredit yang Diberikan </th>
-                    <th>XX..</th>
+                    <th><?= $total_nilai; ?></th>
                 </tr>
             </tfoot>
         </table>

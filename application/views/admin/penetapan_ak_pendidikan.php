@@ -257,7 +257,7 @@
             <h5 class="head-bab">A. Pendidikan</h5>
         </div>
 
-        <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('penilai/action_penetapan_pendidikan'); ?>">
+        <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_penetapan_pendidikan'); ?>">
             <input type="hidden" value="<?= $id_pengajuan; ?>" name="id_pengajuan">
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
@@ -284,6 +284,7 @@
                         <?php $urut = 0;
                         foreach ($a1 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_a1[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['a11']; ?></td>
                                 <td><?= $value['a12']; ?></td>
                                 <td><?= $value['a13']; ?></td>
@@ -332,6 +333,7 @@
                         <?php $urut = 0;
                         foreach ($a2 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_a2[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['a21']; ?></td>
                                 <td><?= $value['a22']; ?></td>
                                 <td><?= $value['a23']; ?></td>
@@ -389,6 +391,7 @@
                         <?php $urut = 0;
                         foreach ($b1 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b1[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b11']; ?></td>
                                 <td><?= $value['b12']; ?></td>
                                 <td><?= $value['b13']; ?></td>
@@ -437,6 +440,7 @@
                         <?php $urut = 0;
                         foreach ($b2 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b2[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b21']; ?></td>
                                 <td class="nav-item text-center">
                                     <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b22'] . '.pdf'); ?>">
@@ -480,6 +484,7 @@
                         <?php $urut = 0;
                         foreach ($b3 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b3[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b31']; ?></td>
                                 <td><?= $value['b32']; ?></td>
                                 <td class="nav-item text-center">
@@ -527,6 +532,7 @@
                         <?php $urut = 0;
                         foreach ($b4 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b4[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b41']; ?></td>
                                 <td><?= $value['b42']; ?></td>
                                 <td><?= $value['b43']; ?></td>
@@ -574,6 +580,7 @@
                         <?php $urut = 0;
                         foreach ($b5 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b5[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b51']; ?></td>
                                 <td><?= $value['b52']; ?></td>
                                 <td><?= $value['b53']; ?></td>
@@ -619,6 +626,7 @@
                         <?php $urut = 0;
                         foreach ($b6 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b6[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b61']; ?></td>
                                 <td><?= $value['b62']; ?></td>
                                 <td class="nav-item text-center">
@@ -665,6 +673,7 @@
                         <?php $urut = 0;
                         foreach ($b7 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b7[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b71']; ?></td>
                                 <td><?= $value['b72']; ?></td>
                                 <td><?= $value['b73']; ?></td>
@@ -714,6 +723,7 @@
                         <?php $urut = 0;
                         foreach ($b8 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b8[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b81']; ?></td>
                                 <td><?= $value['b82']; ?></td>
                                 <td><?= $value['b83']; ?></td>
@@ -762,6 +772,7 @@
                         <?php $urut = 0;
                         foreach ($b9 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b9[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b91']; ?></td>
                                 <td><?= $value['b92']; ?></td>
                                 <td><?= $value['b93']; ?></td>
@@ -808,6 +819,7 @@
                         <?php $urut = 0;
                         foreach ($b10 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b10[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b101']; ?></td>
                                 <td><?= $value['b102']; ?></td>
                                 <td><?= $value['b103']; ?></td>
@@ -854,6 +866,7 @@
                         <?php $urut = 0;
                         foreach ($b11 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b11[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b111']; ?></td>
                                 <td><?= $value['b112']; ?></td>
                                 <td><?= $value['b113']; ?></td>
@@ -900,6 +913,7 @@
                         <?php $urut = 0;
                         foreach ($b12 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b12[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b121']; ?></td>
                                 <td><?= $value['b122']; ?></td>
                                 <td><?= $value['b123']; ?></td>
@@ -944,6 +958,7 @@
                         <?php $urut = 0;
                         foreach ($b13 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_b13[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['b131']; ?></td>
                                 <td class="nav-item text-center">
                                     <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b132'] . '.pdf'); ?>">

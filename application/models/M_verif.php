@@ -2,15 +2,38 @@
 
 class M_verif extends CI_Model
 {
-	function pengajuan_all()
+	public function pengajuan_all()
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1")->result_array();
 	}
-	function pengajuan_not($id)
+
+	public function pengajuan_2()
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=2")->result_array();
+	}
+
+	public function pengajuan_3()
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=3")->result_array();
+	}
+	public function pengajuan_4()
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=4")->result_array();
+	}
+	public function pengajuan_5()
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=5")->result_array();
+	}
+	public function pengajuan_6()
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,a.ak_diterima, b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=6")->result_array();
+	}
+
+	public function pengajuan_not($id)
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1 AND id_pengajuan!=" . $id . "")->result_array();
 	}
-	function verifikator()
+	public function verifikator()
 	{
 		return $this->db->get_where('tbl_verifikator', array('nip' => $this->session->userdata('nip')))->result_array();
 	}
