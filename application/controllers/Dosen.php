@@ -101,6 +101,8 @@ class Dosen extends CI_Controller
     public function action_pendidikan()
     {
         $id_pengajuan = $this->input->post('id_pengajuan');
+        $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
+        $data['array'] = $user[0];
         $filenames = array();
         $ak = 0;
 
@@ -160,9 +162,28 @@ class Dosen extends CI_Controller
                 if ($b11[$i] != "") {
                     $filename = $this->session->userdata('nip') . '_' . $id_pengajuan . '_' . $i . '_b1';
                     $this->berkas->b1($id_pengajuan, $b11[$i], $b12[$i], $b13[$i], $b14[$i], $filename);
+                    $filenames[] = $filename;
+                    $ak = 0;
+                    if ($user[0]['jabatan_fungsi'] == 'Asisten Ahli') {
+                        if ($b13[$i] >= 10) {
+                            $tmp = $b13[$i] - 10;
+                            $tmp1 = $tmp * 0.25;
+                            $ak = 5 + $tmp1;
+                        } else {
+                            $ak = $b13[$i] * 0.5;
+                        }
+                    } else {
+                        if ($b13[$i] >= 10) {
+                            $tmp = $b13[$i] - 10;
+                            $tmp1 = $tmp * 0.5;
+                            $ak = 10 + $tmp1;
+                        } else {
+                            $ak = $b13[$i];
+                        }
+                    }
                 }
-                $filenames[] = $filename;
-                $this->berkas->constraint('b1' . $i, $id_pengajuan, 1);
+                $this->berkas->constraint('b1' . $i, $id_pengajuan, $ak);
+                unset($ak, $tmp, $tmp1);
             }
             $this->berkas->upload_files($filenames, $_FILES['B15']);
             unset($filenames);

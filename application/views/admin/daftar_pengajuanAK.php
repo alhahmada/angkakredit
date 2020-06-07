@@ -109,7 +109,7 @@
                                         <td></td>
                                         <td class="nav-item text-center">
                                             <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
-                                                <span>Cek Kelengkapan Berkas</span>
+                                                <span>Cek Unsur Pengajuan</span>
                                             </a>
                                         </td>
                                     </tr>
@@ -149,15 +149,15 @@
 
                                 </tr>
                             </thead>
-                            <!-- <tbody>
-                            <?php
-                            $no = 1;
-                            foreach ($pengajuan2 as $key => $value) { ?>
-                                    <tr>
-                                        <td><?= $no; ?></td>
-                                        <td><?= $value['nama_lengkap']; ?></td>
-                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                        <td class="nav-item text-center">
+                            <tbody>
+                                <!-- <?php
+                                        $no = 1;
+                                        foreach ($pengajuan2 as $key => $value) { ?> -->
+                                <tr>
+                                    <td><?= $no; ?></td>
+                                    <td><?= $value['nama_lengkap']; ?></td>
+                                    <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                    <td class="nav-item text-center">
                                         <script>
 
                                         </script>
@@ -170,27 +170,27 @@
                                                     <div class="modal-body">Pilih Penilai Pertama
                                                         <select style="width: 20%" id="penilai1" name="penilai1" onchange="optionp1(this)">
                                                             <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> Anzjay </option>
-                                                            <option value="B"> Bajaj </option>
-                                                            <option value="C"> Cakwe </option>
+                                                            <? $i=0; php foreach ($list_penilai as $key =>$value){ ?>
+                                                            <option value="1"> <?= $value['nama_lengkap']; ?></option>
+                                                            <? php }; ?>
                                                         </select>
                                                     </div>
 
                                                     <div class="modal-body">Pilih Penilai Kedua
                                                         <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
                                                             <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
+                                                            <? $i=0; php foreach ($list_penilai as $key =>$value){ ?>
+                                                            <option value="2"> <?= $value['nama_lengkap']; ?></option>
+                                                            <? php }; ?>
                                                         </select>
                                                     </div>
 
                                                     <div class="modal-body">Pilih Penilai Ketiga
-                                                        <select style="width: 20%" id="penilai2" name="penilai2" onchange="optionp2(this)">
+                                                        <select style="width: 20%" id="penilai3" name="penilai3" onchange="optionp3(this)">
                                                             <option value="" selected disabled hidden> ... </option>
-                                                            <option value="A"> A </option>
-                                                            <option value="B"> B </option>
-                                                            <option value="C"> C </option>
+                                                            <? $i=0; php foreach ($list_penilai as $key =>$value){ ?>
+                                                            <option value="3"> <?= $value['nama_lengkap']; ?></option>
+                                                            <? php }; ?>
                                                         </select>
                                                     </div>
 
@@ -201,10 +201,10 @@
                                             </div>
                                         </div>
                                     </td>
-                                    </tr>
-                                <?php $no++;
-                            } ?>
-                            </tbody> -->
+                                </tr>
+                                <!-- <?php $no++;
+                                        } ?> -->
+                            </tbody>
                         </table>
                     </div>
                     <div class="container" style="width: 100%; height: 4rem;"></div>

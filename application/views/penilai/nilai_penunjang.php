@@ -250,7 +250,8 @@
         <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
             <h5 class="head-bab">E. Unsur Penunjang</h5>
         </div>
-        <form>
+        <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('penilai/action_nilai_penunjang'); ?>">
+            <input type="hidden" value="<?= $id_pengajuan; ?>" name="id_pengajuan">
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
@@ -681,14 +682,14 @@
 
             <div class="container row">
                 <div class="col-sm-9">
-                    <a type="submit" href="<?= base_url('penilai/nilai_pengmas'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="button" href="<?= base_url('penilai/nilai_pengmas'); ?>" class="float-right btn btn-primary btn-user btn=block">
                         Sebelumnya
-                    </a>
+                    </button>
                 </div>
                 <div class="col-sm-2">
-                    <a type="submit" href="<?= base_url('penilai/nilai_resume'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="submit" class="float-right btn btn-primary btn-user btn=block">
                         Selanjutnya
-                    </a>
+                    </button>
                 </div>
             </div>
 

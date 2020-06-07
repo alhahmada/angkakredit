@@ -173,7 +173,7 @@
 
 
     <!-- Area Full 1 -->
-    <div class="container-fluid col-xl-12">
+    <div class="container-fluid" style="width: 100%;">
         <div class="card shadow mb-4">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -181,8 +181,8 @@
             </div>
             <!-- Body -->
             <div class="card-body">
-                <div class="chart-pie">
-                    <div class="pt-4 pb-5">
+                <div class="chart-piee">
+                    <div class="container pt-4 pb-5" style="width: 100%;">
                         <table class="greyGridTable">
                             <thead>
                                 <tr>
@@ -210,15 +210,14 @@
                         </table>
                     </div>
 
-                    <div class="pt-2 pb-2">
+                    <div class="container" style="width: 100%; height: 4 rem;">
                         <style>
                             .table-ket {
                                 width: 100%;
                                 text-align: left;
                                 font-size: 16px;
+                                margin-top: 1.5rem;
                                 color: black;
-                                position: absolute;
-                                bottom: 0px;
                             }
 
                             .table-ket thead th {
