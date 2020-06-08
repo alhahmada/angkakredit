@@ -51,7 +51,7 @@ class admin extends CI_Controller
         if ($cekverifikator == null) {
             $pengajuan1 = $this->m_verif->pengajuan_all();
         } else {
-            $pengajuan1 = $this->m_verif->pengajuan_not($cekverifikator[0]['id_pengajuan']);
+            $pengajuan1 = $this->m_verif->pengajuan_not($cekverifikator[0]);
         }
 
         $verifikator = $this->m_verif->verifikator();
@@ -106,7 +106,7 @@ class admin extends CI_Controller
     public function action_progress()
     {
         $id_pengajuan = $this->input->post('id_pengajuan');
-        $this->m_pengajuan->update_progress($id_pengajuan, 5, 'Proses Pengajuan Selesai');
+        $this->m_pengajuan->update_progress($id_pengajuan, 6, 'Proses Pengajuan Selesai');
 
         $total_penetapan1 = $this->db->query("SELECT ak_pendidikan_final, ak_penelitian_final, ak_pengmas_final, ak_penunjang_final FROM tbl_pengajuan WHERE id_pengajuan=$id_pengajuan")->result_array();
         $total_penetapan = $total_penetapan1[0]['ak_pendidikan_final'] + $total_penetapan1[0]['ak_penelitian_final'] + $total_penetapan1[0]['ak_pengmas_final'] + $total_penetapan1[0]['ak_penunjang_final'];
@@ -123,7 +123,14 @@ class admin extends CI_Controller
         $ak_lama = $ak_lama_array[0]['angka_kredit'];
         $ak_tambah = $total_penetapan;
         $ak_baru = $ak_lama + $ak_tambah;
-        $this->m_penetapan->update_ak_dosen($nip, $ak_baru);
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $pangkat_to = $data_pengajuan[0]['pangkat_to'];
+        $gol_to = $data_pengajuan[0]['gol_to'];
+        $jab_fung_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $this->m_penetapan->update_ak_dosen($nip, $ak_baru, $gol_to, $pangkat_to, $jab_fung_to);
 
 
         redirect('/admin/daftar_pengajuanAK');
@@ -134,6 +141,15 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
         $berkas = $this->m_pengajuan->data_berkas($id_pengajuan);
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -186,8 +202,17 @@ class admin extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['e1'] = $this->m_verif->e1($id_pengajuan);
@@ -212,9 +237,18 @@ class admin extends CI_Controller
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+
 
         $data['a1'] = $this->m_verif->a1($id_pengajuan);
         $data['maks_a1'] = $this->m_verif->constraint('a1', $id_pengajuan);
@@ -301,9 +335,18 @@ class admin extends CI_Controller
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+
 
 
         $data['c1'] = $this->m_verif->c1($id_pengajuan);
@@ -359,9 +402,19 @@ class admin extends CI_Controller
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+
+
 
         $data['d1'] = $this->m_verif->d1($id_pengajuan);
         $data['maks_d1'] = $this->m_verif->constraint('d1', $id_pengajuan);
@@ -411,9 +464,18 @@ class admin extends CI_Controller
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+
 
         $data['e1'] = $this->m_verif->e1($id_pengajuan);
         $data['maks_e1'] = $this->m_verif->constraint('e1', $id_pengajuan);
@@ -469,9 +531,19 @@ class admin extends CI_Controller
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+
+
 
         $penetapan = $this->m_resume->resume_penetapan($id_pengajuan);
         $data['data_nilai'] = $penetapan;

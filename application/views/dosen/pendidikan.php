@@ -36,8 +36,37 @@
         </div>
         <!--Body -->
         <div class="card-body">
-            <h5 class="pt-1 pb-2 body-content-a">Pengajuan : Dari Lektor Kepala 100 Menuju Lektor Kepala 200</h5>
-            <h5 class="pt-1 pb-2 body-content-a">Kum Kekurangan Angka : 100</h5>
+            <h5 class="pt-1 pb-1 text-center body-content-a1">Pengajuan</h5>
+            <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Jabatan Fungsional</th>
+                        <th>Pangkat</th>
+                        <th>Golongan Ruang</th>
+                        <th>Angka Kredit</th>
+                    </tr>
+                </thead>
+                <tbody style="font-weight: bold;">
+                    <tr>
+                        <td>Saat Ini </td>
+                        <td><?= $array['jabatan_fungsi']; ?></td>
+                        <td><?= $array['pangkat']; ?></td>
+                        <td><?= $array['golongan_ruang']; ?></td>
+                        <td><?= $array['angka_kredit']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Diajukan Ke- </td>
+                        <td><?= $data_pengajuan['jabatan_fungsi_to'] ?></td>
+                        <td><?= $data_pengajuan['pangkat_to'] ?></td>
+                        <td><?= $data_pengajuan['gol_to'] ?></td>
+                        <td><?= $data_pengajuan['ak_to'] ?></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h5 class="pb-2 body-content-a1">Kum Kekurangan Angka : <?= $data_pengajuan['kurang_ak'] ?></h5>
             <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                 <thead>
                     <tr>
@@ -58,17 +87,17 @@
                 <tbody>
                     <tr>
                         <td style="font-weight: bold;">Persentase</td>
-                        <td>45%</td>
-                        <td>35%</td>
-                        <td>0,5 - 10%</td>
-                        <td>10%</td>
+                        <td><?= $constraint['persen_pendidikan']; ?></td>
+                        <td><?= $constraint['persen_penelitian']; ?></td>
+                        <td><?= $constraint['persen_pengmas']; ?></td>
+                        <td><?= $constraint['persen_penunjang']; ?></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">Angka Kredit</td>
-                        <td>45</td>
-                        <td>35</td>
-                        <td>10</td>
-                        <td>10</td>
+                        <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_pendidikan']; ?></td>
+                        <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_penelitian']; ?></td>
+                        <td>0.5 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_pengmas']; ?></td>
+                        <td>0 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_penunjang']; ?></td>
                     </tr>
                 </tbody>
             </table>
@@ -86,12 +115,20 @@
                     color: black;
                     margin-left: 3rem;
                 }
-            </style>
 
-            <h5 class="pt-1 pb-2 body-content-a">Unsur Penelitian (C)</h5>
+                .body-content-a1 {
+                    font-weight: bold;
+                    font-size: 20px;
+                    color: black;
+                    margin-left: 3rem;
+                }
+            </style>
+            <h5 class="pt-1 pb-2 body-content-a">Constraint Unsur Penelitian (C)</h5>
             <h5 class="pt-1 pb-2 body-content-1">1. Poin C2 e + C3 Maksimal 5% Dari Total Unsur Penelitian</h5>
-            <h5 class="pt-1 pb-2 body-content-1">2. Poin C1 Jurnal Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
-            <h5 class="pt-1 pb-2 body-content-1">3. Poin C2a + C2b + C2c + C2d Tingkat Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
+            <?php if ($data_pengajuan['jabatan_fungsi_to'] != 'Asisten Ahli' or $data_pengajuan['jabatan_fungsi_to'] != 'Lektor') { ?>
+                <h5 class="pt-1 pb-2 body-content-1">2. Poin C1 Jurnal Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
+                <h5 class="pt-1 pb-2 body-content-1">3. Poin C2a + C2b + C2c + C2d Tingkat Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
+            <?php } ?>
         </div>
     </div>
 </div>

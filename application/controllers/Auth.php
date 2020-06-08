@@ -110,4 +110,9 @@ class Auth extends CI_Controller
         $this->load->view('auth/edit_profil');
         $this->load->view('templates/auth_footer');
     }
+
+    public function sampel_chart()
+    {
+        $this->load->view('auth/sampel_chart');
+    }
 }

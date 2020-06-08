@@ -21,6 +21,7 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/tabel.css" rel="stylesheet">
+    <script src="Chart.js"></script>
 
 </head>
 
@@ -60,6 +61,12 @@
             </div>
             <!-- Menu Utama Pertama User -->
             <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('dosen/pengajuan_dosen'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Pengajuan Baru</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw"></i>
                     <span>Daftarkan Pengajuan</span></a>
@@ -69,7 +76,9 @@
                         <a class="collapse-item" href="<?= base_url('dosen/history_pengajuan'); ?>">Pengajuan Lama</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
+
+
             <!-- Menu Utama Kedua User -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('auth/informasi'); ?>">

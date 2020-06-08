@@ -14,13 +14,15 @@ class Berkas extends CI_Model
 
 
     //INSERT PENGAJUAN
-    public function pengajuan($jabatan,$pangkat,$gol)
+    public function pengajuan($jabatan, $pangkat, $gol, $ak_to, $kurang_ak)
     {
         $data = array(
             'tgl_pengajuan' => date('Y-m-d'),
             'jabatan_fungsi_to' => $jabatan,
             'pangkat_to' => $pangkat,
             'gol_to' => $gol,
+            'ak_to' => $ak_to,
+            'kurang_ak' => $kurang_ak,
             'nip' => $this->session->userdata('nip')
         );
         $this->db->insert('tbl_pengajuan', $data);

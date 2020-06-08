@@ -12,9 +12,9 @@ class Dosen extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
-        if ($this->session->userdata('role') != "2" or $this->session->userdata('role') != "2" or $this->session->userdata('role') != "4") {
-            redirect(base_url($this->session->userdata('home')));
-        }
+        // if ($this->session->userdata('role') != "2" or $this->session->userdata('role') != "3" or $this->session->userdata('role') != "4") {
+        //     redirect(base_url($this->session->userdata('home')));
+        // }
         $this->load->library('form_validation');
         $this->load->database();
         $this->load->model('berkas');
@@ -23,9 +23,6 @@ class Dosen extends CI_Controller
         $this->load->model('m_penetapan');
         $this->load->model('m_verif');
         $this->load->library('upload');
-        if ($this->session->userdata('status') != "login") {
-            redirect(base_url("login"));
-        }
     }
 
 
@@ -42,6 +39,7 @@ class Dosen extends CI_Controller
         $this->load->view('dosen/pengajuan');
         $this->load->view('templates/auth_footer');
     }
+
     public function history_pengajuan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -59,10 +57,53 @@ class Dosen extends CI_Controller
     public function action_pengajuan()
     {
         ini_set('max_execution_time', 0);
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $ak_saat_ini = $datauser[0]['angka_kredit'];
+
+
         $F1 = $this->input->post('F1');
         $F2 = $this->input->post('F2');
-        $F3 = $this->input->post('F3');
-        $id_pengajuan = $this->berkas->pengajuan($F1, $F2, $F3);
+        if ($F2 == '1') {
+            $pangkat = 'IIIA';
+            $gol = '-';
+            $ak_to = 100;
+        } elseif ($F2 == '2') {
+            $pangkat = 'IIIB';
+            $gol = 'Penata Muda Tk 1';
+            $ak_to = 150;
+        } elseif ($F2 == '3') {
+            $pangkat = 'IIIC';
+            $gol = 'Penata';
+            $ak_to = 200;
+        } elseif ($F2 == '4') {
+            $pangkat = 'IIID';
+            $gol = 'Penata Tk 1';
+            $ak_to = 300;
+        } elseif ($F2 == '5') {
+            $pangkat = 'IVA';
+            $gol = 'Pembina';
+            $ak_to = 400;
+        } elseif ($F2 == '6') {
+            $pangkat = 'IVB';
+            $gol = 'Pembina Tk 1';
+            $ak_to = 550;
+        } elseif ($F2 == '7') {
+            $pangkat = 'IVC';
+            $gol = 'Pembina Utama Muda';
+            $ak_to = 700;
+        } elseif ($F2 == '8') {
+            $pangkat = 'IVD';
+            $gol = 'Pembina Utama Madya';
+            $ak_to = 850;
+        } elseif ($F2 == '9') {
+            $pangkat = 'IVE';
+            $gol = 'Pembina Utama';
+            $ak_to = 1050;
+        }
+
+        $kurang_ak = $ak_to - $ak_saat_ini;
+
+        $id_pengajuan = $this->berkas->pengajuan($F1, $pangkat, $gol, $ak_to, $kurang_ak);
         $data1 = array();
         $data = array(
             'id_pengajuan' => $id_pengajuan
@@ -86,6 +127,7 @@ class Dosen extends CI_Controller
 
         redirect('/dosen/pendidikan/' . $id_pengajuan);
     }
+
     public function action_pengajuan_final()
     {
         redirect('/dosen/submit_pengajuan');
@@ -98,6 +140,16 @@ class Dosen extends CI_Controller
     public function pendidikan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['array'] = $datauser[0];
+
+        $id_pengajuan = $this->uri->segment(3);
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Pengajuan Angka Kredit';
@@ -478,6 +530,18 @@ class Dosen extends CI_Controller
     public function penelitian()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['array'] = $datauser[0];
+
+        $id_pengajuan = $this->uri->segment(3);
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+
+
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Pengajuan Angka Kredit';
@@ -785,6 +849,18 @@ class Dosen extends CI_Controller
     public function pengmas()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['array'] = $datauser[0];
+
+        $id_pengajuan = $this->uri->segment(3);
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+
+
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Pengajuan Angka Kredit';
@@ -968,6 +1044,18 @@ class Dosen extends CI_Controller
     public function penunjang()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['array'] = $datauser[0];
+
+        $id_pengajuan = $this->uri->segment(3);
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+
+
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Pengajuan Angka Kredit';
@@ -1242,6 +1330,16 @@ class Dosen extends CI_Controller
     public function resume_pengajuan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['array'] = $datauser[0];
+
+        $id_pengajuan = $this->uri->segment(3);
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Pengajuan Angka Kredit';
@@ -1355,35 +1453,17 @@ class Dosen extends CI_Controller
     }
     public function test()
     {
-        // $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-        // $data['nama'] = $datauser[0]['nama_lengkap'];
-        // $data['foto'] = $datauser[0]['foto'];
-        // $data['title'] = 'Pengajuan Angka Kredit';
-        // $data['id_pengajuan'] = $this->uri->segment(3);
-        // $this->load->view('templates/auth_header', $data);
-        // $this->load->view('test');
-        // $this->load->view('templates/tabel_penelitian');
-        // $this->load->view('templates/auth_footer_2');
-        // $id_pengajuan='1';
-        // $a11='OK2';
-        // $a12='OK3';
-        // $a13='OK4';
-        // $a14='OK5';
-        // $a15='OK6';
-        // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
-        // $id_pengajuan = 10;
-        // $nip_array = $this->db->query("SELECT nip from tbl_pengajuan where id_pengajuan=" . $id_pengajuan . "")->result_array();
-
-        // $nip = $nip_array[0]['nip'];
-        // // print_r($nip);
-        // $ak_lama_array = $this->db->query("SELECT angka_kredit FROM tbl_user WHERE nip=" . $nip . "")->result_array();
-        // // print_r($ak_lama_array[0]['angka_kredit']);
-        // $ak_lama = $ak_lama_array[0]['angka_kredit'];
-        // $ak_tambah = 50;
-        // $ak_baru = $ak_lama + $ak_tambah;
-        // $this->m_penetapan->update_ak_dosen($nip, $ak_baru);
-
-        echo $this->m_verif->cek_verifikator();
+        // $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='Asisten Ahli'")->result_array();
+        // print_r($constraint[0]);
+        // $id_pengajuan = $this->uri->segment(3);
+        // $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        // $data['data_pengajuan'] = $data_pengajuan[0];
+        // $pengajuan6 = $this->m_verif->pengajuan_6();
+        // $data['pengajuan6'] = $pengajuan6;
+        // print_r($pengajuan6);
+        $cekverifikator = $this->m_verif->cek_verifikator();
+        $data['cekverifikator'] = $cekverifikator;
+        print_r($cekverifikator[0]);
     }
 
 

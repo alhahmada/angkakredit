@@ -13,9 +13,9 @@ class verificator extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
-        if ($this->session->userdata('role') != "3" or $this->session->userdata('role') != "4") {
-            redirect(base_url($this->session->userdata('home')));
-        }
+        // if ($this->session->userdata('role') != "3" or $this->session->userdata('role') != "4") {
+        //     redirect(base_url($this->session->userdata('home')));
+        // }
         $this->load->model('m_auth');
         $this->load->model('m_verif');
         $this->load->model('m_pengajuan');
@@ -62,8 +62,17 @@ class verificator extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
+
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['a1'] = $this->m_verif->a1($id_pengajuan);
@@ -113,8 +122,16 @@ class verificator extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['c1'] = $this->m_verif->c1($id_pengajuan);
@@ -155,8 +172,16 @@ class verificator extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
+
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+        $data['constraint'] = $constraint[0];
+
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-        $data['array'] = $user[0];
+        $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Verifikasi Pengajuan Angka Kredit';

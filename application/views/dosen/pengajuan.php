@@ -957,27 +957,27 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="font_col_1">Pangkat</td>
-                                    <td class="text-center"><?= $array['pangkat']; ?></td>
-                                    <td><label for="F2">
-                                            <select class="f" id="F2" name="F2">
+                                    <td class="font_col_1">Pangkat/Golongan</td>
+                                    <td class="text-center"><?= $array['pangkat'] ?> / <?= $array['golongan_ruang']; ?></td>
+                                    <td colspan="2"><label for="F2">
+                                            <select class="f" id="F2" name="F2" style="width: auto; margin-bottom: 0px; position: relative;">
                                                 <option value="" selected disabled hidden> ... </option>
-                                                <option value="IIIa">IIIa</option>
-                                                <option value="IIIb">IIIb</option>
-                                                <option value="IIIc">IIIc</option>
-                                                <option value="IIId">IIId</option>
-                                                <option value="IVa">IVa</option>
-                                                <option value="IVb">IVb</option>
-                                                <option value="IVc">IVc</option>
-                                                <option value="IVd">IVd</option>
-                                                <option value="IVe">IVe</option>
+                                                <option value="1">IIIa/</option>
+                                                <option value="2">IIIb/Penata Muda Tk 1</option>
+                                                <option value="3">IIIc/Penata</option>
+                                                <option value="4">IIId/Penata Tk 1</option>
+                                                <option value="5">IVa/Pembina</option>
+                                                <option value="6">IVb/Pembina Tk 1</option>
+                                                <option value="7">IVc/Pembina Utama Muda</option>
+                                                <option value="8">IVd/Pembina Utama Madya</option>
+                                                <option value="9">IVe/Pembina Utama</option>
                                             </select>
                                         </label>
                                     </td>
                                 </tr>
 
 
-                                <tr>
+                                <!-- <tr>
                                     <td class="font_col_1">Golongan Ruang</td>
                                     <td class="text-center"><?= $array['golongan_ruang']; ?></td>
                                     <td><label for="F3">
@@ -994,13 +994,15 @@
                                             </select>
                                         </label>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
 
                         </table>
                     </div>
                 </div>
             </div>
+
+
             <!-- Submit Form -->
             <div class="pt-3">
                 <button type="submit" class="col-sm-2 float-right btn btn-primary btn-user btn=block">

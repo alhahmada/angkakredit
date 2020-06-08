@@ -20,6 +20,11 @@ class M_pengajuan extends CI_Model
 		return $this->db->query("select a.*,b.nama_lengkap,b.email from tbl_pengajuan a join tbl_user b ON a.nip=b.nip where a.nip='345678'")->result_array();
 	}
 
+	public function data_pengajuan_sekarang($id_pengajuan)
+	{
+		return $this->db->query("SELECT * FROM tbl_pengajuan WHERE id_pengajuan = $id_pengajuan")->result_array();
+	}
+
 
 	function total_per_progress()
 	{

@@ -18,12 +18,11 @@ class M_penetapan extends CI_Model
     }
     public function update_ak_penetapan($id_pengajuan, $ak_total_final)
     {
-
-        $this->db->query("UPDATE tbl_pengajuan SET ak_diterima_final=$ak_total_final WHERE id_pengajuan = $id_pengajuan");
+        $this->db->query("UPDATE tbl_pengajuan SET ak_diterima=$ak_total_final WHERE id_pengajuan = $id_pengajuan");
     }
 
-    public function update_ak_dosen($nip, $ak_baru)
+    public function update_ak_dosen($nip, $ak_baru, $gol_to, $pangkat_to, $jab_fung_to)
     {
-        $this->db->query("UPDATE tbl_user SET angka_kredit=$ak_baru WHERE nip=$nip");
+        $this->db->query("UPDATE tbl_user SET angka_kredit=$ak_baru, golongan_ruang='$gol_to', pangkat='$pangkat_to', jabatan_fungsi='$jab_fung_to' WHERE nip=$nip");
     }
 }

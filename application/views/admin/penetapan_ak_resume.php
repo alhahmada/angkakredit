@@ -1,13 +1,12 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-
     <!-- Judul Halaman -->
     <div class="container">
         <!-- Row Pertama -->
         <div class="justify-content-between pb-5 pt-4">
 
-            <h1 class="head-content">Penetapan Angka Kredit</h1>
+            <h1 class="head-content">Penilaian Angka Kredit</h1>
             <style>
                 .head-content {
                     font-size: 30px;
@@ -26,15 +25,12 @@
     </div>
 
 
-    <!-- 1 Row, 2 Area -->
-    <div class="card-deck container">
-
-        <!-- Area Pertama -->
-
+    <!-- Area Pertama -->
+    <div class="container-fluid p-2">
         <div class="card col-xl-6 shadow mb-4">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Keterangan Dosen Pengaju</h6>
             </div>
             <!--Body -->
             <div class="card-body">
@@ -53,6 +49,10 @@
                                 padding-bottom: 0.6rem;
                             }
 
+                            .table-bio tbody td:last-child {
+                                width: 50%;
+                            }
+
                             .table-bio tbody td:first-child {
                                 width: 50%;
                             }
@@ -61,29 +61,23 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td><?= $array['nama_lengkap']; ?></td>
-                                    <!-- <><?= $array['nama_lengkap']; ?> -->
-                                </tr>
+                                    <td><?= $user['nama_lengkap']; ?></td>
                                 <tr>
                                     <td>NIP</td>
-                                    <td><?= $array['nip']; ?></td>
-                                    <!--<?= $array['nip']; ?> -->
+                                    <td><?= $user['nip']; ?></td>
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td> <?= $array['unit_kerja']; ?></td>
-                                    <!-- <?= $array['unit_kerja']; ?> -->
+                                    <td><?= $user['unit_kerja']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td><?= $array['angka_kredit']; ?></td>
-                                    <!-- <?= $array['angka_kredit']; ?> -->
+                                    <td><?= $user['angka_kredit']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td><?= $array['tgl_pengajuan']; ?></td>
-                                    <!-- <?= $array['tgl_pengajuan']; ?> -->
+                                    <td><?= $user['tgl_pengajuan']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -92,134 +86,110 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <!-- Area Kedua -->
 
-        <div class="card col-xl-6 shadow mb-4">
+
+    <!-- Constraint -->
+    <div class="container-fluid p-2">
+        <div class="card shadow" style="width: 100%;">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Pengajuan Kenaikan</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Constraint Pengajuan</h6>
             </div>
             <!--Body -->
             <div class="card-body">
-                <div class="chart-piee pb-2">
-                    <div class="pb-5">
-                        <style>
-                            .table_ver {
-                                border: 0px solid black;
-                                width: 100%;
-                                text-align: center;
-                                border-collapse: collapse;
-                            }
-
-                            .table_ver td,
-                            .table_ver th {
-                                border: 1px solid black;
-                                padding: 3px 4px;
-                            }
-
-                            .table_ver thead th {
-                                font-size: 13px;
-                                font-weight: bold;
-                                color: #123a56;
-                                border-top: none;
-                                border-left: none;
-                                border-bottom: 1 px solid black;
-                                border-right: 1 px solid black;
-                                padding-bottom: 0.75rem;
-                            }
-
-                            .table_ver thead th:last-child {
-                                border-right: none;
-                            }
-
-                            .table_ver tbody td {
-                                font-size: 12px;
-                                color: black;
-                                padding-top: 0.5rem;
-                                text-align: center;
-                                border-top: none;
-                                font-weight: bold;
-                                border-left: none;
-                                border-bottom: none;
-                                border-right: 1 px solid black;
-                            }
-
-                            .table_ver tbody td:last-child {
-                                border-right: none;
-                            }
-
-                            .table_ver tbody td:first-child {
-                                text-align: left;
-                            }
-                        </style>
-                        <table class="table_ver">
-                            <thead>
-                                <tr style="font-weight: bold;">
-                                    <th style="width: 30%;"></th>
-                                    <th style="width: 35%;">Saat Ini</th>
-                                    <th style="width: 35%;">Diajukan</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Jabatan Fungsional</td>
-                                    <td>Lektor Kepala</td>
-                                    <td>Profesor</td>
-                                </tr>
-                                <tr>
-                                    <td>Pangkat</td>
-                                    <td>Penata Muda Tk. 1</td>
-                                    <td>Penata</td>
-                                </tr>
-                                <tr>
-                                    <td>Golongan Ruang</td>
-                                    <td>III D</td>
-                                    <td>IV A</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="pt-2 pb-2">
-                        <style>
-                            .table-rangkuman {
-                                width: 100%;
-                                text-align: left;
-                                font-size: 14px;
-                                color: black;
-                                position: absolute;
-                                bottom: 0px;
-                                font-weight: bold;
-                            }
-
-                            .table-rangkuman tbody td:first-child {
-                                width: 60%;
-                                font-size: 12px;
-                            }
-                        </style>
-                        <table class="table-rangkuman">
-                            <tbody>
-                                <tr>
-                                    <td>Angka Kredit Kum yang Dibutuhkan</td>
-                                    <td>: 550</td>
-                                </tr>
-                                <tr>
-                                    <td>Kekurangan Angka Kredit</td>
-                                    <td>: 150</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <h5 class="pt-1 pb-1 text-center body-content-a1">Pengajuan</h5>
+                <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Jabatan Fungsional</th>
+                            <th>Pangkat</th>
+                            <th>Golongan Ruang</th>
+                            <th>Angka Kredit</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-weight: bold;">
+                        <tr>
+                            <td>Saat Ini </td>
+                            <td><?= $user['jabatan_fungsi']; ?></td>
+                            <td><?= $user['pangkat']; ?></td>
+                            <td><?= $user['golongan_ruang']; ?></td>
+                            <td><?= $user['angka_kredit']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Diajukan Ke- </td>
+                            <td><?= $data_pengajuan['jabatan_fungsi_to'] ?></td>
+                            <td><?= $data_pengajuan['pangkat_to'] ?></td>
+                            <td><?= $data_pengajuan['gol_to'] ?></td>
+                            <td><?= $data_pengajuan['ak_to'] ?></td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
-                </div>
+                <h5 class="pb-2 body-content-a1">Kum Kekurangan Angka : <?= $data_pengajuan['kurang_ak'] ?></h5>
+                <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
+                    <thead>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th>Pendidikan</th>
+                            <th>Penelitian</th>
+                            <th>Pengabdian Masy. </th>
+                            <th>Penunjang</th>
+                        </tr>
+                        <tr>
+
+                            <th>Minimum</th>
+                            <th>Minimum</th>
+                            <th>Rentang</th>
+                            <th>Maksimal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: bold;">Persentase</td>
+                            <td><?= $constraint['persen_pendidikan']; ?></td>
+                            <td><?= $constraint['persen_penelitian']; ?></td>
+                            <td><?= $constraint['persen_pengmas']; ?></td>
+                            <td><?= $constraint['persen_penunjang']; ?></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">Angka Kredit</td>
+                            <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_pendidikan']; ?></td>
+                            <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_penelitian']; ?></td>
+                            <td>0.5 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_pengmas']; ?></td>
+                            <td>0 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_penunjang']; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <style>
+                    .body-content-1 {
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: black;
+                        margin-left: 5rem;
+                    }
+
+                    .body-content-a {
+                        font-weight: bold;
+                        font-size: 16px;
+                        color: black;
+                        margin-left: 3rem;
+                    }
+
+                    .body-content-a1 {
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: black;
+                        margin-left: 3rem;
+                    }
+                </style>
             </div>
         </div>
-
     </div>
-
 
 
     <!-- Penetapan Resume -->

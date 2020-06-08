@@ -13,14 +13,25 @@
 
 <!-- Footer -->
 
-<footer class="sticky-footer" style="background-color: #282b3b; bottom: 0px;">
+<style>
+    .small {
+        font-size: 11px;
+        color: white;
+    }
 
-    <div class="" style="background-color: #282b3b;">
-        <div class="container my-auto">
-            <div class="copyright text-center" style="color: white;">
-                <span>Copyright &copy; Angka Kredit Politeknik Statistika STIS 2020</span>
-            </div>
-        </div>
+    .med {
+        font-size: 13px;
+        color: white;
+    }
+</style>
+
+
+
+<footer style="height: 5rem; background-color: #282b3b;">
+
+    <div class="container text-center pt-4" style="background-color: #282b3b; color: white;">
+        <h5 class="small">Versi 1.0, Last Modified June 2020</h5>
+        <h5 class="med">Copyright &copy; Angka Kredit Politeknik Statistika STIS 2020</h5>
     </div>
 
 </footer>

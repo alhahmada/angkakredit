@@ -61,28 +61,23 @@
                                 <tr>
                                     <td>Nama Lengkap</td>
                                     <td><?= $user['nama_lengkap']; ?></td>
-                                    <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
                                     <td><?= $user['nip']; ?></td>
-                                    <!--<?= $array['nip']; ?>-->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
                                     <td><?= $user['unit_kerja']; ?></td>
-                                    <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
                                     <td><?= $user['angka_kredit']; ?></td>
-                                    <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
                                     <td><?= $user['tgl_pengajuan']; ?></td>
-                                    <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
                         </table>
@@ -164,18 +159,18 @@
                             <tbody>
                                 <tr>
                                     <td>Jabatan Fungsional</td>
-                                    <td>Lektor Kepala</td>
-                                    <td>Profesor</td>
+                                    <td><?= $user['jabatan_fungsi']; ?></td>
+                                    <td><?= $data_pengajuan['jabatan_fungsi_to']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Pangkat</td>
-                                    <td>Penata Muda Tk. 1</td>
-                                    <td>Penata</td>
+                                    <td><?= $user['pangkat']; ?></td>
+                                    <td><?= $data_pengajuan['pangkat_to']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Golongan Ruang</td>
-                                    <td>III D</td>
-                                    <td>IV A</td>
+                                    <td><?= $user['golongan_ruang']; ?></td>
+                                    <td><?= $data_pengajuan['gol_to']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -201,11 +196,11 @@
                             <tbody>
                                 <tr>
                                     <td>Angka Kredit Kum yang Dibutuhkan</td>
-                                    <td>: 550</td>
+                                    <td>: <?= $data_pengajuan['ak_to']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Kekurangan Angka Kredit</td>
-                                    <td>: 150</td>
+                                    <td>: <?= $data_pengajuan['kurang_ak']; ?></td>
                                 </tr>
                             </tbody>
                         </table>

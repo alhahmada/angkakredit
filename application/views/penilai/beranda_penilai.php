@@ -63,8 +63,8 @@
                                     <td><?= $array['nip']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Pangkat/Gol.Ruang</td>
-                                    <td><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></td>
+                                    <td>Unit Kerja</td>
+                                    <td><?= $array['unit_kerja']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Email</td>

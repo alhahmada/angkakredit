@@ -59,29 +59,24 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td><?= $array['nama_lengkap']; ?></td>
-                                    <!-- <><?= $array['nama_lengkap']; ?> -->
+                                    <td><?= $user['nama_lengkap']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td><?= $array['nip']; ?></td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $user['nip']; ?></td>
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td><?= $array['unit_kerja']; ?></td>
-                                    <!-- <?= $array['unit_kerja']; ?> -->
+                                    <td><?= $user['unit_kerja']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td><?= $array['angka_kredit']; ?></td>
-                                    <!-- <?= $array['angka_kredit']; ?> -->
+                                    <td><?= $user['angka_kredit']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td><?= $array['tgl_pengajuan']; ?></td>
-                                    <!-- <?= $array['tgl_pengajuan']; ?> -->
+                                    <td><?= $user['tgl_pengajuan']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -162,18 +157,18 @@
                             <tbody>
                                 <tr>
                                     <td>Jabatan Fungsional</td>
-                                    <td>Lektor Kepala</td>
-                                    <td>Profesor</td>
+                                    <td><?= $user['jabatan_fungsi']; ?></td>
+                                    <td><?= $data_pengajuan['jabatan_fungsi_to']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Pangkat</td>
-                                    <td>Penata Muda Tk. 1</td>
-                                    <td>Penata</td>
+                                    <td><?= $user['pangkat']; ?></td>
+                                    <td><?= $data_pengajuan['pangkat_to']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Golongan Ruang</td>
-                                    <td>III D</td>
-                                    <td>IV A</td>
+                                    <td><?= $user['golongan_ruang']; ?></td>
+                                    <td><?= $data_pengajuan['gol_to']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -199,11 +194,11 @@
                             <tbody>
                                 <tr>
                                     <td>Angka Kredit Kum yang Dibutuhkan</td>
-                                    <td>: 550</td>
+                                    <td>: <?= $data_pengajuan['ak_to']; ?></td>
                                 </tr>
                                 <tr>
                                     <td>Kekurangan Angka Kredit</td>
-                                    <td>: 150</td>
+                                    <td>: <?= $data_pengajuan['kurang_ak']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -256,17 +251,17 @@
                     </thead>
                     <tbody>
                         <?php foreach ($d1 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d11']; ?></td>
-                            <td><?= $value['d12']; ?></td>
-                            <td><?= $value['d13']; ?></td>
-                            <td class="nav-item text-center">
-                               <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/'.$value['d14'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                            <tr>
+                                <td><?= $value['d11']; ?></td>
+                                <td><?= $value['d12']; ?></td>
+                                <td><?= $value['d13']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d14'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -288,15 +283,15 @@
                         </tr>
                     </thead>
                     <tbody> <?php foreach ($d2 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d21']; ?></td>
-                            <td><?= $value['d22']; ?></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d23'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>  <?php } ?>
+                            <tr>
+                                <td><?= $value['d21']; ?></td>
+                                <td><?= $value['d22']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr> <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -320,17 +315,17 @@
                         </tr>
                     </thead>
                     <tbody> <?php foreach ($d3 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d31']; ?></td>
-                            <td><?= $value['d32']; ?></td>
-                            <td><?= $value['d33']; ?></td>
-                            <td><?= $value['d34']; ?></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d35'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>  <?php } ?>
+                            <tr>
+                                <td><?= $value['d31']; ?></td>
+                                <td><?= $value['d32']; ?></td>
+                                <td><?= $value['d33']; ?></td>
+                                <td><?= $value['d34']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr> <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -352,15 +347,15 @@
                         </tr>
                     </thead>
                     <tbody> <?php foreach ($d4 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d41']; ?></td>
-                            <td><?= $value['d42']; ?></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d43'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>  <?php } ?>
+                            <tr>
+                                <td><?= $value['d41']; ?></td>
+                                <td><?= $value['d42']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr> <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -382,15 +377,15 @@
                         </tr>
                     </thead>
                     <tbody> <?php foreach ($d5 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d51']; ?></td>
-                            <td><?= $value['d52']; ?></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d53'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>  <?php } ?>
+                            <tr>
+                                <td><?= $value['d51']; ?></td>
+                                <td><?= $value['d52']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr> <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -412,15 +407,15 @@
                         </tr>
                     </thead>
                     <tbody> <?php foreach ($d6 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d61']; ?></td>
-                            <td><?= $value['d62']; ?></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d63'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>  <?php } ?>
+                            <tr>
+                                <td><?= $value['d61']; ?></td>
+                                <td><?= $value['d62']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr> <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -444,17 +439,17 @@
                         </tr>
                     </thead>
                     <tbody> <?php foreach ($d7 as $key => $value) { ?>
-                        <tr>
-                            <td><?= $value['d71']; ?></td>
-                            <td><?= $value['d72']; ?></td>
-                            <td><?= $value['d73']; ?></td>
-                            <td><?= $value['d74']; ?></td>
-                            <td class="nav-item text-center">
-                                <a class="nav-link" href="<?php echo base_url('/assets/document/'.$value['d75'].'.pdf'); ?>">
-                                    <span>Cek Berkas</span>
-                                </a>
-                            </td>
-                        </tr>  <?php } ?>
+                            <tr>
+                                <td><?= $value['d71']; ?></td>
+                                <td><?= $value['d72']; ?></td>
+                                <td><?= $value['d73']; ?></td>
+                                <td><?= $value['d74']; ?></td>
+                                <td class="nav-item text-center">
+                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
+                                        <span>Cek Berkas</span>
+                                    </a>
+                                </td>
+                            </tr> <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -470,7 +465,7 @@
             </div>
 
 
-                        <div class="container row p-5">
+            <div class="container row p-5">
                 <div class="col-sm-9">
                     <button type="submit" name="aksi" value="tolak" class="float-right btn btn-primary btn-user btn=block">
                         Tolak Pengajuan
@@ -482,10 +477,10 @@
                     </button>
                 </div>
             </div>
-            </div>
-        </form>
-
-
     </div>
+    </form>
+
+
+</div>
 
 </div>

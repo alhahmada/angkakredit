@@ -102,67 +102,8 @@
             </div>
             <!--Body -->
             <div class="card-body">
-                <div class="chart-pie pt-4 pb-2">
-                    <div id="PieChartAK"></div>
-                    <script type="text/javascript">
-                        window.onload = function() {
-                            var chart = new CanvasJS.Chart("PieChartAK", {
-                                data: [{
-                                    type: "doughnut",
-                                    dataPoints: [{
-                                            y: 300,
-                                            indexLabel: "Angka Kredit Anda"
-                                        },
-                                        {
-                                            y: 1050 - 300,
-                                            indexLabel: "Maksimal Angka Kredit Yang Dapat DIperoleh"
-                                        }
-                                    ]
-                                }]
-                            });
-
-                            chart.render();
-                        }
-                    </script>
-                    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-                    <!-- <script type="text/javascript">
-                        window.onload = function() {
-                            Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-                            Chart.defaults.global.defaultFontColor = '#858796';
-                            var chart = document.getElementById("PieChartAK1");
-                            var PieChartAK1 = new Chart(ctx, {
-                                type: 'doughnut',
-                                data: {
-                                    labels: ["Angka Kredit Anda", "Maksimal Angka Kredit yang Dapat Diperoleh"],
-                                    datasets: [{
-                                        data: [100, 1050 - 100],
-                                        backgroundColor: ['#4e73df', '#1cc88a'],
-                                        hoverBackgroundColor: ['#2e59d9', '#17a673'],
-                                        hoverBorderColor: "rgba(234, 236, 244, 1)",
-                                    }],
-                                },
-                                options: {
-                                    maintainAspectRatio: false,
-                                    tooltips: {
-                                        backgroundColor: "rgb(255,255,255)",
-                                        bodyFontColor: "#858796",
-                                        borderColor: '#dddfeb',
-                                        borderWidth: 1,
-                                        xPadding: 15,
-                                        yPadding: 15,
-                                        displayColors: false,
-                                        caretPadding: 10,
-                                    },
-                                    legend: {
-                                        display: false
-                                    },
-                                    cutoutPercentage: 65,
-                                },
-                            });
-                        }
-                    </script> -->
-
+                <div class="chart-pie" style="text-align : center;">
+                    <canvas id="myPieChart" style="width: 100%; height: auto;"></canvas>
                 </div>
             </div>
         </div>
@@ -239,17 +180,17 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>"0" : Pengajuan</td>
-                                    <td>"3" : Pemilihan Tim Penilai</td>
+                                    <td>"0" : Pengajuan Telah Dikirim</td>
+                                    <td>"3" : Tim Penilai Telah Ditentukan</td>
                                     <td>"6" : Selesai</td>
                                 </tr>
                                 <tr>
-                                    <td>"1" : Verifikasi Berkas</td>
-                                    <td>"4" : Penilaian</td>
+                                    <td>"1" : Berkas Sudah Diverifikasi</td>
+                                    <td>"4" : Penilaian Oleh Tim Selesai</td>
                                     <td>"7" : Pengajuan Ditolak</td>
                                 </tr>
                                 <tr>
-                                    <td>"2" : Verifikasi Poin Pengajuan</td>
+                                    <td>"2" : Poin Pengajuan Sudah Terverifikasi </td>
                                     <td>"5" : Penetapan Angka Kredit</td>
                                     <td></td>
                                 </tr>
@@ -306,35 +247,45 @@
             <h1 class="head-content">Unduh / Download</h1>
         </div>
     </div>
+    <style>
+        .buttona {
+            background-color: #282b3b;
+            width: 26rem !important;
+        }
+
+        .buttona:hover {
+            background-color: #5a5c69;
+        }
+    </style>
 
     <div class="row  justify-content-center">
         <div class="col-lg-5 mb-4">
-            <div class="card text-white shadow" style="background-color: #282b3b;">
+            <a type="button" class="card buttona text-white shadow">
                 <div class="card-body">
                     Panduan Ristekdikti
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-lg-5 mb-4">
-            <div class="card bg-dark text-white shadow">
+            <a class="card buttona text-white shadow">
                 <div class="card-body">
                     Format Daftar Usulan PAK
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-lg-5 mb-4">
-            <div class="card bg-dark text-white shadow">
+            <a class="card buttona text-white shadow">
                 <div class="card-body">
                     Format Berkas Pengajuan
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-lg-5 mb-4">
-            <div class="card text-white shadow" style="background-color: #282b3b;">
+            <a class="card buttona text-white shadow">
                 <div class="card-body">
                     Pedoman Pengajuan
                 </div>
-            </div>
+            </a>
         </div>
 
     </div>
@@ -364,3 +315,36 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var ctx = document.getElementById("myPieChart").getContext("2d");
+    var myPieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["Angka Kredit Anda", "Maksimal Angka Kredit yang Dapat Diperoleh"],
+            datasets: [{
+                data: [200, 200],
+                backgroundColor: ['#4e73df', '#1cc88a'],
+                hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+            },
+            legend: {
+                display: false
+            },
+            cutoutPercentage: 65,
+        },
+    });
+</script>
