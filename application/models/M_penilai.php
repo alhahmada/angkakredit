@@ -26,4 +26,13 @@ class M_penilai extends CI_Model
     {
         $this->db->query("UPDATE tbl_penilaian set ak_" . $bab . "=$total where id_pengajuan=$id_pengajuan AND nip='" . $this->session->userdata('nip') . "'");
     }
+    public function cek_penilai()
+    {
+        $array = $this->db->query("SELECT a.id_pengajuan FROM tbl_penilaian a JOIN tbl_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE a.nip=" . $this->session->userdata('nip') . " AND STATUS = 1")->result_array();
+        $array_id = array();
+        foreach ($array as $key => $value) {
+            $array_id[] = $value['id_pengajuan'];
+        }
+        return $id = implode(",", $array_id);
+    }
 }

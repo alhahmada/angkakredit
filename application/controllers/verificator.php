@@ -13,9 +13,9 @@ class verificator extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
-        // if ($this->session->userdata('role') != "3") {
-        //     redirect(base_url($this->session->userdata('home')));
-        // }
+        if ($this->session->userdata('role') != "3" or $this->session->userdata('role') != "4") {
+            redirect(base_url($this->session->userdata('home')));
+        }
         $this->load->model('m_auth');
         $this->load->model('m_verif');
         $this->load->model('m_pengajuan');
@@ -40,7 +40,8 @@ class verificator extends CI_Controller
         if ($cekverifikator == null) {
             $pengajuan = $this->m_verif->pengajuan_all();
         } else {
-            $pengajuan = $this->m_verif->pengajuan_not($cekverifikator[0]['id_pengajuan']);
+            $array_id = array();
+            $pengajuan = $this->m_verif->pengajuan_not($cekverifikator);
         }
 
         $data['pengajuan'] = $pengajuan;

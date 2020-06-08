@@ -6,12 +6,21 @@ class Dosen extends CI_Controller
 {
     public function __construct()
     {
+
         parent::__construct();
+        $this->load->library('form_validation');
+        if ($this->session->userdata('status') != "login") {
+            redirect(base_url("login"));
+        }
+        if ($this->session->userdata('role') != "2" or $this->session->userdata('role') != "2" or $this->session->userdata('role') != "4") {
+            redirect(base_url($this->session->userdata('home')));
+        }
         $this->load->library('form_validation');
         $this->load->database();
         $this->load->model('berkas');
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
+        $this->load->model('m_penetapan');
         $this->load->model('m_verif');
         $this->load->library('upload');
         if ($this->session->userdata('status') != "login") {
@@ -106,9 +115,6 @@ class Dosen extends CI_Controller
         $filenames = array();
         $ak = 0;
 
-
-
-
         //Pengajuan A1
         $a11 = $this->input->post('A11');
         $a12 = $this->input->post('A12');
@@ -163,9 +169,12 @@ class Dosen extends CI_Controller
                     $filename = $this->session->userdata('nip') . '_' . $id_pengajuan . '_' . $i . '_b1';
                     $this->berkas->b1($id_pengajuan, $b11[$i], $b12[$i], $b13[$i], $b14[$i], $filename);
                     $filenames[] = $filename;
+
                     $ak = 0;
+                    $tmp = 0;
+                    $tmp1 = 0;
                     if ($user[0]['jabatan_fungsi'] == 'Asisten Ahli') {
-                        if ($b13[$i] >= 10) {
+                        if ($b13[$i] > 10) {
                             $tmp = $b13[$i] - 10;
                             $tmp1 = $tmp * 0.25;
                             $ak = 5 + $tmp1;
@@ -173,7 +182,7 @@ class Dosen extends CI_Controller
                             $ak = $b13[$i] * 0.5;
                         }
                     } else {
-                        if ($b13[$i] >= 10) {
+                        if ($b13[$i] > 10) {
                             $tmp = $b13[$i] - 10;
                             $tmp1 = $tmp * 0.5;
                             $ak = 10 + $tmp1;
@@ -183,7 +192,9 @@ class Dosen extends CI_Controller
                     }
                 }
                 $this->berkas->constraint('b1' . $i, $id_pengajuan, $ak);
-                unset($ak, $tmp, $tmp1);
+                unset($ak);
+                unset($tmp);
+                unset($tmp1);
             }
             $this->berkas->upload_files($filenames, $_FILES['B15']);
             unset($filenames);
@@ -737,23 +748,23 @@ class Dosen extends CI_Controller
                     $ak = 4;
                 } elseif ($c81[$i] == 'Karya Seni' && $c82[$i] == 'Sebagai Pemusik/Pengrawit/Penari/Dalang/Pemeran/Pengarah AcaraTelevisi/Pelaksana Perancangan' && $c83[$i] == 'Lokal') {
                     $ak = 2;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Naskah Drama/Novel' && $c83[$i] == 'Internasional') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Naskah Drama/Novel' && $c83[$i] == 'Internasional') {
                     $ak = 20;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Naskah Drama/Novel' && $c83[$i] == 'Nasional') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Naskah Drama/Novel' && $c83[$i] == 'Nasional') {
                     $ak = 15;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Naskah Drama/Novel' && $c83[$i] == 'Lokal') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Naskah Drama/Novel' && $c83[$i] == 'Lokal') {
                     $ak = 10;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Cerpen' && $c83[$i] == 'Internasional') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Cerpen' && $c83[$i] == 'Internasional') {
                     $ak = 20;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Cerpen' && $c83[$i] == 'Nasional') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Cerpen' && $c83[$i] == 'Nasional') {
                     $ak = 15;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Cerpen' && $c83[$i] == 'Lokal') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Cerpen' && $c83[$i] == 'Lokal') {
                     $ak = 10;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Puisi' && $c83[$i] == 'Internasional') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Puisi' && $c83[$i] == 'Internasional') {
                     $ak = 20;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Puisi' && $c83[$i] == 'Nasional') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Puisi' && $c83[$i] == 'Nasional') {
                     $ak = 15;
-                } elseif ($c81[$i] == 'Penelitian Atau Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Puisi' && $c83[$i] == 'Lokal') {
+                } elseif ($c81[$i] == 'Karya Sastra' && $c82[$i] == 'Penulis Buku Kumpulan Puisi' && $c83[$i] == 'Lokal') {
                     $ak = 10;
                 }
                 $this->berkas->constraint('c8' . $i, $id_pengajuan, $ak);
@@ -1360,20 +1371,19 @@ class Dosen extends CI_Controller
         // $a14='OK5';
         // $a15='OK6';
         // $this->berkas->a1($id_pengajuan, $a11, $a12, $a13, $a14, $a15);
-        $total1 = 0;
-        for ($i = 1; $i < 9; $i++) {
-            $nilai = array(9, 8);
-            $total = 0;
-            if ($nilai != null) {
-                for ($a = 0; $a < count($nilai); $a++) {
-                    //$id_bab = $this->input->post('id_bab_c' . $i);
-                    //$this->m_penilai->update_nilai('tbl_c' . $i, $id_bab[$a], $nilai[$a], $ak_p);
-                    $total += $nilai[$a];
-                }
-            }
-            $total1 += $total;
-        }
-        print_r($total1);
+        // $id_pengajuan = 10;
+        // $nip_array = $this->db->query("SELECT nip from tbl_pengajuan where id_pengajuan=" . $id_pengajuan . "")->result_array();
+
+        // $nip = $nip_array[0]['nip'];
+        // // print_r($nip);
+        // $ak_lama_array = $this->db->query("SELECT angka_kredit FROM tbl_user WHERE nip=" . $nip . "")->result_array();
+        // // print_r($ak_lama_array[0]['angka_kredit']);
+        // $ak_lama = $ak_lama_array[0]['angka_kredit'];
+        // $ak_tambah = 50;
+        // $ak_baru = $ak_lama + $ak_tambah;
+        // $this->m_penetapan->update_ak_dosen($nip, $ak_baru);
+
+        echo $this->m_verif->cek_verifikator();
     }
 
 

@@ -50,54 +50,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td>Penilai ke-2</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
-                                            <span>Mulai Penilaian</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Muhammad Ali Irfan</td>
-                                    <td>13 Mei 2020</td>
-                                    <td>Penilai ke-1</td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
-                                            <span>Mulai Penilaian</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
-                                            <span>-
-                                                <!-- Mulai Penilaian -->
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="nav-item text-center">
-                                        <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan'); ?>">
-                                            <span>-
-                                                <!-- Mulai Penilaian -->
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuan3 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td>-</td>
+                                        <td class="nav-item text-center">
+                                            <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan/' . $value['id_pengajuan']); ?>">
+                                                <span>
+                                                    Mulai Penilaian
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
                             </tbody>
                         </table>
                     </div>

@@ -16,6 +16,10 @@ class M_verif extends CI_Model
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=3")->result_array();
 	}
+	public function pengajuan3_not($id)
+	{
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=3 AND id_pengajuan NOT IN(" . $id . ")")->result_array();
+	}
 	public function pengajuan_4()
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=4")->result_array();
@@ -31,7 +35,7 @@ class M_verif extends CI_Model
 
 	public function pengajuan_not($id)
 	{
-		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1 AND id_pengajuan!=" . $id . "")->result_array();
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=1 AND id_pengajuan NOT IN(" . $id . ")")->result_array();
 	}
 	public function verifikator()
 	{
@@ -216,7 +220,12 @@ class M_verif extends CI_Model
 	}
 	public function cek_verifikator()
 	{
-		return $this->db->query("select a.nip,b.id_pengajuan from tbl_verifikator a join tbl_verif_pengajuan b on a.unsur_verif=b.unsur where a.nip=" . $this->session->userdata('nip') . "")->result_array();
+		$array = $this->db->query("select b.id_verifikator,b.id_pengajuan from tbl_verifikator a join tbl_verif_pengajuan b on a.unsur_verif=b.unsur WHERE b.id_verifikator=" . $this->session->userdata('nip') . "")->result_array();
+		$array_id = array();
+		foreach ($array as $key => $value) {
+			$array_id[] = $value['id_pengajuan'];
+		}
+		return $id = implode(",", $array_id);
 	}
 	public function constraint($bab, $id_pengajuan)
 	{

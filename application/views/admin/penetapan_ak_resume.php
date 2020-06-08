@@ -61,28 +61,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $array['nip']; ?></td>
+                                    <!--<?= $array['nip']; ?> -->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td> <?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
@@ -261,59 +261,59 @@
                 <tr>
                     <td>1.</td>
                     <td class="text-left">Pendidikan dan Pelaksanaan Pendidikan</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_pendidikan_final; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_pendidikan_final']; ?></td>
                 </tr>
                 <tr>
                     <td>2.</td>
                     <td class="text-left">Penelitian</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_penelitian_final; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_penelitian_final']; ?></td>
                 </tr>
                 <tr>
                     <td>3.</td>
                     <td class="text-left">Pengabdian Masyarakat</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_pengmas_final; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_pengmas_final']; ?></td>
                 </tr>
                 <tr>
                     <td>4.</td>
                     <td class="text-left">Unsur Penunjang</td>
-                    <td>X1</td>
-                    <td>X2</td>
+                    <td><?= $persen_penunjang_final; ?>%</td>
+                    <td><?= $data_nilai[0]['ak_penunjang_final']; ?></td>
                 </tr>
 
             </tbody>
             <tfoot>
                 <tr>
-                    <th colspan="2" class="text-center">Total Angka Kredit yang Diperoleh </th>
-                    <th>XX..</th>
-                    <th>XX..</th>
+                    <th colspan="3" class="text-center">Total Angka Kredit yang Diperoleh </th>
+                    <th><?= $total_nilai; ?></th>
                 </tr>
             </tfoot>
         </table>
-
-        <div class="container p-3">
-            <div class="card-body">
-                <div>
-                    <h6 class="head-subbab font-weight-bold">Berikan Catatan</h6>
-                    <textarea class="col_comment" style="width: 100%; font-family: 'Times New Roman';font-size: 10pt;"></textarea>
+        <form enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_progress'); ?>">
+            <input type="hidden" value="<?= $id_pengajuan; ?>" name="id_pengajuan">
+            <div class="container p-3">
+                <div class="card-body">
+                    <div>
+                        <h6 class="head-subbab font-weight-bold">Berikan Catatan</h6>
+                        <textarea class="col_comment" name="komentar" style="width: 100%; font-family: 'Times New Roman';font-size: 10pt;"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container row p-4">
-            <div class="col-sm-8">
-                <a type="submit" href="<?= base_url('admin/penetapan_ak_penunjang'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                    Sebelumnya
-                </a>
+            <div class="container row p-4">
+                <div class="col-sm-8">
+                    <a type="button" href="<?= base_url('admin/penetapan_ak_penunjang'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                        Sebelumnya
+                    </a>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="float-right btn btn-primary btn-user btn=block">
+                        Tetapkan Angka Kredit
+                    </button>
+                </div>
             </div>
-            <div class="col-sm-3">
-                <a type="submit" href="<?= base_url('admin/daftar_pengajuanAK'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                    Tetapkan Angka Kredit
-                </a>
-            </div>
-        </div>
 
         </form>
 

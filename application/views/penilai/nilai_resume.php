@@ -298,12 +298,13 @@
         <div class="p-3"></div>
 
 
-        <form>
+        <form enctype="multipart/form-data" method="post" action="<?= base_url('penilai/cek_progress'); ?>">
+            <input type="hidden" name="id_pengajuan" value="<?= $id_pengajuan; ?>">
             <div class="container row p-2">
                 <div class="card-body">
                     <div>
                         <h6 class="head-subbab font-weight-bold">Berikan Catatan</h6>
-                        <textarea class="col_comment" style="width: 100%; font-family: 'Times New Roman';font-size: 10pt;"></textarea>
+                        <textarea class="col_comment" name="komentar" style="width: 100%; font-family: 'Times New Roman';font-size: 10pt;"></textarea>
                     </div>
                 </div>
             </div>
@@ -318,9 +319,9 @@
                     </a>
                 </div>
                 <div class="col-sm-3">
-                    <a type="submit" href="<?= base_url('penilai/daftar_penilaianAK'); ?>" class="float-right btn btn-primary btn-user btn=block">
+                    <button type="submit" class="float-right btn btn-primary btn-user btn=block">
                         Kirim Hasil Penilaian
-                    </a>
+                    </button>
                 </div>
             </div>
         </form>

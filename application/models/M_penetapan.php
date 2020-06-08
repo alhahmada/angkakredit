@@ -16,4 +16,14 @@ class M_penetapan extends CI_Model
     {
         $this->db->query("UPDATE tbl_pengajuan set ak_" . $bab . "_final=$total where id_pengajuan=$id_pengajuan");
     }
+    public function update_ak_penetapan($id_pengajuan, $ak_total_final)
+    {
+
+        $this->db->query("UPDATE tbl_pengajuan SET ak_diterima_final=$ak_total_final WHERE id_pengajuan = $id_pengajuan");
+    }
+
+    public function update_ak_dosen($nip, $ak_baru)
+    {
+        $this->db->query("UPDATE tbl_user SET angka_kredit=$ak_baru WHERE nip=$nip");
+    }
 }

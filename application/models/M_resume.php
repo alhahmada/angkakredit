@@ -39,4 +39,8 @@ class M_resume extends CI_Model
     {
         return $this->db->query("SELECT ak_pendidikan, ak_penelitian, ak_pengmas, ak_penunjang FROM tbl_penilaian WHERE id_pengajuan=$id_pengajuan AND nip=$nip")->result_array();
     }
+    public function resume_penetapan($id_pengajuan)
+    {
+        return $this->db->query("SELECT ak_pendidikan_final, ak_penelitian_final, ak_pengmas_final, ak_penunjang_final FROM tbl_pengajuan WHERE id_pengajuan=$id_pengajuan")->result_array();
+    }
 }

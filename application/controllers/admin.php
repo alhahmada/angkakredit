@@ -12,25 +12,18 @@ class admin extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
-        // if ($this->session->userdata('role') != "1") {
-        //     redirect(base_url($this->session->userdata('home')));
-        // }
+        if ($this->session->userdata('role') != "1") {
+            redirect(base_url($this->session->userdata('home')));
+        }
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
         $this->load->model('m_verif');
         $this->load->model('m_penilai');
         $this->load->model('m_penetapan');
+        $this->load->model('m_resume');
     }
 
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     $this->load->library('form_validation');
-    //     if ($this->session->userdata('status') != "login") {
-    //         redirect(base_url("login"));
-    //     }
-    //     $this->load->model('m_auth');
-    // }
+
     public function beranda_admin()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -58,7 +51,7 @@ class admin extends CI_Controller
         if ($cekverifikator == null) {
             $pengajuan1 = $this->m_verif->pengajuan_all();
         } else {
-            $pengajuan1 = $this->m_verif->pengajuan_not($cekverifikator[0]['id']);
+            $pengajuan1 = $this->m_verif->pengajuan_not($cekverifikator[0]['id_pengajuan']);
         }
 
         $verifikator = $this->m_verif->verifikator();
@@ -102,12 +95,38 @@ class admin extends CI_Controller
             $keterangan = $i;
             $this->m_penilai->pilih_penilai($nip, $id_pengajuan, $keterangan);
         }
+        $this->m_pengajuan->update_progress($id_pengajuan, 3, 'Proses Penilaian oleh tim penilai');
         redirect('/admin/daftar_pengajuanAK');
 
         // id_pengajuan
         // keterangan (Penilai Ke Berapa)
 
 
+    }
+    public function action_progress()
+    {
+        $id_pengajuan = $this->input->post('id_pengajuan');
+        $this->m_pengajuan->update_progress($id_pengajuan, 5, 'Proses Pengajuan Selesai');
+
+        $total_penetapan1 = $this->db->query("SELECT ak_pendidikan_final, ak_penelitian_final, ak_pengmas_final, ak_penunjang_final FROM tbl_pengajuan WHERE id_pengajuan=$id_pengajuan")->result_array();
+        $total_penetapan = $total_penetapan1[0]['ak_pendidikan_final'] + $total_penetapan1[0]['ak_penelitian_final'] + $total_penetapan1[0]['ak_pengmas_final'] + $total_penetapan1[0]['ak_penunjang_final'];
+        $this->m_penetapan->update_ak_penetapan($id_pengajuan, $total_penetapan);
+
+        $keterangan = $this->input->post('komentar');
+        $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Penetapan Angka Kredit');
+
+        $nip_array = $this->db->query("SELECT nip from tbl_pengajuan where id_pengajuan=" . $id_pengajuan . "")->result_array();
+        $nip = $nip_array[0]['nip'];
+        // print_r($nip);
+        $ak_lama_array = $this->db->query("SELECT angka_kredit FROM tbl_user WHERE nip=" . $nip . "")->result_array();
+        // print_r($ak_lama_array[0]['angka_kredit']);
+        $ak_lama = $ak_lama_array[0]['angka_kredit'];
+        $ak_tambah = $total_penetapan;
+        $ak_baru = $ak_lama + $ak_tambah;
+        $this->m_penetapan->update_ak_dosen($nip, $ak_baru);
+
+
+        redirect('/admin/daftar_pengajuanAK');
     }
 
     public function cek_berkas()
@@ -158,7 +177,7 @@ class admin extends CI_Controller
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
         } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
-            $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
+            $this->m_pengajuan->update_progress($id_pengajuan, 6, 'Verifikasi ditolak');
         }
         redirect('/admin/daftar_pengajuanAK');
     }
@@ -259,7 +278,7 @@ class admin extends CI_Controller
         $arraytbl = array('a1', 'a2', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'b13');
         $total1 = 0;
         foreach ($arraytbl as $key => $tbl) {
-            $nilai = $this->input->post('nilai_' . $tbl);
+            $nilai = $this->input->post('nilai_' . $tbl . '_final');
             $total = 0;
             if ($nilai != NULL) {
                 for ($i = 0; $i < count($nilai); $i++) {
@@ -315,6 +334,23 @@ class admin extends CI_Controller
     }
     public function action_penetapan_penelitian()
     {
+        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
+        $id_pengajuan = $this->input->post('id_pengajuan');
+        $total1 = 0;
+        for ($a = 1; $a < 9; $a++) {
+            $nilai = $this->input->post('nilai_c' . $a . '_final');
+            $total = 0;
+            if ($nilai != NULL) {
+                for ($i = 0; $i < count($nilai); $i++) {
+                    $id_bab = $this->input->post('id_bab_c' . $a);
+                    $this->m_penetapan->update_nilai_final('tbl_c' . $a, $id_bab[$i], $nilai[$i]);
+                    $total += $nilai[$i];
+                }
+            }
+            $total1 += $total;
+        }
+        $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'penelitian');
+        redirect('/admin/penetapan_ak_pengmas/' . $id_pengajuan);
     }
 
     public function penetapan_ak_pengmas()
@@ -350,6 +386,23 @@ class admin extends CI_Controller
     }
     public function action_penetapan_pengmas()
     {
+        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
+        $id_pengajuan = $this->input->post('id_pengajuan');
+        $total1 = 0;
+        for ($a = 1; $a < 8; $a++) {
+            $nilai = $this->input->post('nilai_d' . $a . '_final');
+            $total = 0;
+            if ($nilai != NULL) {
+                for ($i = 0; $i < count($nilai); $i++) {
+                    $id_bab = $this->input->post('id_bab_d' . $a);
+                    $this->m_penetapan->update_nilai_final('tbl_d' . $a, $id_bab[$i], $nilai[$i]);
+                    $total += $nilai[$i];
+                }
+            }
+            $total1 += $total;
+        }
+        $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'pengmas');
+        redirect('/admin/penetapan_ak_penunjang/' . $id_pengajuan);
     }
 
     public function penetapan_ak_penunjang()
@@ -391,6 +444,23 @@ class admin extends CI_Controller
     }
     public function action_penetapan_penunjang()
     {
+        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
+        $id_pengajuan = $this->input->post('id_pengajuan');
+        $total1 = 0;
+        for ($a = 1; $a < 11; $a++) {
+            $nilai = $this->input->post('nilai_e' . $a . '_final');
+            $total = 0;
+            if ($nilai != NULL) {
+                for ($i = 0; $i < count($nilai); $i++) {
+                    $id_bab = $this->input->post('id_bab_e' . $a);
+                    $this->m_penetapan->update_nilai_final('tbl_e' . $a, $id_bab[$i], $nilai[$i]);
+                    $total += $nilai[$i];
+                }
+            }
+            $total1 += $total;
+        }
+        $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'penunjang');
+        redirect('/admin/penetapan_ak_resume/' . $id_pengajuan);
     }
 
     public function penetapan_ak_resume()
@@ -403,6 +473,17 @@ class admin extends CI_Controller
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
 
+        $penetapan = $this->m_resume->resume_penetapan($id_pengajuan);
+        $data['data_nilai'] = $penetapan;
+
+        $total_penetapan = $penetapan[0]['ak_pendidikan_final'] + $penetapan[0]['ak_penelitian_final'] + $penetapan[0]['ak_pengmas_final'] + $penetapan[0]['ak_penunjang_final'];
+
+        $data['total_nilai'] = $total_penetapan;
+
+        $data['persen_pendidikan_final'] = number_format($penetapan[0]['ak_pendidikan_final'] * 100 / $total_penetapan, 2);
+        $data['persen_penelitian_final'] = number_format($penetapan[0]['ak_penelitian_final'] * 100 / $total_penetapan, 2);
+        $data['persen_pengmas_final'] = number_format($penetapan[0]['ak_pengmas_final'] * 100 / $total_penetapan, 2);
+        $data['persen_penunjang_final'] = number_format($penetapan[0]['ak_penunjang_final'] * 100 / $total_penetapan, 2);
 
 
         $data['id_pengajuan'] = $this->uri->segment(3);

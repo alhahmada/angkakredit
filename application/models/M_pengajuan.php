@@ -65,4 +65,10 @@ class M_pengajuan extends CI_Model
 	{
 		$this->db->query("UPDATE tbl_pengajuan set progress_pengajuan='$progress',keterangan='$keterangan' where id_pengajuan=$id_pengajuan");
 	}
+
+
+	function cek_penilaian($id_pengajuan)
+	{
+		return $this->db->query("SELECT * FROM tbl_penilaian WHERE id_pengajuan=$id_pengajuan AND (ak_pendidikan IS NULL OR ak_penelitian IS NULL OR ak_pengmas IS NULL OR ak_penunjang IS NULL)")->result_array();
+	}
 }

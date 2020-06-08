@@ -60,28 +60,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $array['nip']; ?></td>
+                                    <!--<?= $array['nip']; ?> -->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td> <?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
@@ -255,7 +255,7 @@
         <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
             <h5 class="head-bab">D. Pengabdian Masyarakat</h5>
         </div>
-        <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('penilai/action_penetapan_pengmas'); ?>">
+        <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_penetapan_pengmas'); ?>">
             <input type="hidden" value="<?= $id_pengajuan; ?>" name="id_pengajuan">
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
@@ -282,6 +282,7 @@
                         <?php $urut = 0;
                         foreach ($d1 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d1[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d11']; ?></td>
                                 <td><?= $value['d12']; ?></td>
                                 <td><?= $value['d13']; ?></td>
@@ -328,6 +329,7 @@
                         <?php $urut = 0;
                         foreach ($d2 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d2[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d21']; ?></td>
                                 <td><?= $value['d22']; ?></td>
                                 <td class="nav-item text-center">
@@ -375,6 +377,7 @@
                         <?php $urut = 0;
                         foreach ($d3 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d3[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d31']; ?></td>
                                 <td><?= $value['d32']; ?></td>
                                 <td><?= $value['d33']; ?></td>
@@ -422,6 +425,7 @@
                         <?php $urut = 0;
                         foreach ($d4 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d4[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d41']; ?></td>
                                 <td><?= $value['d42']; ?></td>
                                 <td class="nav-item text-center">
@@ -467,6 +471,7 @@
                         <?php $urut = 0;
                         foreach ($d5 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d5[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d51']; ?></td>
                                 <td><?= $value['d52']; ?></td>
                                 <td class="nav-item text-center">
@@ -512,6 +517,7 @@
                         <?php $urut = 0;
                         foreach ($d6 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d6[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d61']; ?></td>
                                 <td><?= $value['d62']; ?></td>
                                 <td class="nav-item text-center">
@@ -559,6 +565,7 @@
                         <?php $urut = 0;
                         foreach ($d7 as $key => $value) { ?>
                             <tr>
+                                <input type="hidden" name="id_bab_d7[]" value="<?= $value['id']; ?>">
                                 <td><?= $value['d71']; ?></td>
                                 <td><?= $value['d72']; ?></td>
                                 <td><?= $value['d73']; ?></td>

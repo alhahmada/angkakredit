@@ -294,7 +294,7 @@
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
                                         <td class="nav-item text-center">
-                                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                            <a class="nav-link" href="<?= base_url('admin/penetapan_ak_pendidikan/' . $value['id_pengajuan']); ?>">
                                                 <span>Tetapkan Angka Kredit</span>
                                             </a>
                                         </td>

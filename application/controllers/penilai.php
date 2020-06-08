@@ -10,9 +10,9 @@ class penilai extends CI_Controller
         if ($this->session->userdata('status') != "login") {
             redirect(base_url("login"));
         }
-        // if ($this->session->userdata('role') != "5") {
-        //     redirect(base_url($this->session->userdata('home')));
-        // }
+        if ($this->session->userdata('role') != "5" or $this->session->userdata('role') != "4") {
+            redirect(base_url($this->session->userdata('home')));
+        }
 
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
@@ -38,6 +38,16 @@ class penilai extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
+
+        $cekpenilai = $this->m_penilai->cek_penilai();
+        if ($cekpenilai == null) {
+            $pengajuan3 = $this->m_verif->pengajuan_3();
+        } else {
+            $pengajuan3 = $this->m_verif->pengajuan3_not($cekpenilai);
+        }
+
+        $data['pengajuan3'] = $pengajuan3;
+
         $data['title'] = 'Daftar Pengajuan Yang Harus Dinilai';
         $this->load->view('templates/auth_header_penilai', $data);
         $this->load->view('penilai/daftar_penilaianAK');
@@ -394,6 +404,19 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_header_penilai', $data);
         $this->load->view('penilai/nilai_resume');
         $this->load->view('templates/auth_footer');
+    }
+    public function cek_progress()
+    {
+        $id_pengajuan = $this->input->post('id_pengajuan');
+        if ($this->m_pengajuan->cek_penilaian($id_pengajuan) == null) {
+            $this->m_pengajuan->update_progress($id_pengajuan, 4, 'Selesai Dinilai Oleh Tim Penilai');
+        }
+
+        $keterangan = $this->input->post('komentar');
+        $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Penilaian');
+
+
+        redirect('penilai/daftar_penilaianAK');
     }
 
     public function informasi_penilai()

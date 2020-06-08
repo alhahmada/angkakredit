@@ -60,28 +60,28 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Lengkap</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['nama_lengkap']; ?></td>
                                     <!-- <><?= $array['nama_lengkap']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
-                                    <td>$get.Data.User</td>
-                                    <!--<?= $array['nip']; ?>-->
+                                    <td><?= $array['nip']; ?></td>
+                                    <!--<?= $array['nip']; ?> -->
                                 </tr>
 
                                 <tr>
                                     <td>Unit Kerja</td>
-                                    <td>$get.Data.User</td>
+                                    <td> <?= $array['unit_kerja']; ?></td>
                                     <!-- <?= $array['unit_kerja']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Angka Kredit</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['angka_kredit']; ?></td>
                                     <!-- <?= $array['angka_kredit']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
-                                    <td>$get.Data.User</td>
+                                    <td><?= $array['tgl_pengajuan']; ?></td>
                                     <!-- <?= $array['tgl_pengajuan']; ?> -->
                                 </tr>
                             </tbody>
