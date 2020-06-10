@@ -163,15 +163,19 @@ class admin extends CI_Controller
     public function action_verif_berkas()
     {
         $keterangan = $this->input->post('keterangan');
+        $nip = $this->session->userdata('nip');
         $aksi = $this->input->post('aksi');
         $id_pengajuan = $this->input->post('id_pengajuan');
         if ($aksi == 'tolak') {
+            $status = 2;
             $progress = 7;
             $ket = "Berkas Tidak Lulus verifikasi oleh admin";
         } elseif ($aksi == 'terima') {
+            $status = 1;
             $progress = 1;
             $ket = "Berkas Lulus verifikasi oleh admin";
         }
+        $this->m_pengajuan->update_verif_berkas($id_pengajuan, $status, $nip, $keterangan);
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Pengajuan');
         $this->m_pengajuan->update_progress($id_pengajuan, $progress, $ket);
         redirect('/admin/daftar_pengajuanAK');
@@ -221,7 +225,7 @@ class admin extends CI_Controller
             $status = 1;
         }
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Berkas Penunjang');
-        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan, 'verif_pendidikan');
+        $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan, 'verif_penunjang');
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
         } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
@@ -589,7 +593,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_profil_admin()
+    public function edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];

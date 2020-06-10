@@ -1476,15 +1476,187 @@ class Dosen extends CI_Controller
         $this->load->view('dosen/submit_pengajuan');
         $this->load->view('templates/auth_footer');
     }
+
+
+    public function log_pengajuan()
+    {
+        $id_pengajuan = $this->uri->segment(3);
+        $nip = $this->session->userdata('nip');
+        $datauser = $this->m_auth->data_user($nip);
+        $data['array'] = $datauser[0];
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['id_pengajuan'] = $id_pengajuan;
+
+        $tgl_pengajuan = $this->db->query("SELECT tgl_pengajuan FROM tbl_pengajuan WHERE id_pengajuan = $id_pengajuan")->result_array();
+        $data['tgl_pengajuan'] = $tgl_pengajuan[0];
+
+        //Log Verifikasi Berkas 
+        $status_berkas = '-';
+        $verif_berkas = $this->m_verif->cek_verif_berkas($id_pengajuan);
+        if ($verif_berkas != NULL) {
+            $data['verif_berkas'] = $verif_berkas[0];
+            if ($verif_berkas[0]['status'] == '1') {
+                $status_berkas = 'Terverifikasi';
+            } else {
+                $status_berkas = 'Pengajuan Ditolak';
+            }
+            $data['status_berkas'] = $status_berkas;
+        } else {
+            $data['verif_berkas'] = NULL;
+            $data['status_berkas'] = 'Belum Diproses';
+        }
+
+        //Log Verif Pendidikan
+        $status_pendidikan = '-';
+        $verif_pendidikan = $this->m_verif->cek_verif_pendidikan($id_pengajuan);
+        if ($verif_pendidikan != NULL) {
+            $data['verif_pendidikan'] = $verif_pendidikan[0];
+            if ($verif_pendidikan[0]['status'] == '1') {
+                $status_pendidikan = 'Terverifikasi';
+            } else {
+                $status_pendidikan = 'Pengajuan Ditolak';
+            }
+            $data['status_pendidikan'] = $status_pendidikan;
+        } else {
+            $data['verif_pendidikan'] = NULL;
+            $data['status_pendidikan'] = 'Belum Diproses';
+        }
+
+        //Log Verif Penelitian
+        $status_penelitian = '-';
+        $verif_penelitian = $this->m_verif->cek_verif_penelitian($id_pengajuan);
+        if ($verif_penelitian != NULL) {
+            $data['verif_penelitian'] = $verif_penelitian[0];
+            if ($verif_penelitian[0]['status'] == '1') {
+                $status_penelitian = 'Terverifikasi';
+            } else {
+                $status_penelitian = 'Pengajuan Ditolak';
+            }
+            $data['status_penelitian'] = $status_penelitian;
+        } else {
+            $data['verif_penelitian'] = NULL;
+            $data['status_penelitian'] = 'Belum Diproses';
+        }
+
+        //Log Verif Pengabdian Masyarakat
+        $status_pengmas = '-';
+        $verif_pengmas = $this->m_verif->cek_verif_pengmas($id_pengajuan);
+        if ($verif_pengmas != NULL) {
+            $data['verif_pengmas'] = $verif_pengmas[0];
+            if ($verif_pengmas[0]['status'] == '1') {
+                $status_pengmas = 'Terverifikasi';
+            } else {
+                $status_pengmas = 'Pengajuan Ditolak';
+            }
+            $data['status_pengmas'] = $status_pengmas;
+        } else {
+            $data['verif_pengmas'] = NULL;
+            $data['status_pengmas'] = 'Belum Diproses';
+        }
+
+        //Log Verif Penunjang
+        $status_penunjang = '-';
+        $verif_penunjang = $this->m_verif->cek_verif_penunjang($id_pengajuan);
+        if ($verif_penunjang != NULL) {
+            $data['verif_penunjang'] = $verif_penunjang[0];
+            if ($verif_penunjang[0]['status'] == '1') {
+                $status_penunjang = 'Terverifikasi';
+            } else {
+                $status_penunjang = 'Pengajuan Ditolak';
+            }
+            $data['status_penunjang'] = $status_penunjang;
+        } else {
+            $data['verif_penunjang'] = NULL;
+            $data['status_penunjang'] = 'Belum Diproses';
+        }
+
+        //Log Penilaian 1
+        $status_penilaian_1 = '-';
+        $penilaian_1 = $this->m_verif->cek_penilaian_1($id_pengajuan);
+        if ($penilaian_1 != NULL) {
+            $data['penilaian_1'] = $penilaian_1;
+            if ($penilaian_1[0]['ak_pendidikan'] != NULL) {
+                $status_penilaian_1 = 'Sudah Dinilai';
+            } else {
+                $status_penilaian_1 = 'Belum Dinilai';
+            }
+            $data['status_penilaian_1'] = $status_penilaian_1;
+        } else {
+            $data['penilaian_1'] = NULL;
+            $data['status_penilaian_1'] = 'Belum Diproses';
+        }
+
+        //Log Penilaian 2
+        $status_penilaian_2 = '-';
+        $penilaian_2 = $this->m_verif->cek_penilaian_2($id_pengajuan);
+        if ($penilaian_2 != NULL) {
+            $data['penilaian_2'] = $penilaian_2;
+            if ($penilaian_2[0]['ak_pendidikan'] != NULL) {
+                $status_penilaian_2 = 'Sudah Dinilai';
+            } else {
+                $status_penilaian_2 = 'Belum Dinilai';
+            }
+            $data['status_penilaian_2'] = $status_penilaian_2;
+        } else {
+            $data['penilaian_2'] = NULL;
+            $data['status_penilaian_2'] = 'Belum Diproses';
+        }
+
+        //Log Penilaian 3
+        $status_penilaian_3 = '-';
+        $penilaian_3 = $this->m_verif->cek_penilaian_3($id_pengajuan);
+        if ($penilaian_3 != NULL) {
+            $data['penilaian_3'] = $penilaian_3;
+            if ($penilaian_3[0]['ak_pendidikan'] != NULL) {
+                $status_penilaian_3 = 'Sudah Dinilai';
+            } else {
+                $status_penilaian_3 = 'Belum Dinilai';
+            }
+            $data['status_penilaian_3'] = $status_penilaian_3;
+        } else {
+            $data['penilaian_3'] = NULL;
+            $data['status_penilaian_3'] = 'Belum Diproses';
+        }
+
+        //Log Penetapan Angka Kredit
+        $status_penetapanAK = '-';
+        $penetapanAK = $this->m_verif->cek_penetapan($id_pengajuan);
+        if ($penetapanAK != NULL) {
+            $data['penetapanAK'] = $penetapanAK;
+            if ($penetapanAK[0]['ak_diterima_final'] != NULL) {
+                $status_penetapanAK = 'Angka Kredit Telah Ditetapkan';
+            } else {
+                $status_penetapanAK = 'Belum Ditetapkan';
+            }
+            $data['status_penetapanAK'] = $status_penetapanAK;
+        } else {
+            $data['penetapanAK'] = NULL;
+            $data['status_penetapanAK'] = 'Belum Diproses';
+        }
+
+        $data['title'] = 'Log Pengajuan Dosen';
+        $this->load->view('templates/auth_header', $data);
+        $this->load->view('dosen/log_pengajuan');
+        $this->load->view('templates/auth_footer');
+    }
+
+
+
+
+
     public function test()
     {
-        $url3 = $this->uri->segment(3);
-        $url2 = $this->uri->segment(2);
-        $url1 = $this->uri->segment(1);
+        // $nip = $this->session->userdata('nip');
+        // $prodi = $this->db->query("SELECT a.nama_prodi FROM tbl_prodi a JOIN tbl_user b WHERE a.id_prodi=b.prodi AND b.nip=$nip")->result_array();
+        // $data['prodi'] = $prodi[0];
+        // return $prodi[0];
+        // $last = $this->m_pengajuan->data_pengajuan_5last();
+        // $last = $this->m_pengajuan->data_pengajuan();
+        // print_r($last);
+        $verif_berkas = $this->m_verif->cek_penilaian_1(14);
 
-        print_r($url1);
-        print_r($url2);
-        print_r($url3);
+        print_r($verif_berkas[0]['updated_at']);
     }
 
 

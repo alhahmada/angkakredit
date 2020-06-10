@@ -53,7 +53,7 @@ class Auth extends CI_Controller
         $data['title'] = 'Beranda Dosen';
         // =======
         $data['array'] = $datauser[0];
-        $datapengajuan = $this->m_pengajuan->data_pengajuan();
+        $datapengajuan = $this->m_pengajuan->data_pengajuan_5last();
         $data['pengajuan'] = $datapengajuan;
         // >>>>>>> 42b9dad32abb32577e2d9c6b827f7e01327a92ca
         $this->load->view('templates/auth_header', $data);
@@ -100,9 +100,12 @@ class Auth extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_profil_dosen()
+    public function edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $nip = $this->session->userdata('nip');
+        $prodi = $this->db->query("SELECT a.nama_prodi FROM tbl_prodi a JOIN tbl_user b WHERE a.id_prodi=b.prodi AND b.nip=$nip")->result_array();
+        $data['prodi'] = $prodi[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['array'] = $datauser[0];
@@ -114,15 +117,54 @@ class Auth extends CI_Controller
 
     public function action_ubah_nama()
     {
-        $url3 = $this->uri->segment(3);
-        $url2 = $this->uri->segment(2);
-        $url1 = $this->uri->segment(1);
-
+        $url = $this->uri->segment(1);
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $nip = $this->session->userdata('nip');
         $nama_baru = $this->input->post('nama_baru');
 
         $this->m_ubah_data->ubah_nama($nip, $nama_baru);
+
+        redirect('/' . $url . '/edit_profil/');
+    }
+
+    public function action_ubah_prodi()
+    {
+        $url = $this->uri->segment(1);
+        $nip = $this->session->userdata('nip');
+        $prodi_terpilih = $this->input->post('prodi_baru');
+        if ($prodi_terpilih == 'DIV S') {
+            $prodi_baru = "2";
+        } elseif ($prodi_terpilih == 'DIV KS') {
+            $prodi_baru = "1";
+        } elseif ($prodi_terpilih == 'DIII S') {
+            $prodi_baru = "3";
+        }
+
+        $this->m_ubah_data->ubah_prodi($nip, $prodi_baru);
+
+        redirect('/' . $url . '/edit_profil/');
+    }
+
+    public function action_ubah_email()
+    {
+        $url = $this->uri->segment(1);
+        $nip = $this->session->userdata('nip');
+        $email_baru = $this->input->post('email_baru');
+
+        $this->m_ubah_data->ubah_email($nip, $email_baru);
+
+        redirect('/' . $url . '/edit_profil/');
+    }
+
+    public function action_ubah_nohp()
+    {
+        $url = $this->uri->segment(1);
+        $nip = $this->session->userdata('nip');
+        $nohp_baru = $this->input->post('nohp_baru');
+
+        $this->m_ubah_data->ubah_nohp($nip, $nohp_baru);
+
+        redirect('/' . $url . '/edit_profil/');
     }
 
 

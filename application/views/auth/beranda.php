@@ -146,7 +146,7 @@
                                         <td><?= $data['tgl_pengajuan']; ?></td>
                                         <td><?= $data['progress_pengajuan']; ?></td>
                                         <td class="nav-item text-center">
-                                            <a class="nav-link" href="<?= base_url('dosen/log/' . $data['id_pengajuan']); ?>">
+                                            <a class="nav-link" href="<?= base_url('dosen/log_pengajuan/' . $data['id_pengajuan']); ?>">
                                                 <span>Lihat Log</span>
                                             </a>
                                         </td>

@@ -8,6 +8,12 @@ class M_pengajuan extends CI_Model
 		return $this->db->get_where('tbl_pengajuan', array('nip' => $this->session->userdata('nip')))->result_array();
 	}
 
+	function data_pengajuan_5last()
+	{
+		$nip = $this->session->userdata('nip');
+		return $this->db->query("SELECT * FROM tbl_pengajuan WHERE nip=$nip ORDER BY id_pengajuan desc LIMIT 0, 5")->result_array();
+	}
+
 
 	function pengajuan_all()
 	{
@@ -71,9 +77,19 @@ class M_pengajuan extends CI_Model
 		$this->db->query("UPDATE tbl_pengajuan set progress_pengajuan='$progress',keterangan='$keterangan' where id_pengajuan=$id_pengajuan");
 	}
 
+	function update_verif_berkas($id_pengajuan, $status, $nip, $keterangan)
+	{
+		$this->db->query("INSERT INTO tbl_verif_berkas (id_pengajuan, tbl_verif_berkas.status, nip_verifikator, keterangan) VALUES ($id_pengajuan, $status, $nip, $keterangan)");
+	}
+
 
 	function cek_penilaian($id_pengajuan)
 	{
 		return $this->db->query("SELECT * FROM tbl_penilaian WHERE id_pengajuan=$id_pengajuan AND (ak_pendidikan IS NULL OR ak_penelitian IS NULL OR ak_pengmas IS NULL OR ak_penunjang IS NULL)")->result_array();
+	}
+
+	public function log_pengajuan($id_pengajuan)
+	{
+		return $this->db->query("SELECT ");
 	}
 }

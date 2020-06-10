@@ -435,8 +435,6 @@ class penilai extends CI_Controller
         $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
         $data['constraint'] = $constraint[0];
 
-
-
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
         $data['id_pengajuan'] = $id_pengajuan;
@@ -470,8 +468,10 @@ class penilai extends CI_Controller
             $this->m_pengajuan->update_progress($id_pengajuan, 4, 'Selesai Dinilai Oleh Tim Penilai');
         }
 
+        $penilai_ke = $this->db->query("SELECT keterangan FROM tbl_penilaian WHERE id_pengajuan=" . $id_pengajuan . " AND nip=" . $this->session->userdata('nip') . "")->result_array();
+
         $keterangan = $this->input->post('komentar');
-        $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Penilaian');
+        $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Penilaian_' . $penilai_ke[0]['keterangan']);
 
 
         redirect('penilai/daftar_penilaianAK');
@@ -499,7 +499,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_profil_penilai()
+    public function edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];

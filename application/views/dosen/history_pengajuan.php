@@ -39,10 +39,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>ID Pengajuan</th>
                         <th>Tanggal Pengajuan</th>
                         <th>Progress Pengajuan</th>
-                        <th>Terakhir Diproses</th>
-                        <th>ID Pengajuan</th>
+                        <th>Lihat Log</th>
                         <th style="width: 15%;">Angka Kredit yang diterima</th>
                     </tr>
                 </thead>
@@ -51,10 +51,14 @@
                     foreach ($pengajuan as $key => $data) { ?>
                         <tr>
                             <td><?= $no; ?></td>
+                            <td><?= $data['id_pengajuan']; ?></td>
                             <td><?= $data['tgl_pengajuan']; ?></td>
                             <td><?= $data['progress_pengajuan']; ?></td>
-                            <td><?= $data['tgl_pengajuan']; ?></td>
-                            <td><?= $data['id_pengajuan']; ?></td>
+                            <td class="nav-item text-center">
+                                <a class="nav-link" href="<?= base_url('dosen/log_pengajuan/' . $data['id_pengajuan']); ?>">
+                                    <span>Lihat Log</span>
+                                </a>
+                            </td>
                             <td><?= $data['ak_diterima']; ?></td>
                         <?php $no++;
                     } ?>
@@ -70,7 +74,7 @@
                     text-align: left;
                     font-size: 16px;
                     color: black;
-                    margin-top: 30px;
+                    margin-top: 25px;
                 }
 
                 .table-ket thead th {
@@ -110,6 +114,8 @@
             </table>
         </div>
     </div>
+
+    <div class="pt-3"></div>
 
 
 </div>

@@ -89,7 +89,7 @@
             </div>
             <!-- Menu Tambahan User Pertama-->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('penilai/edit_profil_penilai'); ?>">
+                <a class="nav-link" href="<?= base_url('penilai/edit_profil'); ?>">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Edit Profil</span></a>
             </li>
@@ -221,7 +221,7 @@
                             <!-- Menampilkan Popup Ketia Foto atau nama di klik -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <!-- Pilihan 1 (Lihat Profil) -->
-                                <a class="dropdown-item" href="<?= base_url('penilai/edit_profil_penilai'); ?>">
+                                <a class="dropdown-item" href="<?= base_url('penilai/edit_profil'); ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Edit Profil
                                 </a>

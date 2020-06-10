@@ -280,4 +280,43 @@ class M_verif extends CI_Model
 		$id = implode(",", $array_id);
 		return $this->db->query("SELECT a.id_pengajuan, a.tgl_pengajuan, b.nama_lengkap FROM tbl_pengajuan a JOIN tbl_user b ON a.nip=b.nip WHERE a.id_pengajuan IN(" . $id . ")")->result_array();
 	}
+
+
+
+	public function cek_verif_berkas($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.status, b.updated_at, b.keterangan FROM tbl_verif_berkas a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE b.jenis_berkas ='Berkas Pengajuan' AND b.id_pengajuan=$id_pengajuan ")->result_array();
+	}
+	public function cek_verif_pendidikan($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.status, b.updated_at, b.keterangan FROM tbl_verif_pengajuan a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE b.jenis_berkas ='Berkas Pendidikan' AND a.id_pengajuan =$id_pengajuan ORDER BY b.updated_at desc LIMIT 1 ")->result_array();
+	}
+	public function cek_verif_penelitian($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.status, b.updated_at, b.keterangan FROM tbl_verif_pengajuan a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE b.jenis_berkas ='Berkas Penelitian' AND a.id_pengajuan =$id_pengajuan  ORDER BY b.updated_at desc LIMIT 1")->result_array();
+	}
+	public function cek_verif_pengmas($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.status, b.updated_at, b.keterangan FROM tbl_verif_pengajuan a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE b.jenis_berkas ='Berkas Pengmas' AND a.id_pengajuan =$id_pengajuan  ORDER BY b.updated_at desc LIMIT 1")->result_array();
+	}
+	public function cek_verif_penunjang($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.status, b.updated_at, b.keterangan FROM tbl_verif_pengajuan a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE b.jenis_berkas ='Berkas Penunjang' AND a.id_pengajuan =$id_pengajuan  ORDER BY b.updated_at desc LIMIT 1")->result_array();
+	}
+	public function cek_penilaian_1($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.ak_pendidikan, b.updated_at, b.keterangan FROM tbl_penilaian a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE a.id_pengajuan = $id_pengajuan AND b.jenis_berkas ='Penilaian_1' ORDER BY b.updated_at desc LIMIT 1")->result_array();
+	}
+	public function cek_penilaian_2($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.ak_pendidikan, b.updated_at, b.keterangan FROM tbl_penilaian a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE a.id_pengajuan = $id_pengajuan AND b.jenis_berkas ='Penilaian_2' ORDER BY b.updated_at desc LIMIT 1")->result_array();
+	}
+	public function cek_penilaian_3($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.id_pengajuan, a.ak_pendidikan, b.updated_at, b.keterangan FROM tbl_penilaian a JOIN tbl_log_pengajuan b ON a.id_pengajuan=b.id_pengajuan WHERE a.id_pengajuan = $id_pengajuan AND b.jenis_berkas ='Penilaian_3' ORDER BY b.updated_at desc LIMIT 1 ")->result_array();
+	}
+	public function cek_penetapan($id_pengajuan)
+	{
+		return $this->db->query("SELECT a.*, b.ak_diterima_final FROM tbl_log_pengajuan a JOIN tbl_pengajuan b ON a.id_pengajuan = b.id_pengajuan WHERE a.id_pengajuan=$id_pengajuan AND a.jenis_berkas='Penetapan Angka Kredit' ORDER BY a.updated_at desc LIMIT 1 ")->result_array();
+	}
 }

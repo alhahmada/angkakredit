@@ -2,9 +2,9 @@
 
 class M_ubah_data extends CI_Model
 {
-    public function ubah_nip($nip, $nip_baru)
+    public function ubah_nip($id, $nip_baru)
     {
-        $this->db->query("UPDATE tbl_user SET nip=$nip_baru where nip=$nip");
+        $this->db->query("UPDATE tbl_user SET nip=$nip_baru where id=$id");
     }
 
     public function ubah_nama($nip, $nama_baru)
@@ -14,12 +14,12 @@ class M_ubah_data extends CI_Model
 
     public function ubah_email($nip, $email_baru)
     {
-        $this->db->query("UPDATE tbl_user SET email=$email_baru where nip=$nip");
+        $this->db->query("UPDATE tbl_user SET email='$email_baru' where nip=$nip");
     }
 
     public function ubah_nohp($nip, $nohp_baru)
     {
-        $this->db->query("UPDATE tbl_user SET no_hp=$nohp_baru where nip=$nip");
+        $this->db->query("UPDATE tbl_user SET no_hp='$nohp_baru' where nip=$nip");
     }
 
     public function ubah_prodi($nip, $prodi_baru)
@@ -29,7 +29,7 @@ class M_ubah_data extends CI_Model
 
     public function ubah_foto($nip, $foto_baru)
     {
-        $this->db->query("UPDATE tbl_user SET foto=$foto_baru where nip=$nip");
+        $this->db->query("UPDATE tbl_user SET foto='$foto_baru' where nip=$nip");
     }
 
     public function ubah_password($nip, $password_baru)

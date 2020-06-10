@@ -227,7 +227,7 @@ class verificator extends CI_Controller
         $this->m_verif->verif_pengajuan($id_pengajuan, $status, $keterangan, 'verif_pengmas');
         if ($this->m_verif->cek_verif($id_pengajuan) == 4) {
             $this->m_pengajuan->update_progress($id_pengajuan, 2, 'Verifikasi Diterima');
-        } elseif ($this->m_verif->cek_verif($id_pengajuan) == 5) {
+        } elseif ($this->m_verif->cek_verif($id_pengajuan) >= 5) {
             $this->m_pengajuan->update_progress($id_pengajuan, 7, 'Verifikasi ditolak');
         }
         redirect('/verificator/daftar_verifikasiAK');
@@ -255,7 +255,7 @@ class verificator extends CI_Controller
         $this->load->view('auth/setting');
         $this->load->view('templates/auth_footer');
     }
-    public function edit_profil_verif()
+    public function edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
