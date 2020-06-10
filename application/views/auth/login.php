@@ -12,8 +12,8 @@
                     <div class="row">
                         <?php if ($error == 'error') { ?>
                             <div style="width: 100%;background-color: red;color: black;text-align: center;">Username dan password salah !</div>
-                        <?php }elseif ($error == 'role') { ?>
-                            <div style="width: 100%;background-color: red;color: black;text-align: center;">Anda Tidak Memiliki akses ke halaman ini !</div>
+                        <?php } elseif ($error == 'role') { ?>
+                            <div style="width: 100%;background-color: red;color: black;text-align: center;">Anda Tidak Memiliki Akses ke Halaman Tersebut !</div>
                         <?php } ?>
                         <div class="col-lg p-5">
 

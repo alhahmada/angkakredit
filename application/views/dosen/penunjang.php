@@ -161,7 +161,7 @@
         </div>
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi</h5>
+                1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi (Setiap Tahun)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -192,7 +192,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                2. Menjadi anggota panitia/badan pada lembaga pemerintah</h5>
+                2. Menjadi anggota panitia/badan pada lembaga pemerintah (Setiap Kepanitiaan)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -227,7 +227,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                3. Menjadi anggota organisasi profesi</h5>
+                3. Menjadi anggota organisasi profesi (Setiap Periode Jabatan)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -291,7 +291,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                5. Menjadi anggota delegasi nasional ke pertemuan internasional</h5>
+                5. Menjadi anggota delegasi nasional ke pertemuan internasional (Setiap Kegiatan)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -322,7 +322,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                6. Berperan serta aktif dalam pertemuan ilmiah</h5>
+                6. Berperan serta aktif dalam pertemuan ilmiah (Setiap Kegiatan)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -384,7 +384,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional</h5>
+                8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional (Setiap Buku)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -415,7 +415,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                9. Memiliki prestasi di bidang olahraga/humaniora </h5>
+                9. Memiliki prestasi di bidang olahraga/humaniora (Tiap Piagam/Medali)</h5>
         </div>
 
         <div class="pb-5 pt-3">

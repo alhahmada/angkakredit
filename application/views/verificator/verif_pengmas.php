@@ -287,7 +287,7 @@
                                 <td><?= $value['d21']; ?></td>
                                 <td><?= $value['d22']; ?></td>
                                 <td class="nav-item text-center">
-                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
@@ -300,7 +300,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    3. Memberi latihan/penyuluhan/penataran/ceramah pada masyarakat, terjadwal/terprogram</h5>
+                    3. Memberi latihan/penyuluhan/penataran/ceramah pada masyarakat, terjadwal/terprogram (Setiap Program)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable D3">
@@ -321,7 +321,7 @@
                                 <td><?= $value['d33']; ?></td>
                                 <td><?= $value['d34']; ?></td>
                                 <td class="nav-item text-center">
-                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
@@ -334,7 +334,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    4. Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas pemerintahan dan pembangunan</h5>
+                    4. Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas pemerintahan dan pembangunan, tiap program</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable D4">
@@ -351,7 +351,7 @@
                                 <td><?= $value['d41']; ?></td>
                                 <td><?= $value['d42']; ?></td>
                                 <td class="nav-item text-center">
-                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
@@ -381,7 +381,7 @@
                                 <td><?= $value['d51']; ?></td>
                                 <td><?= $value['d52']; ?></td>
                                 <td class="nav-item text-center">
-                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
@@ -411,7 +411,7 @@
                                 <td><?= $value['d61']; ?></td>
                                 <td><?= $value['d62']; ?></td>
                                 <td class="nav-item text-center">
-                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>
@@ -445,7 +445,7 @@
                                 <td><?= $value['d73']; ?></td>
                                 <td><?= $value['d74']; ?></td>
                                 <td class="nav-item text-center">
-                                    <a class="nav-link" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
+                                    <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
                                         <span>Cek Berkas</span>
                                     </a>
                                 </td>

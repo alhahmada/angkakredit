@@ -251,7 +251,33 @@ class M_verif extends CI_Model
 	{
 		return $this->db->query("SELECT SUM(ak_maksimal) as total FROM tbl_constraint WHERE id_pengajuan=$id_pengajuan")->result_array();
 	}
-	public function batas_constraint($from, $to)
+	public function id_terverif($nip)
 	{
+		$array = $this->db->query("SELECT id_pengajuan FROM tbl_verif_pengajuan WHERE id_verifikator=$nip AND status='1'")->result_array();
+		$array_id = array();
+		foreach ($array as $key => $value) {
+			$array_id[] = $value['id_pengajuan'];
+		}
+		$id = implode(",", $array_id);
+		return $this->db->query("SELECT a.id_pengajuan, a.tgl_pengajuan, b.nama_lengkap FROM tbl_pengajuan a JOIN tbl_user b ON a.nip=b.nip WHERE a.id_pengajuan IN(" . $id . ")")->result_array();
+	}
+	public function id_tidak_verif($nip)
+	{
+		return $this->db->query("SELECT id_pengajuan FROM tbl_verif_pengajuan WHERE id_verifikator=$nip AND status='2'")->result_array();
+	}
+
+	public function selesai_nilai($nip)
+	{
+		return $this->db->query("SELECT a.ak_pendidikan, a.ak_penelitian, a.ak_pengmas, a.ak_penunjang, b.tgl_pengajuan, b.id_pengajuan, c.nama_lengkap FROM tbl_penilaian a JOIN tbl_pengajuan b ON a.id_pengajuan=b.id_pengajuan JOIN tbl_user c ON b.nip=c.nip WHERE a.nip=$nip AND a.ak_penunjang IS NOT NULL")->result_array();
+	}
+	public function belum_dinilai($nip)
+	{
+		$array = $this->db->query("SELECT id_pengajuan FROM tbl_penilaian WHERE nip=$nip AND ak_penunjang IS NULL")->result_array();
+		$array_id = array();
+		foreach ($array as $key => $value) {
+			$array_id[] = $value['id_pengajuan'];
+		}
+		$id = implode(",", $array_id);
+		return $this->db->query("SELECT a.id_pengajuan, a.tgl_pengajuan, b.nama_lengkap FROM tbl_pengajuan a JOIN tbl_user b ON a.nip=b.nip WHERE a.id_pengajuan IN(" . $id . ")")->result_array();
 	}
 }

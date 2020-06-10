@@ -43,21 +43,21 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>ID Pengajuan</th>
                                     <th>Nama Dosen</th>
                                     <th>Tanggal Pengajuan</th>
-                                    <th>Ket. Penilai</th>
                                     <th>Penilaian</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($pengajuan3 as $key => $value) { ?>
+                                foreach ($pengajuanBN as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
+                                        <td><?= $value['id_pengajuan']; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                        <td>-</td>
                                         <td class="nav-item text-center">
                                             <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan/' . $value['id_pengajuan']); ?>">
                                                 <span>
@@ -97,48 +97,31 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>ID Pengajuan</th>
                                     <th>Nama Dosen</th>
                                     <th>Tanggal Pengajuan</th>
-                                    <th>Tanggal Submit Penilaian</th>
+                                    <th style="width: 7rem;">Penilaian Pendidikan</th>
+                                    <th style="width: 7rem;">Penilaian Penelitian</th>
+                                    <th style="width: 7rem;">Penilaian Pengmas</th>
+                                    <th style="width: 7rem;">Penilaian Penunjang</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td>20 Juni 2020</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>5.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>6.</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuanSN as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no ?></td>
+                                        <td><?= $value['id_pengajuan']; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= $value['tgl_pengajuan']; ?></td>
+                                        <td><?= $value['ak_pendidikan']; ?></td>
+                                        <td><?= $value['ak_penelitian']; ?></td>
+                                        <td><?= $value['ak_pengmas']; ?></td>
+                                        <td><?= $value['ak_penunjang']; ?></td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
                             </tbody>
                         </table>
                     </div>

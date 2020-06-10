@@ -24,6 +24,10 @@ class penilai extends CI_Controller
     public function beranda_penilai()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+
+        $belum_dinilai = $this->m_verif->belum_dinilai($this->session->userdata('nip'));
+        $data['pengajuanBN'] = $belum_dinilai;
+
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['array'] = $datauser[0];
@@ -39,14 +43,19 @@ class penilai extends CI_Controller
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
 
-        $cekpenilai = $this->m_penilai->cek_penilai();
-        if ($cekpenilai == null) {
-            $pengajuan3 = $this->m_verif->pengajuan_3();
-        } else {
-            $pengajuan3 = $this->m_verif->pengajuan3_not($cekpenilai);
-        }
+        // $cekpenilai = $this->m_penilai->cek_penilai();
+        // if ($cekpenilai == null) {
+        //     $pengajuan3 = $this->m_verif->pengajuan_3();
+        // } else {
+        //     $pengajuan3 = $this->m_verif->pengajuan3_not($cekpenilai);
+        // }
+        // $data['pengajuan3'] = $pengajuan3;
 
-        $data['pengajuan3'] = $pengajuan3;
+        $belum_dinilai = $this->m_verif->belum_dinilai($this->session->userdata('nip'));
+        $data['pengajuanBN'] = $belum_dinilai;
+
+        $selesai_nilai = $this->m_verif->selesai_nilai($this->session->userdata('nip'));
+        $data['pengajuanSN'] = $selesai_nilai;
 
         $data['title'] = 'Daftar Pengajuan Yang Harus Dinilai';
         $this->load->view('templates/auth_header_penilai', $data);

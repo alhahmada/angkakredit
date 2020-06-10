@@ -13,6 +13,7 @@ class Auth extends CI_Controller
         }
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
+        $this->load->model('m_ubah_data');
     }
 
     public function index()
@@ -110,6 +111,20 @@ class Auth extends CI_Controller
         $this->load->view('auth/edit_profil');
         $this->load->view('templates/auth_footer');
     }
+
+    public function action_ubah_nama()
+    {
+        $url3 = $this->uri->segment(3);
+        $url2 = $this->uri->segment(2);
+        $url1 = $this->uri->segment(1);
+
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $nip = $this->session->userdata('nip');
+        $nama_baru = $this->input->post('nama_baru');
+
+        $this->m_ubah_data->ubah_nama($nip, $nama_baru);
+    }
+
 
     public function sampel_chart()
     {

@@ -228,7 +228,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi</h5>
+                    1. Menjadi anggota dalam suatu panitia/Badan pada perguruan tinggi (Setiap Tahun)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -263,7 +263,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e1_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e1_final[]" step="0.1" max="<?= $maks_e1[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -276,7 +276,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    2. Menjadi anggota panitia/badan pada lembaga pemerintah</h5>
+                    2. Menjadi anggota panitia/badan pada lembaga pemerintah (Setiap Kepanitiaan)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -315,7 +315,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e2_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e2_final[]" step="0.1" max="<?= $maks_e2[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -328,7 +328,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    3. Menjadi anggota organisasi profesi</h5>
+                    3. Menjadi anggota organisasi profesi (Setiap Periode Jabatan)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -365,7 +365,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e3_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e3_final[]" step="0.1" max="<?= $maks_e3[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -413,7 +413,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e4_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e4_final[]" step="0.1" max="<?= $maks_e4[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -426,7 +426,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    5. Menjadi anggota delegasi nasional ke pertemuan internasional</h5>
+                    5. Menjadi anggota delegasi nasional ke pertemuan internasional (Setiap Kegiatan)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -461,7 +461,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e5_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e5_final[]" step="0.1" max="<?= $maks_e5[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -474,7 +474,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    6. Berperan serta aktif dalam pertemuan ilmiah</h5>
+                    6. Berperan serta aktif dalam pertemuan ilmiah (Setiap Kegiatan)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -511,7 +511,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e6_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e6_final[]" step="0.1" max="<?= $maks_e6[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -557,7 +557,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e7_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e7_final[]" step="0.1" max="<?= $maks_e7[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -570,7 +570,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional</h5>
+                    8. Menulis buku pelajaran SLTA ke bawah yang diterbitkan dan diedarkan secara nasional (Setiap Buku)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -605,7 +605,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e8_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e8_final[]" step="0.1" max="<?= $maks_e8[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -618,7 +618,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    9. Memiliki prestasi di bidang olahraga/humaniora </h5>
+                    9. Memiliki prestasi di bidang olahraga/humaniora (Tiap Piagam/Medali)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -653,7 +653,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e9_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e9_final[]" step="0.1" max="<?= $maks_e9[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -701,7 +701,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_e10_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_e10_final[]" step="0.1" max="<?= $maks_e10[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }

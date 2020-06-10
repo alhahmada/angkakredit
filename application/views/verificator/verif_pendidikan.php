@@ -239,7 +239,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        1. Mengikuti pendidikan formal dan memperoleh gelar/sebutan/ijazah </h5>
+                        1. Mengikuti pendidikan formal dan memperoleh gelar/sebutan/ijazah (1/periode Penilaian)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable A1">
@@ -276,7 +276,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        2. Mengikuti diklat prajabatan golongan III</h5>
+                        2. Mengikuti diklat prajabatan golongan III (1/periode Penilaian)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable A2">
@@ -318,7 +318,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        1. Melaksanakan perkuliahan/tutorial/perkuliahan praktikum dan membimbing,menguji serta menyelenggarakan pendidikan di laboratorium, praktik keguruan, bengkel/studio/kebun percobaan/teknologi pengajaran dan praktik lapangan (setiap semester)</h5>
+                        1. Melaksanakan perkuliahan/tutorial/perkuliahan praktikum dan membimbing,menguji serta menyelenggarakan pendidikan di laboratorium, praktik keguruan, bengkel/studio/kebun percobaan/teknologi pengajaran dan praktik lapangan (Maks 12 SKS/semester)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B1">
@@ -424,7 +424,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        4. Membimbing dan ikut membimbing dalam menghasilkan disertasi, tesis, skripsi dan laporan akhir studi yang sesuai dengan bidang penugasannya</h5>
+                        4. Membimbing dan ikut membimbing dalam menghasilkan disertasi, tesis, skripsi dan laporan akhir studi yang sesuai dengan bidang penugasannya (Setiap Semester)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B4">
@@ -462,7 +462,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        5. Bertugas sebagai penguji pada ujian akhir/Profesi (Setiap Mahasiswa)</h5>
+                        5. Bertugas sebagai penguji pada ujian akhir/Profesi (Setiap Semester)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B5">
@@ -498,7 +498,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        6. Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan, termasuk dalam kegiatan ini adalah membimbing mahasiswa menghasilkan produk saintifik (setiap semester)</h5>
+                        6. Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan, termasuk dalam kegiatan ini adalah membimbing mahasiswa menghasilkan produk saintifik (2 Kegiatan/semester)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B6">
@@ -532,7 +532,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        7. Mengambengkan program kuliah yang mempunyai nilai kebaharuan metode atau substansi(Setiap Produk)</h5>
+                        7. Mengambangkan program kuliah yang mempunyai nilai kebaharuan metode atau substansi(Maks 1 Mata Kuliah/Semester)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B7">
@@ -569,7 +569,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        8. Mengembangkan bahan pengajaran/bahan kuliah yang mempunyai nilai kebaharuan(Setiap Produk)</h5>
+                        8. Mengembangkan bahan pengajaran/bahan kuliah yang mempunyai nilai kebaharuan(Maks 1 Buku/Tahun dan 2 Produk/Semester)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B8">
@@ -606,7 +606,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        9. Menyampaikan orasi ilmiah di tingkat perguruan tinggi</h5>
+                        9. Menyampaikan orasi ilmiah di tingkat perguruan tinggi (Maks 2 Orasi/Semester</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B9">
@@ -674,7 +674,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        11. Membimbing dosen yang mempunyai jabatan akademik lebih rendah setiap semester(Bagi Min. Lektor Kepala)</h5>
+                        11. Membimbing dosen yang mempunyai jabatan akademik lebih rendah setiap semester bagi Lektor Kepala atau Profesor (Maks 1 orang)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B11">
@@ -708,7 +708,7 @@
 
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
-                        12. Melaksanakan kegiatan datasering dan pencangkokan diluar institusi tempat bekerja (Setiap Semester)</h5>
+                        12. Melaksanakan kegiatan datasering dan pencangkokan diluar institusi tempat bekerja bagi Lektor Kepala atau Profesor (Maks 1 orang)</h5>
                 </div>
                 <div class="pb-5 pt-3">
                     <table class="greyGridTable B12">

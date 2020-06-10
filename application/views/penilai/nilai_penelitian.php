@@ -226,6 +226,8 @@
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
                     1. Menghasilkan karya ilmiah sesuai dengan bidang ilmunya</h5>
+                <h5 class="head-subbab">
+                    Maksimal 1 Buku Per Tahun. Untuk Poin Jurnal, Penjelasan Ada di Halaman Informasi</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -257,7 +259,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c1[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c1[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c1[]" step="0.1" max="<?= $maks_c1[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -272,6 +274,8 @@
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
                     2. Hasil penelitian atau hasil pemikiran yang didiseminasikan</h5>
+                <h5 class="head-subbab">
+                    Penjelasan Dilampirkan di Halaman Informasi</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -303,7 +307,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c2[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c2[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c2[]" step="0.1" max="<?= $maks_c2[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -346,7 +350,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c3[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c3[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c3[]" step="0.1" max="<?= $maks_c3[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -391,7 +395,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c4[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c4[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c4[]" step="0.1" max="<?= $maks_c4[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -435,7 +439,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c5[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c5[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c5[]" step="0.1" max="<?= $maks_c5[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -449,6 +453,8 @@
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
                     6. Membuat rancangan dan karya teknologi yang dipatenkan atau seni yang terdaftar di HaKI secara nasional atau internasional</h5>
+                <h5 class="head-subbab">
+                    Tingkat/Jenjang pilihan F (Urutan 6) Maksimal 2 Karya Per Semester</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -479,7 +485,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c6[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c6[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c6[]" step="0.1" max="<?= $maks_c6[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -524,7 +530,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c7[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c7[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c7[]" step="0.1" max="<?= $maks_c7[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -567,7 +573,7 @@
                                     </a>
                                 </td>
                                 <td><?= $maks_c8[$urut]['ak_maksimal']; ?></td>
-                                <td><input type="number" name="nilai_c8[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_c8[]" step="0.1" max="<?= $maks_c8[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }

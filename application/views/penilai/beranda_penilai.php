@@ -89,11 +89,36 @@
             <!-- Body -->
             <div class="card-body">
                 <div class="chart-piee pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
+                    <div class="col-lg mb-4">
+                        <table class="greyGridTable">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>ID Pengajuan</th>
+                                    <th>Nama Dosen</th>
+                                    <th>Tanggal Pengajuan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuanBN as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['id_pengajuan']; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <!-- Area Full 3 -->

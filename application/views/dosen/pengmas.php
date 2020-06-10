@@ -220,7 +220,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                3. Memberi latihan/penyuluhan/penataran/ceramah pada masyarakat, terjadwal/terprogram</h5>
+                3. Memberi latihan/penyuluhan/penataran/ceramah pada masyarakat, terjadwal/terprogram (Setiap Program)</h5>
         </div>
 
         <div class="pb-5 pt-3">
@@ -253,7 +253,7 @@
 
         <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
             <h5 class="head-subbab">
-                4. Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas pemerintahan dan pembangunan</h5>
+                4. Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas pemerintahan dan pembangunan, tiap program</h5>
         </div>
 
         <div class="pb-5 pt-3">

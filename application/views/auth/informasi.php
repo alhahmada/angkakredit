@@ -66,6 +66,42 @@
             color: black;
             font-family: 'Times New Roman';
         }
+
+        .judul-gambar {
+            font-size: 20px;
+            color: black;
+            font-family: Cambria;
+            font-weight: bold;
+        }
+
+        .container-foto {
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .gambar {
+            width: 65%;
+            height: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            vertical-align: middle;
+        }
+
+        .source {
+            width: 100%;
+            height: auto;
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .source-text {
+            font-size: 16px;
+            color: black;
+            font-style: italic;
+            font-family: 'Times New Roman';
+        }
     </style>
 
     <!-- Tab Informasi Umum -->
@@ -75,23 +111,105 @@
         <div class="container">
             <!-- Row Pertama -->
             <div class="justify-content-between pb-5 pt-5">
-                <h1 class="head-content">Infoemasi Umum</h1>
+                <h1 class="head-content">Informasi Umum</h1>
             </div>
-
         </div>
+
+        <!-- Row Kedua -->
+        <!-- Blablabla -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <h1 class="body-content">Pendidikan dan Pelaksanaan Pendidikan</h1>
+            </div>
+        </div>
+
+        <!-- Row Ketiga -->
+        <!-- Gambar 1 -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <div class="container-foto">
+                    <h1 class="judul-gambar">Tabel Angka Kredit Kumulatif Minimum Berdasarkan</h1>
+                    <h1 class="judul-gambar">Jenjang Jabatan Fungsional, Pangkat, dan Golongan Ruang Tertentu</h1>
+                    <img class="gambar" src="<?= base_url('assets/img/AK Pangkat Dosen.jpg'); ?>"></img>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row Keempat -->
+        <!-- Blablabla -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <h1 class="body-content">Pendidikan dan Pelaksanaan Pendidikan</h1>
+            </div>
+        </div>
+
+        <!-- Row Kelima -->
+        <!-- Gambar 2 -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <div class="container-foto">
+                    <h1 class="judul-gambar">Tabel Persentase Angka Kredit Kumulatif Yang Diajukan</h1>
+                    <h1 class="judul-gambar">Berdasarkan Jenjang Jabatan Fungsional Tertentu</h1>
+                    <img class="gambar" src="<?= base_url('assets/img/AK Persen Unsur.jpg'); ?>" style="width: 75% !important;"></img>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row Keenam -->
+        <!-- Blablabla -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <h1 class="body-content">Pendidikan dan Pelaksanaan Pendidikan</h1>
+            </div>
+        </div>
+
+        <!-- Last Row, Source -->
+        <div class="container">
+            <div class="source">
+                <h1 class="source-text">Sumber : PO PAK Ristekdikti Tahun 2019</h1>
+            </div>
+        </div>
+
     </div>
+
+
+
+
+
 
     <!-- Tab Pendidikan -->
     <div id="pendidikan" class="tabcontent pt-5">
+        <!-- Row Pertama -->
         <!-- Judul Halaman -->
         <div class="container">
-            <!-- Row Pertama -->
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">Pendidikan dan Pelaksanaan Pendidikan</h1>
             </div>
+        </div>
 
+        <!-- Row Kedua -->
+        <!-- Embed PDF -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <div class="container-foto">
+                    <h1 class="judul-gambar">Pendidikan dan Pelaksanaan Pendidikan</h1>
+                    <embed src="<?= base_url('assets/document/docs/pendidikan.pdf'); ?>" width="75%" height="750" type="application/pdf">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Last Row, Source -->
+        <div class="container">
+            <div class="source">
+                <h1 class="source-text">Sumber : PO PAK Ristekdikti Tahun 2019</h1>
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- Tab Penelitian -->
     <div id="penelitian" class="tabcontent pt-5">
@@ -101,9 +219,29 @@
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">Penelitian</h1>
             </div>
+        </div>
+        <!-- Row Kedua -->
+        <!-- Embed PDF -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <div class="container-foto">
+                    <h1 class="judul-gambar">Penelitian</h1>
+                    <embed src="<?= base_url('assets/document/docs/penelitian.pdf'); ?>" width="75%" height="750" type="application/pdf">
+                </div>
+            </div>
+        </div>
 
+
+        <!-- Last Row, Source -->
+        <div class="container">
+            <div class="source">
+                <h1 class="source-text">Sumber : PO PAK Ristekdikti Tahun 2019</h1>
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- Tab Pengabdian Masyarakat -->
     <div id="pengmas" class="tabcontent pt-5">
@@ -113,9 +251,29 @@
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">Pengabdian Masyarakat</h1>
             </div>
+        </div>
+        <!-- Row Kedua -->
+        <!-- Embed PDF -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <div class="container-foto">
+                    <h1 class="judul-gambar">Pengabdian Masyarakat</h1>
+                    <embed src="<?= base_url('assets/document/docs/pengmas.pdf'); ?>" width="75%" height="750" type="application/pdf">
+                </div>
+            </div>
+        </div>
 
+
+        <!-- Last Row, Source -->
+        <div class="container">
+            <div class="source">
+                <h1 class="source-text">Sumber : PO PAK Ristekdikti Tahun 2019</h1>
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- Tab Unsur Penunjang -->
     <div id="penunjang" class="tabcontent pt-5">
@@ -126,7 +284,27 @@
                 <h1 class="head-content">Penunjang</h1>
             </div>
         </div>
+        <!-- Row Kedua -->
+        <!-- Embed PDF -->
+        <div class="container">
+            <div class="justify-content-between pb-5 pt-5">
+                <div class="container-foto">
+                    <h1 class="judul-gambar">Unsur Penunjang</h1>
+                    <embed src="<?= base_url('assets/document/docs/penunjang.pdf'); ?>" width="75%" height="750" type="application/pdf">
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Row, Source -->
+        <div class="container">
+            <div class="source">
+                <h1 class="source-text">Sumber : PO PAK Ristekdikti Tahun 2019</h1>
+            </div>
+        </div>
     </div>
+
+
+
 
 </div>
 

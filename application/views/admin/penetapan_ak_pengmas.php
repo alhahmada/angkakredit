@@ -263,7 +263,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d1_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d1_final[]" step="0.1" max="<?= $maks_d1[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -309,7 +309,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d2_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d2_final[]" step="0.1" max="<?= $maks_d2[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -322,7 +322,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    3. Memberi latihan/penyuluhan/penataran/ceramah pada masyarakat, terjadwal/terprogram</h5>
+                    3. Memberi latihan/penyuluhan/penataran/ceramah pada masyarakat, terjadwal/terprogram (Setiap Program)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -359,7 +359,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d3_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d3_final[]" step="0.1" max="<?= $maks_d3[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -372,7 +372,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    4. Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas pemerintahan dan pembangunan</h5>
+                    4. Memberi pelayanan kepada masyarakat atau kegiatan lain yang menunjang pelaksanaan tugas pemerintahan dan pembangunan, tiap program</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -405,7 +405,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d4_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d4_final[]" step="0.1" max="<?= $maks_d4[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -451,7 +451,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d5_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d5_final[]" step="0.1" max="<?= $maks_d5[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -497,7 +497,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d6_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d6_final[]" step="0.1" max="<?= $maks_d6[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -547,7 +547,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_d7_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_d7_final[]" step="0.1" max="<?= $maks_d7[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }

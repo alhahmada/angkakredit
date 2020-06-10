@@ -229,7 +229,7 @@
             <input type="hidden" value="<?= $id_pengajuan; ?>" name="id_pengajuan">
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    1. Mengikuti pendidikan formal dan memperoleh gelar/sebutan/ijazah </h5>
+                    1. Mengikuti pendidikan formal dan memperoleh gelar/sebutan/ijazah (1/periode Penilaian)</h5>
             </div>
 
             <div class="pb-5 pt-3">
@@ -266,7 +266,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_a1_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_a1_final[]" step="0.1" max="<?= $maks_a1[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -280,7 +280,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    2. Mengikuti diklat prajabatan golongan III</h5>
+                    2. Mengikuti diklat prajabatan golongan III (1/periode Penilaian)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable A2">
@@ -314,7 +314,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_a2_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_a2_final[]" step="0.1" max="<?= $maks_a2[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -337,7 +337,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    1. Melaksanakan perkuliahan/tutorial/perkuliahan praktikum dan membimbing,menguji serta menyelenggarakan pendidikan di laboratorium, praktik keguruan, bengkel/studio/kebun percobaan/teknologi pengajaran dan praktik lapangan (setiap semester)</h5>
+                    1. Melaksanakan perkuliahan/tutorial/perkuliahan praktikum dan membimbing,menguji serta menyelenggarakan pendidikan di laboratorium, praktik keguruan, bengkel/studio/kebun percobaan/teknologi pengajaran dan praktik lapangan (Maks 12 SKS/semester)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B1">
@@ -373,7 +373,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b1_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b1_final[]" step="0.01" max="<?= $maks_b1[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -419,7 +419,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b2_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b2_final[]" step="0.1" max="<?= $maks_b2[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -464,7 +464,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b3_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b3_final[]" step="0.1" max="<?= $maks_b3[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -478,7 +478,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    4. Membimbing dan ikut membimbing dalam menghasilkan disertasi, tesis, skripsi dan laporan akhir studi yang sesuai dengan bidang penugasannya</h5>
+                    4. Membimbing dan ikut membimbing dalam menghasilkan disertasi, tesis, skripsi dan laporan akhir studi yang sesuai dengan bidang penugasannya (Setiap Semester)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B4">
@@ -514,7 +514,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b4_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b4_final[]" step="0.1" max="<?= $maks_b4[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -527,7 +527,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    5. Bertugas sebagai penguji pada ujian akhir/Profesi (Setiap Mahasiswa)</h5>
+                    5. Bertugas sebagai penguji pada ujian akhir/Profesi (Setiap Semester)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B5">
@@ -561,7 +561,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b5_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b5_final[]" step="0.1" max="<?= $maks_b5[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -574,7 +574,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    6. Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan, termasuk dalam kegiatan ini adalah membimbing mahasiswa menghasilkan produk saintifik (setiap semester)</h5>
+                    6. Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan, termasuk dalam kegiatan ini adalah membimbing mahasiswa menghasilkan produk saintifik (2 Kegiatan/semester)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B6">
@@ -606,7 +606,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b6_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b6_final[]" step="0.1" max="<?= $maks_b6[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -619,7 +619,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    7. Mengambengkan program kuliah yang mempunyai nilai kebaharuan metode atau substansi(Setiap Produk)</h5>
+                    7. Mengambangkan program kuliah yang mempunyai nilai kebaharuan metode atau substansi(Maks 1 Mata Kuliah/Semester)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B7">
@@ -655,7 +655,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b7_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b7_final[]" step="0.1" max="<?= $maks_b7[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -669,7 +669,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    8. Mengembangkan bahan pengajaran/bahan kuliah yang mempunyai nilai kebaharuan(Setiap Produk)</h5>
+                    8. Mengembangkan bahan pengajaran/bahan kuliah yang mempunyai nilai kebaharuan(Maks 1 Buku/Tahun dan 2 Produk/Semester)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B8">
@@ -705,7 +705,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b8_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b8_final[]" step="0.1" max="<?= $maks_b8[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -719,7 +719,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    9. Menyampaikan orasi ilmiah di tingkat perguruan tinggi</h5>
+                    9. Menyampaikan orasi ilmiah di tingkat perguruan tinggi (Maks 2 Orasi/Semester</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B9">
@@ -753,7 +753,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b9_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b9_final[]" step="0.1" max="<?= $maks_b9[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -800,7 +800,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b10_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b10_final[]" step="0.1" max="<?= $maks_b10[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -813,7 +813,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    11. Membimbing dosen yang mempunyai jabatan akademik lebih rendah setiap semester(Bagi Min. Lektor Kepala)</h5>
+                    11. Membimbing dosen yang mempunyai jabatan akademik lebih rendah setiap semester bagi Lektor Kepala atau Profesor (Maks 1 orang)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B11">
@@ -847,7 +847,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b11_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b11_final[]" step="0.1" max="<?= $maks_b11[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -860,7 +860,7 @@
 
             <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                 <h5 class="head-subbab">
-                    12. Melaksanakan kegiatan datasering dan pencangkokan diluar institusi tempat bekerja (Setiap Semester)</h5>
+                    12. Melaksanakan kegiatan datasering dan pencangkokan diluar institusi tempat bekerja bagi Lektor Kepala atau Profesor (Maks 1 orang)</h5>
             </div>
             <div class="pb-5 pt-3">
                 <table class="greyGridTable B12">
@@ -894,7 +894,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b12_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b12_final[]" step="0.1" max="<?= $maks_b12[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }
@@ -937,7 +937,7 @@
                                 <td><?= $value['ak_p1']; ?></td>
                                 <td><?= $value['ak_p2']; ?></td>
                                 <td><?= $value['ak_p3']; ?></td>
-                                <td><input type="number" name="nilai_b13_final[]" style="width: 3rem;"></input></td>
+                                <td><input type="number" name="nilai_b13_final[]" step="0.1" max="<?= $maks_b13[$urut]['ak_maksimal']; ?>" style="width: 4rem;"></input></td>
                             </tr>
                         <?php $urut++;
                         }

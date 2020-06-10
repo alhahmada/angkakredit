@@ -70,6 +70,10 @@
                                     <td>Alamat Email</td>
                                     <td><?= $array['email']; ?></td>
                                 </tr>
+                                <tr>
+                                    <td>No HP</td>
+                                    <td><?= $array['no_hp']; ?></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -88,33 +92,40 @@
             </div>
             <!-- Body -->
             <div class="card-body">
-                <div class="chart-pie pt-4 pb-2">
+                <div class="chart-piee pt-4 pb-2">
                     <table class="greyGridTable">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Lengkap Dosen</th>
                                 <th>Tanggal Pengajuan</th>
-                                <th>Deadline Verifikasi</th>
+                                <th>Keterangan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>
-                                    <!-- <?= $array['nama_lengkap']; ?> -->
-                                </td>
-                                <td>
-                                    <!-- <?= $array['tgl_pengajuan']; ?> -->
-                                </td>
-                                <td>
-                                    <!-- <?= $array['deadline_verif']; ?> -->
-                                </td>
-                                <td>
-                                    <a>Mulai Verifikasi</a>
-                                </td>
-                            </tr>
+                            <?php
+                            $no = 1;
+                            foreach ($pengajuan as $key => $value) { ?>
+                                <tr>
+                                    <td><?= $no; ?></td>
+                                    <td>
+                                        <?= $value['nama_lengkap']; ?>
+                                    </td>
+                                    <td>
+                                        <?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?>
+                                    </td>
+                                    <td>
+                                        Keterangan
+                                    </td>
+                                    <td>
+                                        <a class="nav-link" href="<?= base_url('verificator/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                            <span>Cek Kelengkapan Berkas</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php $no++;
+                            } ?>
                         </tbody>
                     </table>
                 </div>

@@ -140,7 +140,7 @@
                                             <div class="modal-body row">
                                                 <div style="width: 15%;"></div>
                                                 <div class="isian-popup" style=" width : 35%; float: left;">NIP Sebelumnya</div>
-                                                <div class="isian-popup" style=" width : 40%; float: left;">123456789012345678</div>
+                                                <div class="isian-popup" style=" width : 40%; float: left;"><?= $array['nip']; ?></div>
                                             </div>
 
                                             <div class="modal-body row">
@@ -155,7 +155,7 @@
 
 
                                             <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Ubah NIP</button></div>
+                                                <button class="btn btn-secondary" type="submit" data-dismiss="modal">Ubah NIP</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -165,34 +165,42 @@
                             <td>Nama Lengkap</td>
                             <td><?= $array['nama_lengkap']; ?></td>
                             <td>
-                                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_nama" data-target="#modal_ubah_nama">Ubah Nama</button>
-                                <div class="modal fade" id="modal_ubah_nama" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="pt-2 pb-4 head-popup" style="text-align: center; width: 100%;">Ubah ___ User</div>
+                                <!-- <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe> -->
 
-                                            <div class="modal-body row">
-                                                <div style="width: 15%;"></div>
-                                                <div class="isian-popup" style=" width : 35%; float: left;">Nama Lengkap</div>
-                                                <div class="isian-popup" style=" width : 40%; float: left;">Alha Ahmada Belasae</div>
+
+                                <form class="user" name="ubah_nama" id="ubah_nama" enctype="multipart/form-data" method="post" action="<?= base_url('auth/action_ubah_nama'); ?>">
+                                    <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_nama" data-target="#modal_ubah_nama">Ubah Nama</button>
+                                    <div class="modal fade" id="modal_ubah_nama" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="pt-2 pb-4 head-popup" style="text-align: center; width: 100%;">Ubah ___ User</div>
+
+                                                <div class="modal-body row">
+                                                    <div style="width: 15%;"></div>
+                                                    <div class="isian-popup" style=" width : 35%; float: left;">Nama Lengkap</div>
+                                                    <div class="isian-popup" style=" width : 40%; float: left;"><?= $array['nama_lengkap']; ?></div>
+                                                </div>
+
+                                                <div class="modal-body row">
+                                                    <div style="width: 15%;"></div>
+                                                    <div class="isian-popup" style=" width : 35%; float: left;">Nama Lengkap Baru</div>
+                                                    <input style="width: 40%;" id="nama_baru" name="nama_baru">
+                                                    </input>
+                                                </div>
+
+
+                                                <div class="p-2"></div>
+
+
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="submit">Ubah Nama</button></div>
                                             </div>
-
-                                            <div class="modal-body row">
-                                                <div style="width: 15%;"></div>
-                                                <div class="isian-popup" style=" width : 35%; float: left;">Nama Lengkap Baru</div>
-                                                <input style="width: 40%;" id="nama_baru" name="nama_baru">
-                                                </input>
-                                            </div>
-
-
-                                            <div class="p-2"></div>
-
-
-                                            <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Ubah Nama</button></div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
+
+
+
                             </td>
                         </tr>
                         <tr>
@@ -208,7 +216,7 @@
                                             <div class="modal-body row">
                                                 <div style="width: 15%;"></div>
                                                 <div class="isian-popup" style=" width : 35%; float: left;">Email</div>
-                                                <div class="isian-popup" style=" width : 40%; float: left;">Dosen@stis.ac.id</div>
+                                                <div class="isian-popup" style=" width : 40%; float: left;"><?= $array['email']; ?></div>
                                             </div>
 
                                             <div class="modal-body row">
@@ -223,7 +231,7 @@
 
 
                                             <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Ubah Email</button></div>
+                                                <button class="btn btn-secondary" type="submit" data-dismiss="modal">Ubah Email</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -242,7 +250,7 @@
                                             <div class="modal-body row">
                                                 <div style="width: 15%;"></div>
                                                 <div class="isian-popup" style=" width : 35%; float: left;">Prodi</div>
-                                                <div class="isian-popup" style=" width : 40%; float: left;">DIV Komputasi Statistik</div>
+                                                <div class="isian-popup" style=" width : 40%; float: left;"><?= $array['prodi']; ?></div>
                                             </div>
 
                                             <div class="modal-body row">
@@ -261,7 +269,7 @@
 
 
                                             <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Ubah Prodi</button></div>
+                                                <button class="btn btn-secondary" type="submit" data-dismiss="modal">Ubah Prodi</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -280,12 +288,12 @@
                                             <div class="modal-body row">
                                                 <div style="width: 15%;"></div>
                                                 <div class="isian-popup" style=" width : 35%; float: left;">No Hp Sebelumnya</div>
-                                                <div class="isian-popup" style=" width : 40%; float: left;">0584739855572</div>
+                                                <div class="isian-popup" style=" width : 40%; float: left;"><?= $array['no_hp']; ?></div>
                                             </div>
 
                                             <div class="modal-body row">
                                                 <div style="width: 15%;"></div>
-                                                <div class="isian-popup" style=" width : 35%; float: left;">No Hp Selanjutnya</div>
+                                                <div class="isian-popup" style=" width : 35%; float: left;">No Hp Baru</div>
                                                 <input style="width: 40%;" id="nohp_baru" name="nohp_baru">
                                                 </input>
                                             </div>
@@ -295,7 +303,7 @@
 
 
                                             <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Ubah Nomor HP</button></div>
+                                                <button class="btn btn-secondary" type="submit" data-dismiss="modal">Ubah Nomor HP</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -326,7 +334,7 @@
                             <div class="p-2"></div>
 
                             <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Ubah Foto</button></div>
+                                <button class="btn btn-secondary" type="submit" data-dismiss="modal">Ubah Foto</button></div>
                         </div>
                     </div>
                 </div>
@@ -387,3 +395,15 @@
 
 
 </div>
+
+
+<?php
+if ($_POST['submit_button']) {
+    $a = $_POST['update'];
+    echo $a;
+} else {
+?>
+
+
+<?php
+} ?>

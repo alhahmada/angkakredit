@@ -42,6 +42,7 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>ID Pengajuan</th>
                                     <th>Nama Dosen</th>
                                     <th>Tanggal Pengajuan</th>
 
@@ -54,6 +55,7 @@
                                 foreach ($pengajuan as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
+                                        <td><?= $value['id_pengajuan']; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
                                         <td class="nav-item text-center">
@@ -99,56 +101,25 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>ID Pengajuan</th>
                                     <th>Nama Dosen</th>
                                     <th>Tanggal Pengajuan</th>
-                                    <th>Tanggal Submit Verifikasi</th>
                                     <th>Hasil</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Dosen A</td>
-                                    <td>10 Mei 2020</td>
-                                    <td>20 Juni 2020</td>
-                                    <td>Terverifikasi/Tidak</td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>5.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>6.</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuanSV as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['id_pengajuan'] ?></td>
+                                        <td><?= $value['nama_lengkap'] ?></td>
+                                        <td><?= $value['tgl_pengajuan'] ?></td>
+                                        <td>Terverifikasi</td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
                             </tbody>
                         </table>
                     </div>

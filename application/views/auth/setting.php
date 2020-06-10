@@ -66,19 +66,52 @@
             color: black;
             font-family: 'Times New Roman';
         }
+
+        .text-sorry {
+            font-size: 20px !important;
+            color: red !important;
+        }
     </style>
 
     <!-- Tab Setelan Umum -->
     <div id="umum" class="tabcontent pt-5">
-
         <!-- Judul Halaman -->
         <div class="container">
             <!-- Row Pertama -->
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">PENGATURAN UMUM</h1>
             </div>
-
         </div>
+
+        <!-- Halaman Belum Tersedia -->
+        <div class="container-fluid p-5 text-center">
+            <style>
+                .text-sorry {
+                    font-size: 20px !important;
+                    color: red !important;
+                    font-weight: bolder;
+                }
+
+                .text-sorry-in {
+                    font-size: 17px;
+                    color: black;
+                    font-weight: bold;
+                }
+            </style>
+
+            <div class="col-lg mb-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="chart-piee p-5 pt-3">
+                            <h3 class="pb-3 font-weight-bold text-primary text-sorry">Maaf, Halaman Belum Tersedia</h3>
+                            <h5 class="text-sorry-in">Halaman Ini Sedang Dalam Proses Pengembangan Oleh Developer</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <!-- Tab Bantuan -->
@@ -89,7 +122,34 @@
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">BANTUAN</h1>
             </div>
+        </div>
 
+        <!-- Halaman Belum Tersedia -->
+        <div class="container-fluid p-5 text-center">
+            <style>
+                .text-sorry {
+                    font-size: 20px !important;
+                    color: red !important;
+                    font-weight: bolder;
+                }
+
+                .text-sorry-in {
+                    font-size: 17px;
+                    color: black;
+                    font-weight: bold;
+                }
+            </style>
+
+            <div class="col-lg mb-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="chart-piee p-5 pt-3">
+                            <h3 class="pb-3 font-weight-bold text-primary text-sorry">Maaf, Halaman Belum Tersedia</h3>
+                            <h5 class="text-sorry-in">Halaman Ini Sedang Dalam Proses Pengembangan Oleh Developer</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,8 +161,36 @@
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">KRITIK DAN SARAN</h1>
             </div>
-
         </div>
+
+        <!-- Halaman Belum Tersedia -->
+        <div class="container-fluid p-5 text-center">
+            <style>
+                .text-sorry {
+                    font-size: 20px !important;
+                    color: red !important;
+                    font-weight: bolder;
+                }
+
+                .text-sorry-in {
+                    font-size: 17px;
+                    color: black;
+                    font-weight: bold;
+                }
+            </style>
+
+            <div class="col-lg mb-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="chart-piee p-5 pt-3">
+                            <h3 class="pb-3 font-weight-bold text-primary text-sorry">Maaf, Halaman Belum Tersedia</h3>
+                            <h5 class="text-sorry-in">Halaman Ini Sedang Dalam Proses Pengembangan Oleh Developer</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Tab Notifikasi -->
@@ -113,8 +201,36 @@
             <div class="justify-content-between pb-5 pt-5">
                 <h1 class="head-content">PENGATURAN NOTIFIKASI</h1>
             </div>
-
         </div>
+
+        <!-- Halaman Belum Tersedia -->
+        <div class="container-fluid p-5 text-center">
+            <style>
+                .text-sorry {
+                    font-size: 20px !important;
+                    color: red !important;
+                    font-weight: bolder;
+                }
+
+                .text-sorry-in {
+                    font-size: 17px;
+                    color: black;
+                    font-weight: bold;
+                }
+            </style>
+
+            <div class="col-lg mb-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="chart-piee p-5 pt-3">
+                            <h3 class="pb-3 font-weight-bold text-primary text-sorry">Maaf, Halaman Belum Tersedia</h3>
+                            <h5 class="text-sorry-in">Halaman Ini Sedang Dalam Proses Pengembangan Oleh Developer</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </div>

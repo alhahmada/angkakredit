@@ -118,6 +118,8 @@ class Berkas extends CI_Model
             'a15' => $a15
         );
         $this->db->insert('tbl_a1', $data);
+        $insert_id = $this->db->insert_id();
+        return $insert_id;
     }
 
 

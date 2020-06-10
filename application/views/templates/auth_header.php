@@ -21,7 +21,7 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/tabel.css" rel="stylesheet">
-    <script src="Chart.js"></script>
+    <script src="js/Chart.js"></script>
 
 </head>
 

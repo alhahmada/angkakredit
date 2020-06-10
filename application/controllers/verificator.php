@@ -23,6 +23,17 @@ class verificator extends CI_Controller
 
     public function beranda_verificator()
     {
+        $cekverifikator = $this->m_verif->cek_verifikator();
+        if ($cekverifikator == null) {
+            $pengajuan = $this->m_verif->pengajuan_all();
+        } else {
+            $array_id = array();
+            $pengajuan = $this->m_verif->pengajuan_not($cekverifikator);
+        }
+        $verifikator = $this->m_verif->verifikator();
+        $data['pengajuan'] = $pengajuan;
+        $data['verifikator'] = $verifikator[0];
+
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
@@ -36,6 +47,7 @@ class verificator extends CI_Controller
     public function daftar_verifikasiAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+
         $cekverifikator = $this->m_verif->cek_verifikator();
         if ($cekverifikator == null) {
             $pengajuan = $this->m_verif->pengajuan_all();
@@ -52,6 +64,11 @@ class verificator extends CI_Controller
         $verifikator = $this->m_verif->verifikator();
         $data['pengajuan'] = $pengajuan;
         $data['verifikator'] = $verifikator[0];
+
+        $pengajuan_teverif = $this->m_verif->id_terverif($this->session->userdata('nip'));
+        $data['pengajuanSV'] = $pengajuan_teverif;
+
+
         $this->load->view('templates/auth_header_verif', $data);
         $this->load->view('verificator/daftar_verifikasiAK');
         $this->load->view('templates/auth_footer');

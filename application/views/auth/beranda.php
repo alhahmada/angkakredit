@@ -3,8 +3,6 @@
 <div class="container-fluid">
 
     <!-- KONTEN HALAMAN -->
-
-
     <!-- Judul Halaman -->
     <div class="container">
         <!-- Row Pertama -->
@@ -32,7 +30,7 @@
     <div class="card-deck container col-xl-12">
 
         <!-- Area Pertama -->
-        <div class="card shadow col-xl-8 mb-4">
+        <div class="card shadow col-xl-7 mb-4">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Keterangan Pribadi</h6>
@@ -55,7 +53,8 @@
                             }
 
                             .table-bio tbody td:first-child {
-                                width: 50%;
+                                width: 45%;
+                                font-weight: bold;
                             }
                         </style>
                         <table class="table-bio">
@@ -63,27 +62,30 @@
                                 <tr>
                                     <td>Nama Lengkap</td>
                                     <td><?= $array['nama_lengkap'] ?></td>
-                                    <!-- <><?= $array['']; ?> -->
-                                </tr>
-                                <tr>
-                                    <td>Alamat Email</td>
-                                    <td><?= $array['email'] ?></td>
-                                    <!-- <?= $array['']; ?> -->
-                                </tr>
-                                <tr>
-                                    <td>Jabatan Fungsional</td>
-                                    <td><?= $array['jabatan_fungsi'] ?></td>
-                                    <!-- <?= $array['']; ?> -->
-                                </tr>
-                                <tr>
-                                    <td>Pangkat/Gol.Ruang</td>
-                                    <td><?= $array['pangkat'] . "/" . $array['golongan_ruang']; ?></td>
-                                    <!-- <?= $array[''] . "/" . $array['golongan_ruang']; ?> -->
                                 </tr>
                                 <tr>
                                     <td>NIP</td>
                                     <td><?= $array['nip'] ?></td>
-                                    <!--<?= $array['']; ?>-->
+                                </tr>
+                                <tr>
+                                    <td>Alamat Email</td>
+                                    <td><?= $array['email'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Jabatan Fungsional</td>
+                                    <td><?= $array['jabatan_fungsi'] ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Pangkat</td>
+                                    <td><?= $array['pangkat']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Golongan Ruang</td>
+                                    <td><?= $array['golongan_ruang']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>No HP</td>
+                                    <td><?= $array['no_hp'] ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -95,15 +97,15 @@
 
         <!-- Area Kedua -->
 
-        <div class="card shadow col-xl-4 mb-4">
+        <div class="card shadow col-xl-5 mb-4">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Angka Kredit Saat ini</h6>
             </div>
             <!--Body -->
             <div class="card-body">
-                <div class="chart-pie" style="text-align : center;">
-                    <canvas id="myPieChart" style="width: 100%; height: auto;"></canvas>
+                <div class="chart-piee" style="text-align : center;">
+                    <canvas id="Chart" style="width: 100%; height: auto;"></canvas>
                 </div>
             </div>
         </div>
@@ -128,10 +130,10 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Tanggal Pengajuan</th>
+                                    <th>ID Pengajuan</th>
+                                    <th>Tanggal Pengajuan (Y-M-d)</th>
                                     <th>Progress Pengajuan</th>
-                                    <th>Keterangan</th>
-                                    <th>Action</th>
+                                    <th>Progress Log</th>
                                     <th>Angka Kredit yang diterima</th>
                                 </tr>
                             </thead>
@@ -140,10 +142,14 @@
                                 foreach ($pengajuan as $key => $data) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
+                                        <td><?= $data['id_pengajuan']; ?></td>
                                         <td><?= $data['tgl_pengajuan']; ?></td>
                                         <td><?= $data['progress_pengajuan']; ?></td>
-                                        <td><?= $data['tgl_pengajuan']; ?></td>
-                                        <td><?= $data['id_pengajuan']; ?></td>
+                                        <td class="nav-item text-center">
+                                            <a class="nav-link" href="<?= base_url('dosen/log/' . $data['id_pengajuan']); ?>">
+                                                <span>Lihat Log</span>
+                                            </a>
+                                        </td>
                                         <td><?= $data['ak_diterima']; ?></td>
                                     <?php $no++;
                                 } ?>
@@ -260,28 +266,28 @@
 
     <div class="row  justify-content-center">
         <div class="col-lg-5 mb-4">
-            <a type="button" class="card buttona text-white shadow">
+            <a type="button" class="card buttona text-white nav-link shadow" target="_blank" href="<?php echo base_url('/assets/document/docs/PO-PAK-RISTEKDIKTI-2019.pdf'); ?>">
                 <div class="card-body">
                     Panduan Ristekdikti
                 </div>
             </a>
         </div>
         <div class="col-lg-5 mb-4">
-            <a class="card buttona text-white shadow">
+            <a class="card buttona text-white nav-link shadow" target="_blank" href="<?php echo base_url('/assets/document/docs/contoh.pdf'); ?>">
                 <div class="card-body">
                     Format Daftar Usulan PAK
                 </div>
             </a>
         </div>
         <div class="col-lg-5 mb-4">
-            <a class="card buttona text-white shadow">
+            <a class="card buttona text-white nav-link shadow" target="_blank" href="<?php echo base_url('/assets/document/docs/contoh.pdf'); ?>">
                 <div class="card-body">
                     Format Berkas Pengajuan
                 </div>
             </a>
         </div>
         <div class="col-lg-5 mb-4">
-            <a class="card buttona text-white shadow">
+            <a class="card buttona text-white nav-link shadow" target="_blank" href="<?php echo base_url('/assets/document/docs/contoh.pdf'); ?>">
                 <div class="card-body">
                     Pedoman Pengajuan
                 </div>
@@ -317,34 +323,35 @@
 </div>
 
 <script type="text/javascript">
-    var ctx = document.getElementById("myPieChart").getContext("2d");
-    var myPieChart = new Chart(ctx, {
+    var ctx = document.getElementById("Chart").getContext("2d");
+    var Chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["Angka Kredit Anda", "Maksimal Angka Kredit yang Dapat Diperoleh"],
+            labels: ["1", "2"],
             datasets: [{
                 data: [200, 200],
                 backgroundColor: ['#4e73df', '#1cc88a'],
-                hoverBackgroundColor: ['#2e59d9', '#17a673'],
-                hoverBorderColor: "rgba(234, 236, 244, 1)",
-            }],
+                hoverBackgroundColor: ['#2e59d9', '#17a673']
+                // hoverBorderColor: "rgba(234, 244, 1)",
+            }]
         },
         options: {
-            maintainAspectRatio: false,
-            tooltips: {
-                backgroundColor: "rgb(255,255,255)",
-                bodyFontColor: "#858796",
-                borderColor: '#dddfeb',
-                borderWidth: 1,
-                xPadding: 15,
-                yPadding: 15,
-                displayColors: false,
-                caretPadding: 10,
-            },
-            legend: {
-                display: false
-            },
-            cutoutPercentage: 65,
-        },
+            responsive: true
+            // maintainAspectRatio: false,
+            // tooltips: {
+            //     backgroundColor: "rgb(255,255,255)",
+            //     bodyFontColor: "#858796",
+            //     borderColor: '#dddfeb',
+            //     borderWidth: 1,
+            //     xPadding: 15,
+            //     yPadding: 15,
+            //     displayColors: false,
+            //     caretPadding: 10,
+            // },
+            // legend: {
+            //     display: false
+            // },
+            // cutoutPercentage: 65,
+        }
     });
 </script>

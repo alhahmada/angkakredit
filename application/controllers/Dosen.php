@@ -143,6 +143,7 @@ class Dosen extends CI_Controller
         $data['array'] = $datauser[0];
 
         $id_pengajuan = $this->uri->segment(3);
+        $data['error'] = $this->uri->segment(4);
         $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
         $data['data_pengajuan'] = $data_pengajuan[0];
         $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
@@ -173,11 +174,16 @@ class Dosen extends CI_Controller
         $a13 = $this->input->post('A13');
         $a14 = $this->input->post('A14');
         $a15 = $this->input->post('A15');
+        $error_data['data_error'] = array();
         if ($a11 != NULL) {
             for ($i = 0; $i < count($a11); $i++) {
                 if ($a11[$i] != "") {
                     $filename = $this->session->userdata('nip') . '_' . $id_pengajuan . '_' . $i . '_a1';
-                    $this->berkas->a1($id_pengajuan, $a11[$i], $a12[$i], $a13[$i], $a14[$i], $filename . '.pdf');
+                    if (is_null($this->session->userdata['data_error'])) {
+                        $error_data['data_error']['tbl_a1'] = $this->berkas->a1($id_pengajuan, $a11[$i], $a12[$i], $a13[$i], $a14[$i], $filename . '.pdf');
+                    } else {
+                        $error_data['data_error']['tbl_a1'] = $this->berkas->a1($id_pengajuan, $a11[$i], $a12[$i], $a13[$i], $a14[$i], $filename . '.pdf');
+                    }
                 }
                 $filenames[] = $filename;
                 $ak = 0;
@@ -519,6 +525,25 @@ class Dosen extends CI_Controller
             $this->berkas->upload_files($filenames, $_FILES['B132']);
             unset($filenames);
         }
+
+        // Minimal AK Pendidikan Diperoleh
+        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
+        $data['data_pengajuan'] = $data_pengajuan[0];
+        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
+
+        $data['total_pendidikan'] = $this->m_verif->total_pendidikan($id_pengajuan);
+        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
+
+        $min_pendidikan = $constraint[0]['persen_pendidikan'] * $data_pengajuan[0]['kurang_ak'];
+
+        // if ($data['total_pendidikan'][0]['total'] >= $min_pendidikan) {
+        //     $this->session->set_userdata(array('data_error'=> NULL));
+        //     redirect('/dosen/penelitian/' . $id_pengajuan);
+        // } else {
+        //     $this->session->set_userdata($error_data);
+        //     redirect(base_url('dosen/pendidikan/' . $id_pengajuan . '/error'));
+        // }
+
         redirect('/dosen/penelitian/' . $id_pengajuan);
     }
 
@@ -1453,17 +1478,13 @@ class Dosen extends CI_Controller
     }
     public function test()
     {
-        // $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='Asisten Ahli'")->result_array();
-        // print_r($constraint[0]);
-        // $id_pengajuan = $this->uri->segment(3);
-        // $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
-        // $data['data_pengajuan'] = $data_pengajuan[0];
-        // $pengajuan6 = $this->m_verif->pengajuan_6();
-        // $data['pengajuan6'] = $pengajuan6;
-        // print_r($pengajuan6);
-        $cekverifikator = $this->m_verif->cek_verifikator();
-        $data['cekverifikator'] = $cekverifikator;
-        print_r($cekverifikator[0]);
+        $url3 = $this->uri->segment(3);
+        $url2 = $this->uri->segment(2);
+        $url1 = $this->uri->segment(1);
+
+        print_r($url1);
+        print_r($url2);
+        print_r($url3);
     }
 
 

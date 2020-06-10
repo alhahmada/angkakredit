@@ -945,7 +945,7 @@
                                     <td class="font_col_1">Jabatan Fungsional</td>
                                     <td class="text-center"><?= $array['jabatan_fungsi']; ?></td>
                                     <td><label for="F1">
-                                            <select class="f" id="F1" name="F1">
+                                            <select class="f" id="F1" name="F1" onchange="optionF(this)" required>
                                                 <option value="" selected disabled hidden> ... </option>
                                                 <option value="Asisten Ahli">Asisten Ahli</option>
                                                 <option value="Lektor">Lektor</option>
@@ -960,22 +960,43 @@
                                     <td class="font_col_1">Pangkat/Golongan</td>
                                     <td class="text-center"><?= $array['pangkat'] ?> / <?= $array['golongan_ruang']; ?></td>
                                     <td colspan="2"><label for="F2">
-                                            <select class="f" id="F2" name="F2" style="width: auto; margin-bottom: 0px; position: relative;">
-                                                <option value="" selected disabled hidden> ... </option>
-                                                <option value="1">IIIa/</option>
-                                                <option value="2">IIIb/Penata Muda Tk 1</option>
-                                                <option value="3">IIIc/Penata</option>
-                                                <option value="4">IIId/Penata Tk 1</option>
-                                                <option value="5">IVa/Pembina</option>
-                                                <option value="6">IVb/Pembina Tk 1</option>
-                                                <option value="7">IVc/Pembina Utama Muda</option>
-                                                <option value="8">IVd/Pembina Utama Madya</option>
-                                                <option value="9">IVe/Pembina Utama</option>
+                                            <select class="f" id="F2" name="F2" style="width: 12rem; margin-bottom: 0px; position: relative;" required>
+
                                             </select>
                                         </label>
                                     </td>
                                 </tr>
 
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                <script>
+                                    $(document).ready(function() {
+                                        $("#F1").change(function() {
+                                            var val = $(this).val();
+                                            if (val == "Asisten Ahli") {
+                                                $("#F2").html(`
+                                                    <option value="" selected disabled hidden> ... </option>
+                                                    <option value="1">IIIa/</option>
+                                                    <option value="2">IIIb/Penata Muda Tk 1</option>`);
+                                            } else if (val == "Lektor") {
+                                                $("#F2").html(`
+                                                    <option value="" selected disabled hidden> ... </option>
+                                                    <option value="3">IIIc/Penata</option>
+                                                    <option value="4">IIId/Penata Tk 1</option>`);
+                                            } else if (val == "Lektor Kepala") {
+                                                $("#F2").html(`
+                                                    <option value="" selected disabled hidden> ... </option>
+                                                    <option value="5">IVa/Pembina</option>
+                                                    <option value="6">IVb/Pembina Tk 1</option>
+                                                    <option value="7">IVc/Pembina Utama Muda</option>`);
+                                            } else if (val == "Profesor") {
+                                                $("#F2").html(`
+                                                    <option value="" selected disabled hidden> ... </option>
+                                                    <option value="8">IVd/Pembina Utama Madya</option>
+                                                    <option value="9">IVe/Pembina Utama</option>`);
+                                            }
+                                        });
+                                    })
+                                </script>
 
                                 <!-- <tr>
                                     <td class="font_col_1">Golongan Ruang</td>
