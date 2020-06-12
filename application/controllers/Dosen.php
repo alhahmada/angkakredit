@@ -1635,6 +1635,9 @@ class Dosen extends CI_Controller
             $data['status_penetapanAK'] = 'Belum Diproses';
         }
 
+        $data_pengajuan_id = $this->m_pengajuan->data_pengajuan_id($id_pengajuan);
+        $data['data_pengajuan_id'] = $data_pengajuan_id[0];
+
         $data['title'] = 'Log Pengajuan Dosen';
         $this->load->view('templates/auth_header', $data);
         $this->load->view('dosen/log_pengajuan');
@@ -1654,9 +1657,10 @@ class Dosen extends CI_Controller
         // $last = $this->m_pengajuan->data_pengajuan_5last();
         // $last = $this->m_pengajuan->data_pengajuan();
         // print_r($last);
-        $verif_berkas = $this->m_verif->cek_penilaian_1(14);
-
-        print_r($verif_berkas[0]['updated_at']);
+        // $verif_berkas = $this->m_verif->cek_penilaian_1(14);
+        // print_r($verif_berkas[0]['updated_at']);
+        $data_pengajuan_id = $this->m_pengajuan->data_pengajuan_id(20);
+        print_r($data_pengajuan_id[0]);
     }
 
 

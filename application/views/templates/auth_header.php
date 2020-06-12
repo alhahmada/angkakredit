@@ -212,8 +212,8 @@
                                 <style>
                                     .img-topbar {
                                         border-radius: 50% !important;
-                                        width: 3rem;
-                                        height: auto;
+                                        width: 3.5rem;
+                                        height: 3.5rem;
                                         border: black;
                                     }
 

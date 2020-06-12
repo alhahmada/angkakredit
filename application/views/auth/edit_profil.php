@@ -297,26 +297,27 @@
                 <img class="foto-inside" src="<?= base_url('assets/img/avatar/' . $foto); ?>"></img>
 
 
+                <form class="user" name="ubah_foto" id="ubah_foto" enctype="multipart/form-data" method="post" action="<?= base_url('auth/action_ubah_foto'); ?>">
+                    <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_foto" data-target="#modal_ubah_foto">Ubah Foto</button>
+                    <div class="modal fade" id="modal_ubah_foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="pt-2 pb-4 head-popup" style="text-align: center; width: 100%;">Ubah Data Pribadi</div>
 
-                <button class="btn-edit btn btn-sm" type="button" data-toggle="modal" id="btn_ubah_foto" data-target="#modal_ubah_foto">Ubah Foto</button>
-                <div class="modal fade" id="modal_ubah_foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="pt-2 pb-4 head-popup" style="text-align: center; width: 100%;">Ubah Data Pribadi</div>
+                                <div class="modal-body row">
+                                    <div style="width: 15%;"></div>
+                                    <div class="isian-popup" style=" width : 35%; float: left;">Upload Foto</div>
+                                    <input style="width: 40%;" type="file" accept="jpg" id="foto_baru" name="foto_baru">
+                                </div>
 
-                            <div class="modal-body row">
-                                <div style="width: 15%;"></div>
-                                <div class="isian-popup" style=" width : 35%; float: left;">Upload Foto</div>
-                                <input style="width: 40%;" type="file" accept="jpg, png, jpeg" id="foto_baru" name="foto_baru">
+                                <div class="p-2"></div>
+
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="submit">Ubah Foto</button></div>
                             </div>
-
-                            <div class="p-2"></div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="submit">Ubah Foto</button></div>
                         </div>
                     </div>
-                </div>
+                </form>
 
 
             </div>
@@ -349,21 +350,25 @@
                         <div style="width: 200px; float: left;">Confirm Password
                         </div>
                     </div>
-                    <div class="row">
-                        <input style="width: 200px;" id="pass1" name="pass1">
-                        </input>
-                        <div style="width: 75px;"></div>
-                        <input style="width: 200px;" id="pass2" name="pass2">
-                        </input>
-                    </div>
-                    <div class="row">
-                        <div style="width: 200px;">
+                    <!-- <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('auth/action_ubah_pass'); ?>"> -->
+                    <form>
+                        <div class="row">
+                            <input type="password" class="form-control form-control-user" style="width: 200px;" id="password1" name="password1" required>
+                            </input>
+                            <div style="width: 75px;"></div>
+                            <input type="password" class="form-control form-control-user" style="width: 200px;" id="password2" name="password2" required>
+                            </input>
                         </div>
-                        <div style="width: 75px;"></div>
-                        <div style="width: 200px;" class="pt-4">
-                            <button class="btn btn-primary btn-sm" style="float: right;">Ubah Password</button>
+                        <?php echo @$error; ?>
+                        <div class="row">
+                            <div style="width: 200px;">
+                            </div>
+                            <div style="width: 75px;"></div>
+                            <div style="width: 200px;" class="pt-4">
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm" style="float: right;">Ubah Password</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </form>
         </div>

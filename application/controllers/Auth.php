@@ -105,6 +105,7 @@ class Auth extends CI_Controller
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $nip = $this->session->userdata('nip');
         $prodi = $this->db->query("SELECT a.nama_prodi FROM tbl_prodi a JOIN tbl_user b WHERE a.id_prodi=b.prodi AND b.nip=$nip")->result_array();
+
         $data['prodi'] = $prodi[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
@@ -113,6 +114,29 @@ class Auth extends CI_Controller
         $this->load->view('templates/auth_header', $data);
         $this->load->view('auth/edit_profil');
         $this->load->view('templates/auth_footer');
+    }
+
+    public function action_ubah_pass()
+    {
+        $url = $this->uri->segment(1);
+        $nip = $this->session->userdata('nip');
+        $datauser = $this->m_auth->data_user($nip);
+
+        // $this->load->helper('form');
+
+        // $this->form_validation->set_rules('password1', '$password2', 'required|trim|min_length[8]|matches[password2]', [
+        //     'matches' => 'password tidak sama!',
+        //     'min_length' => 'password terlalu singkat, min 8 karakter!'
+        // ]);
+        // $this->form_validation->set_rules('password1', '$password2', 'required|trim|matches[password1]');
+
+        if ($this->form_validation->run() == FALSE) {
+        } else {
+            $pass1 = $this->input->post('password1');
+            $pass2 = $this->input->post('password2');
+            $this->m_ubah_data->ubah_password($nip, $pass1);
+            redirect('/' . $url . '/edit_profil/');
+        }
     }
 
     public function action_ubah_nama()
@@ -163,6 +187,20 @@ class Auth extends CI_Controller
         $nohp_baru = $this->input->post('nohp_baru');
 
         $this->m_ubah_data->ubah_nohp($nip, $nohp_baru);
+
+        redirect('/' . $url . '/edit_profil/');
+    }
+
+    public function action_ubah_foto()
+    {
+        $url = $this->uri->segment(1);
+        $nip = $this->session->userdata('nip');
+        $foto_baru = $this->input->post('foto_baru');
+
+        $this->m_ubah_data->upload_foto('foto_baru', $nip);
+
+        $nama = $nip . '.jpg';
+        $this->m_ubah_data->ubah_foto($nip, $nama);
 
         redirect('/' . $url . '/edit_profil/');
     }

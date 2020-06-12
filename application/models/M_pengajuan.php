@@ -92,4 +92,9 @@ class M_pengajuan extends CI_Model
 	{
 		return $this->db->query("SELECT ");
 	}
+
+	function data_pengajuan_id($id_pengajuan)
+	{
+		return $this->db->query("SELECT pangkat_to, jabatan_fungsi_to, gol_to, ak_diterima FROM tbl_pengajuan WHERE id_pengajuan = $id_pengajuan")->result_array();
+	}
 }

@@ -26,128 +26,149 @@
     </div>
 
 
-    <!-- Constraint -->
-    <!-- <div class="container-fluid p-5">
-        <div class="card shadow" style="width: 100%;">
-            
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Constraint Pengajuan</h6>
-            </div>
-            
+    <!-- Resume Pengajuan -->
+    <style>
+        .table-log {
+            width: 100%;
+            text-align: left;
+            font-size: 20px;
+            color: black;
+            font-family: Cambria;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .table-log tbody td:first-child {
+            width: 50%;
+        }
+
+        .table-log1 {
+            width: 80%;
+            text-align: center;
+            font-size: 17px;
+            color: #4e73df;
+            font-family: Cambria;
+            font-weight: bold;
+
+        }
+
+        .table-log1 tbody tr td {
+            height: 2.5rem;
+            border-left: 1px solid black;
+        }
+
+        .table-log1 tbody td:first-child {
+            width: 50%;
+            /* color: #42444e; */
+            color: black;
+            border-left: none !important;
+        }
+    </style>
+    <div class="container-fluid pt-5 pb-2">
+        <div class="card shadow mb-4">
             <div class="card-body">
-                <h5 class="pt-1 pb-1 text-center body-content-a1">Pengajuan</h5>
-                <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Jabatan Fungsional</th>
-                            <th>Pangkat</th>
-                            <th>Golongan Ruang</th>
-                            <th>Angka Kredit</th>
-                        </tr>
-                    </thead>
-                    <tbody style="font-weight: bold;">
-                        <tr>
-                            <td>Saat Ini </td>
-                            <td><?= $array['jabatan_fungsi']; ?></td>
-                            <td><?= $array['pangkat']; ?></td>
-                            <td><?= $array['golongan_ruang']; ?></td>
-                            <td><?= $array['angka_kredit']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Diajukan Ke- </td>
-                            <td><?= $data_pengajuan['jabatan_fungsi_to'] ?></td>
-                            <td><?= $data_pengajuan['pangkat_to'] ?></td>
-                            <td><?= $data_pengajuan['gol_to'] ?></td>
-                            <td><?= $data_pengajuan['ak_to'] ?></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pt-2 pb-1 col-xl-5" style="margin-left: 3rem;">
+                    <table class="table-log">
+                        <tbody>
+                            <tr>
+                                <td>ID Pengajuan</td>
+                                <td>: <?= $id_pengajuan; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Pengajuan</tdtyle=>
+                                <td>: <?= $tgl_pengajuan['tgl_pengajuan']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Diajukan Ke</td>
+                                <td>: </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
-                <h5 class="pb-2 body-content-a1">Kum Kekurangan Angka : <?= $data_pengajuan['kurang_ak'] ?></h5>
-                <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
-                    <thead>
-                        <tr>
-                            <th rowspan="2"></th>
-                            <th>Pendidikan</th>
-                            <th>Penelitian</th>
-                            <th>Pengabdian Masy. </th>
-                            <th>Penunjang</th>
-                        </tr>
-                        <tr>
-
-                            <th>Minimum</th>
-                            <th>Minimum</th>
-                            <th>Rentang</th>
-                            <th>Maksimal</th>
-                        </tr>
-                    </thead>
+                <table class="table-log1" align="center">
                     <tbody>
                         <tr>
-                            <td style="font-weight: bold;">Persentase</td>
-                            <td><?= $constraint['persen_pendidikan']; ?></td>
-                            <td><?= $constraint['persen_penelitian']; ?></td>
-                            <td><?= $constraint['persen_pengmas']; ?></td>
-                            <td><?= $constraint['persen_penunjang']; ?></td>
+                            <td>Jabatan Fungsional</td>
+                            <td><?= $data_pengajuan_id['jabatan_fungsi_to']; ?></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;">Angka Kredit</td>
-                            <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_pendidikan']; ?></td>
-                            <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_penelitian']; ?></td>
-                            <td>0.5 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_pengmas']; ?></td>
-                            <td>0 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_penunjang']; ?></td>
+                            <td>Pangkat / Golongan Ruang</td>
+                            <td><?= $data_pengajuan_id['pangkat_to']; ?> / <?= $data_pengajuan_id['gol_to']; ?></td>
+                        </tr>
+                        <tr style="border-bottom: none !important;">
+                            <td>Angka Kredit Yang Diterima</td>
+                            <td><?= $data_pengajuan_id['ak_diterima']; ?></td>
                         </tr>
                     </tbody>
                 </table>
-                <style>
-                    .body-content-1 {
-                        font-weight: bold;
-                        font-size: 14px;
-                        color: black;
-                        margin-left: 5rem;
-                    }
-
-                    .body-content-a {
-                        font-weight: bold;
-                        font-size: 16px;
-                        color: black;
-                        margin-left: 3rem;
-                    }
-
-                    .body-content-a1 {
-                        font-weight: bold;
-                        font-size: 20px;
-                        color: black;
-                        margin-left: 3rem;
-                    }
-                </style>
             </div>
         </div>
-    </div>  -->
+    </div>
+
 
 
     <!-- Konten Pengajuan #ID Pengajuan -->
-    <div class="container-fluid p-5">
+    <div class="container-fluid pt-2 pb-5">
         <div class="card shadow" style="width: 100%;">
-            <!-- Header -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Log Pengajuan</h6>
-            </div>
-            <!--Body -->
             <div class="card-body">
-                <div class="pt-2 pb-2">
-                    <h5>Id Pengajuan : <?= $id_pengajuan; ?></h5>
-                    <h5>Tanggal Pengajuan : <?= $tgl_pengajuan['tgl_pengajuan']; ?></h5>
-                </div>
-                <table style="text-align: center; width: 100%; height: auto;">
+                <style>
+                    table.tbl-log-pengajuan {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        color: black;
+                        border-collapse: collapse;
+                    }
+
+                    table.tbl-log-pengajuan thead th {
+                        font-size: 20px;
+                        font-weight: bold;
+                        font-family: Cambria;
+                        text-align: center;
+                        color: #4e73df;
+                        border-bottom: 2px solid #cec7c7;
+                    }
+
+                    table.tbl-log-pengajuan tbody tr:nth-child(even) {
+                        background-color: #e7dfdf;
+                    }
+
+                    table.tbl-log-pengajuan tbody td {
+                        font-size: 14px;
+                        font-weight: bold;
+                        font-family: Cambria;
+                        text-align: center;
+                        border-bottom: 1px solid #cec7c7;
+                    }
+
+                    table.tbl-log-pengajuan tbody tr:last-child {
+                        border-bottom: none;
+                    }
+
+                    table.tbl-log-pengajuan tbody tr {
+                        height: 2.5rem;
+                    }
+
+                    table.tbl-log-pengajuan tbody td:nth-child(2) {
+                        text-align: left;
+                        padding-left: 20px;
+                    }
+
+                    table.tbl-log-pengajuan tbody td:nth-child(5) {
+                        text-align: left;
+                        padding-left: 10px;
+                    }
+                </style>
+                <table class="tbl-log-pengajuan" style="width: 100%;">
                     <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Jenis Progress</th>
-                            <th>Status</th>
-                            <th>Tanggal Penetapan</th>
-                            <th>Catatan</th>
+                        <tr style="height: 3.5rem;">
+                            <th style="width: 5%;">No.</th>
+                            <th style="width: 25%;">Jenis Progress</th>
+                            <th style="width: 15%;">Status</th>
+                            <th style="width: 20%;">Tanggal Penetapan</th>
+                            <th style="width: 35%;">Catatan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -224,6 +245,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 
 
