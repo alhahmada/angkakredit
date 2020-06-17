@@ -66,119 +66,123 @@
             }
         </style>
         <div class="container pt-5">
+
             <button class="button-tabel btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_tambah_user" data-target="#modal_tambah_user">Tambah User</button>
-            <div class="modal fade" id="modal_tambah_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="pt-2 pb-4 head-popup" style="text-align: center; width: 100%;">Tambah User</div>
 
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">NIP</div>
-                            <input style="width: 40%;" id="nip_baru" name="nip_baru">
-                            </input>
-                        </div>
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Nama Lengkap</div>
-                            <input style="width: 40%;" id="nama_baru" name="nama_baru">
-                            </input>
-                        </div>
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Email</div>
-                            <input style="width: 40%;" id="email_baru" name="email_baru">
-                            </input>
-                        </div>
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Angka Kredit</div>
-                            <input style="width: 40%" id="ak_baru" name="ak_baru">
-                            </input>
-                        </div>
+            <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_tambah_user'); ?>">
+                <div class="modal fade" id="modal_tambah_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="pt-2 pb-4 head-popup" style="text-align: center; width: 100%;">Tambah User</div>
 
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;"> Jabatan Fungsional</div>
-                            <select style="width: 40%; float: left;" id="jab_fungsi_baru" name="jab_fungsi_baru">
-                                <option value="" selected disabled hidden> ... </option>
-                                <option value="Asisten Ahli"> Asisten Ahli </option>
-                                <option value="Lektor"> Lektor </option>
-                                <option value="Lektor Kepala"> Lektor Kepala </option>
-                                <option value="Profesor"> Profesor </option>
-                            </select>
-                        </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">NIP</div>
+                                <input style="width: 40%;" id="nip_baru" name="nip_baru">
+                                </input>
+                            </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Nama Lengkap</div>
+                                <input style="width: 40%;" id="nama_baru" name="nama_baru">
+                                </input>
+                            </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Email</div>
+                                <input style="width: 40%;" id="email_baru" name="email_baru">
+                                </input>
+                            </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Angka Kredit</div>
+                                <input style="width: 40%" id="ak_baru" name="ak_baru">
+                                </input>
+                            </div>
 
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Pangkat</div>
-                            <select style="width: 40%;" id="pangkat_baru" name="pangkat_baru">
-                                <option value="" selected disabled hidden> ... </option>
-                                <option value="IIIa">IIIa</option>
-                                <option value="IIIb">IIIb</option>
-                                <option value="IIIc">IIIc</option>
-                                <option value="IIId">IIId</option>
-                                <option value="IVa">IVa</option>
-                                <option value="IVb">IVb</option>
-                                <option value="IVc">IVc</option>
-                                <option value="IVd">IVd</option>
-                                <option value="IVe">IVe</option>
-                            </select>
-                        </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;"> Jabatan Fungsional</div>
+                                <select style="width: 40%; float: left;" id="jab_fungsi_baru" name="jab_fungsi_baru">
+                                    <option value="" selected disabled hidden> ... </option>
+                                    <option value="Asisten Ahli"> Asisten Ahli </option>
+                                    <option value="Lektor"> Lektor </option>
+                                    <option value="Lektor Kepala"> Lektor Kepala </option>
+                                    <option value="Profesor"> Profesor </option>
+                                </select>
+                            </div>
 
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Golongan Ruang</div>
-                            <select style="width: 40%;" id="gol_baru" name="gol_baru">
-                                <option value="" selected disabled hidden> ... </option>
-                                <option value="1">Penata Muda Tk.1</option>
-                                <option value="2">Penata</option>
-                                <option value="3">Penata Tk.1</option>
-                                <option value="4">Pembina</option>
-                                <option value="5">Pembina Tk.1</option>
-                                <option value="6">Pembina Utama Muda</option>
-                                <option value="7">Pembina Utama Madya</option>
-                                <option value="8">Pembina Utama</option>
-                            </select>
-                        </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Pangkat</div>
+                                <select style="width: 40%;" id="pangkat_baru" name="pangkat_baru">
+                                    <option value="" selected disabled hidden> ... </option>
+                                    <option value="IIIa">IIIa</option>
+                                    <option value="IIIb">IIIb</option>
+                                    <option value="IIIc">IIIc</option>
+                                    <option value="IIId">IIId</option>
+                                    <option value="IVa">IVa</option>
+                                    <option value="IVb">IVb</option>
+                                    <option value="IVc">IVc</option>
+                                    <option value="IVd">IVd</option>
+                                    <option value="IVe">IVe</option>
+                                </select>
+                            </div>
 
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Program Studi</div>
-                            <select style="width: 40%;" id="prodi_baru" name="prodi_baru">
-                                <option value="" selected disabled hidden> ... </option>
-                                <option value="DIV S">DIV Statistika</option>
-                                <option value="DIV KS">DIV Komp. Statistik</option>
-                                <option value="DIII S">DIII Statistika</option>
-                            </select>
-                        </div>
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Password Awal</div>
-                            <input style="width: 40%" id="pass_baru" name="pass_baru">
-                            </input>
-                        </div>
-                        <div class="modal-body row">
-                            <div style="width: 15%;"></div>
-                            <div class="isian-popup" style=" width : 35%; float: left;">Role</div>
-                            <select style="width: 40%;" id="role_baru" name="role_baru">
-                                <option value="" selected disabled hidden> ... </option>
-                                <option value="1">Administrator</option>
-                                <option value="2">Dosen</option>
-                                <option value="3">Dosen dan Verifikator</option>
-                                <option value="4">Dosen, Verifikator dan Penilai</option>
-                                <option value="5">Penilai</option>
-                            </select>
-                        </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Golongan Ruang</div>
+                                <select style="width: 40%;" id="gol_baru" name="gol_baru">
+                                    <option value="" selected disabled hidden> ... </option>
+                                    <option value="1">Penata Muda Tk.1</option>
+                                    <option value="2">Penata</option>
+                                    <option value="3">Penata Tk.1</option>
+                                    <option value="4">Pembina</option>
+                                    <option value="5">Pembina Tk.1</option>
+                                    <option value="6">Pembina Utama Muda</option>
+                                    <option value="7">Pembina Utama Madya</option>
+                                    <option value="8">Pembina Utama</option>
+                                </select>
+                            </div>
 
-                        <div class="p-2"></div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Program Studi</div>
+                                <select style="width: 40%;" id="prodi_baru" name="prodi_baru">
+                                    <option value="" selected disabled hidden> ... </option>
+                                    <option value="2">DIV Statistika</option>
+                                    <option value="1">DIV Komp. Statistik</option>
+                                    <option value="3">DIII Statistika</option>
+                                </select>
+                            </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Password Awal</div>
+                                <input type="password" style="width: 40%" id="pass_baru" name="pass_baru">
+                                </input>
+                            </div>
+                            <div class="modal-body row">
+                                <div style="width: 15%;"></div>
+                                <div class="isian-popup" style=" width : 35%; float: left;">Role</div>
+                                <select style="width: 40%;" id="role_baru" name="role_baru">
+                                    <option value="" selected disabled hidden> ... </option>
+                                    <option value="1">Administrator</option>
+                                    <option value="2">Dosen</option>
+                                    <option value="3">Dosen dan Verifikator</option>
+                                    <option value="4">Dosen, Verifikator dan Penilai</option>
+                                    <option value="5">Penilai</option>
+                                </select>
+                            </div>
+
+                            <div class="p-2"></div>
 
 
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Tambah User</button></div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="submit">Tambah User</button></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
 
     </div>

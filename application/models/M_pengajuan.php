@@ -97,4 +97,19 @@ class M_pengajuan extends CI_Model
 	{
 		return $this->db->query("SELECT pangkat_to, jabatan_fungsi_to, gol_to, ak_diterima FROM tbl_pengajuan WHERE id_pengajuan = $id_pengajuan")->result_array();
 	}
+
+	function pengajuan_selesai()
+	{
+		return $this->db->query("SELECT b.id_pengajuan, a.nama_lengkap, b.tgl_pengajuan, a.jabatan_fungsi, b.ak_diterima FROM tbl_user a JOIN tbl_pengajuan b ON a.nip=b.nip WHERE b.progress_pengajuan = '6'")->result_array();
+	}
+
+	function pengajuan_tolak()
+	{
+		return $this->db->query("SELECT b.id_pengajuan, a.nama_lengkap, b.tgl_pengajuan FROM tbl_user a JOIN tbl_pengajuan b ON a.nip=b.nip WHERE b.progress_pengajuan = '7'")->result_array();
+	}
+
+	function pengajuan_progress()
+	{
+		return $this->db->query("SELECT b.id_pengajuan, a.nama_lengkap, b.tgl_pengajuan, b.progress_pengajuan FROM tbl_user a JOIN tbl_pengajuan b ON a.nip=b.nip WHERE b.progress_pengajuan  != '7' AND b.progress_pengajuan != '6'")->result_array();
+	}
 }

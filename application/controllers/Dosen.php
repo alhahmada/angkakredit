@@ -1637,6 +1637,8 @@ class Dosen extends CI_Controller
 
         $data_pengajuan_id = $this->m_pengajuan->data_pengajuan_id($id_pengajuan);
         $data['data_pengajuan_id'] = $data_pengajuan_id[0];
+        $nama_pengaju = $this->db->query("SELECT a.nama_lengkap FROM tbl_user a JOIN tbl_pengajuan b WHERE b.id_pengajuan=$id_pengajuan AND a.nip=b.nip")->result_array();
+        $data['nama_pengaju'] = $nama_pengaju;
 
         $data['title'] = 'Log Pengajuan Dosen';
         $this->load->view('templates/auth_header', $data);

@@ -49,43 +49,31 @@
         <table class="greyGridTable">
             <thead>
                 <tr>
-                    <th style="width: 15%;">NIP</th>
+                    <th style="width: 5%;">No.</th>
+                    <th style="width: 14%;">NIP</th>
                     <th style="width: 20%;">Nama Dosen</th>
                     <th style="width: 15%;">Email</th>
-                    <th style="width: 10%;">Angka Kredit</th>
+                    <th style="width: 8%;">Angka Kredit</th>
                     <th style="width: 15%;">Jabatan</th>
-                    <th style="width: 10%;">Pangkat</th>
+                    <th style="width: 8%;">Pangkat</th>
                     <th style="width: 15%;">Golongan</th>
                 </tr>
             </thead>
             <tbody style="font-size: 14px; color: black;">
-                <tr>
-                    <th>get NIP</th>
-                    <th>get Nama Dosen</th>
-                    <th>get Email</th>
-                    <th>get Angka Kredit</th>
-                    <th>get Jabatan</th>
-                    <th>get Pangkat</th>
-                    <th>get Golongan</th>
-                </tr>
-                <tr>
-                    <th>get NIP</th>
-                    <th>get Nama Dosen</th>
-                    <th>get Email</th>
-                    <th>get Angka Kredit</th>
-                    <th>get Jabatan</th>
-                    <th>get Pangkat</th>
-                    <th>get Golongan</th>
-                </tr>
-                <tr>
-                    <th>get NIP</th>
-                    <th>get Nama Dosen</th>
-                    <th>get Email</th>
-                    <th>get Angka Kredit</th>
-                    <th>get Jabatan</th>
-                    <th>get Pangkat</th>
-                    <th>get Golongan</th>
-                </tr>
+                <?php $no = 1;
+                foreach ($dosen as $key => $data) { ?>
+                    <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $data['nip']; ?></td>
+                        <td><?= $data['nama_lengkap']; ?></td>
+                        <td><?= $data['email']; ?></td>
+                        <td><?= $data['angka_kredit']; ?></td>
+                        <td><?= $data['jabatan_fungsi']; ?></td>
+                        <td><?= $data['pangkat']; ?></td>
+                        <td><?= $data['golongan_ruang']; ?></td>
+                    </tr>
+                <?php $no++;
+                } ?>
             </tbody>
         </table>
     </div>

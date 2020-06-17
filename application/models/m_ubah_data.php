@@ -59,4 +59,10 @@ class M_ubah_data extends CI_Model
         $pass = md5($password_baru);
         $this->db->query("UPDATE tbl_user SET password='$pass' where nip=$nip");
     }
+
+    public function tambah_user($nip_baru, $nama_baru, $email_baru, $ak_baru, $jab_fung, $pangkat, $gol, $prodi, $pass, $role)
+    {
+        $password = md5($pass);
+        $this->db->query("INSERT INTO tbl_user SET nip = $nip_baru, nama_lengkap='$nama_baru', email = '$email_baru', angka_kredit = $ak_baru, jabatan_fungsi = '$jab_fung', pangkat = '$pangkat', golongan_ruang = '$gol', prodi = $prodi, tbl_user.password= '$password', tbl_user.role=$role");
+    }
 }

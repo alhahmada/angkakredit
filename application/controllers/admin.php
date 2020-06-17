@@ -21,6 +21,7 @@ class admin extends CI_Controller
         $this->load->model('m_penilai');
         $this->load->model('m_penetapan');
         $this->load->model('m_resume');
+        $this->load->model('m_ubah_data');
     }
 
     public function beranda_admin()
@@ -616,8 +617,29 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
+    public function action_tambah_user()
+    {
+        $nip = $this->input->post('nip_baru');
+        $nama_lengkap = $this->input->post('nama_baru');
+        $email = $this->input->post('email_baru');
+        $angka_kredit = $this->input->post('ak_baru');
+        $jabatan_fungsi = $this->input->post('jab_fungsi_baru');
+        $pangkat = $this->input->post('pangkat_baru');
+        $golongan_ruang = $this->input->post('gol_baru');
+        $program_studi = $this->input->post('prodi_baru');
+        $password_awal = $this->input->post('pass_baru');
+        $role = $this->input->post('role_baru');
+
+        $this->m_ubah_data->tambah_user($nip, $nama_lengkap, $email, $angka_kredit, $jabatan_fungsi, $pangkat, $golongan_ruang, $program_studi, $password_awal, $role);
+
+        redirect('/admin/edit_user');
+    }
+
     public function pengajuan_tolak()
     {
+        $pengajuan_tolak = $this->m_pengajuan->pengajuan_tolak();
+        $data['pengajuan_tolak'] = $pengajuan_tolak;
+
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
@@ -629,6 +651,9 @@ class admin extends CI_Controller
 
     public function pengajuan_selesai()
     {
+        $pengajuan_selesai = $this->m_pengajuan->pengajuan_selesai();
+        $data['pengajuan_selesai'] = $pengajuan_selesai;
+
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
@@ -638,14 +663,204 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
+    public function pengajuan_progress()
+    {
+        $pengajuan_progress = $this->m_pengajuan->pengajuan_progress();
+        $data['pengajuan_progress'] = $pengajuan_progress;
+
+        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['title'] = 'Daftar Pengajuan Selesai';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('admin/pengajuan_progress');
+        $this->load->view('templates/auth_footer');
+    }
+
     public function data_dosen()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
         $data['title'] = 'Database User';
+
+        $dosen = $this->db->query("SELECT * from tbl_user WHERE tbl_user.role != '1' AND tbl_user.role != '5'")->result_array();
+        $data['dosen'] = $dosen;
+
+
         $this->load->view('templates/auth_header_admin', $data);
         $this->load->view('admin/data_dosen');
+        $this->load->view('templates/auth_footer');
+    }
+
+
+
+
+    public function log_pengajuan()
+    {
+        $id_pengajuan = $this->uri->segment(3);
+        $nip = $this->session->userdata('nip');
+        $datauser = $this->m_auth->data_user($nip);
+        $data['array'] = $datauser[0];
+        $data['nama'] = $datauser[0]['nama_lengkap'];
+        $data['foto'] = $datauser[0]['foto'];
+        $data['id_pengajuan'] = $id_pengajuan;
+
+        $tgl_pengajuan = $this->db->query("SELECT tgl_pengajuan FROM tbl_pengajuan WHERE id_pengajuan = $id_pengajuan")->result_array();
+        $data['tgl_pengajuan'] = $tgl_pengajuan[0];
+
+        //Log Verifikasi Berkas 
+        $status_berkas = '-';
+        $verif_berkas = $this->m_verif->cek_verif_berkas($id_pengajuan);
+        if ($verif_berkas != NULL) {
+            $data['verif_berkas'] = $verif_berkas[0];
+            if ($verif_berkas[0]['status'] == '1') {
+                $status_berkas = 'Terverifikasi';
+            } else {
+                $status_berkas = 'Pengajuan Ditolak';
+            }
+            $data['status_berkas'] = $status_berkas;
+        } else {
+            $data['verif_berkas'] = NULL;
+            $data['status_berkas'] = 'Belum Diproses';
+        }
+
+        //Log Verif Pendidikan
+        $status_pendidikan = '-';
+        $verif_pendidikan = $this->m_verif->cek_verif_pendidikan($id_pengajuan);
+        if ($verif_pendidikan != NULL) {
+            $data['verif_pendidikan'] = $verif_pendidikan[0];
+            if ($verif_pendidikan[0]['status'] == '1') {
+                $status_pendidikan = 'Terverifikasi';
+            } else {
+                $status_pendidikan = 'Pengajuan Ditolak';
+            }
+            $data['status_pendidikan'] = $status_pendidikan;
+        } else {
+            $data['verif_pendidikan'] = NULL;
+            $data['status_pendidikan'] = 'Belum Diproses';
+        }
+
+        //Log Verif Penelitian
+        $status_penelitian = '-';
+        $verif_penelitian = $this->m_verif->cek_verif_penelitian($id_pengajuan);
+        if ($verif_penelitian != NULL) {
+            $data['verif_penelitian'] = $verif_penelitian[0];
+            if ($verif_penelitian[0]['status'] == '1') {
+                $status_penelitian = 'Terverifikasi';
+            } else {
+                $status_penelitian = 'Pengajuan Ditolak';
+            }
+            $data['status_penelitian'] = $status_penelitian;
+        } else {
+            $data['verif_penelitian'] = NULL;
+            $data['status_penelitian'] = 'Belum Diproses';
+        }
+
+        //Log Verif Pengabdian Masyarakat
+        $status_pengmas = '-';
+        $verif_pengmas = $this->m_verif->cek_verif_pengmas($id_pengajuan);
+        if ($verif_pengmas != NULL) {
+            $data['verif_pengmas'] = $verif_pengmas[0];
+            if ($verif_pengmas[0]['status'] == '1') {
+                $status_pengmas = 'Terverifikasi';
+            } else {
+                $status_pengmas = 'Pengajuan Ditolak';
+            }
+            $data['status_pengmas'] = $status_pengmas;
+        } else {
+            $data['verif_pengmas'] = NULL;
+            $data['status_pengmas'] = 'Belum Diproses';
+        }
+
+        //Log Verif Penunjang
+        $status_penunjang = '-';
+        $verif_penunjang = $this->m_verif->cek_verif_penunjang($id_pengajuan);
+        if ($verif_penunjang != NULL) {
+            $data['verif_penunjang'] = $verif_penunjang[0];
+            if ($verif_penunjang[0]['status'] == '1') {
+                $status_penunjang = 'Terverifikasi';
+            } else {
+                $status_penunjang = 'Pengajuan Ditolak';
+            }
+            $data['status_penunjang'] = $status_penunjang;
+        } else {
+            $data['verif_penunjang'] = NULL;
+            $data['status_penunjang'] = 'Belum Diproses';
+        }
+
+        //Log Penilaian 1
+        $status_penilaian_1 = '-';
+        $penilaian_1 = $this->m_verif->cek_penilaian_1($id_pengajuan);
+        if ($penilaian_1 != NULL) {
+            $data['penilaian_1'] = $penilaian_1;
+            if ($penilaian_1[0]['ak_pendidikan'] != NULL) {
+                $status_penilaian_1 = 'Sudah Dinilai';
+            } else {
+                $status_penilaian_1 = 'Belum Dinilai';
+            }
+            $data['status_penilaian_1'] = $status_penilaian_1;
+        } else {
+            $data['penilaian_1'] = NULL;
+            $data['status_penilaian_1'] = 'Belum Diproses';
+        }
+
+        //Log Penilaian 2
+        $status_penilaian_2 = '-';
+        $penilaian_2 = $this->m_verif->cek_penilaian_2($id_pengajuan);
+        if ($penilaian_2 != NULL) {
+            $data['penilaian_2'] = $penilaian_2;
+            if ($penilaian_2[0]['ak_pendidikan'] != NULL) {
+                $status_penilaian_2 = 'Sudah Dinilai';
+            } else {
+                $status_penilaian_2 = 'Belum Dinilai';
+            }
+            $data['status_penilaian_2'] = $status_penilaian_2;
+        } else {
+            $data['penilaian_2'] = NULL;
+            $data['status_penilaian_2'] = 'Belum Diproses';
+        }
+
+        //Log Penilaian 3
+        $status_penilaian_3 = '-';
+        $penilaian_3 = $this->m_verif->cek_penilaian_3($id_pengajuan);
+        if ($penilaian_3 != NULL) {
+            $data['penilaian_3'] = $penilaian_3;
+            if ($penilaian_3[0]['ak_pendidikan'] != NULL) {
+                $status_penilaian_3 = 'Sudah Dinilai';
+            } else {
+                $status_penilaian_3 = 'Belum Dinilai';
+            }
+            $data['status_penilaian_3'] = $status_penilaian_3;
+        } else {
+            $data['penilaian_3'] = NULL;
+            $data['status_penilaian_3'] = 'Belum Diproses';
+        }
+
+        //Log Penetapan Angka Kredit
+        $status_penetapanAK = '-';
+        $penetapanAK = $this->m_verif->cek_penetapan($id_pengajuan);
+        if ($penetapanAK != NULL) {
+            $data['penetapanAK'] = $penetapanAK;
+            if ($penetapanAK[0]['ak_diterima_final'] != NULL) {
+                $status_penetapanAK = 'Angka Kredit Telah Ditetapkan';
+            } else {
+                $status_penetapanAK = 'Belum Ditetapkan';
+            }
+            $data['status_penetapanAK'] = $status_penetapanAK;
+        } else {
+            $data['penetapanAK'] = NULL;
+            $data['status_penetapanAK'] = 'Belum Diproses';
+        }
+
+        $data_pengajuan_id = $this->m_pengajuan->data_pengajuan_id($id_pengajuan);
+        $data['data_pengajuan_id'] = $data_pengajuan_id[0];
+        $nama_pengaju = $this->db->query("SELECT a.nama_lengkap FROM tbl_user a JOIN tbl_pengajuan b WHERE b.id_pengajuan=$id_pengajuan AND a.nip=b.nip")->result_array();
+        $data['nama_pengaju'] = $nama_pengaju;
+
+        $data['title'] = 'Log Pengajuan Dosen';
+        $this->load->view('templates/auth_header_admin', $data);
+        $this->load->view('dosen/log_pengajuan');
         $this->load->view('templates/auth_footer');
     }
 }

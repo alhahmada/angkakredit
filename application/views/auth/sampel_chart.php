@@ -4,6 +4,7 @@
 <head>
     <title>Membuat Grafik Dengan Menggunakan Chart.js - www.malasngoding.com</title>
     <script type="text/javascript" src="chartjs/Chart.js"></script>
+    <script src="<?= base_url('assets/'); ?>>vendor/chart.js/Chart.min.js"></script>
 </head>
 
 <body>

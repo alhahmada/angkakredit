@@ -40,21 +40,25 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Dosen</th>
-                        <th>Tanggal Penetapan</th>
-                        <th>Daftar Penilai</th>
+                        <th>Tanggal Pengajuan</th>
+                        <th>Lihat Log Pengajuan</th>
                         <th>Jabatan Saat Ini</th>
                         <th style="width: 15%;">Angka Kredit yang diterima</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1;
-                    foreach ($pengajuan as $key => $data) { ?>
+                    foreach ($pengajuan_selesai as $key => $data) { ?>
                         <tr>
                             <td><?= $no; ?></td>
+                            <td><?= $data['nama_lengkap']; ?></td>
                             <td><?= $data['tgl_pengajuan']; ?></td>
-                            <td><?= $data['progress_pengajuan']; ?></td>
-                            <td><?= $data['tgl_pengajuan']; ?></td>
-                            <td><?= $data['id_pengajuan']; ?></td>
+                            <td class="nav-item text-center">
+                                <a class="nav-link" href="<?= base_url('admin/log_pengajuan/' . $data['id_pengajuan']); ?>">
+                                    <span>Lihat Log</span>
+                                </a>
+                            </td>
+                            <td><?= $data['jabatan_fungsi']; ?></td>
                             <td><?= $data['ak_diterima']; ?></td>
                         <?php $no++;
                     } ?>

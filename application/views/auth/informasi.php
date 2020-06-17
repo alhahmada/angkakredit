@@ -22,7 +22,7 @@
             font-family: Cambria;
         }
 
-        .nolep {
+        .noright {
             border-right: none !important;
         }
 
@@ -45,11 +45,11 @@
         }
     </style>
 
-    <button class="tab" onclick="openinfoTab(event, 'umum')">Informasi Umum</button>
+    <button class="tab" style="display: block;" onclick="openinfoTab(event, 'umum')">Informasi Umum</button>
     <button class="tab" onclick="openinfoTab(event, 'pendidikan')">Unsur Pendidikan</button>
     <button class="tab" onclick="openinfoTab(event, 'penelitian')">Unsur Penelitian</button>
     <button class="tab" onclick="openinfoTab(event, 'pengmas')">Unsur Peng. Msyarakat</button>
-    <button class="tab nolep " onclick="openinfoTab(event, 'penunjang')">Unsur Penunjang</button>
+    <button class="tab noright " onclick="openinfoTab(event, 'penunjang')">Unsur Penunjang</button>
 
     <style>
         .head-content {
@@ -105,7 +105,7 @@
     </style>
 
     <!-- Tab Informasi Umum -->
-    <div id="umum" class="tabcontent pt-5">
+    <div id="umum" style="display: block;" class="active tabcontent pt-5">
 
         <!-- Judul Halaman -->
         <div class="container">

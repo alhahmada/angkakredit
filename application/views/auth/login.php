@@ -30,17 +30,17 @@
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox small">
                                         <input type="checkbox" class="custom-control-input" id="customCheck">
-                                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                        <label class="custom-control-label" for="customCheck" style="color: black;">Remember Me</label>
                                     </div>
                                 </div>
                                 <button type="submit" name="login_as" value="dosen" class="btn btn-primary btn-user btn-block">
                                     Masuk Sebagai Dosen
                                 </button>
 
-                                <button type="submit" name="login_as" value="penilai" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" name="login_as" value="penilai" class="btn btn-dark btn-user btn-block">
                                     Masuk Sebagai Tim Penilai
                                 </button>
-                                <button type="submit" name="login_as" value="verificator" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" name="login_as" value="verificator" class="btn btn-danger btn-user btn-block">
                                     Masuk Sebagai Verifikator
                                 </button>
                                 <button type="submit" name="login_as" value="admin" class="btn btn-primary btn-user btn-block">

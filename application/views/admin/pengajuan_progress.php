@@ -5,7 +5,7 @@
         <!-- Row Pertama -->
         <div class="justify-content-between pb-3 pt-4">
 
-            <h1 class="head-content">History Pengajuan Selesai</h1>
+            <h1 class="head-content">Pengajuan Dalam Progress</h1>
             <style>
                 .head-content {
                     font-size: 30px;
@@ -39,28 +39,31 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Id Pengajuan</th>
+                        <th>ID Pengajuan</th>
                         <th>Nama Dosen</th>
                         <th>Tanggal Pengajuan</th>
+                        <th>Progress Pengajuan</th>
                         <th>Lihat Log</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1;
-                    foreach ($pengajuan_tolak as $key => $data) { ?>
+                    foreach ($pengajuan_progress as $key => $data) { ?>
                         <tr>
                             <td><?= $no; ?></td>
                             <td><?= $data['id_pengajuan']; ?></td>
                             <td><?= $data['nama_lengkap']; ?></td>
                             <td><?= $data['tgl_pengajuan']; ?></td>
+                            <td><?= $data['progress_pengajuan']; ?></td>
                             <td class="nav-item text-center">
                                 <a class="nav-link" href="<?= base_url('admin/log_pengajuan/' . $data['id_pengajuan']); ?>">
                                     <span>Lihat Log</span>
                                 </a>
                             </td>
-                        <?php $no++;
-                    } ?>
                         </tr>
+                    <?php $no++;
+                    } ?>
+
                 </tbody>
             </table>
         </div>

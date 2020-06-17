@@ -72,6 +72,10 @@
                     <table class="table-log">
                         <tbody>
                             <tr>
+                                <td>Nama Dosen</td>
+                                <td>: <?= $nama_pengaju[0]['nama_lengkap']; ?></td>
+                            </tr>
+                            <tr>
                                 <td>ID Pengajuan</td>
                                 <td>: <?= $id_pengajuan; ?></td>
                             </tr>

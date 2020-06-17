@@ -105,7 +105,7 @@
             <!--Body -->
             <div class="card-body">
                 <div class="chart-piee" style="text-align : center;">
-                    <canvas id="Chart" style="width: 100%; height: auto;"></canvas>
+                    <canvas id="myChart" style="width: 100%; height: auto;"></canvas>
                 </div>
             </div>
         </div>
@@ -322,36 +322,60 @@
     </div>
 </div>
 
+<script></script>
+
 <script type="text/javascript">
-    var ctx = document.getElementById("Chart").getContext("2d");
-    var Chart = new Chart(ctx, {
+    Chart.defaults.global.maintainAspectRatio = false;
+    var data = {
+        labels: ["Asisten Ahli", "Lektor", "Lektor Kepala", "Profesor"],
+        datasets: [{
+            data: [3, 3, 8, 7],
+            backgroundColor: ['#4e73df', '#1cc88a', '#4e73df', '#1cc88a'],
+            hoverBackgroundColor: ['#2e59d9', '#17a673', '#2e59d9', '#17a673'],
+            hoverBorderColor: "rgba(234, 244, 1)",
+        }]
+    };
+
+    Chart.pluginService.register({
+        beforeDraw: function(chart) {
+            var width = chart.chart.width,
+                height = chart.chart.height,
+                ctx = chart.chart.ctx;
+
+            ctx.restore();
+            var fontSize = (height / 114).toFixed(2);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.textBaseline = "middle";
+
+            var text = <?= $array['angka_kredit'] ?>,
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
+    });
+
+    var chart = new Chart(document.getElementById('myChart'), {
         type: 'doughnut',
-        data: {
-            labels: ["1", "2"],
-            datasets: [{
-                data: [200, 200],
-                backgroundColor: ['#4e73df', '#1cc88a'],
-                hoverBackgroundColor: ['#2e59d9', '#17a673']
-                // hoverBorderColor: "rgba(234, 244, 1)",
-            }]
-        },
+        data: data,
         options: {
-            responsive: true
-            // maintainAspectRatio: false,
-            // tooltips: {
-            //     backgroundColor: "rgb(255,255,255)",
-            //     bodyFontColor: "#858796",
-            //     borderColor: '#dddfeb',
-            //     borderWidth: 1,
-            //     xPadding: 15,
-            //     yPadding: 15,
-            //     displayColors: false,
-            //     caretPadding: 10,
-            // },
-            // legend: {
-            //     display: false
-            // },
-            // cutoutPercentage: 65,
+            responsive: true,
+            maintainAspectRatio: false,
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                caretPadding: 10,
+            },
+            legend: {
+                display: false
+            },
+            cutoutPercentage: 65,
         }
     });
 </script>
