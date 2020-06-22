@@ -50,15 +50,8 @@
                         <h3 class="m-0 font-weight-bold text-primary">Selamat</h3>
                         <h5>Pengajuan Angka Kredit telah Sukses !</h5>
                     </div>
-                    <div class="p-3">
-                        <form class="user" method="post" action="<?= base_url('dosen/beranda'); ?>">
-                            <button type="submit" class="float-center btn btn-primary btn-user btn=block">
-                                Unduh DUPAK
-                            </button>
-                        </form>
-                    </div>
 
-                    <div class="p-3">
+                    <div class="p-5">
                         <form class="user" method="post" action="<?= base_url('auth/beranda'); ?>">
                             <button type="submit" class="float-center btn btn-primary btn-user btn=block">
                                 Kembali ke Halaman Beranda

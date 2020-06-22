@@ -99,21 +99,29 @@
                             <tbody>
                                 <?php
                                 $no = 1;
+                                $i = 0;
                                 foreach ($pengajuan1 as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="nav-item text-center">
-                                            <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
-                                                <span>Cek Unsur Pengajuan</span>
-                                            </a>
-                                        </td>
+                                        <td><?= $status_verifikasi[$i]['A']; ?></td>
+                                        <td><?= $status_verifikasi[$i]['B']; ?></td>
+                                        <td><?= $status_verifikasi[$i]['C']; ?></td>
+                                        <?php if ($status_verifikasi[$i]['D'] == '1') { ?>
+                                            <td>Sudah Diverifikasi</td>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <td class="nav-item text-center">
+                                                <a class="nav-link" href="<?= base_url('admin/' . $verifikator['unsur_verif'] . '/' . $value['id_pengajuan']); ?>">
+                                                    <span>Cek Unsur Pengajuan</span>
+                                                </a>
+                                            </td>
+                                        <?php } ?>
                                     </tr>
                                 <?php $no++;
+                                    $i++;
                                 } ?>
                             </tbody>
                         </table>
@@ -243,16 +251,18 @@
                             <tbody>
                                 <?php
                                 $no = 1;
+                                $i = 0;
                                 foreach ($pengajuan3 as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?= $status_penilaian[$i]['p1']; ?></td>
+                                        <td><?= $status_penilaian[$i]['p2']; ?></td>
+                                        <td><?= $status_penilaian[$i]['p3']; ?></td>
                                     </tr>
                                 <?php $no++;
+                                    $i++;
                                 } ?>
                             </tbody>
                         </table>
@@ -311,6 +321,94 @@
         </div>
     </div>
 
+    <!-- Tahap Kirim AK Kepada Dosen -->
+    <div class="row">
+
+        <!-- Content Column -->
+        <div class="col-lg mb-4">
+
+            <!-- Project Card Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Pengajuan dalam Tahap Verifikasi Angka Kredit Diterima Dosen</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-piee pt-4 pb-2">
+
+
+                        <table class="greyGridTable">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Nama Dosen</th>
+                                    <th>Tanggal Pengajuan</th>
+                                    <th>AK Ditetapkan</th>
+                                    <th>Tetapkan Angka Kredit</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($pengajuan5 as $key => $value) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $value['nama_lengkap']; ?></td>
+                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        <td><?= $value['ak_diterima']; ?></td>
+                                        <td class="nav-item text-center">
+
+                                            <form class="user" enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_progress'); ?>">
+                                                <input type="hidden" value="<?= $value['id_pengajuan']; ?>" name="id_pengajuan">
+                                                <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" id="btn_kirim_ak" data-target="#modal_kirim_ak">Tetapkan Angka Kredit</button>
+                                                <div class="modal fade" id="modal_kirim_ak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+
+                                                            <div class="modal-body">Nama Dosen
+                                                                <div style="width: 100%; text-align: center;" class="h5">
+                                                                    <?= $value['nama_lengkap']; ?>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="modal-body">Angka Kredit yang Dikirim
+                                                                <div style="width: 100%; text-align: center;" class="h5">
+                                                                    <?= $value['ak_diterima']; ?>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="modal-body">Jabatan Fungsional
+                                                                <div style="width: 100%; text-align: center;" class="h5">
+                                                                    <?= $value['jabatan_fungsi_to']; ?>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="modal-body">Pangkat / Gol. Ruang
+                                                                <div style="width: 100%; text-align: center;" class="h5">
+                                                                    <?= $value['pangkat_to']; ?>/<?= $value['gol_to']; ?>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="modal-footer">
+                                                                <button class="btn btn-secondary" type="submit">Tetapkan Angka Kredit Dosen</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="container" style="width: 100%; height: 4rem;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Pengajuan Selesai -->
     <div class="row">
         <div class="col-lg mb-4">
@@ -341,7 +439,7 @@
                                         <td><?= $no; ?></td>
                                         <td><?= $value['nama_lengkap']; ?></td>
                                         <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
-                                        <td><?= $value['ak_diterima']; ?></td>
+                                        <td><?= $value['ak_diterima_final']; ?></td>
                                     </tr>
                                 <?php $no++;
                                 } ?>

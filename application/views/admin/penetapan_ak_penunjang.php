@@ -188,7 +188,7 @@
     </div>
 
 
-    <!-- Penetapan Pendidikan -->
+    <!-- Penetapan Penunjang -->
     <div class="container-fluid p-5">
         <style>
             .head-bab {

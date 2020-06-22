@@ -24,8 +24,6 @@
         </div>
     </div>
 
-
-
     <!-- 1 Row, 2 Area -->
     <div class="card-deck container">
 

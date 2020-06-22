@@ -1026,9 +1026,26 @@
 
             <!-- Submit Form -->
             <div class="pt-3">
-                <button type="submit" class="col-sm-2 float-right btn btn-primary btn-user btn=block">
+                <button data-toggle="modal" type="button" data-target="#pengajuanModal" class="float-right btn btn-primary btn-user btn=block">
                     Ajukan Pengajuan
                 </button>
+            </div>
+        </div>
+        <div class="modal fade" id="pengajuanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ajukan Pengajuan ?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Klik Lanjutkan Untuk Mengirim Berkas Pengajuan Usulan Penilaian Angka Kredit Anda. Tidak Dapat dilakukan Pengeditan setelah Berkas Disubmit</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                        <button class="btn btn-primary" type="submit">Lanjutkan</button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

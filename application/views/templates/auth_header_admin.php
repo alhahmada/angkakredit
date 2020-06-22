@@ -21,6 +21,8 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/tabel.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="<?= base_url('assets/'); ?>dataTables/dataTable/css/dataTables.bootstrap4.min.css">
+
 
 </head>
 

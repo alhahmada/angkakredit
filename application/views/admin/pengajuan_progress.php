@@ -34,7 +34,7 @@
 
     <!-- Body -->
     <div class="container">
-        <div class="pt-1 pb-3">
+        <div class="pt-3 pb-3">
             <table class="greyGridTable">
                 <thead>
                     <tr>
@@ -92,7 +92,7 @@
             <table class="table-ket">
                 <thead>
                     <tr>
-                        <th colspan="3">Keterangan / Status :</th>
+                        <th colspan="3">Keterangan / Status Progress Pengajuan:</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,5 +116,6 @@
         </div>
     </div>
 
+    <div class="pt-5 pb-2"></div>
 
 </div>

@@ -236,7 +236,6 @@
                     <h5 class="head-bab">A. Pendidikan</h5>
                 </div>
 
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         1. Mengikuti pendidikan formal dan memperoleh gelar/sebutan/ijazah (1/periode Penilaian)</h5>
@@ -272,8 +271,6 @@
 
                 </div>
 
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         2. Mengikuti diklat prajabatan golongan III (1/periode Penilaian)</h5>
@@ -285,8 +282,7 @@
                                 <th>Nama Diklat</th>
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
-                                <th>Lampirkan Bukti</th>
-
+                                <th>Lampiran</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -315,7 +311,6 @@
                     <h5 class="head-bab">B. Pelaksanaan Pendidikan</h5>
                 </div>
 
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         1. Melaksanakan perkuliahan/tutorial/perkuliahan praktikum dan membimbing,menguji serta menyelenggarakan pendidikan di laboratorium, praktik keguruan, bengkel/studio/kebun percobaan/teknologi pengajaran dan praktik lapangan (Maks 12 SKS/semester)</h5>
@@ -328,7 +323,7 @@
                                 <th>Semester</th>
                                 <th>Kelas</th>
                                 <th>Mata Kuliah</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -352,9 +347,6 @@
 
                 <div class="p-3"></div>
 
-
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         2. Membimbing Seminar Mahasiswa (Setiap Semester)</h5>
@@ -365,7 +357,7 @@
                         <thead>
                             <tr>
                                 <th>Tahun Akademik</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -386,8 +378,6 @@
 
                 <div class="p-3"></div>
 
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         3. Membimbing Paktik Kerja Lapangan (Setiap Semester)</h5>
@@ -398,7 +388,7 @@
                             <tr>
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -420,8 +410,6 @@
 
                 <div class="p-3"></div>
 
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         4. Membimbing dan ikut membimbing dalam menghasilkan disertasi, tesis, skripsi dan laporan akhir studi yang sesuai dengan bidang penugasannya (Setiap Semester)</h5>
@@ -434,7 +422,7 @@
                                 <th>Tugas/Peran (Option)</th>
                                 <th>Tahun Akademik</th>
                                 <th>Jumlah Mahasiswa (Option)</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -458,8 +446,6 @@
 
                 <div class="p-3"></div>
 
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         5. Bertugas sebagai penguji pada ujian akhir/Profesi (Setiap Semester)</h5>
@@ -471,7 +457,7 @@
                                 <th>Jabatan Dalam Sidang (Option)</th>
                                 <th>Tahun Akademik</th>
                                 <th>Jumlah Mahasiswa</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -494,8 +480,6 @@
 
                 <div class="p-3"></div>
 
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         6. Membina kegiatan mahasiswa di bidang akademik dan kemahasiswaan, termasuk dalam kegiatan ini adalah membimbing mahasiswa menghasilkan produk saintifik (2 Kegiatan/semester)</h5>
@@ -506,7 +490,7 @@
                             <tr>
                                 <th>Jenis (Isian)</th>
                                 <th>Tahun Akademik</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -528,8 +512,6 @@
 
                 <div class="p-3"></div>
 
-
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         7. Mengambangkan program kuliah yang mempunyai nilai kebaharuan metode atau substansi(Maks 1 Mata Kuliah/Semester)</h5>
@@ -542,7 +524,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Mata Kuliah</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -566,7 +548,6 @@
 
                 <div class="p-3"></div>
 
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         8. Mengembangkan bahan pengajaran/bahan kuliah yang mempunyai nilai kebaharuan(Maks 1 Buku/Tahun dan 2 Produk/Semester)</h5>
@@ -579,7 +560,7 @@
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
                                 <th>Mata Kuliah</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -603,7 +584,6 @@
 
                 <div class="p-3"></div>
 
-
                 <div class="d-sm-flex align-items-center text-justify justify-content-between mb-0">
                     <h5 class="head-subbab">
                         9. Menyampaikan orasi ilmiah di tingkat perguruan tinggi (Maks 2 Orasi/Semester</h5>
@@ -615,7 +595,7 @@
                                 <th>Judul</th>
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -649,7 +629,7 @@
                                 <th>Jabatan yang diduduki (Option)</th>
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -683,7 +663,7 @@
                                 <th>Jenis (Option)</th>
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -717,7 +697,7 @@
                                 <th>Jenis (Option)</th>
                                 <th>Tahun Akademik</th>
                                 <th>Semester</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>
@@ -749,7 +729,7 @@
                         <thead>
                             <tr>
                                 <th>Lama Program Pengembangan yang diikuti</th>
-                                <th>Lampirkan Bukti</th>
+                                <th>Lampiran</th>
 
                             </tr>
                         </thead>

@@ -188,7 +188,7 @@
                     <div class="pt-4 pb-5">
                         <table class="greyGridTable">
                             <thead>
-                                <tr>
+                                <tr style="height: 8 rem;">
                                     <th></th>
                                     <th>0</th>
                                     <th>1</th>
@@ -200,13 +200,15 @@
                                     <th>7</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
+                            <thead>
+                                <tr style="height: 6 rem; color: black; font-weight: bold;">
                                     <td>Jumlah Dosen</td>
                                     <?php for ($i = 0; $i < 8; $i++) {
                                         echo "<td>" . $progress[$i] . "</td>";
                                     } ?>
                                 </tr>
+                            </thead>
+                            <tbody>
                             </tbody>
                         </table>
                     </div>
@@ -265,14 +267,9 @@
         </div>
     </div>
 
-
-
-
-
-
 </div>
 
-<!-- Illustrations -->
+<!-- End Of Page -->
 
 <div class="pt-5 pb-3"></div>
 </div>

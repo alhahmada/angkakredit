@@ -628,14 +628,29 @@
 
         <div class="p-5"></div>
 
-        <div class="container row">
-            <div class="col-sm-9">
-                <a href="<?= base_url('dosen/pengajuan_dosen'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                    Sebelumnya
-                </a>
-            </div>
-            <div class="col-sm-2">
-                <button type="submit" class="float-right btn btn-primary btn-user btn=block">Selanjutnya</button>
+
+
+        <div class="pt-3">
+            <button data-toggle="modal" type="button" style="margin-right: 8rem; width: 10rem;" data-target="#pengajuanModal" class="float-right btn btn-primary text-center btn-user btn=block">
+                Selanjutnya
+            </button>
+        </div>
+
+        <div class="modal fade" id="pengajuanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ajukan Pengajuan ?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Klik Lanjutkan Untuk Mengirim Berkas Unsur Pendidikan Pengajuan Usulan Penilaian Angka Kredit Anda. Tidak Dapat dilakukan Pengeditan setelah Berkas Disubmit</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                        <button class="btn btn-primary" type="submit">Lanjutkan</button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

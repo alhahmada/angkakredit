@@ -1449,6 +1449,7 @@ class Dosen extends CI_Controller
         $data['maks_e9'] = $this->m_verif->constraint('e9', $id_pengajuan);
         $data['e10'] = $this->m_verif->e10($id_pengajuan);
         $data['maks_e10'] = $this->m_verif->constraint('e10', $id_pengajuan);
+
         $data['total_pendidikan'] = $this->m_verif->total_pendidikan($id_pengajuan);
         $data['total_penelitian'] = $this->m_verif->total_penelitian($id_pengajuan);
         $data['total_pengmas'] = $this->m_verif->total_pengmas($id_pengajuan);
@@ -1640,6 +1641,60 @@ class Dosen extends CI_Controller
         $nama_pengaju = $this->db->query("SELECT a.nama_lengkap FROM tbl_user a JOIN tbl_pengajuan b WHERE b.id_pengajuan=$id_pengajuan AND a.nip=b.nip")->result_array();
         $data['nama_pengaju'] = $nama_pengaju;
 
+
+        $data['total_pendidikan'] = $this->m_verif->total_pendidikan($id_pengajuan);
+        $data['total_penelitian'] = $this->m_verif->total_penelitian($id_pengajuan);
+        $data['total_pengmas'] = $this->m_verif->total_pengmas($id_pengajuan);
+        $data['total_penunjang'] = $this->m_verif->total_penunjang($id_pengajuan);
+        $data['total_AK'] = $this->m_verif->total_AK($id_pengajuan);
+
+        $data['persentase_pendidikan'] = number_format($data['total_pendidikan'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $data['persentase_penelitian'] = number_format($data['total_penelitian'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $data['persentase_pengmas'] = number_format($data['total_pengmas'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $data['persentase_penunjang'] = number_format($data['total_penunjang'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+
+
+        $data['a1'] = $this->m_verif->a1($id_pengajuan);
+        $data['a2'] = $this->m_verif->a2($id_pengajuan);
+        $data['b1'] = $this->m_verif->b1($id_pengajuan);
+        $data['b2'] = $this->m_verif->b2($id_pengajuan);
+        $data['b3'] = $this->m_verif->b3($id_pengajuan);
+        $data['b4'] = $this->m_verif->b4($id_pengajuan);
+        $data['b5'] = $this->m_verif->b5($id_pengajuan);
+        $data['b6'] = $this->m_verif->b6($id_pengajuan);
+        $data['b7'] = $this->m_verif->b7($id_pengajuan);
+        $data['b8'] = $this->m_verif->b8($id_pengajuan);
+        $data['b9'] = $this->m_verif->b9($id_pengajuan);
+        $data['b10'] = $this->m_verif->b10($id_pengajuan);
+        $data['b11'] = $this->m_verif->b11($id_pengajuan);
+        $data['b12'] = $this->m_verif->b12($id_pengajuan);
+        $data['b13'] = $this->m_verif->b13($id_pengajuan);
+        $data['c1'] = $this->m_verif->c1($id_pengajuan);
+        $data['c2'] = $this->m_verif->c2($id_pengajuan);
+        $data['c3'] = $this->m_verif->c3($id_pengajuan);
+        $data['c4'] = $this->m_verif->c4($id_pengajuan);
+        $data['c5'] = $this->m_verif->c5($id_pengajuan);
+        $data['c6'] = $this->m_verif->c6($id_pengajuan);
+        $data['c7'] = $this->m_verif->c7($id_pengajuan);
+        $data['c8'] = $this->m_verif->c8($id_pengajuan);
+        $data['d1'] = $this->m_verif->d1($id_pengajuan);
+        $data['d2'] = $this->m_verif->d2($id_pengajuan);
+        $data['d3'] = $this->m_verif->d3($id_pengajuan);
+        $data['d4'] = $this->m_verif->d4($id_pengajuan);
+        $data['d5'] = $this->m_verif->d5($id_pengajuan);
+        $data['d6'] = $this->m_verif->d6($id_pengajuan);
+        $data['d7'] = $this->m_verif->d7($id_pengajuan);
+        $data['e1'] = $this->m_verif->e1($id_pengajuan);
+        $data['e2'] = $this->m_verif->e2($id_pengajuan);
+        $data['e3'] = $this->m_verif->e3($id_pengajuan);
+        $data['e4'] = $this->m_verif->e4($id_pengajuan);
+        $data['e5'] = $this->m_verif->e5($id_pengajuan);
+        $data['e6'] = $this->m_verif->e6($id_pengajuan);
+        $data['e7'] = $this->m_verif->e7($id_pengajuan);
+        $data['e8'] = $this->m_verif->e8($id_pengajuan);
+        $data['e9'] = $this->m_verif->e9($id_pengajuan);
+        $data['e10'] = $this->m_verif->e10($id_pengajuan);
+
         $data['title'] = 'Log Pengajuan Dosen';
         $this->load->view('templates/auth_header', $data);
         $this->load->view('dosen/log_pengajuan');
@@ -1652,19 +1707,27 @@ class Dosen extends CI_Controller
 
     public function test()
     {
-        // $nip = $this->session->userdata('nip');
-        // $prodi = $this->db->query("SELECT a.nama_prodi FROM tbl_prodi a JOIN tbl_user b WHERE a.id_prodi=b.prodi AND b.nip=$nip")->result_array();
-        // $data['prodi'] = $prodi[0];
-        // return $prodi[0];
-        // $last = $this->m_pengajuan->data_pengajuan_5last();
-        // $last = $this->m_pengajuan->data_pengajuan();
-        // print_r($last);
-        // $verif_berkas = $this->m_verif->cek_penilaian_1(14);
-        // print_r($verif_berkas[0]['updated_at']);
-        $data_pengajuan_id = $this->m_pengajuan->data_pengajuan_id(20);
-        print_r($data_pengajuan_id[0]);
+        $pengajuan3 = $this->m_verif->pengajuan_3();
+
+        $status_penilaian = array();
+        for ($i = 0; $i < count($pengajuan3); $i++) {
+            $status_penilaian[$i] = $this->m_verif->status_penilaian($pengajuan3[$i]['id_pengajuan']);
+        }
+
+        $data['status_penilaian'] = $status_penilaian;
+        print_r($status_penilaian);
     }
 
+
+
+    //     if ($a[0]['status'] == '1') {
+    //         $status_A[0] = 'Terverifikasi';
+    //     } elseif ($a[0]['status'] == '2') {
+    //         $status_A[0] = 'Pengajuan Ditolak';
+    //     }
+    // } else {
+    //     $status_A[0] = 'BeDiverifikasi';
+    // }
 
 
 

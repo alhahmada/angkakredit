@@ -16,6 +16,7 @@ class M_verif extends CI_Model
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=3")->result_array();
 	}
+
 	public function pengajuan3_not($id)
 	{
 		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=3 AND id_pengajuan NOT IN(" . $id . ")")->result_array();
@@ -26,11 +27,11 @@ class M_verif extends CI_Model
 	}
 	public function pengajuan_5()
 	{
-		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=5")->result_array();
+		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan, a.ak_diterima, a.jabatan_fungsi_to, a.gol_to, a.pangkat_to ,b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=5")->result_array();
 	}
 	public function pengajuan_6()
 	{
-		return $this->db->query("select a.id_pengajuan,a.tgl_pengajuan,a.ak_diterima, b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=6")->result_array();
+		return $this->db->query("select a.id_pengajuan, a.tgl_pengajuan, a.ak_diterima_final, b.nama_lengkap from tbl_pengajuan a join tbl_user b on a.nip=b.nip where a.progress_pengajuan=6")->result_array();
 	}
 
 	public function pengajuan_not($id)
@@ -318,5 +319,78 @@ class M_verif extends CI_Model
 	public function cek_penetapan($id_pengajuan)
 	{
 		return $this->db->query("SELECT a.*, b.ak_diterima_final FROM tbl_log_pengajuan a JOIN tbl_pengajuan b ON a.id_pengajuan = b.id_pengajuan WHERE a.id_pengajuan=$id_pengajuan AND a.jenis_berkas='Penetapan Angka Kredit' ORDER BY a.updated_at desc LIMIT 1 ")->result_array();
+	}
+
+	public function status_verif($id_pengajuan)
+	{
+		$unsur_a = 'verif_pendidikan';
+		$unsur_b = 'verif_penelitian';
+		$unsur_c = 'verif_pengmas';
+		$unsur_d = 'verif_penunjang';
+		$a = $this->db->query("SELECT tbl_verif_pengajuan.status FROM tbl_verif_pengajuan WHERE unsur = '$unsur_a' AND id_pengajuan =$id_pengajuan")->result_array();
+		$b = $this->db->query("SELECT tbl_verif_pengajuan.status FROM tbl_verif_pengajuan WHERE unsur = '$unsur_b' AND id_pengajuan =$id_pengajuan")->result_array();
+		$c = $this->db->query("SELECT tbl_verif_pengajuan.status FROM tbl_verif_pengajuan WHERE unsur = '$unsur_c' AND id_pengajuan =$id_pengajuan")->result_array();
+		$d = $this->db->query("SELECT tbl_verif_pengajuan.status FROM tbl_verif_pengajuan WHERE unsur = '$unsur_d' AND id_pengajuan =$id_pengajuan")->result_array();
+
+		$status = array();
+
+		if ($a == null) {
+			$status[0]['A'] = 'Belum Diverifikasi';
+		} else {
+			$status[0]['A'] = 'Sudah Diverifikasi';
+		}
+
+		if ($b == null) {
+			$status[0]['B'] = 'Belum Diverifikasi';
+		} else {
+			$status[0]['B'] = 'Sudah Diverifikasi';
+		}
+
+		if ($c == null) {
+			$status[0]['C'] = 'Belum Diverifikasi';
+		} else {
+			$status[0]['C'] = 'Sudah Diverifikasi';
+		}
+
+		if ($a == null) {
+			$status[0]['D'] = '0';
+		} else {
+			$status[0]['D'] = '1';
+		}
+
+		return $status[0];
+	}
+
+	public function status_penilaian($id_pengajuan)
+	{
+
+		$p1 = $this->db->query("SELECT a.ak_pendidikan FROM tbl_penilaian a JOIN tbl_pengajuan b ON a.id_pengajuan = b.id_pengajuan WHERE b.progress_pengajuan='3' AND a.keterangan = '1' AND a.id_pengajuan ='$id_pengajuan'")->result_array();
+		$p2 = $this->db->query("SELECT a.ak_pendidikan FROM tbl_penilaian a JOIN tbl_pengajuan b ON a.id_pengajuan = b.id_pengajuan WHERE b.progress_pengajuan='3' AND a.keterangan = '2' AND a.id_pengajuan ='$id_pengajuan'")->result_array();
+		$p3 = $this->db->query("SELECT a.ak_pendidikan FROM tbl_penilaian a JOIN tbl_pengajuan b ON a.id_pengajuan = b.id_pengajuan WHERE b.progress_pengajuan='3' AND a.keterangan = '3' AND a.id_pengajuan ='$id_pengajuan'")->result_array();
+
+		if ($p1[0]['ak_pendidikan'] == null) {
+			$status_p1 = 'Belum Dinilai';
+		} else {
+			$status_p1 = 'Sudah Dinilai';
+		}
+
+		if ($p2[0]['ak_pendidikan'] == null) {
+			$status_p2 = 'Belum Dinilai';
+		} else {
+			$status_p2 = 'Sudah Dinilai';
+		}
+		if ($p3[0]['ak_pendidikan'] == null) {
+			$status_p3 = 'Belum Dinilai';
+		} else {
+			$status_p3 = 'Sudah Dinilai';
+		}
+
+		$status = array(
+			'p1' => $status_p1,
+			'p2' => $status_p2,
+			'p3' => $status_p3
+		);
+
+		return $status;
 	}
 }

@@ -79,7 +79,7 @@ class M_pengajuan extends CI_Model
 
 	function update_verif_berkas($id_pengajuan, $status, $nip, $keterangan)
 	{
-		$this->db->query("INSERT INTO tbl_verif_berkas (id_pengajuan, tbl_verif_berkas.status, nip_verifikator, keterangan) VALUES ($id_pengajuan, $status, $nip, $keterangan)");
+		$this->db->query("INSERT INTO tbl_verif_berkas (id_pengajuan, tbl_verif_berkas.status, nip_verifikator, keterangan) VALUES ($id_pengajuan, $status, $nip, '$keterangan')");
 	}
 
 

@@ -455,7 +455,6 @@
     </div>
 </div>
 
-
 <!-- Resume Penelitian -->
 <div class="container-fluid">
     <div class="p-5">
@@ -632,7 +631,6 @@
     </div>
 </div>
 
-
 <!-- Resume Pengabdian Masyarakat -->
 <div class="container-fluid">
     <div class="p-5">
@@ -789,8 +787,6 @@
         </table>
     </div>
 </div>
-
-
 
 <!-- Unsur Penunjang -->
 <div class="container-fluid">
@@ -1005,7 +1001,6 @@
     </div>
 </div>
 
-
 <!-- Resume Total -->
 <div class="container-fluid">
     <div class="p-5">
@@ -1071,11 +1066,6 @@
 
         <div class="chart-piee pt-1 pb-1">
             <div class="row container p-2">
-                <div class="col-sm-9">
-                    <a href="<?= base_url('dosen/penunjang'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                        Sebelumnya
-                    </a>
-                </div>
                 <div class="col-sm-2">
                     <button data-toggle="modal" type="button" data-target="#pengajuanModal" class="float-right btn btn-primary btn-user btn=block">
                         Submit Pengajuan
