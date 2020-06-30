@@ -62,7 +62,7 @@
             </div>
             <!-- Menu Utama Pertama User -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('dosen/pengajuan_dosen'); ?>">
+                <a class="nav-link" href="<?= base_url('dosen/daftar_pengajuan'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Pengajuan Baru</span>
                 </a>

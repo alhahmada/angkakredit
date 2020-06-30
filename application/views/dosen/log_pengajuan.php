@@ -171,6 +171,13 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <?php if ($data_pengajuan_id['progress_pengajuan'] == '7' || $data_pengajuan_id['progress_pengajuan'] == '8') { ?>
+                            <div class="pt-5 pb-4 justify-content-center text-center">
+                                <a href="<?= base_url('dosen/pengajuan_unsur/' . $id_pengajuan); ?>" class="btn btn-primary text-center btn-user btn=block" style="width: 300px; font-weight: bold;">
+                                    Edit Pengajuan
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -335,32 +342,32 @@
                             <td>1.</td>
                             <td class="text-left">Pendidikan dan Pelaksanaan Pendidikan</td>
                             <td><?= $persentase_pendidikan; ?>%</td>
-                            <td><?= $total_pendidikan[0]['total']; ?></td>
+                            <td><?= $total_pendidikan; ?></td>
                         </tr>
                         <tr>
                             <td>2.</td>
                             <td class="text-left">Penelitian</td>
                             <td><?= $persentase_penelitian; ?>%</td>
-                            <td><?= $total_penelitian[0]['total'];  ?></td>
+                            <td><?= $total_penelitian;  ?></td>
                         </tr>
                         <tr>
                             <td>3.</td>
                             <td class="text-left">Pengabdian Masyarakat</td>
                             <td><?= $persentase_pengmas; ?>%</td>
-                            <td><?= $total_pengmas[0]['total']; ?></td>
+                            <td><?= $total_pengmas; ?></td>
                         </tr>
                         <tr>
                             <td>4.</td>
                             <td class="text-left">Unsur Penunjang</td>
                             <td><?= $persentase_penunjang; ?>%</td>
-                            <td><?= $total_penunjang[0]['total']; ?></td>
+                            <td><?= $total_penunjang; ?></td>
                         </tr>
 
                     </tbody>
                     <tfoot>
                         <tr>
                             <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                            <th><?= $total_AK[0]['total']; ?></th>
+                            <th><?= $total_AK; ?></th>
                         </tr>
                     </tfoot>
                 </table>

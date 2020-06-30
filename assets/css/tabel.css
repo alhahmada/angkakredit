@@ -99,6 +99,16 @@ table.greyGridTable {
     border: none;
     border-radius: 15px;
   }
+  
+  .hapusA1, .hapusA2, .hapusB1, .hapusB2, .hapusB3, .hapusB4, .hapusB5, .hapusB6, .hapusB7, .hapusB8, .hapusB9, .hapusB10, .hapusB11, .hapusB12, .hapusB13 {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
 
   .removeC1, .removeC2, .removeC3, .removeC4, .removeC5, .removeC6, .removeC7, .removeC8{
     width: 30px;

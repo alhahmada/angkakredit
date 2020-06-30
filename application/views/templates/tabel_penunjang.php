@@ -1,6 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
 <script>
     var htmlE1 =
         '<tr>' +
@@ -435,7 +432,7 @@
 
 
         '<td>' +
-        '<select id="D103" name="D103[]">' +
+        '<select id="E103" name="E103[]">' +
         '<option value="" selected disabled hidden> ... </option>' +
         '<option value="Ganjil">Ganjil</option>' +
         '<option value="Genap">Genap</option>' +

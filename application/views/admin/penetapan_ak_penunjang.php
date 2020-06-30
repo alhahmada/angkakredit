@@ -6,7 +6,7 @@
         <!-- Row Pertama -->
         <div class="justify-content-between pb-5 pt-4">
 
-            <h1 class="head-content">Penilaian Angka Kredit</h1>
+            <h1 class="head-content">Penetapan Angka Kredit</h1>
             <style>
                 .head-content {
                     font-size: 30px;
@@ -26,7 +26,7 @@
 
 
     <!-- Area Pertama -->
-    <div class="container-fluid p-2">
+    <div class="card-deck container">
         <div class="card col-xl-6 shadow mb-4">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -74,6 +74,54 @@
                                 <tr>
                                     <td>Tanggal Pengajuan</td>
                                     <td><?= $user['tgl_pengajuan']; ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-xl-6 shadow mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Keterangan Penilai</h6>
+            </div>
+            <!--Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-1 pb-2">
+                    <div class="col-lg body-content">
+
+                        <style>
+                            .table-bio {
+                                width: 100%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                            }
+
+                            .table-bio tbody td {
+                                padding-bottom: 0.6rem;
+                            }
+
+                            .table-bio tbody td:last-child {
+                                width: 50%;
+                            }
+                        </style>
+                        <table class="table-bio">
+                            <tbody>
+                                <tr>
+                                    <td>Penilai 1</td>
+                                    <td>: <?= $penilai[0]['nama_lengkap']; ?></td>
+                                <tr>
+                                    <td>Penilai 2</td>
+                                    <td>: <?= $penilai[1]['nama_lengkap']; ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Penilai 3</td>
+                                    <td>: <?= $penilai[2]['nama_lengkap']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -713,12 +761,7 @@
             <div class="p-3"></div>
 
             <div class="container row">
-                <div class="col-sm-9">
-                    <a type="submit" href="<?= base_url('admin/penetapan_ak_pengmas'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                        Sebelumnya
-                    </a>
-                </div>
-                <div class="col-sm-2">
+                <div class="col-sm-12">
                     <button type="submit" class="float-right btn btn-primary btn-user btn=block">
                         Selanjutnya
                     </button>

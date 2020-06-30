@@ -101,16 +101,22 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $no = 1;
-                                foreach ($pengajuanBN as $key => $value) { ?>
-                                    <tr>
-                                        <td><?= $no; ?></td>
-                                        <td><?= $value['id_pengajuan']; ?></td>
-                                        <td><?= $value['nama_lengkap']; ?></td>
-                                        <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                if ($pengajuanBN != null) {
+                                    $no = 1;
+                                    foreach ($pengajuanBN as $key => $value) { ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $value['id_pengajuan']; ?></td>
+                                            <td><?= $value['nama_lengkap']; ?></td>
+                                            <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
+                                        </tr>
+                                    <?php $no++;
+                                    }
+                                } else { ?>
+                                    <tr style="height: 5 rem;">
+                                        <td colspan="4" style="text-align: center; font-weight: bold;"> Tidak Ada Data Pengajuan Untuk Dinilai </td>
                                     </tr>
-                                <?php $no++;
-                                } ?>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

@@ -14,6 +14,44 @@ class M_pengajuan extends CI_Model
 		return $this->db->query("SELECT * FROM tbl_pengajuan WHERE nip=$nip ORDER BY id_pengajuan desc LIMIT 0, 5")->result_array();
 	}
 
+	function data_pengajuan_dosen_8($nip)
+	{
+		$this->db->where('nip', $nip);
+		$this->db->where('progress_pengajuan', '8');
+		$this->db->from('tbl_pengajuan');
+		$list = $this->db->get()->result_array();
+		return $list;
+	}
+	function data_pengajuan_dosen_7($nip)
+	{
+		$this->db->where('nip', $nip);
+		$this->db->where('progress_pengajuan', '7');
+		$this->db->from('tbl_pengajuan');
+		$list = $this->db->get()->result_array();
+		return $list;
+	}
+
+	function kode_batasan($id_pengajuan, $nip)
+	{
+		$this->db->select('jabatan_fungsi');
+		$this->db->from('tbl_user');
+		$this->db->where('nip', $nip);
+		$jab_fungsi = $this->db->get()->result_array();
+
+		$this->db->select('jabatan_fungsi_to');
+		$this->db->from('tbl_pengajuan');
+		$this->db->where('id_pengajuan', $id_pengajuan);
+		$jab_fung_to = $this->db->get()->result_array();
+
+		$this->db->select('kode_batasan');
+		$this->db->from('tbl_batasan');
+		$this->db->where('jab_fung', $jab_fungsi[0]['jabatan_fungsi']);
+		$this->db->where('jab_fung_to', $jab_fung_to[0]['jabatan_fungsi_to']);
+		$kode = $this->db->get()->result_array();
+
+		return $kode[0]['kode_batasan'];
+	}
+
 
 	function pengajuan_all()
 	{
@@ -74,7 +112,15 @@ class M_pengajuan extends CI_Model
 
 	function update_progress($id_pengajuan, $progress, $keterangan)
 	{
-		$this->db->query("UPDATE tbl_pengajuan set progress_pengajuan='$progress',keterangan='$keterangan' where id_pengajuan=$id_pengajuan");
+		$data = array(
+			'progress_pengajuan' => $progress,
+			'tgl_pengajuan' => date('Y-m-d'),
+			'keterangan' => $keterangan
+		);
+		$this->db->from('tbl_pengajuan');
+		$this->db->where('id_pengajuan', $id_pengajuan);
+		$this->db->set($data);
+		return $this->db->update();
 	}
 
 	function update_verif_berkas($id_pengajuan, $status, $nip, $keterangan)
@@ -95,7 +141,7 @@ class M_pengajuan extends CI_Model
 
 	function data_pengajuan_id($id_pengajuan)
 	{
-		return $this->db->query("SELECT pangkat_to, jabatan_fungsi_to, gol_to, ak_diterima FROM tbl_pengajuan WHERE id_pengajuan = $id_pengajuan")->result_array();
+		return $this->db->get_where('tbl_pengajuan', array('id_pengajuan' => $id_pengajuan))->result_array();
 	}
 
 	function pengajuan_selesai()
@@ -111,5 +157,11 @@ class M_pengajuan extends CI_Model
 	function pengajuan_progress()
 	{
 		return $this->db->query("SELECT b.id_pengajuan, a.nama_lengkap, b.tgl_pengajuan, b.progress_pengajuan FROM tbl_user a JOIN tbl_pengajuan b ON a.nip=b.nip WHERE b.progress_pengajuan  != '7' AND b.progress_pengajuan != '6'")->result_array();
+	}
+
+	public function edit($data, $tbl, $id)
+	{
+
+		return $this->db->update($tbl, $data, ['id' => $id]);
 	}
 }

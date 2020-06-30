@@ -464,17 +464,52 @@
                 </div>
             </div>
 
-
             <div class="container row p-5">
                 <div class="col-sm-9">
-                    <button type="submit" name="aksi" value="tolak" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#tolakModal" class="float-right btn btn-primary btn-user btn=block">
                         Tolak Pengajuan
                     </button>
                 </div>
                 <div class="col-sm-3">
-                    <button type="submit" name="aksi" value="terima" class="float-right btn btn-primary btn-user btn=block">
+                    <button data-toggle="modal" type="button" data-target="#verModal" class="float-right btn btn-primary btn-user btn=block">
                         Verifikasi Pengajuan
                     </button>
+                </div>
+            </div>
+            <!-- Modal Verifikasi Berkas -->
+            <div class="modal fade" id="verModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Verifikasi Berkas ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Memverifikasi Berkas Pengajuan Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="terima" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Tolak Verifikasi Berkas-->
+            <div class="modal fade" id="tolakModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tolak Berkas Pengajuan ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Menolak Berkas Pengajuan Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="tolak" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
     </div>

@@ -7,6 +7,11 @@ class M_penilai extends CI_Model
         return $this->db->query("SELECT nip,nama_lengkap FROM tbl_user WHERE tbl_user.role='5' OR tbl_user.role='4'")->result_array();
     }
 
+    public function penilai_pengajuan($id_pengajuan)
+    {
+        return $this->db->query("SELECT a.nama_lengkap, b.keterangan FROM tbl_user a JOIN tbl_penilaian b ON a.nip=b.nip WHERE b.id_pengajuan = $id_pengajuan order by b.keterangan")->result_array();
+    }
+
     public function pilih_penilai($nip_penilai, $id_pengajuan, $keterangan)
     {
         $data = array(

@@ -98,11 +98,11 @@
                 <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Jabatan Fungsional</th>
-                            <th>Pangkat</th>
-                            <th>Golongan Ruang</th>
-                            <th>Angka Kredit</th>
+                            <th style="width: 20%;"></th>
+                            <th style="width: 20%;">Jabatan Fungsional</th>
+                            <th style="width: 20%;">Pangkat</th>
+                            <th style="width: 20%;">Golongan Ruang</th>
+                            <th style="width: 20%;">Angka Kredit</th>
                         </tr>
                     </thead>
                     <tbody style="font-weight: bold;">
@@ -128,17 +128,17 @@
                 <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                     <thead>
                         <tr>
-                            <th rowspan="2"></th>
-                            <th>Pendidikan</th>
-                            <th>Penelitian</th>
-                            <th>Pengabdian Masy. </th>
-                            <th>Penunjang</th>
+                            <th style="width: 20%;" rowspan="2"></th>
+                            <th style="width: 20%;">Pendidikan</th>
+                            <th style="width: 20%;">Penelitian</th>
+                            <th style="width: 20%;">Pengabdian Masy. </th>
+                            <th style="width: 20%;">Penunjang</th>
                         </tr>
                         <tr>
 
                             <th>Minimum</th>
                             <th>Minimum</th>
-                            <th>Rentang</th>
+                            <th>Maksimal</th>
                             <th>Maksimal</th>
                         </tr>
                     </thead>
@@ -655,12 +655,7 @@
 
 
             <div class="container row">
-                <div class="col-sm-9">
-                    <button type="button" href="<?= base_url('penilai/nilai_pengmas'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                        Sebelumnya
-                    </button>
-                </div>
-                <div class="col-sm-2">
+                <div class="col-sm-12">
                     <button type="submit" class="float-right btn btn-primary btn-user btn=block">
                         Selanjutnya
                     </button>

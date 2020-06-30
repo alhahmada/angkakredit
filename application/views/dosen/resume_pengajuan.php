@@ -93,13 +93,33 @@
                         <td><?= $constraint['persen_penunjang']; ?></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold;">Angka Kredit</td>
-                        <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_pendidikan']; ?></td>
-                        <td><?= $data_pengajuan['kurang_ak'] * $constraint['persen_penelitian']; ?></td>
-                        <td>0.5 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_pengmas']; ?></td>
-                        <td>0 - <?= $data_pengajuan['kurang_ak'] * $constraint['persen_penunjang']; ?></td>
+                        <td style="font-weight: bold;">AK Kum</td>
+                        <td><?= $data_pengajuan['ak_to'] * $constraint['persen_pendidikan']; ?></td>
+                        <td><?= $data_pengajuan['ak_to'] * $constraint['persen_penelitian']; ?></td>
+                        <td>0.5 - <?= $data_pengajuan['ak_to'] * $constraint['persen_pengmas']; ?></td>
+                        <td>0 - <?= $data_pengajuan['ak_to'] * $constraint['persen_penunjang']; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">AK Saat Ini</td>
+                        <td><?= $data_ak['ak_pendidikan']; ?></td>
+                        <td><?= $data_ak['ak_penelitian']; ?></td>
+                        <td><?= $data_ak['ak_pengmas']; ?></td>
+                        <td><?= $data_ak['ak_penunjang']; ?></td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr style="color: black !important; font-weight: bold; height: 4rem;">
+                        <td style=" font-size: 20px;">Kekurangan</td>
+                        <td style=" font-size: 20px;"><?= $data_pengajuan['ak_to'] * $constraint['persen_pendidikan'] - $data_ak['ak_pendidikan']; ?></td>
+                        <td style=" font-size: 20px;"><?= $data_pengajuan['ak_to'] * $constraint['persen_penelitian'] - $data_ak['ak_penelitian']; ?></td>
+                        <?php if ($data_ak['ak_pengmas'] == 0) { ?>
+                            <td style=" font-size: 20px;">0,5 - <?= $data_pengajuan['ak_to'] * $constraint['persen_pengmas'] - $data_ak['ak_pengmas']; ?></td>
+                        <?php } elseif ($data_ak['ak_pengmas'] >= 0.5) { ?>
+                            <td style=" font-size: 20px;">0 - <?= $data_pengajuan['ak_to'] * $constraint['persen_pengmas'] - $data_ak['ak_pengmas']; ?></td>
+                        <?php } ?>
+                        <td style=" font-size: 20px;">0 - <?= $data_pengajuan['ak_to'] * $constraint['persen_penunjang'] - $data_ak['ak_penunjang']; ?></td>
+                    </tr>
+                </tfoot>
             </table>
             <style>
                 .body-content-1 {
@@ -123,881 +143,172 @@
                     margin-left: 3rem;
                 }
             </style>
-            <h5 class="pt-1 pb-2 body-content-a">Constraint Unsur Penelitian (C)</h5>
-            <h5 class="pt-1 pb-2 body-content-1">1. Poin C2 e + C3 Maksimal 5% Dari Total Unsur Penelitian</h5>
-            <?php if ($data_pengajuan['jabatan_fungsi_to'] != 'Asisten Ahli' or $data_pengajuan['jabatan_fungsi_to'] != 'Lektor') { ?>
-                <h5 class="pt-1 pb-2 body-content-1">2. Poin C1 Jurnal Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
-                <h5 class="pt-1 pb-2 body-content-1">3. Poin C2a + C2b + C2c + C2d Tingkat Nasional Maksimal 25% Dari Total Unsur Penelitian</h5>
-            <?php } ?>
+            <!-- Batasan -->
+            <h5 class="pt-1 pb-2 body-content-a1">Batas Syarat Pengajuan</h5>
+            <!-- Tabel Batasan Menurut Jenis Pengajuan -->
+            <table class="greyGridTable" style="margin-top: 2rem; margin-bottom: 3rem;">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenis Batasan</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. </td>
+                        <td style="text-align: left;">Pegajuan Unsur C Poin 2.E + 3 Maksimal 5% dari Total Unsur Penelitian</td>
+                        <td style="width: 20%;">ket</td>
+                    </tr>
+                    <?php if ($kode_batasan == 1) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.5 / 1.C.6</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Sudah Pernah atau Sedang Mengajukan Gelar Magister</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 2) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.5 atau 1.C.6 </td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Sudah Pernah atau Sedang Mengajukan Gelar Magister</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 3) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 1.C.6 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 2.A.4 + 2.B + 2.C.2 + 2.D.2 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td style="text-align: left;">Minimal Terdapat 2 Unsur Pengajuan C Poin 1.C.1 / 1.C.2</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 4) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.5 / 1.C.6</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Sudah Pernah atau Sedang Mengajukan Gelar Magister</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 5) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 1.C.6 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 2.A.4 + 2.B + 2.C.2 + 2.D.2 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.1 / 1.C.2 / 1.C.3 (Untuk Magister)</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>5. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.4 (Untuk Doktor)</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 6) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 1.C.6 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 2.A.4 + 2.B + 2.C.2 + 2.D.2 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td style="text-align: left;">Minimal Terdapat 4 Unsur Pengajuan C Poin 1.C.1 / 1.C.2</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>5. </td>
+                            <td style="text-align: left;">Sudah Pernah atau Sedang Mengajukan Gelar Doktor</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 7) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 1.C.6 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 2.A.4 + 2.B + 2.C.2 + 2.D.2 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.5 / 1.C.6</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>5. </td>
+                            <td style="text-align: left;">Sudah Pernah atau Sedang Mengajukan Gelar Doktor / Magister</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 8) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 1.C.6 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 2.A.4 + 2.B + 2.C.2 + 2.D.2 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.1 / 1.C.2</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } elseif ($kode_batasan == 9) { ?>
+                        <tr>
+                            <td>2. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 1.C.6 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>3. </td>
+                            <td style="text-align: left;">Pengajuan Unsur C Poin 2.A.4 + 2.B + 2.C.2 + 2.D.2 Maksimal 25% dari Total Unsur Penelitian</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                        <tr>
+                            <td>4. </td>
+                            <td style="text-align: left;">Wajib Ada Pengajuan Unsur C Minimal Poin 1.C.4</td>
+                            <td style="width: 20%;">ket</td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+
+            </table>
         </div>
-    </div>
-</div>
-
-
-
-
-<!-- Resume Pendidikan dan Pengajaran -->
-<div class="container-fluid">
-    <div class="p-5">
-
-        <style>
-            .head-bab {
-                font-size: 24px;
-                color: #4e73df;
-                font-weight: bold;
-                font-family: Cambria;
-            }
-
-            .head-subbab {
-                font-size: 18px;
-                color: black;
-                font-family: 'Times New Roman';
-            }
-        </style>
-
-        <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
-            <h5 class="head-bab">Pendidikan dan Pengajaran</h5>
-        </div>
-
-
-        <table class="greyGridTable">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Jenis Pengajuan</th>
-                    <th>Keterangan Lampiran</th>
-                    <th>Angka kredit maksimal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $no = 1;
-                $urut = 0;
-                foreach ($a1 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['a15']); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_a1[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($a2 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['a24'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_a2[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b1 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b15'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b1[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b2 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b22'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b2[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b3 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b33'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b3[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b4 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b45'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b4[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b5 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b54'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b5[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b6 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b63'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b6[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b7 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b75'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b7[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b8 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b85'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b8[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b9 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b94'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b9[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b10 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b104'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b10[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b11 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b114'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b11[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b12 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b124'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b12[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($b13 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['b132'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_b13[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-                unset($no);
-                unset($urut); ?>
-
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                    <th class="nav-item text-center">
-                        <?= $total_pendidikan[0]['total']; ?>
-                    </th>
-                </tr>
-            </tfoot>
-
-        </table>
-    </div>
-</div>
-
-<!-- Resume Penelitian -->
-<div class="container-fluid">
-    <div class="p-5">
-
-        <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
-            <h5 class="head-bab">Penelitian</h5>
-        </div>
-
-
-        <table class="greyGridTable">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Jenis Pengajuan</th>
-                    <th>Keterangan Lampiran</th>
-                    <th>Angka kredit maksimal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1;
-                $urut = 0;
-                foreach ($c1 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c15'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c1[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c2 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c25'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c2[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c3 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c33'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c3[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c4 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c44'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c4[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c5 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c54'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c5[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c6 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c65'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c6[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c7 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c75'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c7[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($c8 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['c84'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_c8[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-                unset($no);
-                unset($urut); ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                    <th class="nav-item text-center">
-                        <?= $total_penelitian[0]['total']; ?>
-                    </th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-</div>
-
-<!-- Resume Pengabdian Masyarakat -->
-<div class="container-fluid">
-    <div class="p-5">
-
-        <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
-            <h5 class="head-bab">Pengabdian Masyarakat</h5>
-        </div>
-
-        <table class="greyGridTable">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Jenis Pengajuan</th>
-                    <th>Keterangan Lampiran</th>
-                    <th>Angka kredit maksimal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1;
-                $urut = 0;
-                foreach ($d1 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d14'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d1[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($d2 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d23'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d2[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($d3 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d35'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d3[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($d4 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d43'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d4[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($d5 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d53'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d5[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($d6 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d63'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d6[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($d7 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['d75'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_d7[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-                unset($no);
-                unset($urut); ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                    <th class="nav-item text-center">
-                        <?= $total_pengmas[0]['total']; ?>
-                    </th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-</div>
-
-<!-- Unsur Penunjang -->
-<div class="container-fluid">
-    <div class="p-5">
-
-        <div class="p-2 d-sm-flex align-items-center justify-content-between mb-4">
-            <h5 class="head-bab">Unsur Penunjang</h5>
-        </div>
-
-
-
-        <table class="greyGridTable">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Jenis Pengajuan</th>
-                    <th>Keterangan Lampiran</th>
-                    <th>Angka kredit maksimal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $no = 1;
-                $urut = 0;
-                foreach ($e1 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e14'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e1[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e2 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e26'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e2[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e3 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e35'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e3[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e4 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e44'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e4[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e5 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e54'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e5[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e6 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e65'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e6[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e7 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e73'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e7[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e8 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e84'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e8[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e9 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e94'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e9[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-
-                unset($urut); ?>
-                <?php
-                $urut = 0;
-                foreach ($e10 as $key => $value) { ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td style="text-align: left;"><?= $value['jenis_pengajuan']; ?></td>
-                        <td class="nav-item text-center">
-                            <a class="nav-link" target="_blank" href="<?php echo base_url('/assets/document/' . $value['e104'] . '.pdf'); ?>">
-                                <span>Cek Kelengkapan Berkas</span>
-                            </a>
-                        </td>
-                        <td><?= $maks_e10[$urut]['ak_maksimal']; ?></td>
-                    </tr>
-                <?php $no++;
-                    $urut++;
-                }
-                unset($no);
-                unset($urut); ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                    <th class="nav-item text-center">
-                        <?= $total_penunjang[0]['total']; ?>
-                    </th>
-                </tr>
-            </tfoot>
-        </table>
     </div>
 </div>
 
@@ -1018,39 +329,62 @@
                     <th>Unsur Pengajuan</th>
                     <th>Persentase</th>
                     <th>Total Angka Kredit</th>
+                    <th>Keterangan</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1.</td>
-                    <td class="text-left">Pendidikan dan Pelaksanaan Pendidikan</td>
+                    <td class="text-left" style="font-weight: bold;">Pendidikan dan Pelaksanaan Pendidikan</td>
                     <td><?= $persentase_pendidikan; ?>%</td>
-                    <td><?= $total_pendidikan[0]['total']; ?></td>
+                    <td><?= $total_pendidikan; ?></td>
+                    <?php if ($total_pendidikan < $data_pengajuan['kurang_ak'] * $constraint['persen_pendidikan']) { ?>
+                        <td style="color: red;">Belum Tercukupi</td>
+                    <?php } else { ?>
+                        <td>Tercukupi</td>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <td>2.</td>
-                    <td class="text-left">Penelitian</td>
+                    <td class="text-left" style="font-weight: bold;">Penelitian</td>
                     <td><?= $persentase_penelitian; ?>%</td>
-                    <td><?= $total_penelitian[0]['total'];  ?></td>
+                    <td><?= $total_penelitian;  ?></td>
+                    <?php if ($total_penelitian < $data_pengajuan['kurang_ak'] * $constraint['persen_penelitian']) { ?>
+                        <td style="color: red;">Belum Tercukupi</td>
+                    <?php } else { ?>
+                        <td>Tercukupi</td>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <td>3.</td>
-                    <td class="text-left">Pengabdian Masyarakat</td>
+                    <td class="text-left" style="font-weight: bold;">Pengabdian Masyarakat</td>
                     <td><?= $persentase_pengmas; ?>%</td>
-                    <td><?= $total_pengmas[0]['total']; ?></td>
+                    <td><?= $total_pengmas; ?></td>
+                    <?php if ($total_pengmas > $data_pengajuan['kurang_ak'] * $constraint['persen_pengmas']) { ?>
+                        <td style="color: red;">Terlalu Banyak</td>
+                    <?php } elseif ($total_pengmas + $data_ak['ak_pengmas'] < 0.5) { ?>
+                        <td style="color: red;">Belum Tercukupi</td>
+                    <?php } else { ?>
+                        <td>Tercukupi</td>
+                    <?php } ?>
                 </tr>
                 <tr>
                     <td>4.</td>
-                    <td class="text-left">Unsur Penunjang</td>
+                    <td class="text-left" style="font-weight: bold;">Unsur Penunjang</td>
                     <td><?= $persentase_penunjang; ?>%</td>
-                    <td><?= $total_penunjang[0]['total']; ?></td>
+                    <td><?= $total_penunjang; ?></td>
+                    <?php if ($total_penunjang > $data_pengajuan['kurang_ak'] * $constraint['persen_penunjang']) { ?>
+                        <td style="color: red;">Terlalu Banyak</td>
+                    <?php } else { ?>
+                        <td>Tercukupi</td>
+                    <?php } ?>
                 </tr>
 
             </tbody>
             <tfoot>
-                <tr>
-                    <th colspan="3" class="text-right">Total Maksimal Angka Kredit yang Diperoleh </th>
-                    <th><?= $total_AK[0]['total']; ?></th>
+                <tr style="height: 5rem;">
+                    <th colspan="3">Total Maksimal Angka Kredit yang Diperoleh </th>
+                    <th colspan="2"><?= $total_AK; ?></th>
                 </tr>
             </tfoot>
         </table>
@@ -1059,40 +393,20 @@
 
 <div class="pt-3"></div>
 
-<div class="container-fluid">
-    <form class="user" enctype='multipart/form-data' method="post" action="<?= base_url('dosen/action_pengajuan_final'); ?>">
-
-        <!-- Pemilihan Tipe/Jenis Pengajuan -->
-
-        <div class="chart-piee pt-1 pb-1">
-            <div class="row container p-2">
-                <div class="col-sm-2">
-                    <button data-toggle="modal" type="button" data-target="#pengajuanModal" class="float-right btn btn-primary btn-user btn=block">
-                        Submit Pengajuan
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="pengajuanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajukan Pengajuan ?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Klik Lanjutkan Untuk Mengirim Pengajuan Angka Kredit Anda</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                        <button class="btn btn-primary" type="submit">Lanjutkan</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </form>
+<div class="container-fluid text-center pt-5 pb-5">
+    <div class="justify-content-between">
+        <a href="<?= base_url('dosen/pengajuan_unsur/' . $data_pengajuan['id_pengajuan']); ?>" class="btn btn-primary text-center btn-user btn=block" style="width: 400px;">
+            Kembali ke Halaman Pengajuan
+        </a>
+    </div>
 </div>
+<script>
+    var myWindow;
+
+    function closeWin() {
+        myWindow.close();
+    }
+</script>
 
 <style>
     select.f {
@@ -1107,5 +421,3 @@
         color: chartreuse;
     }
 </style>
-
-<div class="p-5"></div>

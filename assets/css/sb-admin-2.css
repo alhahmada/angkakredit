@@ -11089,3 +11089,14 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
   color: #414b81;
 }
+
+
+.hapusA1, .hapusA2, .hapusB1, .hapusB2, .hapusB3, .hapusB4, .hapusB5, .hapusB6, .hapusB7, .hapusB8, .hapusB9, .hapusB10, .hapusB11, .hapusB12, .hapusB13 {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }

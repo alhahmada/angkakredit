@@ -1,5 +1,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+    $(function() {
+        $(document).on('click', '.hapus', function() {
+            var id = $(this).closest('tr').attr('id');
+            var tbl = $(this).closest('tr').attr('itemid');
+            if (confirm("Apakah Anda Yakin Menghapus Poin Pengajuan ini ?")) {
+                $.ajax({
+                    url: "<?= base_url('/dosen/hapus_pengajuan/'); ?>" + tbl + "/" + id,
+                    method: "POST",
+                    data: {
+                        id: id
+                    },
+                    success: function(data) {
+                        alert("Data Dihapus dari Pengajuan");
+                    }
+                })
+                $(this).parents('tr').remove();
+            }
+        });
+    });
+</script>
+
 <script>
     var htmlA1 =
         '<tr>' +
@@ -120,6 +143,8 @@
         $(document).on('click', '.removeB1', function() {
             $(this).parents('tr').remove();
         });
+
+
 
         $('#getValues').click(function() {
             var values = [];

@@ -100,11 +100,11 @@
                 <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Jabatan Fungsional</th>
-                            <th>Pangkat</th>
-                            <th>Golongan Ruang</th>
-                            <th>Angka Kredit</th>
+                            <th style="width: 20%;"></th>
+                            <th style="width: 20%;">Jabatan Fungsional</th>
+                            <th style="width: 20%;">Pangkat</th>
+                            <th style="width: 20%;">Golongan Ruang</th>
+                            <th style="width: 20%;">Angka Kredit</th>
                         </tr>
                     </thead>
                     <tbody style="font-weight: bold;">
@@ -130,17 +130,17 @@
                 <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                     <thead>
                         <tr>
-                            <th rowspan="2"></th>
-                            <th>Pendidikan</th>
-                            <th>Penelitian</th>
-                            <th>Pengabdian Masy. </th>
-                            <th>Penunjang</th>
+                            <th style="width: 20%;" rowspan="2"></th>
+                            <th style="width: 20%;">Pendidikan</th>
+                            <th style="width: 20%;">Penelitian</th>
+                            <th style="width: 20%;">Pengabdian Masy. </th>
+                            <th style="width: 20%;">Penunjang</th>
                         </tr>
                         <tr>
 
                             <th>Minimum</th>
                             <th>Minimum</th>
-                            <th>Rentang</th>
+                            <th>Maksimal</th>
                             <th>Maksimal</th>
                         </tr>
                     </thead>
@@ -279,16 +279,29 @@
 
             <div class="p-3"></div>
 
-            <div class="container row">
-                <div class="col-sm-8">
-                    <a type="submit" href="<?= base_url('penilai/nilai_pendidikan'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                        Edit Kembali
-                    </a>
-                </div>
-                <div class="col-sm-3">
-                    <button type="submit" class="float-right btn btn-primary btn-user btn=block">
+            <div class="container row p-5">
+                <div class="col-sm-12">
+                    <button data-toggle="modal" type="button" data-target="#verModal" class="float-right btn btn-primary btn-user btn=block">
                         Kirim Hasil Penilaian
                     </button>
+                </div>
+            </div>
+            <!-- Modal Verifikasi Berkas -->
+            <div class="modal fade" id="verModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Kirim Penilaian ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Mengirim Hasil Penilaian Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="terima" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

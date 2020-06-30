@@ -6,7 +6,7 @@
         <!-- Row Pertama -->
         <div class="justify-content-between pb-5 pt-4">
 
-            <h1 class="head-content">Penilaian Angka Kredit</h1>
+            <h1 class="head-content">Penetapan Angka Kredit</h1>
             <style>
                 .head-content {
                     font-size: 30px;
@@ -26,7 +26,7 @@
 
 
     <!-- Area Pertama -->
-    <div class="container-fluid p-2">
+    <div class="card-deck container">
         <div class="card col-xl-6 shadow mb-4">
             <!-- Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -52,16 +52,12 @@
                             .table-bio tbody td:last-child {
                                 width: 50%;
                             }
-
-                            .table-bio tbody td:first-child {
-                                width: 50%;
-                            }
                         </style>
                         <table class="table-bio">
                             <tbody>
                                 <tr>
-                                    <td>Nama Lengkap</td>
-                                    <td><?= $user['nama_lengkap']; ?></td>
+                                    <td style="width: 50%;">Nama Lengkap</td>
+                                    <td style="width: 50%;"><?= $user['nama_lengkap']; ?></td>
                                 <tr>
                                     <td>NIP</td>
                                     <td><?= $user['nip']; ?></td>
@@ -86,9 +82,55 @@
                 </div>
             </div>
         </div>
+
+        <div class="card col-xl-6 shadow mb-4">
+            <!-- Header -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Keterangan Penilai</h6>
+            </div>
+            <!--Body -->
+            <div class="card-body">
+                <div class="chart-piee pt-1 pb-2">
+                    <div class="col-lg body-content">
+
+                        <style>
+                            .table-bio {
+                                width: 100%;
+                                text-align: left;
+                                font-size: 16px;
+                                color: black;
+                            }
+
+                            .table-bio tbody td {
+                                padding-bottom: 0.6rem;
+                            }
+
+                            .table-bio tbody td:last-child {
+                                width: 50%;
+                            }
+                        </style>
+                        <table class="table-bio">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%;">Penilai 1</td>
+                                    <td style="width: 50%;">: <?= $penilai[0]['nama_lengkap']; ?></td>
+                                <tr>
+                                    <td>Penilai 2</td>
+                                    <td>: <?= $penilai[1]['nama_lengkap']; ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Penilai 3</td>
+                                    <td>: <?= $penilai[2]['nama_lengkap']; ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 
 
     <!-- Constraint -->
@@ -104,11 +146,11 @@
                 <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Jabatan Fungsional</th>
-                            <th>Pangkat</th>
-                            <th>Golongan Ruang</th>
-                            <th>Angka Kredit</th>
+                            <th style="width: 20%;"></th>
+                            <th style="width: 20%;">Jabatan Fungsional</th>
+                            <th style="width: 20%;">Pangkat</th>
+                            <th style="width: 20%;">Golongan Ruang</th>
+                            <th style="width: 20%;">Angka Kredit</th>
                         </tr>
                     </thead>
                     <tbody style="font-weight: bold;">
@@ -134,11 +176,11 @@
                 <table class="greyGridTable" style="text-align: center; margin-top: 2rem; margin-bottom: 3rem;">
                     <thead>
                         <tr>
-                            <th rowspan="2"></th>
-                            <th>Pendidikan</th>
-                            <th>Penelitian</th>
-                            <th>Pengabdian Masy. </th>
-                            <th>Penunjang</th>
+                            <th style="width: 20%;" rowspan="2"></th>
+                            <th style="width: 20%;">Pendidikan</th>
+                            <th style="width: 20%;">Penelitian</th>
+                            <th style="width: 20%;">Pengabdian Masy. </th>
+                            <th style="width: 20%;">Penunjang</th>
                         </tr>
                         <tr>
 
@@ -261,7 +303,7 @@
                 </tr>
             </tfoot>
         </table>
-        <form enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_progress'); ?>">
+        <form enctype="multipart/form-data" method="post" action="<?= base_url('admin/action_penetapan_ak_resume'); ?>">
             <input type="hidden" value="<?= $id_pengajuan; ?>" name="id_pengajuan">
             <div class="container p-3">
                 <div class="card-body">
@@ -273,17 +315,32 @@
             </div>
 
             <div class="container row p-4">
-                <div class="col-sm-8">
-                    <a type="button" href="<?= base_url('admin/penetapan_ak_penunjang'); ?>" class="float-right btn btn-primary btn-user btn=block">
-                        Sebelumnya
-                    </a>
-                </div>
-                <div class="col-sm-3">
-                    <button type="submit" class="float-right btn btn-primary btn-user btn=block">
-                        Tetapkan Angka Kredit
+                <div class="col-sm-10">
+                    <button data-toggle="modal" type="button" data-target="#verModal" class="float-right btn btn-primary btn-user btn=block">
+                        Tetapkan Nilai Angka Kredit
                     </button>
                 </div>
             </div>
+            <!-- Modal Verifikasi Berkas -->
+            <div class="modal fade" id="verModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tetapkan Nilai ?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Klik Lanjutkan Untuk Menetapkan Hasil Penilaian Angka Kredit</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-primary" name="aksi" value="terima" type="submit">Lanjutkan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
         </form>
 
