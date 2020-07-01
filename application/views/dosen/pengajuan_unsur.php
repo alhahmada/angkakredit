@@ -3605,7 +3605,7 @@
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="modal-body">Klik Lanjutkan Untuk Melihat Resume Pengajuan Usulan Peilaian Angka Kredit</div>
+                        <div class="modal-body">Klik Lanjutkan Mengajukan Usulan Peilaian Angka Kredit</div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
                             <button class="btn btn-primary" name="aksi" value="lanjutkan" type="submit">Lanjutkan</button>

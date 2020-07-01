@@ -128,15 +128,84 @@ class M_pengajuan extends CI_Model
 		$this->db->query("INSERT INTO tbl_verif_berkas (id_pengajuan, tbl_verif_berkas.status, nip_verifikator, keterangan) VALUES ($id_pengajuan, $status, $nip, '$keterangan')");
 	}
 
+	function delete_verif($id_pengajuan)
+	{
+		$table = array('tbl_verif_berkas', 'tbl_verif_pengajuan');
+		$this->db->where('id_pengajuan', $id_pengajuan);
+		return $this->db->delete($table);
+	}
+
+	function delete_log($id_pengajuan)
+	{
+		$this->db->where('id_pengajuan', $id_pengajuan);
+		return $this->db->delete('tbl_log_pengajuan');
+	}
+
+	function delete_penilaian($id_pengajuan)
+	{
+		$this->db->where('id_pengajuan', $id_pengajuan);
+		return $this->db->delete('tbl_penilaian');
+	}
+
+	function delete_ak_nilai($id_pengajuan)
+	{
+		$data = array(
+			'ak_diterima' => null,
+			'ak_pendidikan_final' => null,
+			'ak_penelitian_final' => null,
+			'ak_pengmas_final' => null,
+			'ak_penunjang_final' => null,
+			'ak_diterima_final' => null
+		);
+		$this->db->where('id_pengajuan', $id_pengajuan);
+		$this->db->from('tbl_pengajuan');
+		$this->db->set($data);
+		return $this->db->update();
+	}
+
+	function delete_ak_penilai_unsur($id_pengajuan)
+	{
+		$data = array(
+			'ak_p1' => null,
+			'ak_p2' => null,
+			'ak_p3' => null,
+			'ak_final' => null
+		);
+		for ($i = 1; $i < 3; $i++) {
+			$this->db->where('id_pengajuan', $id_pengajuan);
+			$this->db->set($data);
+			$this->db->from('tbl_a' . $i);
+			$this->db->update();
+		}
+		for ($i = 1; $i < 14; $i++) {
+			$this->db->where('id_pengajuan', $id_pengajuan);
+			$this->db->set($data);
+			$this->db->from('tbl_b' . $i);
+			$this->db->update();
+		}
+		for ($i = 1; $i < 9; $i++) {
+			$this->db->where('id_pengajuan', $id_pengajuan);
+			$this->db->set($data);
+			$this->db->from('tbl_c' . $i);
+			$this->db->update();
+		}
+		for ($i = 1; $i < 8; $i++) {
+			$this->db->where('id_pengajuan', $id_pengajuan);
+			$this->db->set($data);
+			$this->db->from('tbl_d' . $i);
+			$this->db->update();
+		}
+		for ($i = 1; $i < 11; $i++) {
+			$this->db->where('id_pengajuan', $id_pengajuan);
+			$this->db->set($data);
+			$this->db->from('tbl_e' . $i);
+			$this->db->update();
+		}
+	}
 
 	function cek_penilaian($id_pengajuan)
 	{
 		return $this->db->query("SELECT * FROM tbl_penilaian WHERE id_pengajuan=$id_pengajuan AND (ak_pendidikan IS NULL OR ak_penelitian IS NULL OR ak_pengmas IS NULL OR ak_penunjang IS NULL)")->result_array();
-	}
-
-	public function log_pengajuan($id_pengajuan)
-	{
-		return $this->db->query("SELECT ");
 	}
 
 	function data_pengajuan_id($id_pengajuan)

@@ -50,11 +50,11 @@
 
     <div class="container" style="height: 95%;">
 
-        <button class="tab " onclick="openinfoTab(event, 'resume')">Resume Pengajuan</button>
-        <button class="tab " onclick="openinfoTab(event, 'pendidikan')">Unsur Pendidikan</button>
-        <button class="tab " onclick="openinfoTab(event, 'penelitian')">Unsur Penelitian</button>
-        <button class="tab " onclick="openinfoTab(event, 'pengmas')">Unsur Peng. Masy.</button>
-        <button class="tab nolep " onclick="openinfoTab(event, 'penunjang')">Unsur Penunjang</button>
+        <button class="tab" style="display: block;" onclick="openinfoTab(event, 'resume')">Resume Pengajuan</button>
+        <button class="tab" onclick="openinfoTab(event, 'pendidikan')">Unsur Pendidikan</button>
+        <button class="tab" onclick="openinfoTab(event, 'penelitian')">Unsur Penelitian</button>
+        <button class="tab" onclick="openinfoTab(event, 'pengmas')">Unsur Peng. Masy.</button>
+        <button class="tab nolep" onclick="openinfoTab(event, 'penunjang')">Unsur Penunjang</button>
 
         <style>
             .head-content {
@@ -79,7 +79,7 @@
         </style>
 
         <!-- Tab Resume-->
-        <div id="resume" class="tabcontent pt-5">
+        <div id="resume" style="display: block;" class="tabcontent pt-5">
             <!-- Judul Halaman -->
             <div class="container">
                 <!-- Row Pertama -->

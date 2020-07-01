@@ -160,6 +160,8 @@ class admin extends CI_Controller
 
     }
 
+
+    // ACTION TERAKHIR TETAPKAN AK
     public function action_progress()
     {
         $id_pengajuan = $this->input->post('id_pengajuan');
@@ -289,7 +291,7 @@ class admin extends CI_Controller
         redirect('/admin/daftar_pengajuanAK');
     }
 
-    public function penetapan_ak_pendidikan()
+    public function penetapan_ak()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -300,76 +302,78 @@ class admin extends CI_Controller
         $data['data_pengajuan'] = $data_pengajuan[0];
         $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
 
+        $data_ak = $this->m_auth->data_ak($user[0]['nip']);
+        $data['data_ak'] = $data_ak[0];
+
+        $kode = $this->m_pengajuan->kode_batasan($id_pengajuan, $user[0]['nip']);
+        $data['kode_batasan'] = $kode;
+
+        $berkas = $this->m_pengajuan->data_berkas($id_pengajuan);
+        $data['berkas'] = $berkas[0];
+
         $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
         $data['constraint'] = $constraint[0];
 
         $penilai = $this->m_penilai->penilai_pengajuan($id_pengajuan);
         $data['penilai'] = $penilai;
 
+
         $data['user'] = $user[0];
         $data['nama'] = $datauser[0]['nama_lengkap'];
         $data['foto'] = $datauser[0]['foto'];
 
-
         $data['a1'] = $this->m_verif->a1($id_pengajuan);
-        $data['maks_a1'] = $this->m_verif->constraint('a1', $id_pengajuan);
         $data['a2'] = $this->m_verif->a2($id_pengajuan);
-        $data['maks_a2'] = $this->m_verif->constraint('a2', $id_pengajuan);
         $data['b1'] = $this->m_verif->b1($id_pengajuan);
-        $data['maks_b1'] = $this->m_verif->constraint('b1', $id_pengajuan);
         $data['b2'] = $this->m_verif->b2($id_pengajuan);
-        $data['maks_b2'] = $this->m_verif->constraint('b2', $id_pengajuan);
         $data['b3'] = $this->m_verif->b3($id_pengajuan);
-        $data['maks_b3'] = $this->m_verif->constraint('b3', $id_pengajuan);
         $data['b4'] = $this->m_verif->b4($id_pengajuan);
-        $data['maks_b4'] = $this->m_verif->constraint('b4', $id_pengajuan);
         $data['b5'] = $this->m_verif->b5($id_pengajuan);
-        $data['maks_b5'] = $this->m_verif->constraint('b5', $id_pengajuan);
         $data['b6'] = $this->m_verif->b6($id_pengajuan);
-        $data['maks_b6'] = $this->m_verif->constraint('b6', $id_pengajuan);
         $data['b7'] = $this->m_verif->b7($id_pengajuan);
-        $data['maks_b7'] = $this->m_verif->constraint('b7', $id_pengajuan);
         $data['b8'] = $this->m_verif->b8($id_pengajuan);
-        $data['maks_b8'] = $this->m_verif->constraint('b8', $id_pengajuan);
         $data['b9'] = $this->m_verif->b9($id_pengajuan);
-        $data['maks_b9'] = $this->m_verif->constraint('b9', $id_pengajuan);
         $data['b10'] = $this->m_verif->b10($id_pengajuan);
-        $data['maks_b10'] = $this->m_verif->constraint('b10', $id_pengajuan);
         $data['b11'] = $this->m_verif->b11($id_pengajuan);
-        $data['maks_b11'] = $this->m_verif->constraint('b11', $id_pengajuan);
         $data['b12'] = $this->m_verif->b12($id_pengajuan);
-        $data['maks_b12'] = $this->m_verif->constraint('b12', $id_pengajuan);
         $data['b13'] = $this->m_verif->b13($id_pengajuan);
-        $data['maks_b13'] = $this->m_verif->constraint('b13', $id_pengajuan);
+        $data['c1'] = $this->m_verif->c1($id_pengajuan);
+        $data['c2'] = $this->m_verif->c2($id_pengajuan);
+        $data['c3'] = $this->m_verif->c3($id_pengajuan);
+        $data['c4'] = $this->m_verif->c4($id_pengajuan);
+        $data['c5'] = $this->m_verif->c5($id_pengajuan);
+        $data['c6'] = $this->m_verif->c6($id_pengajuan);
+        $data['c7'] = $this->m_verif->c7($id_pengajuan);
+        $data['c8'] = $this->m_verif->c8($id_pengajuan);
+        $data['d1'] = $this->m_verif->d1($id_pengajuan);
+        $data['d2'] = $this->m_verif->d2($id_pengajuan);
+        $data['d3'] = $this->m_verif->d3($id_pengajuan);
+        $data['d4'] = $this->m_verif->d4($id_pengajuan);
+        $data['d5'] = $this->m_verif->d5($id_pengajuan);
+        $data['d6'] = $this->m_verif->d6($id_pengajuan);
+        $data['d7'] = $this->m_verif->d7($id_pengajuan);
+        $data['e1'] = $this->m_verif->e1($id_pengajuan);
+        $data['e2'] = $this->m_verif->e2($id_pengajuan);
+        $data['e3'] = $this->m_verif->e3($id_pengajuan);
+        $data['e4'] = $this->m_verif->e4($id_pengajuan);
+        $data['e5'] = $this->m_verif->e5($id_pengajuan);
+        $data['e6'] = $this->m_verif->e6($id_pengajuan);
+        $data['e7'] = $this->m_verif->e7($id_pengajuan);
+        $data['e8'] = $this->m_verif->e8($id_pengajuan);
+        $data['e9'] = $this->m_verif->e9($id_pengajuan);
+        $data['e10'] = $this->m_verif->e10($id_pengajuan);
+
 
         $data['id_pengajuan'] = $this->uri->segment(3);
         $data['title'] = 'Penetapan Angka Kredit';
         $this->load->view('templates/auth_header_admin', $data);
-        $this->load->view('admin/penetapan_ak_pendidikan');
+        $this->load->view('admin/penetapan_ak');
         $this->load->view('templates/auth_footer');
     }
-    public function action_penetapan_pendidikan()
+
+    public function action_penetapan_ak()
     {
         ini_set('max_execution_time', 0);
-        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
-
-        $id_pengajuan = $this->input->post('id_pengajuan');
-
-        $nilai_a1_final = $this->input->post('nilai_a1_final');
-        $nilai_a2_final = $this->input->post('nilai_a2_final');
-        $nilai_b1_final = $this->input->post('nilai_b1_final');
-        $nilai_b2_final = $this->input->post('nilai_b2_final');
-        $nilai_b3_final = $this->input->post('nilai_b3_final');
-        $nilai_b4_final = $this->input->post('nilai_b4_final');
-        $nilai_b5_final = $this->input->post('nilai_b5_final');
-        $nilai_b6_final = $this->input->post('nilai_b6_final');
-        $nilai_b7_final = $this->input->post('nilai_b7_final');
-        $nilai_b8_final = $this->input->post('nilai_b8_final');
-        $nilai_b9_final = $this->input->post('nilai_b9_final');
-        $nilai_b10_final = $this->input->post('nilai_b10_final');
-        $nilai_b11_final = $this->input->post('nilai_b11_final');
-        $nilai_b12_final = $this->input->post('nilai_b12_final');
-        $nilai_b13_final = $this->input->post('nilai_b13_final');
         $id_pengajuan = $this->input->post('id_pengajuan');
 
         $arraytbl = array('a1', 'a2', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'b13');
@@ -387,64 +391,9 @@ class admin extends CI_Controller
             $total1 += $total;
         }
         $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'pendidikan');
+        $total_pendidikan = $total1;
+        unset($total1, $total);
 
-
-        redirect('/admin/penetapan_ak_penelitian/' . $id_pengajuan);
-    }
-
-    public function penetapan_ak_penelitian()
-    {
-        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan'] = $id_pengajuan;
-        $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-
-        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
-        $data['data_pengajuan'] = $data_pengajuan[0];
-        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
-
-        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
-        $data['constraint'] = $constraint[0];
-
-        $penilai = $this->m_penilai->penilai_pengajuan($id_pengajuan);
-        $data['penilai'] = $penilai;
-
-        $data['user'] = $user[0];
-        $data['nama'] = $datauser[0]['nama_lengkap'];
-        $data['foto'] = $datauser[0]['foto'];
-
-
-
-        $data['c1'] = $this->m_verif->c1($id_pengajuan);
-        $data['maks_c1'] = $this->m_verif->constraint('c1', $id_pengajuan);
-        $data['c2'] = $this->m_verif->c2($id_pengajuan);
-        $data['maks_c2'] = $this->m_verif->constraint('c2', $id_pengajuan);
-        $data['c3'] = $this->m_verif->c3($id_pengajuan);
-        $data['maks_c3'] = $this->m_verif->constraint('c3', $id_pengajuan);
-        $data['c4'] = $this->m_verif->c4($id_pengajuan);
-        $data['maks_c4'] = $this->m_verif->constraint('c4', $id_pengajuan);
-        $data['c5'] = $this->m_verif->c5($id_pengajuan);
-        $data['maks_c5'] = $this->m_verif->constraint('c5', $id_pengajuan);
-        $data['c6'] = $this->m_verif->c6($id_pengajuan);
-        $data['maks_c6'] = $this->m_verif->constraint('c6', $id_pengajuan);
-        $data['c7'] = $this->m_verif->c7($id_pengajuan);
-        $data['maks_c7'] = $this->m_verif->constraint('c7', $id_pengajuan);
-        $data['c8'] = $this->m_verif->c8($id_pengajuan);
-        $data['maks_c8'] = $this->m_verif->constraint('c8', $id_pengajuan);
-
-
-
-
-        $data['id_pengajuan'] = $this->uri->segment(3);
-        $data['title'] = 'Penetapan Angka Kredit';
-        $this->load->view('templates/auth_header_admin', $data);
-        $this->load->view('admin/penetapan_ak_penelitian');
-        $this->load->view('templates/auth_footer');
-    }
-    public function action_penetapan_penelitian()
-    {
-        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->input->post('id_pengajuan');
         $total1 = 0;
         for ($a = 1; $a < 9; $a++) {
             $nilai = $this->input->post('nilai_c' . $a . '_final');
@@ -459,58 +408,9 @@ class admin extends CI_Controller
             $total1 += $total;
         }
         $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'penelitian');
-        redirect('/admin/penetapan_ak_pengmas/' . $id_pengajuan);
-    }
+        $total_penelitian = $total1;
+        unset($total1, $total);
 
-    public function penetapan_ak_pengmas()
-    {
-        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan'] = $id_pengajuan;
-        $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-
-        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
-        $data['data_pengajuan'] = $data_pengajuan[0];
-        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
-
-        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
-        $data['constraint'] = $constraint[0];
-
-        $penilai = $this->m_penilai->penilai_pengajuan($id_pengajuan);
-        $data['penilai'] = $penilai;
-
-        $data['user'] = $user[0];
-        $data['nama'] = $datauser[0]['nama_lengkap'];
-        $data['foto'] = $datauser[0]['foto'];
-
-
-
-        $data['d1'] = $this->m_verif->d1($id_pengajuan);
-        $data['maks_d1'] = $this->m_verif->constraint('d1', $id_pengajuan);
-        $data['d2'] = $this->m_verif->d2($id_pengajuan);
-        $data['maks_d2'] = $this->m_verif->constraint('d2', $id_pengajuan);
-        $data['d3'] = $this->m_verif->d3($id_pengajuan);
-        $data['maks_d3'] = $this->m_verif->constraint('d3', $id_pengajuan);
-        $data['d4'] = $this->m_verif->d4($id_pengajuan);
-        $data['maks_d4'] = $this->m_verif->constraint('d4', $id_pengajuan);
-        $data['d5'] = $this->m_verif->d5($id_pengajuan);
-        $data['maks_d5'] = $this->m_verif->constraint('d5', $id_pengajuan);
-        $data['d6'] = $this->m_verif->d6($id_pengajuan);
-        $data['maks_d6'] = $this->m_verif->constraint('d6', $id_pengajuan);
-        $data['d7'] = $this->m_verif->d7($id_pengajuan);
-        $data['maks_d7'] = $this->m_verif->constraint('d7', $id_pengajuan);
-
-        $data['id_pengajuan'] = $this->uri->segment(3);
-        $data['title'] = 'Penetapan Angka Kredit';
-        $this->load->view('templates/auth_header_admin', $data);
-        $this->load->view('admin/penetapan_ak_pengmas');
-        $this->load->view('templates/auth_footer');
-    }
-
-    public function action_penetapan_pengmas()
-    {
-        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->input->post('id_pengajuan');
         $total1 = 0;
         for ($a = 1; $a < 8; $a++) {
             $nilai = $this->input->post('nilai_d' . $a . '_final');
@@ -525,62 +425,9 @@ class admin extends CI_Controller
             $total1 += $total;
         }
         $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'pengmas');
-        redirect('/admin/penetapan_ak_penunjang/' . $id_pengajuan);
-    }
+        $total_pengmas = $total1;
+        unset($total1, $total);
 
-    public function penetapan_ak_penunjang()
-    {
-        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->uri->segment(3);
-        $data['id_pengajuan'] = $id_pengajuan;
-        $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-
-        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
-        $data['data_pengajuan'] = $data_pengajuan[0];
-        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
-
-        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
-        $data['constraint'] = $constraint[0];
-
-        $penilai = $this->m_penilai->penilai_pengajuan($id_pengajuan);
-        $data['penilai'] = $penilai;
-
-        $data['user'] = $user[0];
-        $data['nama'] = $datauser[0]['nama_lengkap'];
-        $data['foto'] = $datauser[0]['foto'];
-
-
-        $data['e1'] = $this->m_verif->e1($id_pengajuan);
-        $data['maks_e1'] = $this->m_verif->constraint('e1', $id_pengajuan);
-        $data['e2'] = $this->m_verif->e2($id_pengajuan);
-        $data['maks_e2'] = $this->m_verif->constraint('e2', $id_pengajuan);
-        $data['e3'] = $this->m_verif->e3($id_pengajuan);
-        $data['maks_e3'] = $this->m_verif->constraint('e3', $id_pengajuan);
-        $data['e4'] = $this->m_verif->e4($id_pengajuan);
-        $data['maks_e4'] = $this->m_verif->constraint('e4', $id_pengajuan);
-        $data['e5'] = $this->m_verif->e5($id_pengajuan);
-        $data['maks_e5'] = $this->m_verif->constraint('e5', $id_pengajuan);
-        $data['e6'] = $this->m_verif->e6($id_pengajuan);
-        $data['maks_e6'] = $this->m_verif->constraint('e6', $id_pengajuan);
-        $data['e7'] = $this->m_verif->e7($id_pengajuan);
-        $data['maks_e7'] = $this->m_verif->constraint('e7', $id_pengajuan);
-        $data['e8'] = $this->m_verif->e8($id_pengajuan);
-        $data['maks_e8'] = $this->m_verif->constraint('e8', $id_pengajuan);
-        $data['e9'] = $this->m_verif->e9($id_pengajuan);
-        $data['maks_e9'] = $this->m_verif->constraint('e9', $id_pengajuan);
-        $data['e10'] = $this->m_verif->e10($id_pengajuan);
-        $data['maks_e10'] = $this->m_verif->constraint('e10', $id_pengajuan);
-
-        $data['id_pengajuan'] = $this->uri->segment(3);
-        $data['title'] = 'Penetapan Angka Kredit';
-        $this->load->view('templates/auth_header_admin', $data);
-        $this->load->view('admin/penetapan_ak_penunjang');
-        $this->load->view('templates/auth_footer');
-    }
-    public function action_penetapan_penunjang()
-    {
-        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->input->post('id_pengajuan');
         $total1 = 0;
         for ($a = 1; $a < 11; $a++) {
             $nilai = $this->input->post('nilai_e' . $a . '_final');
@@ -595,72 +442,22 @@ class admin extends CI_Controller
             $total1 += $total;
         }
         $this->m_penetapan->update_total_nilai_final($id_pengajuan, $total1, 'penunjang');
-        redirect('/admin/penetapan_ak_resume/' . $id_pengajuan);
-    }
+        $total_penunjang = $total1;
+        unset($total1, $total);
 
-    public function penetapan_ak_resume()
-    {
-        $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
-        $id_pengajuan = $this->uri->segment(3);
-
-        $this->m_pengajuan->update_progress($id_pengajuan, 5, 'Niali Angka Kredit Sudah Ditetapkan');
-
-        $data['id_pengajuan'] = $id_pengajuan;
-        $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
-
-        $data_pengajuan = $this->m_pengajuan->data_pengajuan_sekarang($id_pengajuan);
-        $data['data_pengajuan'] = $data_pengajuan[0];
-        $jabatan_to = $data_pengajuan[0]['jabatan_fungsi_to'];
-
-        $constraint = $this->db->query("SELECT * FROM tbl_constraint_persen WHERE jab_fungsional='$jabatan_to'")->result_array();
-        $data['constraint'] = $constraint[0];
-
-        $penilai = $this->m_penilai->penilai_pengajuan($id_pengajuan);
-        $data['penilai'] = $penilai;
-
-        $data['user'] = $user[0];
-        $data['nama'] = $datauser[0]['nama_lengkap'];
-        $data['foto'] = $datauser[0]['foto'];
-
-
-
-        $penetapan = $this->m_resume->resume_penetapan($id_pengajuan);
-        $data['data_nilai'] = $penetapan;
-
-        $total_penetapan = $penetapan[0]['ak_pendidikan_final'] + $penetapan[0]['ak_penelitian_final'] + $penetapan[0]['ak_pengmas_final'] + $penetapan[0]['ak_penunjang_final'];
-
-        $data['total_nilai'] = $total_penetapan;
-
-        $data['persen_pendidikan_final'] = number_format($penetapan[0]['ak_pendidikan_final'] * 100 / $total_penetapan, 2);
-        $data['persen_penelitian_final'] = number_format($penetapan[0]['ak_penelitian_final'] * 100 / $total_penetapan, 2);
-        $data['persen_pengmas_final'] = number_format($penetapan[0]['ak_pengmas_final'] * 100 / $total_penetapan, 2);
-        $data['persen_penunjang_final'] = number_format($penetapan[0]['ak_penunjang_final'] * 100 / $total_penetapan, 2);
-
-        $this->db->query("UPDATE tbl_pengajuan SET ak_diterima = $total_penetapan");
-
-
-        $data['id_pengajuan'] = $this->uri->segment(3);
-        $data['title'] = 'Penetapan Angka Kredit';
-        $this->load->view('templates/auth_header_admin', $data);
-        $this->load->view('admin/penetapan_ak_resume');
-        $this->load->view('templates/auth_footer');
-    }
-
-    public function action_penetapan_ak_resume()
-    {
-        $nip = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->input->post('id_pengajuan');
         $this->m_pengajuan->update_progress($id_pengajuan, 5, 'Angka Kredit Telah Ditetapkan, Menunggu Pembuatan Berkas ');
 
         $keterangan = $this->input->post('komentar');
         $this->m_pengajuan->update_log($id_pengajuan, $keterangan, 'Penetapan Angka Kredit');
 
-        $total_penetapan1 = $this->db->query("SELECT ak_pendidikan_final, ak_penelitian_final, ak_pengmas_final, ak_penunjang_final FROM tbl_pengajuan WHERE id_pengajuan=$id_pengajuan")->result_array();
-        $total_penetapan = $total_penetapan1[0]['ak_pendidikan_final'] + $total_penetapan1[0]['ak_penelitian_final'] + $total_penetapan1[0]['ak_pengmas_final'] + $total_penetapan1[0]['ak_penunjang_final'];
+        $total_penetapan = number_format($total_pendidikan + $total_penelitian + $total_pengmas + $total_penunjang, 2);
         $this->m_penetapan->update_ak_penetapan($id_pengajuan, $total_penetapan);
 
-        redirect('/admin/daftar_pengajuanAK');
+        redirect(base_url('admin/daftar_pengajuanAK'));
     }
+
+
 
     public function informasi_admin()
     {
@@ -806,7 +603,6 @@ class admin extends CI_Controller
         $this->load->view('admin/history_dosen');
         $this->load->view('templates/auth_footer');
     }
-
 
     public function log_pengajuan()
     {
@@ -971,16 +767,53 @@ class admin extends CI_Controller
         $data['nama_pengaju'] = $nama_pengaju;
 
 
-        $data['total_pendidikan'] = $this->m_verif->total_pendidikan($id_pengajuan);
-        $data['total_penelitian'] = $this->m_verif->total_penelitian($id_pengajuan);
-        $data['total_pengmas'] = $this->m_verif->total_pengmas($id_pengajuan);
-        $data['total_penunjang'] = $this->m_verif->total_penunjang($id_pengajuan);
-        $data['total_AK'] = $this->m_verif->total_AK($id_pengajuan);
+        $total_pendidikan = 0;
+        for ($i = 1; $i < 3; $i++) {
+            $tambah = $this->m_verif->total_unsur($id_pengajuan, 'tbl_a' . $i);
+            $total_pendidikan = $total_pendidikan + $tambah[0]['ak_maks'];
+        }
+        for ($i = 1; $i < 14; $i++) {
+            $tambah = $this->m_verif->total_unsur($id_pengajuan, 'tbl_b' . $i);
+            $total_pendidikan = $total_pendidikan + $tambah[0]['ak_maks'];
+        }
+        $data['total_pendidikan'] = number_format($total_pendidikan, 2);
 
-        $data['persentase_pendidikan'] = number_format($data['total_pendidikan'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
-        $data['persentase_penelitian'] = number_format($data['total_penelitian'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
-        $data['persentase_pengmas'] = number_format($data['total_pengmas'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
-        $data['persentase_penunjang'] = number_format($data['total_penunjang'][0]['total'] * 100 / $data['total_AK'][0]['total'], 2);
+        $total_penelitian = 0;
+        for ($i = 1; $i < 9; $i++) {
+            $tambah_c = $this->m_verif->total_unsur($id_pengajuan, 'tbl_c' . $i);
+            $total_penelitian = $total_penelitian + $tambah_c[0]['ak_maks'];
+        }
+        $data['total_penelitian'] = number_format($total_penelitian, 2);
+
+        $total_pengmas = 0;
+        for ($i = 1; $i < 8; $i++) {
+            $tambah_d = $this->m_verif->total_unsur($id_pengajuan, 'tbl_d' . $i);
+            $total_pengmas = $total_pengmas + $tambah_d[0]['ak_maks'];
+        }
+        $data['total_pengmas'] = number_format($total_pengmas, 2);
+
+        $total_penunjang = 0;
+        for ($i = 1; $i < 11; $i++) {
+            $tambah_e = $this->m_verif->total_unsur($id_pengajuan, 'tbl_e' . $i);
+            $total_penunjang = $total_penunjang + $tambah_e[0]['ak_maks'];
+        }
+        $data['total_penunjang'] = number_format($total_penunjang, 2);
+
+        $total_AK_maks = number_format($total_pendidikan + $total_penelitian + $total_pengmas + $total_penunjang, 2);
+        $data['total_AK'] = $total_AK_maks;
+
+
+        if ($total_AK_maks != 0) {
+            $data['persentase_pendidikan'] = number_format($data['total_pendidikan'] * 100 / $data['total_AK'], 2);
+            $data['persentase_penelitian'] = number_format($data['total_penelitian'] * 100 / $data['total_AK'], 2);
+            $data['persentase_pengmas'] = number_format($data['total_pengmas'] * 100 / $data['total_AK'], 2);
+            $data['persentase_penunjang'] = number_format($data['total_penunjang'] * 100 / $data['total_AK'], 2);
+        } else {
+            $data['persentase_pendidikan'] = '0';
+            $data['persentase_penelitian'] = '0';
+            $data['persentase_pengmas'] = '0';
+            $data['persentase_penunjang'] = '0';
+        }
 
 
         $data['a1'] = $this->m_verif->a1($id_pengajuan);

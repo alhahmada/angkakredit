@@ -60,7 +60,7 @@
                                             <td><?= $value['nama_lengkap']; ?></td>
                                             <td><?= date('d F Y', strtotime($value['tgl_pengajuan'])); ?></td>
                                             <td class="nav-item text-center">
-                                                <a class="nav-link" href="<?= base_url('penilai/nilai_pendidikan/' . $value['id_pengajuan']); ?>">
+                                                <a class="nav-link" href="<?= base_url('penilai/penilaian_ak/' . $value['id_pengajuan']); ?>">
                                                     <span>
                                                         Mulai Penilaian
                                                     </span>

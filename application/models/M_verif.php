@@ -395,7 +395,7 @@ class M_verif extends CI_Model
 			$status[0]['A'] = 'Sudah Diverifikasi';
 		}
 
-		if ($b == 0) {
+		if ($b[0]['status'] == 0) {
 			$status[0]['B'] = 'Belum Diverifikasi';
 		} else {
 			$status[0]['B'] = 'Sudah Diverifikasi';

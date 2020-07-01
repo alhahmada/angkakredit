@@ -25,9 +25,7 @@ class Dosen extends CI_Controller
         $this->load->library('upload');
     }
 
-
     // Form Pengajuan Berkas (Awal)
-
 
 
     public function daftar_pengajuan()
@@ -1441,8 +1439,14 @@ class Dosen extends CI_Controller
             $this->m_pengajuan->update_progress($id_pengajuan, $progress_pengajuan, $keterangan);
             redirect(base_url('dosen/daftar_pengajuan'));
         } elseif ($aksi == 'lanjutkan') {
+            $this->m_pengajuan->delete_penilaian($id_pengajuan);
+            $this->m_pengajuan->delete_ak_penilai_unsur($id_pengajuan);
+            $this->m_pengajuan->delete_ak_nilai($id_pengajuan);
+            $this->m_pengajuan->delete_verif($id_pengajuan);
+            $this->m_pengajuan->delete_log($id_pengajuan);
             $progress_pengajuan = '0';
             $keterangan = 'Sudah Diajukan';
+            $this->m_pengajuan->update_progress($id_pengajuan, $progress_pengajuan, $keterangan);
             redirect(base_url('dosen/submit_pengajuan'));
         } elseif ($aksi == 'lihathasil') {
             redirect(base_url('dosen/lihat_hasil/' . $id_pengajuan));
@@ -1537,11 +1541,6 @@ class Dosen extends CI_Controller
         $this->load->view('dosen/submit_pengajuan');
         $this->load->view('templates/auth_footer');
     }
-
-
-
-
-
 
     public function history_pengajuan()
     {
@@ -1818,87 +1817,9 @@ class Dosen extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-
-
-
-
     public function test()
     {
-
-        $nip = $this->session->userdata('nip');
-
-        print_r($nip);
-    }
-
-
-
-    //     if ($a[0]['status'] == '1') {
-    //         $status_A[0] = 'Terverifikasi';
-    //     } elseif ($a[0]['status'] == '2') {
-    //         $status_A[0] = 'Pengajuan Ditolak';
-    //     }
-    // } else {
-    //     $status_A[0] = 'BeDiverifikasi';
-    // }
-
-
-
-
-
-    public function test_submit()
-    {
-        $id_pengajuan = $this->input->post('id_pengajuan');
-        $filenames = array();
-        $ak = 0;
-
-
-        //Pengajuan C1
-        $c11 = $this->input->post('C11');
-        $c12 = $this->input->post('C12');
-        $c13 = $this->input->post('C13');
-        $c14 = $this->input->post('C14');
-        $c15 = $this->input->post('C15');
-        print_r($c11);
-        echo "<br>";
-        print_r($c13);
-        if ($c11 != NULL) {
-            for ($i = 0; $i < count($c11); $i++) {
-                $ak = 0;
-                if ($c11[$i] != "") {
-                    if ($c11[$i] == 'Buku Sendiri' && $c13[$i] == 'Buku Referensi') {
-                        $ak = 40;
-                    } elseif ($c11[$i] == 'Buku Sendiri' && $c13[$i] == 'Monograf') {
-                        $ak = 20;
-                    } elseif ($c11[$i] == 'Buku Berbagai Penulis' && $c13[$i] == 'Internasional') {
-                        $ak = 15;
-                    } elseif ($c11[$i] == 'Buku Berbagai Penulis' && $c13[$i] == 'Nasional') {
-                        $ak = 10;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Internasional Bereputasi dan Berfaktor Dampak') {
-                        $ak = 40;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Internasional Bereputasi') {
-                        $ak = 30;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Internasional Tidak Bereputasi') {
-                        $ak = 20;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Nasional Terakreditasi Dikti') {
-                        $ak = 25;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Nasional Terakreditasi Dikti Peringkat 1 dan 2') {
-                        $ak = 25;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Bahasa resmi PBB terindeks pada Basis Data yang diakui Dikti') {
-                        $ak = 20;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Nasional Terakreditasi Peringkat 3 dan 4') {
-                        $ak = 20;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Nasional berbahasa Indonesia terindeks yang diakui Dikti (peringkat 5 dan 6)') {
-                        $ak = 15;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Nasional') {
-                        $ak = 10;
-                    } elseif ($c11[$i] == 'Jurnal' && $c13[$i] == 'Jurnal Ilmiah Bahasa Resmi PBB yang tidak memenuhi syarat Jurnal Internasional') {
-                        $ak = 10;
-                    }
-
-                    echo $ak . "-" . $c11[$i] . "-" . $c13[$i] . "<br>";
-                }
-                unset($ak);
-            }
-        }
+        $data_ak = $this->m_auth->data_ak('10102020');
+        print_r($data_ak);
     }
 }
