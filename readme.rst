@@ -1,70 +1,74 @@
 ###################
-What is CodeIgniter
+SISTEM PENILAIAN ANGKA KREDIT DOSEN
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Sitem Penilaian Angka Kredit Dosen Merupakan Sistem berbasis web yang dapat digunakan untuk tahap pengajuan, verifikasi berkas,
+verifikasi unsur pengajuan, penilaian pegajuan, penetapan angka kredit, dan pengiriman angka kredit kepada dosen pengaju.
+Sistem dibangun dengan menggunakan Metode System Development Life Cycle Model Waterfall dengan tahapan sebagai berikut.
+1. Analisis Kebutuhan
+2. Rancangan dan Desain
+3. Implementasi 
+4. Testing
+5. Pemeliharaan
 
 *******************
-Release Information
+Panduan Pembangunan Sistem
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Sistem Dibangun mengadopsi peraturan yang termuat dalam beberapa referensi, yaitu.
+1. Pedoman Operasional Penilaian Angka Kredit (PO-PAK) Kemenristekdikti Tahun 2019
+2. Undang-Undang tentang Guru dan Dosen
+3. Peraturan Pemerintah tentang Dosen
 
 **************************
-Changelog and New Features
+Versi
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Sistem ini merupakan sistem versi 1.0 yang dikembangkan terakhir pada Juli 2020
 
 *******************
-Server Requirements
+Kebutuhan Sistem 
 *******************
 
-PHP version 5.6 or newer is recommended.
+Kebutuhan Sistem yang diperoleh dari Analisis Sistem Berjalan adalah sebagai berikut.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Kebutuhan Fungsional yang didapatkan adalah sistem dapat:
+1. Menampilkan Informasi Dosen
+2. Digunakan untuk pengajuan s.d. Pengiriman Angka Kredit
+3. Menampilkan Berkas Pengajuan dalam bentuk soft-file
+4. Mengkalkulasi angka kredit dan menampilkan batasan sesuai degan jenis/tipe pengajuan
+
+Kebutuhan Non-fungsional yang didapatkan adalah sistem memiliki:
+1. Basis Data untuk menyimpan berkas-berkas pegajuan seluruh dosen
+2. Fitur untuk mengelola pengguna
+3. Tampilan yang mudah dipahami dilengkapi dengan panduan.
 
 ************
-Installation
+Batasan Pembanguan Sistem
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+Sistem dibangun di lingkup dosen Politeknik Statistika STIS, dan 
+Dibangun secara independen / tidak diintegrasikan dengan sistem lainnya
 
 *******
-License
+Tools Pembangunan Sistem
 *******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Sistem Dibangun denga Menggunakan :
+Metode-Model    = SDLC-Waterfall
+Framework       = CodeIgniter Ver 3
+Bahasa          = HTML, PHP, Javascript
+Basis Data      = MySQL - HeidiSQL
+Metode Evaluasi = Black-Box Testing 
 
-*********
-Resources
-*********
+Metode Evaluasi Lanjutan    = System Usability Scale (SUS)
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
 ***************
-Acknowledgement
+Tentang Developer
 ***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Developer Sistem Merupakan Mahasiswa Politeknik Statistika STIS Tingkat 4 Tahun Akademik 2019/2020
+
+Kritik dan Saran kami terima dari pengguna yang dapat dikirim melalui.
+email   : 16.8993@stis.ac.id
