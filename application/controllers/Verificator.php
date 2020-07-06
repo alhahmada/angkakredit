@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class verificator extends CI_Controller
+class Verificator extends CI_Controller
 {
 
 

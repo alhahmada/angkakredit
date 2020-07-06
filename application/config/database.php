@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '10.13.13.220',
+	'username' => 'bintang2',
+	'password' => 'alhasu2020**',
 	'database' => 'angkakredit',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
