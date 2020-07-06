@@ -12,7 +12,10 @@ class M_ubah_data extends CI_Model
 
     public function ubah_nip($id, $nip_baru)
     {
-        $this->db->query("UPDATE tbl_user SET nip=$nip_baru where id=$id");
+        $this->db->where('id', $id);
+        $this->db->from('tbl_user');
+        $this->db->set('nip', $nip_baru);
+        return $this->db->update();
     }
 
     public function ubah_nama($nip, $nama_baru)
