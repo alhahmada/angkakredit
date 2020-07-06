@@ -10,10 +10,10 @@
                 <div class="card-body">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
+
+
                         <?php if ($error == 'error') { ?>
                             <div style="width: 100%;background-color: red;color: black;text-align: center;">Username dan password salah !</div>
-                        <?php } elseif ($error == 'role') { ?>
-                            <div style="width: 100%;background-color: red;color: black;text-align: center;">Anda Tidak Memiliki Akses ke Halaman Tersebut !</div>
                         <?php } ?>
                         <div class="col-lg p-5">
 
@@ -33,33 +33,22 @@
                                         <label class="custom-control-label" for="customCheck" style="color: black;">Remember Me</label>
                                     </div>
                                 </div>
-                                <button type="submit" name="login_as" value="dosen" class="btn btn-primary btn-user btn-block">
-                                    Masuk Sebagai Dosen
-                                </button>
 
-                                <button type="submit" name="login_as" value="penilai" class="btn btn-dark btn-user btn-block">
-                                    Masuk Sebagai Tim Penilai
-                                </button>
-                                <button type="submit" name="login_as" value="verificator" class="btn btn-danger btn-user btn-block">
-                                    Masuk Sebagai Verifikator
-                                </button>
-                                <button type="submit" name="login_as" value="admin" class="btn btn-primary btn-user btn-block">
-                                    Masuk Sebagai Administrator
+                                <button type="submit" value="dosen" class="btn btn-primary btn-user btn-block">
+                                    Masuk
                                 </button>
                             </form>
+
+
                             <hr>
                             <div class="text-center">
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Login Form -->
-
-    <div class="pt-5"></div>
-
-
 </div>

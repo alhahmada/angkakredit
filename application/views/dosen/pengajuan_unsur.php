@@ -408,7 +408,7 @@
                 <div class="card-body">
                     <div class="pt-2 pb-3">
                         <input type="hidden" name="id_pengajuan" value="<?= $this->uri->segment(3); ?>">
-                        <table class="greyGridTable A1">
+                        <table class="greyGridTable">
                             <thead>
                                 <tr>
                                     <th>No.</th>

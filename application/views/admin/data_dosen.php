@@ -36,12 +36,7 @@
 
 
     <!-- Pencarian -->
-    <div class="container pt-4 pb-4" style="width: 80%;">
-        <div class="row" style="position: relative; margin-right: 2rem;">
-            <input style="width: 75%; position: relative; margin-right: 2 rem;" type="text" placeholder="Cari Dosen Berdasarkan Nama atau NIP ..."></input>
-            <button type="button" class="btn btn-primary btn-sm" style="width: 15%; margin-left: 3rem;">Cari Dosen</button>
-        </div>
-    </div>
+    
 
 
     <!-- Tabel Dosen -->
@@ -52,7 +47,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-
+		
                     <table class="table dataTable table-bordered display" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
@@ -94,3 +89,4 @@
         </div>
     </div>
 </div>
+

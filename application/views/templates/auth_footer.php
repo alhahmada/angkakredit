@@ -16,20 +16,17 @@
 <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<!-- <script type="text/javascript" href="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.js"></script> -->
-<!-- <script type="text/javascript" href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.js"></script> -->
-<!-- <script type="text/javascript" href="<?= base_url('assets/'); ?>vendor/js/demo/datatables-demo.js"></script> -->
 
-<script type="text/javascript" href="<?= base_url('assets/'); ?>dataTables/dataTable/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" href="<?= base_url('assets/'); ?>dataTables/dataTable/js/dataTables.bootstrap4.min.js"></script>
-<script type="text/javascript" href="<?= base_url('assets/'); ?>vendor/js/demo/datatables-demo.js"></script>
-<!-- <script>
+<script type="text/javascript" src="<?= base_url('assets/'); ?>datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?= base_url('assets/'); ?>datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= base_url('assets/'); ?>datatables-responsive/dataTables.responsive.js"></script>
+
+<script>
     $(document).ready(function() {
         $('#dataTable').DataTable();
+
     });
-</script> -->
-
-
+</script>
 
 
 </body>

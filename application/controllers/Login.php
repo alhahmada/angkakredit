@@ -45,7 +45,6 @@ class Login extends CI_Controller
 	{
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-		$login_as = $this->input->post('login_as');
 		$where = array(
 			'email' => $email,
 			'password' => md5($password)
@@ -54,16 +53,15 @@ class Login extends CI_Controller
 
 		if ($cek > 0) {
 			$data = $this->m_auth->cek_login("tbl_user", $where)->result_array();
-			if ($login_as == 'admin' && $data[0]['role'] == 1) {
+			$role = $data[0]['role'];
+			if ($data[0]['role'] == 1) {
 				$home = '/admin/beranda_admin';
-			} elseif ($login_as == 'dosen' && ($data[0]['role'] == 2 || $data[0]['role'] == 3 || $data[0]['role'] == 4)) {
+			} elseif ($data[0]['role'] == 2) {
 				$home = '/auth/beranda';
-			} elseif ($login_as == 'penilai' && ($data[0]['role'] == 5 || $data[0]['role'] == 4)) {
+			} elseif ($data[0]['role'] == 5) {
 				$home = '/penilai/beranda_penilai';
-			} elseif ($login_as == 'verificator' && ($data[0]['role'] == 3 || $data[0]['role'] == 4)) {
-				$home = '/verificator/beranda_verificator';
-			} else {
-				$home = 'login/login/role';
+			} elseif ($data[0]['role'] == 3 || $data[0]['role'] == 4) {
+				$home = 'login/login_pilihan/' . $role;
 			}
 			if ($home != 'login/login/role') {
 				$data_session = array(
@@ -79,6 +77,45 @@ class Login extends CI_Controller
 		} else {
 			redirect(base_url('login/login/error'));
 		}
+	}
+
+	function login_pilihan()
+	{
+		if ($this->session->userdata('status') != "login") {
+			redirect(base_url("login"));
+		}
+
+		$role = $this->uri->segment(3);
+		$data['title'] = 'Halaman Masuk';
+		$data['role'] = $role;
+		$data['user'] = $this->session->userdata('nip');
+
+		$this->load->view('templates/auth_header_login', $data);
+		$this->load->view('auth/login_pilihan');
+		$this->load->view('templates/auth_footer_login');
+	}
+
+	function aksi_login_2()
+	{
+		$nip = $this->session->userdata('nip');
+		$this->db->select('role');
+		$this->db->from('tbl_user');
+		$this->db->where('nip', $nip);
+		$role = $this->db->get();
+
+
+		$login_as = $this->input->post('login_as');
+
+
+		if ($login_as == 'dosen') {
+			$home = '/auth/beranda';
+		} elseif ($login_as == 'penilai') {
+			$home = '/penilai/beranda_penilai';
+		} elseif ($login_as == 'verificator') {
+			$home = '/verificator/beranda_verificator';
+		}
+
+		redirect(base_url($home));
 	}
 
 	function logout()
