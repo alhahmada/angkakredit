@@ -517,7 +517,7 @@ class admin extends CI_Controller
         $password_awal = $this->input->post('pass_baru');
         $role = $this->input->post('role_baru');
 
-        $this->m_ubah_data->tambah_user($nip, $nama_lengkap, $email, $angka_kredit, $jabatan_fungsi, $pangkat, $golongan_ruang, $program_studi, $password_awal, $role);
+        $this->m_ubah->tambah_user($nip, $nama_lengkap, $email, $angka_kredit, $jabatan_fungsi, $pangkat, $golongan_ruang, $program_studi, $password_awal, $role);
 
         redirect('/admin/edit_user');
     }

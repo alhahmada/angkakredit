@@ -1,6 +1,6 @@
 <?php
 
-class M_ubah_data extends CI_Model
+class M_ubah extends CI_Model
 {
     function __construct()
     {

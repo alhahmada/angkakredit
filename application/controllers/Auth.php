@@ -134,7 +134,7 @@ class Auth extends CI_Controller
         } else {
             $pass1 = $this->input->post('password1');
             $pass2 = $this->input->post('password2');
-            $this->m_ubah_data->ubah_password($nip, $pass1);
+            $this->m_ubah->ubah_password($nip, $pass1);
             redirect('/' . $url . '/edit_profil/');
         }
     }
