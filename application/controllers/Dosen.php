@@ -28,7 +28,7 @@ class Dosen extends CI_Controller
     // Form Pengajuan Berkas (Awal)
 
 
-    public function daftar_pengajuan()
+    public function Daftar_pengajuan()
     {
         $pengajuan8 = $this->m_pengajuan->data_pengajuan_dosen_8($this->session->userdata('nip'));
         $pengajuan7 = $this->m_pengajuan->data_pengajuan_dosen_7($this->session->userdata('nip'));
@@ -46,7 +46,7 @@ class Dosen extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_daftar_pengajuan()
+    public function Action_daftar_pengajuan()
     {
         ini_set('max_execution_time', 0);
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -105,7 +105,7 @@ class Dosen extends CI_Controller
         redirect(base_url('dosen/pengajuan_unsur/' . $id_pengajuan));
     }
 
-    public function pengajuan_unsur()
+    public function Pengajuan_unsur()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['array'] = $datauser[0];
@@ -185,7 +185,7 @@ class Dosen extends CI_Controller
         $this->load->view('templates/auth_footer_2');
     }
 
-    public function hapus_pengajuan($tbl, $id)
+    public function Hapus_pengajuan($tbl, $id)
     {
         // $id = $this->input->post('');
         $data = array(
@@ -199,7 +199,7 @@ class Dosen extends CI_Controller
         $this->m_pengajuan->edit($data, $tbl, $id);
     }
 
-    public function action_update_berkas()
+    public function Action_update_berkas()
     {
         $id_pengajuan = $this->input->post('id_pengajuan');
         $bk = $this->input->post('id_berkas');  // bk1 - bk18
@@ -223,7 +223,7 @@ class Dosen extends CI_Controller
     }
 
 
-    public function action_pengajuan_unsur()
+    public function Action_pengajuan_unsur()
     {
         $id_pengajuan = $this->input->post('id_pengajuan');
         $user = $this->m_pengajuan->user_pengajuan($id_pengajuan);
@@ -1453,7 +1453,7 @@ class Dosen extends CI_Controller
         }
     }
 
-    public function lihat_hasil()
+    public function Lihat_hasil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['array'] = $datauser[0];
@@ -1531,7 +1531,7 @@ class Dosen extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function submit_pengajuan()
+    public function Submit_pengajuan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -1542,7 +1542,7 @@ class Dosen extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function history_pengajuan()
+    public function History_pengajuan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $datapengajuan = $this->m_pengajuan->data_pengajuan();
@@ -1557,7 +1557,7 @@ class Dosen extends CI_Controller
 
 
 
-    public function log_pengajuan()
+    public function Log_pengajuan()
     {
         $id_pengajuan = $this->uri->segment(3);
         $nip = $this->session->userdata('nip');
@@ -1817,7 +1817,7 @@ class Dosen extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function test()
+    public function Test()
     {
         $data_ak = $this->m_auth->data_ak('10102020');
         print_r($data_ak);

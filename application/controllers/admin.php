@@ -24,7 +24,7 @@ class admin extends CI_Controller
         $this->load->model('m_ubah');
     }
 
-    public function beranda_admin()
+    public function Beranda_admin()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $progress = $this->m_pengajuan->total_per_progress();
@@ -38,7 +38,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function daftar_pengajuanAK()
+    public function Daftar_pengajuanAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
 
@@ -111,7 +111,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_pilih_verifikator()
+    public function Action_pilih_verifikator()
     {
         // Insert ke Tabel Penilaian
         // id_penilaian
@@ -140,7 +140,7 @@ class admin extends CI_Controller
     }
 
 
-    public function action_pilih_penilai()
+    public function Action_pilih_penilai()
     {
         // Insert ke Tabel Penilaian
         // id_penilaian
@@ -162,7 +162,7 @@ class admin extends CI_Controller
 
 
     // ACTION TERAKHIR TETAPKAN AK
-    public function action_progress()
+    public function Action_progress()
     {
         $id_pengajuan = $this->input->post('id_pengajuan');
         $this->m_pengajuan->update_progress($id_pengajuan, 6, 'Proses Pengajuan Selesai');
@@ -191,7 +191,7 @@ class admin extends CI_Controller
         redirect('/admin/daftar_pengajuanAK');
     }
 
-    public function cek_berkas()
+    public function Cek_berkas()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -217,7 +217,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_verif_berkas()
+    public function Action_verif_berkas()
     {
         $keterangan = $this->input->post('keterangan');
         $nip = $this->session->userdata('nip');
@@ -238,7 +238,7 @@ class admin extends CI_Controller
         redirect('/admin/daftar_pengajuanAK');
     }
 
-    public function verif_penunjang()
+    public function Verif_penunjang()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -271,7 +271,7 @@ class admin extends CI_Controller
         $this->load->view('admin/verif_penunjang');
         $this->load->view('templates/auth_footer');
     }
-    public function action_verif_penunjang()
+    public function Action_verif_penunjang()
     {
         $keterangan = $this->input->post('keterangan');
         $aksi = $this->input->post('aksi');
@@ -291,7 +291,7 @@ class admin extends CI_Controller
         redirect('/admin/daftar_pengajuanAK');
     }
 
-    public function penetapan_ak()
+    public function Penetapan_ak()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -371,7 +371,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_penetapan_ak()
+    public function Action_penetapan_ak()
     {
         ini_set('max_execution_time', 0);
         $id_pengajuan = $this->input->post('id_pengajuan');
@@ -459,7 +459,7 @@ class admin extends CI_Controller
 
 
 
-    public function informasi_admin()
+    public function Informasi_admin()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -470,7 +470,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function setelan_admin()
+    public function Setelan_admin()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -481,7 +481,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_profil()
+    public function Edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -493,7 +493,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_user()
+    public function Edit_user()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -504,7 +504,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_tambah_user()
+    public function Action_tambah_user()
     {
         $nip = $this->input->post('nip_baru');
         $nama_lengkap = $this->input->post('nama_baru');
@@ -522,7 +522,7 @@ class admin extends CI_Controller
         redirect('/admin/edit_user');
     }
 
-    public function pengajuan_tolak()
+    public function Pengajuan_tolak()
     {
         $pengajuan_tolak = $this->m_pengajuan->pengajuan_tolak();
         $data['pengajuan_tolak'] = $pengajuan_tolak;
@@ -536,7 +536,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function pengajuan_selesai()
+    public function Pengajuan_selesai()
     {
         $pengajuan_selesai = $this->m_pengajuan->pengajuan_selesai();
         $data['pengajuan_selesai'] = $pengajuan_selesai;
@@ -550,7 +550,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function pengajuan_progress()
+    public function Pengajuan_progress()
     {
         $pengajuan_progress = $this->m_pengajuan->pengajuan_progress();
         $data['pengajuan_progress'] = $pengajuan_progress;
@@ -564,7 +564,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function data_dosen()
+    public function Data_dosen()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -580,7 +580,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function history_dosen()
+    public function History_dosen()
     {
 
         $nip = $this->uri->segment(3);
@@ -604,7 +604,7 @@ class admin extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function log_pengajuan()
+    public function Log_pengajuan()
     {
         $id_pengajuan = $this->uri->segment(3);
         $nip = $this->session->userdata('nip');

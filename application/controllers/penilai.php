@@ -21,7 +21,7 @@ class penilai extends CI_Controller
         $this->load->model('m_resume');
     }
 
-    public function beranda_penilai()
+    public function Beranda_penilai()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
 
@@ -37,7 +37,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function daftar_penilaianAK()
+    public function Daftar_penilaianAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -63,7 +63,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function penilaian_ak()
+    public function Penilaian_ak()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -138,7 +138,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_penilaian_ak()
+    public function Action_penilaian_ak()
     {
         ini_set('max_execution_time', 0);
         $nip = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -167,7 +167,7 @@ class penilai extends CI_Controller
         }
     }
 
-    public function nilai_pendidikan()
+    public function Nilai_pendidikan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -208,7 +208,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_nilai_pendidikan()
+    public function Action_nilai_pendidikan()
     {
         ini_set('max_execution_time', 0);
         $nip = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -306,7 +306,7 @@ class penilai extends CI_Controller
         redirect('penilai/daftar_penilaianAK');
     }
 
-    public function informasi_penilai()
+    public function Informasi_penilai()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -317,7 +317,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function setelan_penilai()
+    public function Setelan_penilai()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -328,7 +328,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_profil()
+    public function Edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -340,7 +340,7 @@ class penilai extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function history_penilai()
+    public function History_penilai()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];

@@ -9,12 +9,12 @@ class Login extends CI_Controller
 		$this->load->model('m_auth');
 	}
 
-	function index()
+	function Index()
 	{
 		redirect(base_url('login/login'));
 	}
 
-	function login()
+	function Login()
 	{
 		$data['title'] = 'Halaman Masuk';
 		$data['error'] = $this->uri->segment(3);
@@ -22,7 +22,7 @@ class Login extends CI_Controller
 		$this->load->view('auth/login');
 		$this->load->view('templates/auth_footer_login');
 	}
-	public function registration()
+	public function Registration()
 	{
 		$this->form_validation->set_rules('name', 'Name', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]');
@@ -41,7 +41,7 @@ class Login extends CI_Controller
 			echo 'data berhasil ditambahkan!';
 		}
 	}
-	function aksi_login()
+	function Aksi_login()
 	{
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
@@ -79,7 +79,7 @@ class Login extends CI_Controller
 		}
 	}
 
-	function login_pilihan()
+	function Login_pilihan()
 	{
 		if ($this->session->userdata('status') != "login") {
 			redirect(base_url("login"));
@@ -95,7 +95,7 @@ class Login extends CI_Controller
 		$this->load->view('templates/auth_footer_login');
 	}
 
-	function aksi_login_2()
+	function Aksi_login_2()
 	{
 		$nip = $this->session->userdata('nip');
 		$this->db->select('role');
@@ -118,12 +118,12 @@ class Login extends CI_Controller
 		redirect(base_url($home));
 	}
 
-	function logout()
+	function Logout()
 	{
 		$this->session->sess_destroy();
 		redirect(base_url('login'));
 	}
-	function test()
+	function Test()
 	{
 		$where = array(
 			'email' => 'dosen@stis.id',

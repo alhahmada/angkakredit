@@ -21,7 +21,7 @@ class verificator extends CI_Controller
         $this->load->model('m_pengajuan');
     }
 
-    public function beranda_verificator()
+    public function Beranda_verificator()
     {
         $cekverifikator = $this->m_verif->cek_verifikator();
         if ($cekverifikator == null) {
@@ -44,7 +44,7 @@ class verificator extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function daftar_verifikasiAK()
+    public function Daftar_verifikasiAK()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
 
@@ -74,7 +74,7 @@ class verificator extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function verif_pendidikan()
+    public function Verif_pendidikan()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -114,7 +114,7 @@ class verificator extends CI_Controller
         $this->load->view('verificator/verif_pendidikan');
         $this->load->view('templates/auth_footer');
     }
-    public function action_verif_pendidikan()
+    public function Action_verif_pendidikan()
     {
         $keterangan = $this->input->post('keterangan');
         $aksi = $this->input->post('aksi');
@@ -134,7 +134,7 @@ class verificator extends CI_Controller
         redirect('/verificator/daftar_verifikasiAK');
     }
 
-    public function verif_penelitian()
+    public function Verif_penelitian()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -164,7 +164,7 @@ class verificator extends CI_Controller
         $this->load->view('verificator/verif_penelitian');
         $this->load->view('templates/auth_footer');
     }
-    public function action_verif_penelitian()
+    public function Action_verif_penelitian()
     {
         $keterangan = $this->input->post('keterangan');
         $aksi = $this->input->post('aksi');
@@ -184,7 +184,7 @@ class verificator extends CI_Controller
         redirect('/verificator/daftar_verifikasiAK');
     }
 
-    public function verif_pengmas()
+    public function Verif_pengmas()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $id_pengajuan = $this->uri->segment(3);
@@ -213,7 +213,7 @@ class verificator extends CI_Controller
         $this->load->view('verificator/verif_pengmas');
         $this->load->view('templates/auth_footer');
     }
-    public function action_verif_pengmas()
+    public function Action_verif_pengmas()
     {
         $keterangan = $this->input->post('keterangan');
         $aksi = $this->input->post('aksi');
@@ -234,7 +234,7 @@ class verificator extends CI_Controller
     }
 
 
-    public function informasi_verif()
+    public function Informasi_verif()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -245,7 +245,7 @@ class verificator extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function setelan_verif()
+    public function Setelan_verif()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -255,7 +255,7 @@ class verificator extends CI_Controller
         $this->load->view('auth/setting');
         $this->load->view('templates/auth_footer');
     }
-    public function edit_profil()
+    public function Edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -267,7 +267,7 @@ class verificator extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function history_verif()
+    public function History_verif()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];

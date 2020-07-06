@@ -16,12 +16,12 @@ class Auth extends CI_Controller
         $this->load->model('m_ubah');
     }
 
-    public function index()
+    public function Index()
     {
         redirect('/auth/beranda');
     }
 
-    public function registration()
+    public function Registration()
     {
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]');
@@ -44,7 +44,7 @@ class Auth extends CI_Controller
         }
     }
 
-    public function beranda()
+    public function Beranda()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -62,7 +62,7 @@ class Auth extends CI_Controller
     }
 
 
-    public function setelan_dosen()
+    public function Setelan_dosen()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -73,12 +73,12 @@ class Auth extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function sampel_dinamic()
+    public function Sampel_dinamic()
     {
         $this->load->view('auth/sampel_dinamic');
     }
 
-    public function sampel_2()
+    public function Sampel_2()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -89,7 +89,7 @@ class Auth extends CI_Controller
     }
 
 
-    public function informasi()
+    public function Informasi()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $data['nama'] = $datauser[0]['nama_lengkap'];
@@ -100,7 +100,7 @@ class Auth extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function edit_profil()
+    public function Edit_profil()
     {
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
         $nip = $this->session->userdata('nip');
@@ -116,7 +116,7 @@ class Auth extends CI_Controller
         $this->load->view('templates/auth_footer');
     }
 
-    public function action_ubah_pass()
+    public function Action_ubah_pass()
     {
         $url = $this->uri->segment(1);
         $nip = $this->session->userdata('nip');
@@ -139,7 +139,7 @@ class Auth extends CI_Controller
         }
     }
 
-    public function action_ubah_nama()
+    public function Action_ubah_nama()
     {
         $url = $this->uri->segment(1);
         $datauser = $this->m_auth->data_user($this->session->userdata('nip'));
@@ -151,7 +151,7 @@ class Auth extends CI_Controller
         redirect('/' . $url . '/edit_profil/');
     }
 
-    public function action_ubah_prodi()
+    public function Action_ubah_prodi()
     {
         $url = $this->uri->segment(1);
         $nip = $this->session->userdata('nip');
@@ -169,7 +169,7 @@ class Auth extends CI_Controller
         redirect('/' . $url . '/edit_profil/');
     }
 
-    public function action_ubah_email()
+    public function Action_ubah_email()
     {
         $url = $this->uri->segment(1);
         $nip = $this->session->userdata('nip');
@@ -180,7 +180,7 @@ class Auth extends CI_Controller
         redirect('/' . $url . '/edit_profil/');
     }
 
-    public function action_ubah_nohp()
+    public function Action_ubah_nohp()
     {
         $url = $this->uri->segment(1);
         $nip = $this->session->userdata('nip');
@@ -191,7 +191,7 @@ class Auth extends CI_Controller
         redirect('/' . $url . '/edit_profil/');
     }
 
-    public function action_ubah_foto()
+    public function Action_ubah_foto()
     {
         $url = $this->uri->segment(1);
         $nip = $this->session->userdata('nip');
@@ -206,7 +206,7 @@ class Auth extends CI_Controller
     }
 
 
-    public function sampel_chart()
+    public function Sampel_chart()
     {
         $this->load->view('auth/sampel_chart');
     }
