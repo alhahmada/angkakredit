@@ -13,7 +13,7 @@ class Auth extends CI_Controller
         }
         $this->load->model('m_auth');
         $this->load->model('m_pengajuan');
-        $this->load->model('m_ubah_data');
+        $this->load->model('m_ubah');
     }
 
     public function index()

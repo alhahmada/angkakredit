@@ -21,7 +21,7 @@ class admin extends CI_Controller
         $this->load->model('m_penilai');
         $this->load->model('m_penetapan');
         $this->load->model('m_resume');
-        $this->load->model('m_ubah_data');
+        $this->load->model('m_ubah');
     }
 
     public function beranda_admin()
