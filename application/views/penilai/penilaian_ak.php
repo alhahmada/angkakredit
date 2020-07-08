@@ -821,7 +821,6 @@
                                     <th>Tahun Keluar</th>
                                     <th>Lampiran</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -841,6 +840,12 @@
                                         </td>
                                         <td><?= $value['ak_maks']; ?></td>
                                         <td><input type="number" step="0.1" max="<?= $value['ak_maks']; ?>" name="nilai_a1[]" style="width: 4rem;"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <input type="hidden" name="id_bab_a1[]" value="<?= $value['id']; ?>">
+                                        <td colspan="7" class="trxt-center">
+                                            <input type="file" accept="application/pdf" name="peerA1[]">
+                                        </td>
                                     </tr>
                                 <?php $urut++;
                                 }
@@ -865,7 +870,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -918,7 +922,6 @@
                                     <th>Mata Kuliah</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -962,7 +965,6 @@
                                     <th>Tahun Akademik</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1001,7 +1003,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1044,7 +1045,6 @@
                                     <th>Jumlah Mahasiswa (Option)</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1087,7 +1087,6 @@
                                     <th>Jumlah Mahasiswa</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1128,7 +1127,6 @@
                                     <th>Tahun Akademik</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1170,7 +1168,6 @@
                                     <th>Mata Kuliah</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1215,7 +1212,6 @@
                                     <th>Mata Kuliah</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1259,7 +1255,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1301,7 +1296,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1343,7 +1337,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1385,7 +1378,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1425,7 +1417,6 @@
                                     <th>Lama Program Pengembangan yang diikuti</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK Diberikan</th>
                                 </tr>
                             </thead>
@@ -1488,7 +1479,6 @@
                                     <th>Tahun</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1536,7 +1526,6 @@
                                     <th>Tahun Didiseminasikan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1581,7 +1570,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1625,7 +1613,6 @@
                                     <th>No ISBN</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1669,7 +1656,6 @@
                                     <th>No ISBN</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1759,7 +1745,6 @@
                                     <th>Tahun Pembuatan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1803,7 +1788,6 @@
                                     <th>Tingkat</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1868,7 +1852,6 @@
                                     <th>Tahun Menjabat (Sejak)</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1910,7 +1893,6 @@
                                     <th>Tahun Diterapkan/Diterbitkan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1953,7 +1935,6 @@
                                     <th>Tingkat</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -1996,7 +1977,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2037,7 +2017,6 @@
                                     <th>Tahun Pembuatan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2078,7 +2057,6 @@
                                     <th>Tahun Pembuatan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2121,7 +2099,6 @@
                                     <th>Tahun</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2183,7 +2160,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2228,7 +2204,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2274,7 +2249,6 @@
                                     <th>Tahun</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2318,7 +2292,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2361,7 +2334,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2405,7 +2377,6 @@
                                     <th>Tahun Pelaksanaan</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2448,7 +2419,6 @@
                                     <th>Tahun Diterima</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2490,7 +2460,6 @@
                                     <th>Tahun Terbit</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2533,7 +2502,6 @@
                                     <th>Tingkat (Option)</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
@@ -2576,7 +2544,6 @@
                                     <th>Semester</th>
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
-
                                     <th>AK yang diberikan</th>
                                 </tr>
                             </thead>
