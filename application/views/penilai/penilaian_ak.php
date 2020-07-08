@@ -889,6 +889,12 @@
                                         <td><?= $value['ak_maks'];; ?></td>
                                         <td><input type="number" name="nilai_a2[]" step="0.1" max="<?= $value['ak_maks']; ?>" style="width: 4rem;"></input></td>
                                     </tr>
+                                    <tr>
+                                        <input type="hidden" name="id_bab_a2[]" value="<?= $value['id']; ?>">
+                                        <td colspan="7" class="trxt-center">
+                                            <input type="file" accept="application/pdf" name="peerA2[]">
+                                        </td>
+                                    </tr>
                                 <?php $urut++;
                                 }
                                 unset($urut); ?>
@@ -941,6 +947,12 @@
                                         </td>
                                         <td><?= $value['ak_maks']; ?></td>
                                         <td><input type="number" name="nilai_b1[]" step="0.01" max="<?= $value['ak_maks']; ?>" style="width: 4rem;"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <input type="hidden" name="id_bab_b1[]" value="<?= $value['id']; ?>">
+                                        <td colspan="7" class="trxt-center">
+                                            <input type="file" accept="application/pdf" name="peerB1[]">
+                                        </td>
                                     </tr>
                                 <?php $urut++;
                                 }
