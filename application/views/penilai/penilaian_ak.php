@@ -929,6 +929,7 @@
                                     <th>Lampirkan Bukti</th>
                                     <th>AK Maksimal</th>
                                     <th>AK Diberikan</th>
+                                    <th>Peer</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -947,9 +948,6 @@
                                         </td>
                                         <td><?= $value['ak_maks']; ?></td>
                                         <td><input type="number" name="nilai_b1[]" step="0.01" max="<?= $value['ak_maks']; ?>" style="width: 4rem;"></input></td>
-                                    </tr>
-                                    <tr>
-                                        <input type="hidden" name="id_bab_b1[]" value="<?= $value['id']; ?>">
                                         <td colspan="7" class="trxt-center">
                                             <input type="file" accept="application/pdf" name="peerB1[]">
                                         </td>
